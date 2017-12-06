@@ -1,0 +1,787 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_shops_map
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-09 23:54+0000\n"
+"PO-Revision-Date: 2016-09-10 03:04+0300\n"
+"Last-Translator: Tatiana Deribina <deribina@itlibertas.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_api_key
+msgid "API Key"
+msgstr "Ключ для API"
+
+#. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.menu_api_settings_administration
+msgid "API Settings"
+msgstr "Настройки API"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.shop_api_users_view_tree
+msgid "API Users"
+msgstr "Пользователи API"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Address"
+msgstr "Адрес"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_city
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_city
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "City"
+msgstr "Город"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_comment
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_comment
+msgid "Comment"
+msgstr "Комментарий"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Comment..."
+msgstr "Комментарий..."
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_country_id
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_country_id
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Country"
+msgstr "Страна"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,help:website_shops_map.shop_properties_action
+msgid "Create a Shop Property."
+msgstr "Создать свойство магазина."
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,help:website_shops_map.eyekraft_shop_action
+msgid "Create a Shop."
+msgstr "Создать магазин."
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_create_date
+msgid "Created on"
+msgstr "Создан"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_default
+msgid "Default"
+msgstr "По умолчанию"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_display_name
+msgid "Display Name"
+msgstr "Отображаемое Имя"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_email
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_email
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Email"
+msgstr "Эл. почта"
+
+#. module: website_shops_map
+#: sql_constraint:period.of.time:0
+msgid "End of period can't be less than or equal to start of period!"
+msgstr "Конец периода не может быть раньше начала периода!"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_full_address
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_full_address
+msgid "Full Address"
+msgstr "Адрес"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_id
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_id
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_id
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_id
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_id
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_image_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_image_ids
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Images"
+msgstr "Изображения"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days___last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop___last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time___last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user___last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property___last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours___last_update
+msgid "Last Modified on"
+msgstr "Последнее Изменение"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_write_uid
+msgid "Last Updated by"
+msgstr "Последний раз обновлено"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_write_date
+msgid "Last Updated on"
+msgstr "Последний раз обновлено"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_partner_latitude
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_partner_latitude
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Latitude"
+msgstr "Широта"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_partner_longitude
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_partner_longitude
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Longitude"
+msgstr "Долгота"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_image_main
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_image_main
+msgid "Main image"
+msgstr "Главное изображение"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_image_main_medium
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_image_main_medium
+msgid "Medium image"
+msgstr "Среднее изображение"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_metro_station
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_metro_station
+msgid "Metro Station"
+msgstr "Станция метро"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Metro station"
+msgstr "Станция метро"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_name
+msgid "Name"
+msgstr "Название"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.shop_property_view_form
+msgid "Name..."
+msgstr "Название..."
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_period_of_time
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_name
+msgid "Period of Time"
+msgstr "Период времени"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.period_of_time_view_form
+msgid "Period of time"
+msgstr "Период времени"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_work_hours_work_days_id
+msgid "Period of week in which the shop works in set hours"
+msgstr "Дни недели, в которые магазин работает в заданные часы"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.period_of_time_action
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_period_ids
+#: model:ir.ui.menu,name:website_shops_map.period_of_time_menu
+msgid "Periods of Time"
+msgstr "Периоды времени"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_phone
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_properties_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_properties_ids
+msgid "Properties"
+msgstr "Свойства"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_rating
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_rating
+msgid "Rating"
+msgstr "Рейтинг"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_property_sequence
+msgid "Sequence"
+msgstr "Последовательность"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_public
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_shop_id
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_public
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_shop_id
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Shop"
+msgstr "Магазин"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_api_users_action
+#: model:ir.ui.menu,name:website_shops_map.shop_api_users_menu
+msgid "Shop API Users"
+msgstr "Пользователи API магазинов"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_shop_api_user
+msgid "Shop API users"
+msgstr "Пользователи API магазинов"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Shop Info"
+msgstr "Информация о магазине"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_properties_action
+#: model:ir.ui.view,arch_db:website_shops_map.view_shop_property_view_tree
+msgid "Shop Properties"
+msgstr "Свойства магазинов"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.shop_property_view_form
+msgid "Shop Property"
+msgstr "Свойства магазина"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_eyekraft_shop
+msgid "Shop model for eyekraft"
+msgstr "Shop model for eyekraft"
+
+#. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
+msgid "Shop properties"
+msgstr "Свойства магазинов"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_shop_property
+msgid "Shop property model for eyekraft"
+msgstr "Модель магазина Eyekraft"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.eyekraft_shop_action
+#: model:ir.ui.menu,name:website_shops_map.eyekraft_shop_menu
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_tree
+msgid "Shops"
+msgstr "Магазины"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_eyecraft_work_days
+#: model:ir.model,name:website_shops_map.model_shop_work_hours
+msgid "Shops Work Hours"
+msgstr "Часы работы"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_start_time
+msgid "Since"
+msgstr "Начиная с"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_image_main_small
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_image_main_small
+msgid "Small image"
+msgstr "Маленькое изображение"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_state_id
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_state_id
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "State"
+msgstr "Регион"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_street
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_street
+msgid "Street"
+msgstr "Улица"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Mall"
+msgstr "Торговый центр"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Street"
+msgstr "Улица"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_street2
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_street2
+msgid "Mall"
+msgstr "Торговый центр"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time_end_time
+msgid "To"
+msgstr "До"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_stock_warehouse
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_warehouse_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_warehouse_ids
+msgid "Warehouse"
+msgstr "Склад"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours_work_days_id
+msgid "Week days"
+msgstr "Дни недели"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Work Hours"
+msgstr "Часы работы"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days_name
+msgid "Work days"
+msgstr "Дни недели"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_work_hours_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_work_hours_ids
+msgid "Work hours"
+msgstr "Часы работы"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_view_form
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "ZIP"
+msgstr "Индекс"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_zip
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse_zip
+msgid "Zip"
+msgstr "Индекс"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.view_shop_module
+msgid "About"
+msgstr "О приложении"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.view_shop_module
+msgid "Instructions"
+msgstr "Инструкция"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.view_config_settings
+msgid "Shops Map"
+msgstr "Карта магазинов"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.view_config_settings
+msgid ""
+"Extends Warehouse model to store more shop data. Adds website snippet to show shops on the map."
+"Partner And Google Map Snippet compatible."
+msgstr ""
+"Создает магазины на основе складов и отображает их на веб-страницах при помощи сниппета."
+"Также список магазинов может быть отображен при помощи сниппета Partner And Google Map Snippet"
+
+#. module: eyekraft_shop_map
+#: model:ir.ui.view,arch_db:eyekraft_shop_map.shop_urls_tree
+msgid "API Users"
+msgstr "Пользователи API"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_create_date
+msgid "Created on"
+msgstr "Создан"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_display_name
+msgid "Display Name"
+msgstr "Отображаемое имя"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config___last_update
+msgid "Last Modified on"
+msgstr "Последний раз изменено"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_write_uid
+msgid "Last Updated by"
+msgstr "Последний раз обновлено"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_write_date
+msgid "Last Updated on"
+msgstr "Последний раз обновлено"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_urls_action
+#: model:ir.ui.menu,name:website_shops_map.shop_urls_menu
+#: model:ir.ui.view,arch_db:website_shops_map.shop_urls_form
+msgid "Shop List Config"
+msgstr "Получение списка магазинов"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_shop_list_params
+msgid "Shop List Paramters"
+msgstr "Параметры"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config_shop_list_url
+msgid "Shop List Url"
+msgstr "Ссылка"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_shop_list_config
+msgid "shop.list.config"
+msgstr "Источник списка магазинов"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_shop_list_config_settings
+msgid "shop.list.config.settings"
+msgstr "Настройки источника списка магазинов"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_website_shops_map
+msgid "Shops Map"
+msgstr "Карта магазинов"
+
+#. module: base
+#: model:ir.module.module,summary:base.module_website_shops_map
+msgid "Shop model with map snippet"
+msgstr "Модель магазина со сниппетом карты"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop_file_db_store
+#: model:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "Image stored in database"
+msgstr "Загруженное изображение"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+msgid "Map"
+msgstr "Карта"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+msgid "Shop list"
+msgstr "Список"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+msgid "Find"
+msgstr "Найти"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+msgid "Back to the shop list"
+msgstr "К списку магазинов"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_options
+msgid "Edit source"
+msgstr "Источник данных"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_options
+msgid "List Tab ON/OFF"
+msgstr "Список  вкл/выкл"
+
+#. module: website_shops_map
+#: model:ir.ui.view,arch_db:website_shops_map.snippet_options
+msgid "Map Tab ON/OFF"
+msgstr "Карта  вкл/выкл"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_snippet.js:719
+#, python-format
+msgid "You are here"
+msgstr "Вы здесь"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_snippet.js:495
+#, python-format
+msgid "More to show"
+msgstr "Показать еще"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:29
+#, python-format
+msgid "Map Data Source"
+msgstr "Источник данных для карты"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:158
+#, python-format
+msgid "Source API-key"
+msgstr "API-ключ источника"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:161
+#, python-format
+msgid "Source URL"
+msgstr "URL источника"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:166
+#, python-format
+msgid "Options"
+msgstr "Свойства"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:168
+#, python-format
+msgid "Color"
+msgstr "Цвет"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:168
+#, python-format
+msgid "Enter name of the HTML-color"
+msgstr "Введите название HTML-цвета"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:172
+#, python-format
+msgid "Label"
+msgstr "Метка"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:172
+#, python-format
+msgid "Marked label to show before the caption of the shop card"
+msgstr "Цветная текстовая метка, расположенная рядом с названием магазина"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:176
+#, python-format
+msgid "Info"
+msgstr "Инфо"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:176
+#, python-format
+msgid "Option to show info in the caption of the shop card"
+msgstr "Информация, отображаемая в заголовке карточки магазина"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:178
+#, python-format
+msgid "Km"
+msgstr "Км"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:181
+#, python-format
+msgid "Code"
+msgstr "Код"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/js/shop_list_editor.js:191
+#, python-format
+msgid "Shop tags:"
+msgstr "Теги:"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:143
+#, python-format
+msgid "Your approximate location is:"
+msgstr "Ваше примерное расположение:"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:146
+#, python-format
+msgid "Edit"
+msgstr "Уточнить"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:149
+#, python-format
+msgid "Update"
+msgstr "Обновить"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:124
+#, python-format
+msgid "Show on the map"
+msgstr "Показать на карте"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:49
+#, python-format
+msgid "Show map"
+msgstr "Показать карту"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:54
+#, python-format
+msgid "Show route"
+msgstr "Маршрут"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:63
+#, python-format
+msgid "Image"
+msgstr "Фото"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:203
+#, python-format
+msgid "Address:"
+msgstr "Адрес:"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:211
+#, python-format
+msgid "Opening hours:"
+msgstr "Часы работы:"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:216
+#, python-format
+msgid "Phone:"
+msgstr "Телефон:"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:221
+#, python-format
+msgid "Email:"
+msgstr "Эл.почта:"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:226
+#, python-format
+msgid "Comment:"
+msgstr "Комментарий"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:137
+#, python-format
+msgid "Enter your address"
+msgstr "Введите свой адрес"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/views/website_frontend_template.xml:24
+#: code:website_shops_map/views/website_frontend_template.xml:26
+#: code:website_shops_map/views/website_frontend_template.xml:99
+#: code:website_shops_map/views/website_frontend_template.xml:101
+#, python-format
+msgid "km"
+msgstr "км"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:website_shops_map/static/src/xml/widget.xml:31
+#, python-format
+msgid "Add source"
+msgstr "Добавить источник"

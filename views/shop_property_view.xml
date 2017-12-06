@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="view_shop_property_view_tree" model="ir.ui.view">
+            <field name="name">eyekraft.shop.property.tree</field>
+            <field name="model">shop.property</field>
+            <field name="arch" type="xml">
+                <tree string="Shop Properties">
+                    <field name="name"/>
+                    <field name="default"/>
+		    <field name="path"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="shop_property_view_form" model="ir.ui.view">
+            <field name="name">eyekraft.shop.property.form</field>
+            <field name="model">shop.property</field>
+            <field name="arch" type="xml">
+                <form string="Shop Property">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="default"/>
+			    <field name="path"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="shop_properties_action" model="ir.actions.act_window">
+            <field name="name">Shop Properties</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shop.property</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a Shop Property.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="website_shops_map.shop_properties_menu"
+            action="shop_properties_action"
+            parent="stock.menu_warehouse_config"
+            name="Shop properties"
+            sequence="100"
+        />
+
+    </data>
+</openerp>

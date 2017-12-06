@@ -1,0 +1,38 @@
+<templates id="template" xml:space="preserve">
+
+    <t t-name="website_shops_map.widget.dialog.source">
+        <li t-att-data-source-id="source.id">
+            <div class="input-group">
+                <span class="input-group-addon fa fa-bars"/>
+                <span class="form-control">
+                    <span class="js_source_label">
+                        <t t-esc="source.shop_list_url"/>
+                    </span>
+                </span>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary js_edit_source fa fa-pencil-square-o"/>
+                    <button type="button" class="btn btn-danger js_delete_source fa fa-trash-o"/>
+                </span>
+            </div>
+        </li>
+    </t>
+
+    <div t-name="website_shops_map.widget.dialog.edit">
+        <t>
+            <t t-set="title">Source setup</t>
+            <ul class="oe_source_editor list-unstyled">
+                <t t-foreach="widget.sources" t-as="source">
+                    <t t-call="website_shops_map.widget.dialog.source"/>
+                </t>
+            </ul>
+            <div class="mt16">
+                <div>
+                    <a href="#" class="js_add_source">
+                        <i class="fa fa-plus-circle"/> Add source
+                    </a>
+                </div>
+            </div>
+        </t>
+    </div>
+
+</templates>

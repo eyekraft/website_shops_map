@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="snippet_eyekraft_shop_list" name="Shop List Snippet">
+            <section class="snippet_eyekraft_shop_list">
+                <div class="container">
+                    <div id="shop-list-snippet-wrapper">
+                        <div id="wrap">
+                            <div class="oe_structure"/>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3" id="eyekraft_back_to_shop_list" style="display: none;">
+                                        <div style="padding-top: 20px;">
+                                            <h4><a href="#shopList">Back to the shop list</a></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" id="eyekraft_shop_search">
+                                        <div id="address-input-group" >
+                                            <div class="input-group">
+                                                <input id="eyekraft-shop-list-address-input" type="text" class="form-control" placeholder="Search" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-info find-shop-by-address" >Find</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" id="eyekraft_props_picker_selector">
+                                        <select id="eyekraft_props_picker" class="hidden" multiple="" title="Select option">
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <span class="eyekraft-geocoded-address"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs" id="shop_widget_tabs">
+                                <li class="active" data-visible="on"><a id="eyekraft-show-list-tab" data-toggle="tab" href="#shop_list_panel">Shop list</a></li>
+                                <li data-visible="on"><a id="eyekraft-show-map-tab" data-toggle="tab" href="#shop_map_panel">Map</a></li>
+                            </ul>
+                            <div class="tab-content" id="shop_widget_content">
+                                <div id="shop_list_panel" class="tab-pane fade in active">
+                                    <section class="mt16 mb16">
+                                        <div class="container">
+                                            <div class="reflex-container reflex-wrap shop-list-container">
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div id="shop_map_panel" class="tab-pane fade">
+                                    <section class="mt16 mb16">
+                                        <div class="container">
+                                            <div class="reflex-container reflex-wrap shop-map-container row">
+                                                <div class="col-xs-12 col-md-4" id="shop-list-vertical">
+                                                </div>
+                                                <div class="col-xs-12 col-md-8" >
+                                                    <div id="map-container-vertical" style="width:100%; height:100%; min-height:584px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template id="add_snippet_to_panel_shoplist" inherit_id="website.snippets" name="Add Snippet to Panel">
+            <xpath expr="//div[@id='snippet_structure']/div[contains(@class, 'o_panel_body')]" position="inside">
+                <t t-snippet="website_shops_map.snippet_eyekraft_shop_list"
+                t-thumbnail="/website_shops_map/static/src/img/snippets/shop_list_snippet_icon.png"/>
+            </xpath>
+        </template>
+
+        <template id="snippet_options" inherit_id="website.snippet_options" name="Snippet Options" >
+            <xpath expr="." position="inside">
+                <div data-js='eyekraft_shop_list'
+                     data-selector=".snippet_eyekraft_shop_list">
+                    <li class="divider"></li>
+                    <li data-list_visibility="true"><a href="#">List Tab ON/OFF</a></li>
+                    <li data-map_visibility="true"><a href="#">Map Tab ON/OFF</a></li>
+                    <li class="divider"></li>
+                    <li data-widget_settings="true"><a href="#">Edit source</a></li>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>

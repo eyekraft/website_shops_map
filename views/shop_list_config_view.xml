@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="shop_urls_tree" model="ir.ui.view">
+            <field name="name">shop.list.config.tree</field>
+            <field name="model">shop.list.config</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="API Users" editable="bottom">
+                    <field name="shop_list_url"/>
+                    <field name="shop_list_params"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="shop_urls_form" model="ir.ui.view">
+            <field name="name">Shop List Config</field>
+            <field name="model">shop.list.config</field>
+            <field name="arch" type="xml">
+                <form string="Shop List Config">
+                    <sheet>
+                        <group string="Shop List Config">
+                            <div class="col-md-12 col-lg-12">
+                                <group>
+                                    <field name="shop_list_url"/>
+                                    <field name="shop_list_params"/>
+                                    <field name="widget_id"/>
+                                </group>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="shop_urls_action" model="ir.actions.act_window">
+            <field name="name">Shop List Config</field>
+            <field name="res_model">shop.list.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="shop_urls_tree" />
+        </record>
+
+        <menuitem id="shop_urls_menu" name="Shop List Config"
+            parent="base.menu_administration" action="shop_urls_action"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="eyekraft_shop_card">
+            <div class=" reflex-col-xs-12 reflex-col-sm-6 reflex-col-md-4 reflex-col-lg-4">
+                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" >
+		    <t t-set="bordercolor" t-value="'rgb(230,230,230)'"/>
+		    <t t-if="shop.color" t-set="bordercolor" t-value="shop.color"/>
+                    <div class="reflex-col-md-12" t-attf-style="padding-bottom: 10px; background-color: white; border: 1px solid {{ bordercolor }}; border-radius: 2px; box-shadow: 0px 0px 9px rgb(230,230,230);">
+                        <div class="col-xs-12" style="margin-bottom: auto; margin-top: auto;">
+
+                            <div t-if="shop.name" class="row">
+                                <div class="col-xs-8">
+				    <div t-if="shop.tag" class="mr8 mt16" t-attf-style="margin-top:auto; height:16px; float:left; padding-left:8px; padding-right:8px; color: white; border-radius: 8px; background-color: {{ bordercolor }};">
+					<p style="font-size:11px;"><t t-esc="shop.tag"/></p>
+				    </div>
+                                    <h4>
+                                        <a t-att-href="shop.own_page_href"><span> <t t-esc="shop.name"/> </span></a>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-4 text-right" style="color:green;padding-top: 10px;">
+                                    <h5 t-if="adminMode">№ <t t-esc="shop.code" /></h5>
+                                    <h5 t-elif="shop.info and (shop.info == 'km')"><t t-esc="shop.distance"/> km</h5>
+                                    <h5 t-elif="shop.info and (shop.info == 'num')">№ <t t-esc="shop.code"/></h5>
+                                    <h5 t-else=""><t t-esc="shop.distance"/> km</h5>
+                                </div>
+                            </div>
+
+                            <div t-if="shop.full_address">
+                                <i class="fa fa-map-marker" style="padding-right: 5px;"></i>
+                                <span t-esc="shop.full_address"/>
+                                <t t-if="shop.metro_station">
+                                    (<span t-esc="shop.metro_station"/>)
+                                </t>
+                            </div>
+
+                            <div t-if="shop.working_hours">
+                                <i class="fa fa-clock-o" style="padding-right: 5px;"></i>
+                                <span t-esc="shop.working_hours"/>
+                            </div>
+
+                            <div t-if="shop.phone">
+                                <i class="fa fa-phone" style="padding-right: 5px;"></i>
+                                <span t-esc="shop.phone"/>
+                            </div>
+                            <div class="col-xs-8" style="margin-top: 10px;">
+                                <a t-if="shop.map_href" t-att-href="shop.map_href" data-toggle="collapse">
+                                    Show map
+                                </a>
+                            </div>
+                            <div class="col-xs-4 text-right" data-block="route_link" style="margin-top: 10px;">
+                                <a t-if="shop.show_route_id" t-attf-style="cursor:pointer" t-att-id="shop.show_route_id" t-att-shop="shop.id">
+                                    Show route
+                                </a>
+                            </div>
+                            <div t-att-id="shop.map_id" class="collapse">
+                                <img t-att-src="shop.map_url" id="shop-card-small-map" class="img img-responsive" style="padding-top:10px"/>
+                            </div>
+                            <t t-foreach="shop.images" t-as="image">
+                                <div class="col-xs-4 col-md-3">
+                                    <a t-att-href="image.href" data-toggle="collapse">
+                                        Image <t t-esc="image.num" />
+                                    </a>
+				</div>
+			    </t>
+                            <t t-foreach="shop.images" t-as="image">
+				<div class="col-xs-12">
+                                    <div t-att-id="image.elid" class="collapse" style="padding-top:4px;padding-bottom:4px">
+                                        <img t-att-src="image.url" id="shop-card-small-image" class="img img-responsive"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="eyekraft_shop_card_map">
+            <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12">
+                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" >
+		    <t t-set="bordercolor" t-value="'rgb(230,230,230)'"/>
+		    <t t-if="shop.color" t-set="bordercolor" t-value="shop.color"/>
+                    <div class="reflex-col-md-12" t-attf-style="padding-bottom: 10px; background-color: white; border: 1px solid {{ bordercolor }}; border-radius: 2px; box-shadow: 0px 0px 9px rgb(230,230,230);">
+                        <div class="col-xs-12" style="margin-bottom: auto; margin-top: auto;">
+
+                            <div t-if="shop.name" class="row">
+                                <div class="col-xs-8">
+				    <div t-if="shop.tag" class="mr8 mt16" t-attf-style="margin-top:auto; height:16px; float:left; padding-left:8px; padding-right:8px; color: white; border-radius: 8px; background-color: {{ bordercolor }};">
+					<p style="font-size:11px;"><t t-esc="shop.tag"/></p>
+				    </div>
+                                    <h4>
+                                        <a t-att-href="shop.own_page_href"><span> <t t-esc="shop.name"/> </span></a>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-4 text-right" style="color: green; padding-top: 10px;">
+                                    <h5 t-if="adminMode">№ <t t-esc="shop.code" /></h5>
+                                    <h5 t-elif="shop.info and (shop.info == 'km')"><t t-esc="shop.distance"/> km</h5>
+                                    <h5 t-elif="shop.info and (shop.info == 'num')">№ <t t-esc="shop.code"/></h5>
+                                    <h5 t-else=""><t t-esc="shop.distance"/> km</h5>
+                                </div>
+                            </div>
+
+                            <div t-if="shop.full_address">
+                                <i class="fa fa-map-marker" style="padding-right: 5px;"></i>
+                                <span t-esc="shop.full_address"/>
+                                <t t-if="shop.metro_station">
+                                    (<span t-esc="shop.metro_station"/>)
+                                </t>
+                            </div>
+
+                            <div t-if="shop.working_hours">
+                                <i class="fa fa-clock-o" style="padding-right: 5px;"></i>
+                                <span t-esc="shop.working_hours"/>
+                            </div>
+
+                            <div t-if="shop.phone">
+                                <i class="fa fa-phone" style="padding-right: 5px;"></i>
+                                <span t-esc="shop.phone"/>
+                            </div>
+                            <div class="col-xs-12" style="margin-top: 10px;">
+                                <a t-if="shop.show_on_map_id" t-attf-style="cursor:pointer" t-att-id="shop.show_on_map_id" t-att-lat="shop.partner_latitude" t-att-lng="shop.partner_longitude">
+                                    Show on the map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="eyekraft_shop_list_client_address">
+            <div style="padding-bottom:16px">
+                <div id="eyekraft-shop-list-user-geoloc" class="collapse">
+                    <div class="input-group">
+                        <input id="eyekraft-shop-list-user-geoloc-input" type="text" class="form-control" placeholder="Enter your address" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info user-geoloc-input-address" ><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <h5>Your approximate location is:</h5>
+                <h4 id="eyekraft-shop-list-user-geoloc-text" style="margin-bottom:8px"> <t t-esc="address"/> </h4>
+                <a class="btn"  href="#eyekraft-shop-list-user-geoloc" data-toggle="collapse">
+                    Edit
+                </a>
+                <a class="btn ml16" id="eyekraft-shop-list-refresh">
+                    Update
+                </a>
+            </div>
+        </template>
+
+        <template id="eyekraft_shop_map_balloon">
+            <div style='width:100%; max-width:300px;'>
+                <p t-if="shop.full_address" style="font-size:14px; margin-top:8px;margin-bottom:8px;">
+                    <b><t t-esc="shop.full_address" /></b>
+                </p>
+                <p t-if="shop.working_hours" style="font-size:13px; margin-bottom:0px;">
+                    <i class="fa fa-clock-o" style="padding-right: 5px;"></i>
+                    <span t-esc="shop.working_hours"/>
+                </p>
+                <p t-if="shop.phone" style="font-size:13px;">
+                    <i class="fa fa-phone" style="padding-right: 5px;"></i>
+                    <t t-esc="shop.phone" />
+                </p>
+            </div>
+        </template>
+
+        <template id="eyekraft_shop_map_props_option">
+            <option><t t-esc="option" /></option>
+        </template>
+
+        <template id="eyekraft_shop_own_page">
+            <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12" id="eyekraft_shop_own_page">
+                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" style="margin:0px;">
+                    <div class="reflex-col-md-12" t-attf-style="margin-top:15px;margin-bottom:15px;padding-bottom: 10px; margin-right:0px; background-color: white; boCrder: 1px solid {{ bordercolor }}; border-radius: 2px; box-shadow: 0px 0px 9px rgb(230,230,230);">
+                        <div class="col-xs-12" style="margin-bottom: auto; margin-top: auto;">
+
+                            <div t-if="shop.name" class="row">
+                                <div class="col-xs-8">
+                                    <h4>
+                                        <span> <t t-esc="shop.name"/> </span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-xs-12" style="padding: 20px 0px;">
+                                <t t-foreach="shop.images" t-as="image">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-md-4">
+                                        <div t-att-id="image.elid" class="">
+                                            <img t-att-src="image.url" id="shop-card-small-image" class="img img-responsive"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+
+                                                      <div>
+
+                            </div>
+
+                            <div t-if="shop.full_address">
+                                <i class="fa fa-map-marker" style="padding-right: 5px;"></i>
+                                <b>Address:</b> <span> <t t-esc="shop.full_address"/> </span>
+                                <t t-if="shop.metro_station">
+                                    (<span> <t t-esc="shop.metro_station"/> </span>)
+                                </t>
+                            </div>
+
+                            <div t-if="shop.working_hours">
+                                <i class="fa fa-clock-o" style="padding-right: 5px;"></i>
+                                <b>Opening hours:</b> <span t-esc="shop.working_hours"/>
+                            </div>
+
+                            <div t-if="shop.phone">
+                                <i class="fa fa-phone" style="padding-right: 5px;"></i>
+                                <b>Phone:</b> <span> <t t-esc="shop.phone"/> </span>
+                            </div>
+
+                            <div t-if="shop.email">
+                                <i class="fa fa-envelope" style="padding-right: 5px;"></i>
+                                <b>Email:</b> <span> <t t-esc="shop.email"/> </span>
+                            </div>
+
+                            <div t-if="shop.comment">
+                                <i class="fa fa-commenting " style="padding-right: 5px;"></i>
+                                <b>Comment:</b> <span> <t t-esc="shop.comment"/> </span>
+                            </div>
+                            <div class="col-xs-6 col-md-3 col-md-offset-3" style="padding-top: 20px;">
+                                <a t-att-href="shop.own_map_href" data-toggle="collapse">
+                                    Show map
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-md-3" data-block="route_link" style="padding-top: 20px; cursor: pointer;">
+                                <a t-att-id="shop.own_show_route_id" t-att-shop="shop.id">
+                                    Show route
+                                </a>
+                            </div>
+                            <div class="col-xs-12 col-md-5 collapse text-center" t-att-id="shop.own_map_id" style="padding-top: 20px;">
+                                <img t-att-src="shop.map_url" id="shop-card-small-map" class="img img-responsive" style="border: 1px solid lightgrey"/>
+                            </div>
+			    <div class="col-xs-12 col-md-7" style="padding-top: 20px;">
+                        	<div id="own-map-container-vertical"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </data>
+</openerp>
