@@ -63,16 +63,16 @@ class eyekraft_module_geo(models.Model):
     @api.model
     def load_primary_shop_list(self,snippet_id,tab):
 	#prevent of search bots requests
+	if not 'HTTP_USER_AGENT' in request.httprequest.environ:
+	    return ''
 	bots = ['Bot','bot','Yandex','Google']
 	for bot in bots:
-	    if not 'HTTP_USER_AGENT' in request.httprequest.environ:
-		return ''
 	    if request.httprequest.environ['HTTP_USER_AGENT'].find(bot) > -1:
 		return ''
 	#load parameters of snippet
 	header= {'Content-type':'application/json'}
 	try:
-	    r = requests.get(request.httprequest.host_url+'api/shoplist/params', data=json.dumps({'params':{'widget_id':'eyekraftShopMap'+str(snippet_id)}}), headers=header)
+	    r = requests.get(request.httprequest.host_url+'api/shoplist/params', timeout=3, data=json.dumps({'params':{'widget_id':'eyekraftShopMap'+str(snippet_id)}}), headers=header)
 	    result = json.loads(r.text)['result']
 	except:
 	    return ''
@@ -80,9 +80,12 @@ class eyekraft_module_geo(models.Model):
 	    return ''
 	params = json.loads(result)[0]
 	#load shop list
-	r = requests.get(request.httprequest.host_url+'api/shops', data=json.dumps({'params':params['shop_list_params']}), headers=header)
-	result = json.loads(r.text)['result']
-	shop_list = json.loads(result)
+	try:
+	    r = requests.get(request.httprequest.host_url+'api/shops', timeout=3, data=json.dumps({'params':params['shop_list_params']}), headers=header)
+	    result = json.loads(r.text)['result']
+	    shop_list = json.loads(result)
+	except:
+	    return ''
 	if not shop_list:
 	    return ''
 	location = {}
@@ -107,7 +110,7 @@ class eyekraft_module_geo(models.Model):
 
 	#count shops distance and sort shop list by remoteness
 	for shop in shop_list:
-	    shop['distance'] = float(format(vincenty((location['latitude'],location['longitude']),(shop['latitude'],shop['longitude'])).km,'.2f'))
+	    shop['distance'] = float(format(vincenty((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
 	shop_list = sorted(shop_list, key=lambda shop: shop['distance'])
 	#prepare the list of shop cards to import to webpage
 	view = request.env['ir.ui.view'].sudo()
