@@ -62,11 +62,14 @@ class stock_warehouse(models.Model):
     def write(self,vals):
 	record = super(stock_warehouse, self).write(vals)
 	values = {'name': self.name}
+	#if warehouse is shop
 	if self.shop_id.public:
-	    coordinates = self._get_lat_lng()
-	    values['partner_latitude'] = coordinates[0]
-	    values['partner_longitude'] = coordinates[1]
-	    values['date_localization'] = datetime.today().strftime('%d.%m.%Y')
+	    #if there are no coordinates - count them
+	    if not self.shop_id.partner_latitude:
+		coordinates = self._get_lat_lng()
+		values['partner_latitude'] = coordinates[0]
+		values['partner_longitude'] = coordinates[1]
+		values['date_localization'] = datetime.today().strftime('%Y-%m-%d')
 	    # assign first shop photo as shop partner avatar image
 	    if self.shop_id.image_ids:
 		values['image'] = self.shop_id.image_ids[0].image_medium

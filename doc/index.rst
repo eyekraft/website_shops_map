@@ -47,7 +47,7 @@ The example of usage::
 	
 	<div id="shop-list-snippet-wrapper" data-id="eyekraftShopMap1512116381857" shops-on-page="6" switch-to-map="true">
 
-* shop_ids='[<list of ids of shop records to load to the snippet>]' It allows to show a limited number of certain shops.
+* shop_ids='[<list of ids of "eyekraft.shop" model records to load to the snippet>]' It allows to show a limited number of certain shops.
 * lat='<value of latitude of the fixed map center>'
 * lon='<value of longitude of the fixed map center>' By default map has user coordinates by map center. This options may override this.
 * zoom='<value of zoom level of the map>'

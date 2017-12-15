@@ -29,7 +29,7 @@ class eyekraft_module_description(models.Model):
 
     @api.one
     def _manual(self):
-	if self.env.context['lang'] == 'ru_RU':
+	if self.env.context['lang'] == u'ru_RU':
 	    path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
 	else:
 	    path = modules.module.get_module_resource(self.name, 'doc/manual.html')
@@ -65,6 +65,8 @@ class eyekraft_module_geo(models.Model):
 	#prevent of search bots requests
 	bots = ['Bot','bot','Yandex','Google']
 	for bot in bots:
+	    if not 'HTTP_USER_AGENT' in request.httprequest.environ:
+		return ''
 	    if request.httprequest.environ['HTTP_USER_AGENT'].find(bot) > -1:
 		return ''
 	#load parameters of snippet
@@ -96,7 +98,12 @@ class eyekraft_module_geo(models.Model):
 	    else:
 		ip = request.httprequest.environ['REMOTE_ADDR']
 	    url = 'http://freegeoip.net/json/'+ip
-	    location = json.loads(requests.get(url).text)
+	    try:
+		location = json.loads(requests.get(url, timeout=3).text)
+		_logger.info('freegeoip.net request completed!')
+		_logger.info('location is %s, %s' % (location['latitude'], location['longitude']))
+	    except:
+		return ''
 
 	#count shops distance and sort shop list by remoteness
 	for shop in shop_list:
@@ -181,6 +188,9 @@ class eyekraft_shop(models.Model):
             self.full_address = full_address[:-2]
         else:
             self.full_address = full_address
+	#clear coordinates if exist to count them again in stock.warehouse.get_lat_lng()
+	self.partner_latitude = 0
+	self.partner_longitude = 0
 
 
     full_address = fields.Char(

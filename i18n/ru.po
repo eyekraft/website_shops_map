@@ -294,6 +294,17 @@ msgid "Shop API Users"
 msgstr "Пользователи API магазинов"
 
 #. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
+msgid "Shop map"
+msgstr "Карта магазинов"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
+msgid "Shop map cache"
+msgstr "Кеш карты магазинов"
+
+#. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_shop_api_user
 msgid "Shop API users"
 msgstr "Пользователи API магазинов"
@@ -785,3 +796,4 @@ msgstr "км"
 #, python-format
 msgid "Add source"
 msgstr "Добавить источник"
+

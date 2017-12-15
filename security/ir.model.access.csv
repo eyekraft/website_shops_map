@@ -1,9 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_shop_property_group_user,access_shop_property,model_shop_property,base.group_user,1,1,1,1
 access_eyekraft_shop_group_user,access_eyekraft_shop,model_eyekraft_shop,base.group_user,1,1,1,1
+access_eyekraft_shop_public,access_eyekraft_shop_public,model_eyekraft_shop,,1,1,1,1
 access_shop_api_user_group_user,access_shop_api_user,model_shop_api_user,base.group_user,1,1,1,1
 access_eyecraft_work_days_group_user,access_eyecraft_work_days group_user,model_eyecraft_work_days,base.group_user,1,1,1,1
+access_eyecraft_work_days_public,access_eyecraft_work_days,model_eyecraft_work_days,,1,1,1,1
 access_period_of_time_group_user,access_period_of_time group_user,model_period_of_time,base.group_user,1,1,1,1
+access_period_of_time_public,access_period_of_time,model_period_of_time,,1,1,1,1
 access_shop_list_config_group_user,access_shop_list_config group_user,model_shop_list_config,base.group_user,1,1,1,1
 access_shop_work_hours_group_user,access_shop_work_hours group_user,model_shop_work_hours,base.group_user,1,1,1,1
+access_shop_work_hours_public,access_shop_work_hours_public,model_shop_work_hours,,1,1,1,1
 access_shop_map_cache_public, access_shop_map_cache_public,model_shop_map_cache,,1,1,1,0
