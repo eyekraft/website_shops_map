@@ -1,40 +1,71 @@
-# Виджет отображения списка магазинов 
+# Store List Widget
 
-## Каталоги и библиотеки
+## Directories and Libraries
 
 ### lib
-Здесь лежат внешние используемые библиотеки
-* bootstrap-selector - красивый селектор для бутстрапа
-* jquery-autocomplete - автодополнение для полей ввода
+
+Here are the external libraries used:
+
+* [bootstrap-selector](https://developer.snapappointments.com/bootstrap-select/) - good selector for bootstrap.
+
+* [jquery-autocomplete](https://jqueryui.com/autocomplete/) - autocomplete for input fields.
 
 ### src
-Здесь лежат исходники
-* css - каскадные таблицы стилей
-	* reflex.css - библиотека рефлекс для отображения адаптивного интерфейса
-	* shop_list_style.css - дополнительные стили
-* img - pltcm пока лежит только иконка для сниппета
-* js - файл shop_list_shippet со всей логикой отрисовки
+
+Here are the sources codes:
+
+* ``css`` - cascading style sheets files:
+
+    * [reflex.css](https://github.com/leejordan/reflex) - reflex library for displaying adaptive interface.
+
+    * ``shop_list_style.css`` - additional styles file.
+
+* ``img`` - here is only the icon for the snippet.
+
+* ``js`` - shop_list_shippet file with all the rendering logic.
 
 ## shop_list_snippet.js
-Содержит виджет shopList и некоторые вспомогательные функции
-* toRadians - перевод градусов в радианы
-* decimalAdjust - десятичное округление
-* makeIterator - делает итератор для массива
-* filter_shops - функция фильтраци списка магазинов по строке поиска
-* filter_shops_on_properties - функция фильтраци списка магазинов по набору свойств
-* shopList
-	* compute_shop_distance - вычисление дистанции между клиентом и магазином, 0 если нет координат клиента
-	* get_lat_lng - получение координат клиента (грубые координаты получаются из yandex-maps, затем уточняются, если пользователь разрешает использовать геолокацию)
-	* get_client_address - по координатам клиента получаем его адрес человеческим языком через ymaps api
-	* find_shop_by_id - находим магазин по id
-	* remove_placemarks - удаляет все отметки с карты
-	* load_settings - загружаем все настройки для получения списка магазинов
-	* load_shop_list - загружаем список магазинов, так как рендер мы начинаем только после того, как получен весь список магазинов, а источников магазинов может быть много - создаем рекурсивную очередь promise, пробегаясь итератором по доступному списку настроек, как только все магазины получены (вся очередь промисов зарезолвилась) - резволвится результирующий промис
-	* render_shoplist - рендерим список магазинов
-	* render_client_address - рендерим адрес клиента, адрес клиента дополнен полем для редактирования с автокомплитом на основе данных из геокодера yandex, запросы к геокодеру начинают уходить когда длина запроса превышает 8 букв
-	* render_vertical_shoplist - рендер списка магазинов на вкладке с картой
-	* render_big_map - рендер карты на вкладке с картой
-	* render_client_placemark - помещаем на карту отметку с положением клиента
-	* render_route - рисует на карте маршрут
-	* render_properties_selector - рендер селектора свойств магазинов
-	* init - вызывает необходимые рендеры и привязывает обработчики событий к элементам интерфейса
+
+Contains the shopList widget and some helper functions:
+
+* **toRadians** - convert degrees to radians
+
+* **decimalAdjust** - decimal rounding
+
+* **makeIterator** - makes an iterator for the array
+
+* **filter_shops** - function to filter the list of stores by search string
+
+* **filter_shops_on_properties** - function to filter the list of stores by a set of properties
+
+* **shopList**
+
+	* **compute_shop_distance** - calculation of the distance between the client and the store, 0 if there are no client coordinates.
+
+	* **get_lat_lng** - obtaining the client's coordinates (coarse coordinates are obtained from yandex-maps, then refined if the user allows the use of geolocation).
+
+	* **get_client_address** - according to the client's coordinates, we get his address in human language through ymaps api.
+
+	* **find_shop_by_id** - find store by id.
+
+	* **remove_placemarks** - removes all markers from the map.
+
+	* **load_settings** - load all settings to get a list of stores.
+
+	* **load_shop_list** - we load the list of stores, since we start rendering only after the entire list of stores has been received, and there can be many sources of stores - we create a recursive promise queue, iterating through the available list of settings as soon as all stores are received (the entire queue of promises has resolved) - the resulting promise resolves.
+
+	* **render_shoplist** - render a list of stores.
+
+	* **render_client_address** - render the client's address, the client's address is supplemented with an edit field with autocomplete based on data from the yandex geocoder, requests to the geocoder start leaving when the request length exceeds 8 letters.
+
+	* **render_vertical_shoplist** - store list rendering on the map tab.
+
+	* **render_big_map** - map render on the map tab.
+
+	* **render_client_placemark** - put a mark on the map with the position of the client.
+
+	* **render_route** - draws a route on the map.
+
+	* **render_properties_selector** - store property selector render.
+
+	* **init** - calls the necessary renderers and binds event handlers to UI elements.
