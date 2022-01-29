@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
          <record id="shop_map_cache_view_tree" model="ir.ui.view">
             <field name="name">shop.map.cache.tree</field>
@@ -40,4 +40,4 @@
         />
 
     </data>
-</openerp>
+</odoo>

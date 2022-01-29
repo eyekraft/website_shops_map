@@ -2,7 +2,7 @@
 
 import logging
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 import sys
 import geopy
 from datetime import datetime

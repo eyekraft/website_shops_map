@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import hashlib
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
 class shop_api_user(models.Model):

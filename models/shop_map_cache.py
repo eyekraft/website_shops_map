@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 #this is model to store cached requests for geo-coordibates determination
 #model stores coordinates and short shoplist in HTML for quick page formation

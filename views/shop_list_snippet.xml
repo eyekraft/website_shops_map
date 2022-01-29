@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
 
         <template id="snippet_eyekraft_shop_list" name="Shop List Snippet">
@@ -88,4 +88,4 @@
             </xpath>
         </template>
     </data>
-</openerp>
+</odoo>

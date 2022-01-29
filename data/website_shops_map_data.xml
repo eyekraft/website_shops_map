@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
   <data noupdate="1">
     # creation of the server action
     <record id="shop_cache_erase_server_action" model="ir.actions.server">
@@ -32,4 +32,4 @@
 	<field name="active">True</field>
     </record>
   </data>
-</openerp>
+</odoo>
