@@ -26,7 +26,6 @@ class paeriod_of_time(models.Model):
         ),
     ]
 
-    @api.multi
     @api.depends('start_time', 'end_time')
     def _compute_name(self):
         for period in self:
