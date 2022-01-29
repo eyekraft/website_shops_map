@@ -37,7 +37,6 @@
         <record id="shop_urls_action" model="ir.actions.act_window">
             <field name="name">Shop List Config</field>
             <field name="res_model">shop.list.config</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="shop_urls_tree" />
         </record>
