@@ -9,8 +9,8 @@ def fn_post_init_hook(cr, registry):
     model_obj = env['stock.warehouse']
     warehouses = model_obj.search([('shop_id', '=', False)])
 
-    #search for existed warehouses
-    #convert them in compatible type
+    # search for existed warehouses
+    # convert them in compatible type
     for wh in warehouses:
         values = {'name': wh.name}
         shop_id = env['eyekraft.shop'].create(values)
@@ -21,11 +21,12 @@ def fn_post_init_hook(cr, registry):
             wh.shop_id.partner_id = wh.partner_id
             partner_to_delete.sudo().unlink()
 
-    #search for partners available for 'snippet_google_partner' module
-    #and create warehouses with corresponding partners linked
-    #to show on native module map
+    # search for partners available for 'snippet_google_partner' module
+    # and create warehouses with corresponding partners linked
+    # to show on native module map
     partner_model = env['res.partner']
-    partners_to_stock = partner_model.search([('category_id','!=',False),
+    partners_to_stock = partner_model.search([
+        ('category_id','!=',False),
         ('partner_latitude','!=',False),
         ('partner_longitude','!=',False),
         ('partner_longitude','!=',False),
