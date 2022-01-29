@@ -27,7 +27,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-       <menuitem id="period_of_time_menu"
+        <menuitem id="period_of_time_menu"
             action="period_of_time_action"
             parent="sales_team.menu_sale_config"
             name="Periods of Time"

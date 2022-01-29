@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
+        <!-- Shop List Snippet Template -->
         <template id="snippet_eyekraft_shop_list" name="Shop List Snippet">
             <section class="snippet_eyekraft_shop_list">
                 <div class="container">
@@ -68,17 +68,19 @@
             </section>
         </template>
 
+        <!-- Add "Shop List Snippet" Template to the Snippets bar -->
         <template id="add_snippet_to_panel_shoplist" inherit_id="website.snippets" name="Add Snippet to Panel">
             <xpath expr="//div[@id='snippet_structure']/div[contains(@class, 'o_panel_body')]" position="inside">
                 <t t-snippet="website_shops_map.snippet_eyekraft_shop_list"
-                t-thumbnail="/website_shops_map/static/src/img/snippets/shop_list_snippet_icon.png"/>
+                   t-thumbnail="/website_shops_map/static/src/img/snippets/shop_list_snippet_icon.png"/>
             </xpath>
         </template>
 
+        <!-- Snippet's Options -->
         <template id="snippet_options" inherit_id="website.snippet_options" name="Snippet Options" >
             <xpath expr="." position="inside">
-                <div data-js='eyekraft_shop_list'
-                     data-selector=".snippet_eyekraft_shop_list">
+                <div data-js="eyekraft_shop_list" data-selector=".snippet_eyekraft_shop_list">
+                    <!-- Form Options  -->
                     <li class="divider"></li>
                     <li data-list_visibility="true"><a href="#">List Tab ON/OFF</a></li>
                     <li data-map_visibility="true"><a href="#">Map Tab ON/OFF</a></li>

@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data noupdate="1">
-    # creation of the server action
-    <record id="shop_cache_erase_server_action" model="ir.actions.server">
-	<field name="name">Erase Shop Map Cache on shop creation or deletion</field>
-	<field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
-	<field name="condition">True</field>
-	<field name="state">code</field>
-	<field name="code">action = env["shop.map.cache"].erase_on_new_shop()</field>
-    </record>
-    # creation of the automatic rule to call server action
-    <record id="shop_cache_erase_on_cr_rule" model="base.action.rule">
-	<field name="name">Call Shop Map Cache erasing on create</field>
-	<field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
-	<field name="active">False</field>
-	<field name="kind">on_create</field>
-	<field name="server_action_ids" eval="[(6,0,[[ref('shop_cache_erase_server_action')]])]"/>
-    </record>
-    <record id="shop_cache_erase_on_dl_rule" model="base.action.rule">
-	<field name="name">Call Shop Map Cache erasing on delete</field>
-	<field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
-	<field name="active">False</field>
-	<field name="kind">on_unlink</field>
-	<field name="server_action_ids" eval="[(6,0,[[ref('shop_cache_erase_server_action')]])]"/>
-    </record>
-  </data>
-  <data noupdate="1">
-    # creation of the 'shop' partner tag
-    <record id="partner_shop_category_id" model="res.partner.category">
-	<field name="name">shop</field>
-	<field name="active">True</field>
-    </record>
-  </data>
+    <data noupdate="1">
+        <!-- creation of the server action -->
+        <record id="shop_cache_erase_server_action" model="ir.actions.server">
+            <field name="name">Erase Shop Map Cache on shop creation or deletion</field>
+            <field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="code">action = env["shop.map.cache"].erase_on_new_shop()</field>
+        </record>
+
+        <!-- creation of the automatic rule to call server action -->
+        <record id="shop_cache_erase_on_cr_rule" model="base.action.rule">
+            <field name="name">Call Shop Map Cache erasing on create</field>
+            <field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
+            <field name="active">False</field>
+            <field name="kind">on_create</field>
+            <field name="server_action_ids" eval="[(6,0,[[ref('shop_cache_erase_server_action')]])]"/>
+        </record>
+        <record id="shop_cache_erase_on_dl_rule" model="base.action.rule">
+            <field name="name">Call Shop Map Cache erasing on delete</field>
+            <field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
+            <field name="active">False</field>
+            <field name="kind">on_unlink</field>
+            <field name="server_action_ids" eval="[(6,0,[[ref('shop_cache_erase_server_action')]])]"/>
+        </record>
+    </data>
+    <data noupdate="1">
+        <!-- creation of the 'shop' partner tag -->
+        <record id="partner_shop_category_id" model="res.partner.category">
+            <field name="name">shop</field>
+            <field name="active">True</field>
+        </record>
+    </data>
 </odoo>
