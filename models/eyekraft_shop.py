@@ -56,19 +56,19 @@ class shopobj:
 class eyekraft_module_geo(models.Model):
     _inherit = "website"
 
-    #parameters are:
-    #snippet_id - to read parameters of certain snippet
-    #tab - flag of the tab showed by default. Template name of shop card depends of it.
+    # parameters are:
+    # snippet_id - to read parameters of certain snippet
+    # tab - flag of the tab showed by default. Template name of shop card depends of it.
     @api.model
     def load_primary_shop_list(self,snippet_id,tab):
-        #prevent of search bots requests
+        # prevent of search bots requests
         if not 'HTTP_USER_AGENT' in request.httprequest.environ:
             return ''
         bots = ['Bot','bot','Yandex','Google']
         for bot in bots:
             if request.httprequest.environ['HTTP_USER_AGENT'].find(bot) > -1:
                 return ''
-        #load parameters of snippet
+        # load parameters of snippet
         header= {'Content-type':'application/json'}
         try:
             r = requests.get(request.httprequest.host_url+'api/shoplist/params', timeout=3, data=json.dumps({'params':{'widget_id':'eyekraftShopMap'+str(snippet_id)}}), headers=header)
@@ -78,7 +78,7 @@ class eyekraft_module_geo(models.Model):
         if result == u'[]':
             return ''
         params = json.loads(result)[0]
-        #load shop list
+        # load shop list
         try:
             r = requests.get(request.httprequest.host_url+'api/shops', timeout=3, data=json.dumps({'params':params['shop_list_params']}), headers=header)
             result = json.loads(r.text)['result']
@@ -107,11 +107,11 @@ class eyekraft_module_geo(models.Model):
             except:
                 return ''
 
-        #count shops distance and sort shop list by remoteness
+        # count shops distance and sort shop list by remoteness
         for shop in shop_list:
             shop['distance'] = float(format(vincenty((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
         shop_list = sorted(shop_list, key=lambda shop: shop['distance'])
-        #prepare the list of shop cards to import to webpage
+        # prepare the list of shop cards to import to webpage
         view = request.env['ir.ui.view'].sudo()
         shop_cards_html = ''
         if tab == 'list':
@@ -131,7 +131,7 @@ class eyekraft_module_geo(models.Model):
             shop.show_on_map_id = False
             shop.images = False
             shop_cards_html += view.render_template(template_name,{'shop':shop,'adminMode':False,});
-        #save data to the cache model
+        # save data to the cache model
         if 'geo_lat' in request.httprequest.cookies:
             CacheRec = self.env['shop.map.cache'].create({
                             'latitude':location['latitude'],
@@ -186,11 +186,12 @@ class eyekraft_shop(models.Model):
             self.full_address = full_address[:-2]
         else:
             self.full_address = full_address
-        #clear coordinates if exist to count them again in stock.warehouse.get_lat_lng()
+        # clear coordinates if exist to count them again in stock.warehouse.get_lat_lng()
         self.partner_latitude = 0
         self.partner_longitude = 0
 
 
+    # Model Fields
     full_address = fields.Char(
         string='Full Address',
         compute='_compute_full_address',
@@ -222,7 +223,7 @@ class eyekraft_shop(models.Model):
     warehouse_ids = fields.One2many(
         "stock.warehouse",
         "shop_id",
-        "Warehouse",
+        string="Warehouse",
     )
 
     # collect string of all work hours periods

@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-
 import logging
-
-from odoo import models, fields, api
 import sys
 import geopy
 from datetime import datetime
-
+from odoo import api, fields, models
 _logger = logging.getLogger(__name__)
 
 
@@ -97,9 +94,10 @@ class stock_warehouse(models.Model):
             rec.sudo().unlink()
 
 
+    # Model Fields
     shop_id = fields.Many2one(
         "eyekraft.shop",
-        "Shop",
+        string="Shop",
         required=False,
         ondelete="cascade",
     )

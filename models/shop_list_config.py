@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from odoo  import models, fields, api, sys
+from odoo import api, fields, models, sys
+
 
 class shop_list_config(models.Model):
     _name = 'shop.list.config'

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-
-from odoo import models, fields, api
 import logging
-
+from odoo import api, fields, models
 _logger = logging.getLogger(__name__)
 
 
@@ -16,7 +14,6 @@ class eyecraft_work_days(models.Model):
 class paeriod_of_time(models.Model):
     _name = "period.of.time"
     _description = "Period of Time"
-
 
     _sql_constraints = [
         (
@@ -34,6 +31,7 @@ class paeriod_of_time(models.Model):
                 end=('%.2f' % self.end_time).replace('.', ':'),
             )
 
+    # Model Fields
     name = fields.Char("Period of Time", compute="_compute_name", store=True)
     start_time = fields.Float("Since", required=True)
     end_time = fields.Float("To", required=True)
@@ -43,10 +41,11 @@ class shop_work_hours(models.Model):
     _name = "shop.work.hours"
     _description = "Shops Work Hours"
 
-    name = fields.Char("Name")
+    # Model Fields
+    name = fields.Char(string="Name")
     work_days_id = fields.Many2one(
         "eyecraft.work.days",
-        "Week days",
+        string="Week days",
         help="Period of week in which the shop works in set hours",
         reqiured=True,
     )
@@ -55,10 +54,10 @@ class shop_work_hours(models.Model):
         "work_hours_periods_rel",
         "work_hours_id",
         "period_id",
-        "Periods of Time",
+        string="Periods of Time",
         required=True,
     )
     shop_id = fields.Many2one(
         "eyekraft.shop",
-        "Shop",
+        string="Shop",
     )

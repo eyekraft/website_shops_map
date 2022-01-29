@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import hashlib
-
-from odoo import models, fields, api
+from odoo import api, fields, models
 
 
 class shop_api_user(models.Model):
@@ -20,6 +19,8 @@ class shop_api_user(models.Model):
         api_user = super(shop_api_user, self).create(values)
         api_user.generate_api_key()
         return api_user
-    
+
+
+    # Model Fields
     name = fields.Char(string="Name")
     api_key = fields.Char(string="API Key")
