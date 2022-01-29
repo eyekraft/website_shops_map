@@ -3,6 +3,7 @@ from odoo  import models, fields, api, sys
 
 class shop_list_config(models.Model):
     _name = 'shop.list.config'
+    _description = "Shop List Configurations"
 
     shop_list_url = fields.Char(string="Shop List Url")
     shop_list_params = fields.Char(string="Shop List Paramters")
