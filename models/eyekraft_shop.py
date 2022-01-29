@@ -27,7 +27,6 @@ class eyekraft_module_description(models.Model):
     _descriprion = "Extends standart description_html with more html files"
     _inherit = "ir.module.module"
 
-    @api.one
     def _manual(self):
 	if self.env.context['lang'] == u'ru_RU':
 	    path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
@@ -168,7 +167,6 @@ class eyekraft_shop(models.Model):
 	return record
 
     # collect full address field from other fields
-    @api.one
     @api.depends('country_id', 'state_id', 'city', 'street', 'street2', 'zip')
     def _compute_full_address(self):
         """

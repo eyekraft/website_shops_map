@@ -58,7 +58,6 @@ class stock_warehouse(models.Model):
 	record.shop_id.write(values)
 	return record
 
-    @api.one
     def write(self,vals):
 	record = super(stock_warehouse, self).write(vals)
 	values = {'name': self.name}
