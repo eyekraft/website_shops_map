@@ -17,5 +17,5 @@ class ShopsMapCache(models.Model):
     #on new shop creation
     @api.model
     def erase_on_new_shop(self):
-	for rec in self.search([]):
-	    rec.sudo().unlink()
+        for rec in self.search([]):
+            rec.sudo().unlink()

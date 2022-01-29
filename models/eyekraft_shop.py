@@ -28,20 +28,20 @@ class eyekraft_module_description(models.Model):
     _inherit = "ir.module.module"
 
     def _manual(self):
-	if self.env.context['lang'] == u'ru_RU':
-	    path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
-	else:
-	    path = modules.module.get_module_resource(self.name, 'doc/manual.html')
-	if path:
-	    html_file = open(path,'r')
-	    text = html_file.read()
-	    html_file.close()
+        if self.env.context['lang'] == u'ru_RU':
+            path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
+        else:
+            path = modules.module.get_module_resource(self.name, 'doc/manual.html')
+        if path:
+            html_file = open(path,'r')
+            text = html_file.read()
+            html_file.close()
             htmltext = lxml.html.document_fromstring(text)
             for element, attribute, link, pos in htmltext.iterlinks():
                 if element.get('src') and not '//' in element.get('src') and not 'static/' in element.get('src'):
                     element.set('src', "/%s/static/description/%s" % (self.name, element.get('src')))
-	    text = lxml.html.tostring(htmltext)
-	    self.manual_html = text
+            text = lxml.html.tostring(htmltext)
+            self.manual_html = text
 
     manual_html = fields.Html(string='Manual HTML', compute='_manual')
 
@@ -49,7 +49,7 @@ class eyekraft_module_description(models.Model):
 # for template data compatibility
 class shopobj:
     def __init__(self,dictobj):
-	self.__dict__ = dictobj
+        self.__dict__ = dictobj
 
 # class to get coordinates of the user on server side
 # and load and show primary list of shops
@@ -61,86 +61,84 @@ class eyekraft_module_geo(models.Model):
     #tab - flag of the tab showed by default. Template name of shop card depends of it.
     @api.model
     def load_primary_shop_list(self,snippet_id,tab):
-	#prevent of search bots requests
-	if not 'HTTP_USER_AGENT' in request.httprequest.environ:
-	    return ''
-	bots = ['Bot','bot','Yandex','Google']
-	for bot in bots:
-	    if request.httprequest.environ['HTTP_USER_AGENT'].find(bot) > -1:
-		return ''
-	#load parameters of snippet
-	header= {'Content-type':'application/json'}
-	try:
-	    r = requests.get(request.httprequest.host_url+'api/shoplist/params', timeout=3, data=json.dumps({'params':{'widget_id':'eyekraftShopMap'+str(snippet_id)}}), headers=header)
-	    result = json.loads(r.text)['result']
-	except:
-	    return ''
-	if result == u'[]':
-	    return ''
-	params = json.loads(result)[0]
-	#load shop list
-	try:
-	    r = requests.get(request.httprequest.host_url+'api/shops', timeout=3, data=json.dumps({'params':params['shop_list_params']}), headers=header)
-	    result = json.loads(r.text)['result']
-	    shop_list = json.loads(result)
-	except:
-	    return ''
-	if not shop_list:
-	    return ''
-	location = {}
-	if 'geo_lat' in request.httprequest.cookies:
-	    location['latitude'] = float(format(float(request.httprequest.cookies['geo_lat']),'.2f'))
-	    location['longitude'] = float(format(float(request.httprequest.cookies['geo_lon']),'.2f'))
-	    CacheRec = self.env['shop.map.cache'].search([('latitude','=',location['latitude']),('longitude','=',location['longitude'])])
-	    if CacheRec:
-		return CacheRec[0].html
-	else:    
-	    if 'HTTP_X_FORWARDED_FOR' in request.httprequest.environ:
-		ip = request.httprequest.environ['HTTP_X_FORWARDED_FOR']
-	    else:
-		ip = request.httprequest.environ['REMOTE_ADDR']
-	    url = 'http://freegeoip.net/json/'+ip
-	    try:
-		location = json.loads(requests.get(url, timeout=3).text)
-		_logger.info('freegeoip.net request completed!')
-		_logger.info('location is %s, %s' % (location['latitude'], location['longitude']))
-	    except:
-		return ''
+        #prevent of search bots requests
+        if not 'HTTP_USER_AGENT' in request.httprequest.environ:
+            return ''
+        bots = ['Bot','bot','Yandex','Google']
+        for bot in bots:
+            if request.httprequest.environ['HTTP_USER_AGENT'].find(bot) > -1:
+                return ''
+        #load parameters of snippet
+        header= {'Content-type':'application/json'}
+        try:
+            r = requests.get(request.httprequest.host_url+'api/shoplist/params', timeout=3, data=json.dumps({'params':{'widget_id':'eyekraftShopMap'+str(snippet_id)}}), headers=header)
+            result = json.loads(r.text)['result']
+        except:
+            return ''
+        if result == u'[]':
+            return ''
+        params = json.loads(result)[0]
+        #load shop list
+        try:
+            r = requests.get(request.httprequest.host_url+'api/shops', timeout=3, data=json.dumps({'params':params['shop_list_params']}), headers=header)
+            result = json.loads(r.text)['result']
+            shop_list = json.loads(result)
+        except:
+            return ''
+        if not shop_list:
+            return ''
+        location = {}
+        if 'geo_lat' in request.httprequest.cookies:
+            location['latitude'] = float(format(float(request.httprequest.cookies['geo_lat']),'.2f'))
+            location['longitude'] = float(format(float(request.httprequest.cookies['geo_lon']),'.2f'))
+            CacheRec = self.env['shop.map.cache'].search([('latitude','=',location['latitude']),('longitude','=',location['longitude'])])
+            if CacheRec:
+                return CacheRec[0].html
+        else:
+            if 'HTTP_X_FORWARDED_FOR' in request.httprequest.environ:
+                ip = request.httprequest.environ['HTTP_X_FORWARDED_FOR']
+            else:
+                ip = request.httprequest.environ['REMOTE_ADDR']
+                url = 'http://freegeoip.net/json/'+ip
+            try:
+                location = json.loads(requests.get(url, timeout=3).text)
+                _logger.info('freegeoip.net request completed!')
+                _logger.info('location is %s, %s' % (location['latitude'], location['longitude']))
+            except:
+                return ''
 
-	#count shops distance and sort shop list by remoteness
-	for shop in shop_list:
-	    shop['distance'] = float(format(vincenty((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
-	shop_list = sorted(shop_list, key=lambda shop: shop['distance'])
-	#prepare the list of shop cards to import to webpage
-	view = request.env['ir.ui.view'].sudo()
-	shop_cards_html = ''
-	if tab == 'list':
-	    template_name = 'website_shops_map.eyekraft_shop_card'
-	else:
-	    template_name = 'website_shops_map.eyekraft_shop_card_map'
-	for i in xrange(6):
-	    shop = shopobj(shop_list[i])
-	    shop.color = params['shop_list_params']['color'] if 'color' in params['shop_list_params'] else False
-	    shop.tag = params['shop_list_params']['tag'] if 'tag' in params['shop_list_params'] else False
-	    shop.info = params['shop_list_params']['info'] if 'info' in params['shop_list_params'] else 'км'
-	    shop.map_id = False
-	    shop.map_href = False
-	    shop.map_url = False
-	    shop.own_page_href = False
-	    shop.show_route_id = False
-	    shop.show_on_map_id = False
-	    shop.images = False
-	    shop_cards_html += view.render_template(template_name,{'shop':shop,
-								   'adminMode':False,
-								    });
-	#save data to the cache model
-	if 'geo_lat' in request.httprequest.cookies:
-	    CacheRec = self.env['shop.map.cache'].create({
-					    'latitude':location['latitude'],
-					    'longitude':location['longitude'],
-					    'html':shop_cards_html,
-						    })
-	return shop_cards_html
+        #count shops distance and sort shop list by remoteness
+        for shop in shop_list:
+            shop['distance'] = float(format(vincenty((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
+        shop_list = sorted(shop_list, key=lambda shop: shop['distance'])
+        #prepare the list of shop cards to import to webpage
+        view = request.env['ir.ui.view'].sudo()
+        shop_cards_html = ''
+        if tab == 'list':
+            template_name = 'website_shops_map.eyekraft_shop_card'
+        else:
+            template_name = 'website_shops_map.eyekraft_shop_card_map'
+        for i in xrange(6):
+            shop = shopobj(shop_list[i])
+            shop.color = params['shop_list_params']['color'] if 'color' in params['shop_list_params'] else False
+            shop.tag = params['shop_list_params']['tag'] if 'tag' in params['shop_list_params'] else False
+            shop.info = params['shop_list_params']['info'] if 'info' in params['shop_list_params'] else 'км'
+            shop.map_id = False
+            shop.map_href = False
+            shop.map_url = False
+            shop.own_page_href = False
+            shop.show_route_id = False
+            shop.show_on_map_id = False
+            shop.images = False
+            shop_cards_html += view.render_template(template_name,{'shop':shop,'adminMode':False,});
+        #save data to the cache model
+        if 'geo_lat' in request.httprequest.cookies:
+            CacheRec = self.env['shop.map.cache'].create({
+                            'latitude':location['latitude'],
+                            'longitude':location['longitude'],
+                            'html':shop_cards_html,
+            })
+        return shop_cards_html
 
 class tune_partner(models.Model):
     _inherit="res.partner"
@@ -158,12 +156,12 @@ class eyekraft_shop(models.Model):
     _sql_constraints = [('check_name', 'CHECK(True)','')]
 
     def unlink(self):
-	partner = self.partner_id
-	foreign_partner = self.foreign_partner
+        partner = self.partner_id
+        foreign_partner = self.foreign_partner
         record = super(eyekraft_shop, self).unlink()
-	if not foreign_partner:
-	    partner.unlink()
-	return record
+        if not foreign_partner:
+            partner.unlink()
+        return record
 
     # collect full address field from other fields
     @api.depends('country_id', 'state_id', 'city', 'street', 'street2', 'zip')
@@ -172,8 +170,8 @@ class eyekraft_shop(models.Model):
         Computes full shop address
         """
         full_address = ''
-    	if self.zip:
-	    full_address += self.zip + ', '
+        if self.zip:
+            full_address += self.zip + ', '
         if self.country_id and self.country_id.name:
             full_address += self.country_id.name + ', '
         if self.state_id:
@@ -188,9 +186,9 @@ class eyekraft_shop(models.Model):
             self.full_address = full_address[:-2]
         else:
             self.full_address = full_address
-	#clear coordinates if exist to count them again in stock.warehouse.get_lat_lng()
-	self.partner_latitude = 0
-	self.partner_longitude = 0
+        #clear coordinates if exist to count them again in stock.warehouse.get_lat_lng()
+        self.partner_latitude = 0
+        self.partner_longitude = 0
 
 
     full_address = fields.Char(

@@ -48,23 +48,23 @@ class EyekraftShopList(http.Controller):
                 'comment',
             ]
 
-	    isIds = request.params.get('ids','')
-	    tags = request.params.get('tags','')
-	    tags = tags.split(',') if tags else False
-            shop_ids = []
-            if not isIds:
-		#if not ids list passes get recordset of all shops ('public' flag in true)
-		#checks if linked warehouse record is not archieved ('active' flag is true)
-		#and filter by selected tags
-		domain = [('public', '=', True),('warehouse_ids.active','=',True)]
-		if tags:
-		    domain.append('|') if len(tags) > 1 else None
-		    for tag in tags:
-			tagId = request.env['res.partner.category'].sudo().search([('name','=',tag)]).id
-			domain.append(('category_id','in',tagId))
-                shop_ids = request.env['eyekraft.shop'].sudo().search(domain)
+        isIds = request.params.get('ids','')
+        tags = request.params.get('tags','')
+        tags = tags.split(',') if tags else False
+        shop_ids = []
+        if not isIds:
+            #if not ids list passes get recordset of all shops ('public' flag in true)
+            #checks if linked warehouse record is not archieved ('active' flag is true)
+            #and filter by selected tags
+            domain = [('public', '=', True),('warehouse_ids.active','=',True)]
+            if tags:
+                domain.append('|') if len(tags) > 1 else None
+                for tag in tags:
+                    tagId = request.env['res.partner.category'].sudo().search([('name','=',tag)]).id
+                    domain.append(('category_id','in',tagId))
+                    shop_ids = request.env['eyekraft.shop'].sudo().search(domain)
             else:
-		#if ids list get recordset of passed ids only
+                #if ids list get recordset of passed ids only
                 shop_ids = request.env['eyekraft.shop'].sudo().browse(isIds)
 
             for shop in shop_ids:
@@ -87,7 +87,7 @@ class EyekraftShopList(http.Controller):
                     shop_dict['images'].append(image_dict)
                     i += 1
                 shop_dict['working_hours'] = shop._get_work_hours()
-		shop_dict['code'] = request.env['stock.warehouse'].sudo().search([('shop_id.id','=',shop.id)])[0].code
+                shop_dict['code'] = request.env['stock.warehouse'].sudo().search([('shop_id.id','=',shop.id)])[0].code
                 results.append(shop_dict)
         return json.dumps(results, ensure_ascii=False)
 
@@ -103,7 +103,7 @@ class EyekraftShopList(http.Controller):
         }
         """
         widget_id = kwargs.get('widget_id', False)
-	shopIds = kwargs.get('ids',False)
+        shopIds = kwargs.get('ids',False)
         export_fields = [
             'shop_list_url',
             'shop_list_params',
@@ -112,8 +112,8 @@ class EyekraftShopList(http.Controller):
         for conf in request.env['shop.list.config'].sudo().search([('widget_id', '=', widget_id)]):
             conf_dict = { field: conf.__getattribute__(field) for field in export_fields}
             conf_dict['shop_list_params'] = ast.literal_eval(conf_dict['shop_list_params'].strip())
-	    if shopIds:
-		conf_dict['shop_list_params']['ids'] = shopIds
+            if shopIds:
+                conf_dict['shop_list_params']['ids'] = shopIds
             results.append(conf_dict)
         return json.dumps(results, ensure_ascii=False)
 

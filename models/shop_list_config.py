@@ -12,13 +12,13 @@ class shop_list_config(models.Model):
     @api.model
     def get_sorces_for_widget(self, widget_id):
         sources = self.search([('widget_id', '=', widget_id)])
-	tags = self.env['eyekraft.shop'].search([]).mapped('category_id.name')
+        tags = self.env['eyekraft.shop'].search([]).mapped('category_id.name')
         res = []
-    	for source in sources:
-    	    res.append({
-        	'id': source.id,
-		'tags_avail': tags if tags else [],
-            	'shop_list_url': source.shop_list_url.replace('/api/shops', ''),
+        for source in sources:
+            res.append({
+                'id': source.id,
+                'tags_avail': tags if tags else [],
+                'shop_list_url': source.shop_list_url.replace('/api/shops', ''),
                 'shop_list_params': eval(source.shop_list_params)['api_key'],
                 'shop_list_color': eval(source.shop_list_params)['color'] if 'color' in eval(source.shop_list_params) else '',
                 'shop_list_tag': eval(source.shop_list_params)['tag'] if 'tag' in eval(source.shop_list_params) else '',
@@ -37,10 +37,10 @@ class shop_list_config(models.Model):
                 values = {
                     'shop_list_url': (source['shop_list_url'] + '/api/shops').replace('//api', '/api'),
                     'shop_list_params': str({'api_key': source['shop_list_params'],
-                			     'color': source['shop_list_color'],
-                			     'tag': source['shop_list_tag'],
-                			     'info': source['shop_list_info'],
-					     'tags': ','.join(source['tags']) if 'tags' in source else ''}),
+                    'color': source['shop_list_color'],
+                    'tag': source['shop_list_tag'],
+                    'info': source['shop_list_info'],
+                    'tags': ','.join(source['tags']) if 'tags' in source else ''}),
                     'widget_id': widget_id,
                 }
                 try:
