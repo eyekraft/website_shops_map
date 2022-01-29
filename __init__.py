@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-
-import models
-import controllers
+from . import models
+from . import controllers
 
 
 def fn_post_init_hook(cr, registry):
