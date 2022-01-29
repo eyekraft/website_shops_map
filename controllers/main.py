@@ -22,7 +22,6 @@ class EyekraftShopList(http.Controller):
 
 
     @http.route(['/api/shops'], type='json', auth="public", website=False, cors='*')
-
     def get_shops_list(self, query=False,  debug=False, lat=False, lng=False, **kwargs):
         """
         Exports Shop list in JSON format
@@ -53,9 +52,9 @@ class EyekraftShopList(http.Controller):
         tags = tags.split(',') if tags else False
         shop_ids = []
         if not isIds:
-            #if not ids list passes get recordset of all shops ('public' flag in true)
-            #checks if linked warehouse record is not archieved ('active' flag is true)
-            #and filter by selected tags
+            # if not ids list passes get recordset of all shops ('public' flag in true)
+            # checks if linked warehouse record is not archieved ('active' flag is true)
+            # and filter by selected tags
             domain = [('public', '=', True),('warehouse_ids.active','=',True)]
             if tags:
                 domain.append('|') if len(tags) > 1 else None
@@ -64,7 +63,7 @@ class EyekraftShopList(http.Controller):
                     domain.append(('category_id','in',tagId))
                     shop_ids = request.env['eyekraft.shop'].sudo().search(domain)
             else:
-                #if ids list get recordset of passed ids only
+                # if ids list get recordset of passed ids only
                 shop_ids = request.env['eyekraft.shop'].sudo().browse(isIds)
 
             for shop in shop_ids:
