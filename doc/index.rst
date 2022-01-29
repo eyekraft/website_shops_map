@@ -2,7 +2,7 @@
  Shops Map 
 ===========
 
-Also this documentation is available in other languages as *English* | `Russian <index_ru.rst>`_.
+Also this documentation is available in other languages as *English* | `Russian <index_ru.rst>`_ | `Spanish <index_es.rst>`_.
 
 
 Installation

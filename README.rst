@@ -20,6 +20,8 @@ Translations
 
 * Russian.
 
+* Spanish.
+
 
 Installation
 ============
