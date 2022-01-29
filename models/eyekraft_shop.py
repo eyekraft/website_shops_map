@@ -157,7 +157,6 @@ class eyekraft_shop(models.Model):
     partner_id = fields.Many2one("res.partner", required=True, ondelete="restrict")
     _sql_constraints = [('check_name', 'CHECK(True)','')]
 
-    @api.multi
     def unlink(self):
 	partner = self.partner_id
 	foreign_partner = self.foreign_partner
@@ -229,7 +228,6 @@ class eyekraft_shop(models.Model):
     )
 
     # collect string of all work hours periods
-    @api.multi
     def _get_work_hours(self):
         self.ensure_one()
         res = u''

@@ -39,7 +39,6 @@ class stock_warehouse(models.Model):
             _logger.warning("Geopy has not been imported, therefore lat|lng for shop is not computed")
 	return location.latitude, location.longitude
 
-    @api.multi
     def unlink(self):
         for wh in self:
             if wh.shop_id:
@@ -79,13 +78,10 @@ class stock_warehouse(models.Model):
 	self.shop_id.write(values)
 	return record
 
-
-    @api.multi
     def _inverse_name(self):
         for wh in self:
             wh.shop_id.name = wh.name
 
-    @api.multi
     def _set_address(self, field):
         setattr(self, field, getattr(self.partner_id, field))
 
