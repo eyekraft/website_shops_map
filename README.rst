@@ -4,12 +4,21 @@ Shops Map
 
 This module extends Warehouse model to store more data and allow you to publish warehouses as shops on the map by webpage snippet with all contact information.
 
+
 Tested
 ======
 
 * Odoo 10 CE version.
 
 * Odoo 13 CE version.
+
+
+Translations
+============
+
+* English.
+
+* Russian.
 
 
 Installation
