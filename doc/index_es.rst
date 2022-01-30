@@ -63,7 +63,7 @@ En el cuadro de diálogo de configuración del fragmento HTML, puede elegir las 
 Opciones adicionales (para uso administrativo)
 ==============================================
 
-Hay varias opciones que puede definir agregando atributos a la etiqueta ``<div>`` del fragmento en el editor QWEB.
+Hay varias opciones que puede definir agregando atributos a la etiqueta ``<div>`` del fragmento en el editor `QWeb <https://www.odoo.com/documentation/13.0/es/developer/reference/javascript/qweb.html>`_.
 El ejemplo de uso:
 
 ::

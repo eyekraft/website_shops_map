@@ -64,7 +64,7 @@ In the snippet configuration dialog you can choose next options of your shop lis
 Additional options (for admin usage)
 ====================================
 
-There are several options you can define by adding attributes to the snippet's ``<div>`` tag in QWEB editor.
+There are several options you can define by adding attributes to the snippet's ``<div>`` tag in `QWeb <https://www.odoo.com/documentation/13.0/developer/reference/javascript/qweb.html>`_ editor.
 The example of usage:
 
 ::
