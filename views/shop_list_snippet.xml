@@ -35,8 +35,12 @@
                                 </div>
                             </div>
                             <ul class="nav nav-tabs" id="shop_widget_tabs">
-                                <li class="active" data-visible="on"><a id="eyekraft-show-list-tab" data-toggle="tab" href="#shop_list_panel">Shop list</a></li>
-                                <li data-visible="on"><a id="eyekraft-show-map-tab" data-toggle="tab" href="#shop_map_panel">Map</a></li>
+                                <li class="active" data-visible="on">
+                                    <a id="eyekraft-show-list-tab" data-toggle="tab" href="#shop_list_panel">Shop list</a>
+                                </li>
+                                <li data-visible="on">
+                                    <a id="eyekraft-show-map-tab" data-toggle="tab" href="#shop_map_panel">Map</a>
+                                </li>
                             </ul>
                             <div class="tab-content" id="shop_widget_content">
                                 <div id="shop_list_panel" class="tab-pane fade in active">
