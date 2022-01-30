@@ -57,6 +57,12 @@ Installation
 This module only work on servers who have Python's ``geopy`` module installed, please check the `documentation <doc/index.rst>`_ for it.
 
 
+License
+=======
+
+This module are under the **GNU GENERAL PUBLIC LICENSE, Version 3**, please check the `license details <LICENSE>`_ for it.
+
+
 Credits
 =======
 
@@ -64,3 +70,12 @@ Sponsors
 --------
 
 * `Eyekraft Optical <https://www.eyekraft.ru>`__
+
+Contributors
+------------
+
+* Tatiana Deribina <deribina@itlibertas.com>
+
+* Leonardo J. Caballero G. <leonardocaballero@gmail.com>
+
+More details about who contribute to this module, please, checkout the `contributors <https://github.com/eyekraft/website_shops_map/graphs/contributors>`_ list on github repo.
