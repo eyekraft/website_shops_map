@@ -143,7 +143,7 @@ var shopList = baseWidget.extend({
     show_own_shop_route: false,
     latitude: 0.0,
     longitude: 0.0,
-    full_client_address: _t("Not defined");
+    full_client_address: _t("Not defined"),
     properties_selector: false,
     properties: [],
     controller: false,
