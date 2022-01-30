@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 22:03+0000\n"
-"PO-Revision-Date: 2022-01-28 20:25-0400\n"
+"POT-Creation-Date: 2022-01-30 10:36+0000\n"
+"PO-Revision-Date: 2022-01-30 06:50-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -210,9 +210,8 @@ msgstr "Lista negra"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_bounce
-#, fuzzy
 msgid "Bounce"
-msgstr "Bote"
+msgstr "Rebote"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_shop_map_cache
@@ -245,7 +244,8 @@ msgstr "Canales"
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__is_company
 msgid "Check if the contact is a company, otherwise it is a person"
-msgstr "Verifica si el contacto es una empresa, de lo contrario es una persona"
+msgstr ""
+"Verifica si el contacto es una empresa, de lo contrario es una persona"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__employee
@@ -323,10 +323,24 @@ msgid "Complete Address"
 msgstr "Completa tu direccion"
 
 #. module: website_shops_map
+#. openerp-web
+#: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
+#, python-format
+msgid "Configuring the data source"
+msgstr "Configuración de la fuente de datos"
+
+#. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_res_partner
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__child_ids
 msgid "Contact"
 msgstr "Contacto"
+
+#. module: website_shops_map
+#. openerp-web
+#: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
+#, python-format
+msgid "Could not find source entry"
+msgstr "No se pudo encontrar la entrada de origen"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__payment_token_count
@@ -614,8 +628,8 @@ msgid ""
 "If the email address is on the blacklist, the contact won't receive mass "
 "mailing anymore, from any list"
 msgstr ""
-"Si la dirección de correo electrónico está en la lista negra, el contacto ya "
-"no recibirá correos masivos, de ninguna lista"
+"Si la dirección de correo electrónico está en la lista negra, el contacto ya"
+" no recibirá correos masivos, de ninguna lista"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_1920
@@ -983,7 +997,8 @@ msgstr "DESACTIVAR"
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
 msgid "Option to show info in the caption of the shop card"
-msgstr "Opción para mostrar información en el título de la tarjeta de la tienda"
+msgstr ""
+"Opción para mostrar información en el título de la tarjeta de la tienda"
 
 #. module: website_shops_map
 #. openerp-web
@@ -1036,7 +1051,8 @@ msgstr "Período de tiempo"
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_shop_work_hours__work_days_id
 msgid "Period of week in which the shop works in set hours"
-msgstr "Periodo de la semana en el que la tienda trabaja en horario establecido"
+msgstr ""
+"Periodo de la semana en el que la tienda trabaja en horario establecido"
 
 #. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.period_of_time_action
@@ -1457,8 +1473,8 @@ msgid ""
 "The partner has at least one unreconciled debit and credit since last time "
 "the invoices & payments matching was performed."
 msgstr ""
-"El socio tiene al menos un débito y un crédito sin conciliar desde la última "
-"vez que se realizó la conciliación de facturas y pagos."
+"El socio tiene al menos un débito y un crédito sin conciliar desde la última"
+" vez que se realizó la conciliación de facturas y pagos."
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_stock_customer
@@ -1722,12 +1738,9 @@ msgid ""
 "If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
 "Anywhere else, time values are computed according to the time offset of your web client."
 msgstr ""
-"Al imprimir documentos y exportar/importar datos, los valores de tiempo se "
-"calculan de acuerdo con esta zona horaria.\n"
-"Si la zona horaria no está configurada, se usa UTC (Tiempo universal "
-"coordinado).\n"
-"En cualquier otro lugar, los valores de tiempo se calculan de acuerdo con la "
-"compensación de tiempo de su cliente web."
+"Al imprimir documentos y exportar/importar datos, los valores de tiempo se calculan de acuerdo con esta zona horaria.\n"
+"Si la zona horaria no está configurada, se usa UTC (Tiempo universal coordinado).\n"
+"En cualquier otro lugar, los valores de tiempo se calculan de acuerdo con la compensación de tiempo de su cliente web."
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__widget_id

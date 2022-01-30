@@ -103,7 +103,7 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
                 });
                 dialog.open();
             } else {
-                alert("Could not find source entry");
+                alert(_t("Could not find source entry"));
             }
         },
 

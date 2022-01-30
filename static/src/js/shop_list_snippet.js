@@ -143,7 +143,7 @@ var shopList = baseWidget.extend({
     show_own_shop_route: false,
     latitude: 0.0,
     longitude: 0.0,
-    full_client_address: "Не определено",
+    full_client_address: _t("Not defined");
     properties_selector: false,
     properties: [],
     controller: false,
@@ -241,11 +241,11 @@ var shopList = baseWidget.extend({
                 console.log('GeoLocation: Address retrieved successfully: '+self.full_client_address);
                 deferred.resolve();
             } else {
-                self.full_client_address = "Не определено";
+                self.full_client_address = _t("Not defined");
                 deferred.reject();
             }
         }).fail(function(result) {
-            self.full_client_address = "Ошибка определения адреса";
+            self.full_client_address = _t("Address determination error");
             console.log('GeoLocarion: Error retrieving client address from gecode-maps.yandex.ru');
             console.log(result);
             deferred.reject();
@@ -543,7 +543,7 @@ var shopList = baseWidget.extend({
                     }
                     callback(data);
                 }).fail(function(result) {
-                    self.full_client_address = "Не определено";
+                    self.full_client_address = _t("Not defined");
                     console.log('GeoLocarion: Error retrieving client address from gecode-maps.yandex.ru');
                     deferred.reject();
                 });
@@ -551,7 +551,7 @@ var shopList = baseWidget.extend({
         }
 
         $("#eyekraft-shop-list-refresh").click(function (event) {
-            $("#eyekraft-shop-list-user-geoloc-text").html( "определяется...");
+            $("#eyekraft-shop-list-user-geoloc-text").html( _t("determined..."));
             self.get_lat_lng(Forced).then(function() {
                 self.get_client_address().then( function() {
                     self.render_client_address();
@@ -623,7 +623,7 @@ var shopList = baseWidget.extend({
                         shop_list.unshift(temp[0]);
                     }
                 } catch(e) {}
-            }    
+            }
         }
 
         for(var i = 0, len = shop_list.length; i < len; i++) {
@@ -738,12 +738,12 @@ var shopList = baseWidget.extend({
                 }).then(function (route) {
                     self.route = route;
                     var points = self.route.getWayPoints();
-                    points.get(0).properties.set('balloonContentHeader', 'Вы здесь');
+                    points.get(0).properties.set('balloonContentHeader', _t('Are you here'));
                     points.get(0).properties.set('balloonContent', self.full_client_address);
                     points.get(0).options.set('preset', 'twirl#redIcon');
                     points.get(1).properties.set('balloonContent', qweb.render("website_shops_map.eyekraft_shop_map_balloon",{widget: this, shop:shop}));
                     self.route.getPaths().options.set({
-                        balloonContentBodyLayout: ymaps.templateLayoutFactory.createClass("Время в пути: примерно "+self.route.getHumanTime()),
+                        balloonContentBodyLayout: ymaps.templateLayoutFactory.createClass(_t("Travel time: approx.")+" "+self.route.getHumanTime()),
                         opacity: 0.9
                     });
                     self.map.geoObjects.add(self.route);

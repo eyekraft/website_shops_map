@@ -3,6 +3,8 @@ odoo.define('website_shops_map.editor', function (require) {
 
 var editor = require('web_editor.editor');
 var website = require('website.website');
+var core = require('web.core');
+var _t = core._t;
 
 website.TopBar.include({
     edit: function () {
@@ -10,12 +12,13 @@ website.TopBar.include({
         this.$el.hide();
         editor.editor_bar = new editor.Class(this);
         editor.editor_bar.prependTo(document.body);
+        message_list = _t('Select property');
 
         var selector = $(document).find('#eyekraft_props_picker_selector')
         if (selector.length){
             // remove properties
             $(selector).children().remove();
-            $(selector).append("<select id='eyekraft_props_picker' class='hidden' multiple='' title='Select property'></select>");
+            $(selector).append("<select id='eyekraft_props_picker' class='hidden' multiple='' title='+ message_list +'></select>");
         };
 
         var big_map_view = $(document).find('#map-container-vertical')
