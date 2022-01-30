@@ -6,7 +6,7 @@ import lxml.html
 import requests
 import json
 from odoo.http import request
-from geopy.distance import vincenty
+from geopy.distance import geodesic
 
 _logger = logging.getLogger(__name__)
 
@@ -111,7 +111,7 @@ class eyekraft_module_geo(models.Model):
 
         # count shops distance and sort shop list by remoteness
         for shop in shop_list:
-            shop['distance'] = float(format(vincenty((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
+            shop['distance'] = float(format(geodesic((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
         shop_list = sorted(shop_list, key=lambda shop: shop['distance'])
         # prepare the list of shop cards to import to webpage
         view = request.env['ir.ui.view'].sudo()
