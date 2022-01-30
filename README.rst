@@ -12,7 +12,7 @@ Shop List Tab
 -------------
 
 .. figure:: ./static/description/scr_index_3.jpg
-  :width: 400px
+  :width: 600px
   :alt: Screenshot Addon for Shop List Tab
 
 
@@ -21,7 +21,7 @@ Shop Map Tab
 
 
 .. figure:: ./static/description/scr_title.jpg
-  :width: 400px
+  :width: 600px
   :alt: Screenshot Addon for Shop Map Tab
 
 
