@@ -225,7 +225,7 @@ class eyekraft_shop(models.Model):
     warehouse_ids = fields.One2many(
         "stock.warehouse",
         "shop_id",
-        string="Warehouse",
+        string="Warehouse Name",
     )
 
     # collect string of all work hours periods
