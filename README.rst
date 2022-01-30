@@ -36,9 +36,9 @@ Also this documentation is available in other languages as *English* | `Russian 
 Tested
 ======
 
-* Odoo 10 CE version.
-
 * Odoo 13 CE version.
+
+* Odoo 10 CE version.
 
 
 Translations
