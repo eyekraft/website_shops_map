@@ -6,6 +6,7 @@ class shop_list_config(models.Model):
     _name = 'shop.list.config'
     _description = "Shop List Configurations"
 
+    # Model Fields
     shop_list_url = fields.Char(string="Shop List Url")
     shop_list_params = fields.Char(string="Shop List Paramters")
     widget_id = fields.Char(string="Widget ID")

@@ -45,6 +45,7 @@ class eyekraft_module_description(models.Model):
             text = lxml.html.tostring(htmltext)
             self.manual_html = text
 
+    # Model Fields
     manual_html = fields.Html(string='Manual HTML', compute='_manual')
 
 # class to objectify shop dictionary
@@ -154,8 +155,10 @@ class eyekraft_shop(models.Model):
     _inherit = "base_multi_image.owner"
     _inherits = {"res.partner":'partner_id'}
 
-    partner_id = fields.Many2one("res.partner", required=True, ondelete="restrict")
     _sql_constraints = [('check_name', 'CHECK(True)','')]
+
+    # Model Fields
+    partner_id = fields.Many2one("res.partner", required=True, ondelete="restrict")
 
     def unlink(self):
         partner = self.partner_id
