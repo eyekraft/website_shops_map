@@ -47,7 +47,7 @@ class shop_work_hours(models.Model):
         "eyecraft.work.days",
         string="Week days",
         help="Period of week in which the shop works in set hours",
-        reqiured=True,
+        required=True,
     )
     period_ids = fields.Many2many(
         "period.of.time",
