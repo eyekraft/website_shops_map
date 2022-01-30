@@ -218,7 +218,7 @@ class eyekraft_shop(models.Model):
 
     rating = fields.Float(string="Rating")
 
-    public = fields.Boolean(string="Shop")
+    public = fields.Boolean(string="Public Shop")
 
     foreign_partner = fields.Boolean(help="Flag for partner record linked on module install")
 
