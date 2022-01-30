@@ -11,18 +11,18 @@
         </record>
 
         <!-- creation of the automatic rule to call server action -->
-        <record id="shop_cache_erase_on_cr_rule" model="base.action.rule">
+        <record id="shop_cache_erase_on_cr_rule" model="base.automation">
             <field name="name">Call Shop Map Cache erasing on create</field>
             <field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
-            <field name="active">False</field>
-            <field name="kind">on_create</field>
+            <field name="active" eval="False"/>
+            <field name="trigger">on_create</field>
             <field name="server_action_ids" eval="[(6,0,[[ref('shop_cache_erase_server_action')]])]"/>
         </record>
-        <record id="shop_cache_erase_on_dl_rule" model="base.action.rule">
+        <record id="shop_cache_erase_on_dl_rule" model="base.automation">
             <field name="name">Call Shop Map Cache erasing on delete</field>
             <field name="model_id" ref="website_shops_map.model_stock_warehouse"/>
-            <field name="active">False</field>
-            <field name="kind">on_unlink</field>
+            <field name="active" eval="False"/>
+            <field name="trigger">on_unlink</field>
             <field name="server_action_ids" eval="[(6,0,[[ref('shop_cache_erase_server_action')]])]"/>
         </record>
     </data>

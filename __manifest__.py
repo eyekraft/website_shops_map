@@ -17,7 +17,7 @@ Partner And Google Map Snippet compatible.
         'sale',
         'base_multi_image',
         'base_geolocalize',
-        'base_action_rule',
+        'base_automation',
         'website',
         'stock',
     ],
