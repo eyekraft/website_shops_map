@@ -12,7 +12,7 @@ class shop_api_user(models.Model):
         Generate API key for shop list user
         """
         hash_dict = {field: self.__getattribute__(field) for field in self._fields}
-        self.api_key = hashlib.sha1(str(hash_dict)).hexdigest()
+        self.api_key = hashlib.sha1(str(hash_dict).encode('utf-8')).hexdigest()
     
     @api.model
     def create(self, values):
