@@ -30,6 +30,8 @@ class eyekraft_module_description(models.Model):
     def _manual(self):
         if self.env.context['lang'] == u'ru_RU':
             path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
+        elif self.env.context['lang'] == u'es' and self.env.context['lang'] == u'es_CL' and self.env.context['lang'] == u'es_ES':
+            path = modules.module.get_module_resource(self.name, 'doc/manual_es.html')
         else:
             path = modules.module.get_module_resource(self.name, 'doc/manual.html')
         if path:
