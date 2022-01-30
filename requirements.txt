@@ -1,1 +1,2 @@
 geopy==2.2.0
+geographiclib==1.52
