@@ -12,7 +12,7 @@ Installation
 
 ::
 
-    $ pip install -r requirements.txt
+    $ pip install geopy==2.2.0
 
 
 Configuration
