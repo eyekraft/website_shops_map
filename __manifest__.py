@@ -13,6 +13,7 @@ Partner And Google Map Snippet compatible.
     'author': 'Eyekraft Optical',
     'website': 'https://eyekraft.ru',
     'support': 'https://support.eyekraft.ru',
+    'maintainer': "Leonardo J. Caballero G. <leonardocaballero@gmail.com>",
     'depends': [
         'sale',
         'base_multi_image',
@@ -43,7 +44,7 @@ Partner And Google Map Snippet compatible.
     ],
     'test': [
     ],
-    'license': 'LGPL-3',
+    'license': 'GPL-3',
     'images': ['static/description/main.png'],
     'update_xml': [],
     'installable': True,
