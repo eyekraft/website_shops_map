@@ -253,7 +253,11 @@ var shopList = baseWidget.extend({
         return deferred;
     },
 
-    // find shop by id function
+    /**
+     * Find shop by id function.
+     *
+     * @param {*} shop_id
+     */
     find_shop_by_id: function(shop_id) {
         for(var i = 0, len = this.shop_list.length; i < len; i++) {
             if(this.shop_list[i].id === shop_id) {
@@ -263,7 +267,11 @@ var shopList = baseWidget.extend({
         return false;
     },
 
-    // remove placemarks function
+    /**
+     * Remove placemarks function.
+     *
+     * @param {*} dont_remove_client
+     */
     remove_placemarks: function(dont_remove_client) {
         if (this.map) {
             var self = this;
@@ -341,7 +349,13 @@ var shopList = baseWidget.extend({
             return deferred;
     },
 
-    // load shop list function
+    /**
+     * Load shop list function.
+     *
+     * @param {*} query
+     * @param {*} lat
+     * @param {*} long
+     */
     load_shop_list: function(query, lat, long) {
         var deferred = $.Deferred();
         var self = this;
@@ -399,7 +413,12 @@ var shopList = baseWidget.extend({
         return deferred;
     },
 
-    // render shop list function
+    /**
+     * Render shop list function.
+     *
+     * @param {*} shop_list
+     * @param {*} index
+     */
     render_shoplist: function(shop_list, index) {
         var self = this;
         var contents = this.$el[0].querySelector('.shop-list-container');
@@ -601,7 +620,11 @@ var shopList = baseWidget.extend({
         });
     },
 
-    // render the vertical shop list function
+    /**
+     * Render the vertical shop list function.
+     *
+     * @param {*} shop_list
+     */
     render_vertical_shoplist: function(shop_list) {
         var contents = this.$el[0].querySelector('#shop-list-vertical');
         contents.innerHTML = "";
@@ -689,7 +712,11 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // render the own big map function
+    /**
+     * Render the own big map function.
+     *
+     * @param {*} shop
+     */
     render_own_big_map: function(shop) {
         var center = [shop.partner_latitude, shop.partner_longitude];
         this.map = new ymaps.Map ("own-map-container-vertical", {
@@ -719,7 +746,11 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // render the route function
+    /**
+     * Render the route function.
+     *
+     * @param {*} shop
+     */
     render_route: function(shop) {
         if (this.map) {
             if(this.latitude && this.longitude) {
@@ -779,7 +810,14 @@ var shopList = baseWidget.extend({
         if (this.properties.length > 0) { $('.bootstrap-select').removeClass('hidden') };
     },
 
-    // init function
+    /**
+     * Init function.
+     *
+     * @constructor
+     *
+     * @param {*} parent
+     * @param {*} options
+     */
     init: function(parent, options) {
         this._super(parent);
         options = options || {};

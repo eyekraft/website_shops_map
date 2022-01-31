@@ -13,7 +13,6 @@ var qweb = core.qweb;
 
 ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
 
-
     var EditSourcesDialog = edit_widget.Dialog.extend({
         template: 'website_shops_map.widget.dialog.edit',
         events: _.extend({}, edit_widget.Dialog.prototype.events, {
@@ -21,8 +20,15 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             'click button.js_edit_source': 'edit_source',
             'click button.js_delete_source': 'delete_source',
         }),
-
-        // init function
+        /**
+         * Init function.
+         *
+         * @constructor
+         *
+         * @param {*} parent
+         * @param {*} sources
+         * @param {*} widget_id
+         */
         init: function (parent, sources, widget_id) {
             this.sources = sources;
             this.flat = this.flatenize(sources);
@@ -50,8 +56,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             });
             return r;
         },
-
-        // flatenize function
+        /**
+         * Flatenize function.
+         *
+         * @param {*} sources
+         */
         flatenize: function (sources) {
             var dict = {};
             var self = this;
@@ -76,12 +85,19 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
                 };
                 self.flat[new_source.id] = new_source;
                 self.$('.oe_source_editor').append(
-                    qweb.render('website_shops_map.widget.dialog.source', { source: new_source }));
+                    qweb.render('website_shops_map.widget.dialog.source',
+                        { source: new_source }
+                    )
+                );
             });
             dialog.open();
         },
 
-        // edit_source function
+        /**
+         * Edit source function.
+         *
+         * @param {*} ev
+         */
         edit_source: function (ev) {
             var self = this;
             var source_id = $(ev.currentTarget).closest('[data-source-id]').data('source-id');
@@ -107,7 +123,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             }
         },
 
-        // delete_source function
+        /**
+         * Delete source function.
+         *
+         * @param {*} ev
+         */
         delete_source: function (ev) {
             var self = this;
             var $source = $(ev.currentTarget).closest('[data-source-id]');
@@ -132,7 +152,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             ajax.jsonRpc('/web/dataset/call_kw', 'call', {
                 model: 'shop.list.config',
                 method: 'save',
-                args: [[context.website_id], { data: data, to_delete: self.to_delete, widget_id: self.widget_id }],
+                args: [[context.website_id], {
+                    data: data,
+                    to_delete: self.to_delete,
+                    widget_id: self.widget_id
+                }],
                 kwargs: {
                     context: context
                 },
@@ -143,7 +167,16 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
     });
 
     var SourceEntryDialog = edit_widget.LinkDialog.extend({
-        // init function
+        /**
+         * Init function.
+         *
+         * @constructor
+         *
+         * @param {*} parent
+         * @param {*} options
+         * @param {*} editor
+         * @param {*} data
+         */
         init: function (parent, options, editor, data) {
             data.text = data.shop_list_params || '';
             data.url = data.shop_list_url || '';
@@ -202,8 +235,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
                     </div>
                 </div>
             </div>');
-            if (this.data.info == 'num') {this.$("input[value=num]").attr('checked','checked')}
-            else {this.$("input[value=km]").attr('checked','checked')};
+            if (this.data.info == 'num') {
+                this.$("input[value=num]").attr('checked','checked')
+            } else {
+                this.$("input[value=km]").attr('checked','checked')
+            };
             if (this.data.tags_avail.length) {
                 mainDiv.append('<div class="list-group">
                     <div id="tags-group" class="form-group list-group-item" style="overflow:hidden">
@@ -214,28 +250,32 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
                 </div>');
                 var tagsDiv = this.$("#tags-group");
                 var tagsSelected = this.data.tags.length > 0
-                if (tagsSelected && this.data.tags[0] == '') { this.data.tags = this.data.tags_avail }
+                if (tagsSelected && this.data.tags[0] == '') {
+                    this.data.tags = this.data.tags_avail
+                }
                 for (var i=0; i < this.data.tags_avail.length; i++) {
                     var tagName = this.data.tags_avail[i];
                     tagsDiv.append('<div class="col-md-2 mt8">
                         <input id="shoptag'+i+'" type="checkbox" class="vertic-align" value="'+tagName+'" style="transform:scale(1.3);"/>
                         <span class="ml8">'+tagName+'</span>
                     </div>');
-                if (tagsSelected) {
-                    if (this.data.tags.indexOf(tagName) > -1) {
-                        tagsDiv.find('#shoptag'+i).attr('checked','checked');
-                    }
-                } else {
-                    if (tagName == 'shop') {
-                        tagsDiv.find('#shoptag'+i).attr('checked','checked');
+                    if (tagsSelected) {
+                        if (this.data.tags.indexOf(tagName) > -1) {
+                            tagsDiv.find('#shoptag'+i).attr('checked','checked');
+                        }
+                    } else {
+                        if (tagName == 'shop') {
+                            tagsDiv.find('#shoptag'+i).attr('checked','checked');
+                        }
                     }
                 }
             }
-        }
             return $.when(this._super.apply(this, arguments)).then(function () {
                 var $link_text = self.$('#link-text').focus();
                 self.$('#link-page').change(function (e) {
-                    if ($link_text.val()) { return; }
+                    if ($link_text.val()) {
+                        return;
+                    }
                     var data = $(this).select2('data');
                     $link_text.val(data.create ? data.id : data.shop_list_url);
                     $link_text.focus();
@@ -253,7 +293,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             }
             this.data.color = this.$("#optcolor").val();
             this.data.tag = this.$("#opttag").val();
-            if (this.$("input[value=num]").prop('checked')){ this.data.info = 'num' } else { this.data.info = 'km' }
+            if (this.$("input[value=num]").prop('checked')){
+                this.data.info = 'num'
+            } else {
+                this.data.info = 'km'
+            }
             var tagInputs = this.$("input[id*=shoptag]");
             this.data.tags = []
             for (var i=0; i < tagInputs.length; i++) {
@@ -270,10 +314,13 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
         },
     });
 
-
     options.registry.eyekraft_shop_list = options.Class.extend({
-
-        // set_visibility function
+        /**
+         * Set visibility function.
+         *
+         * @param {*} elem
+         * @param {*} visible
+         */
         set_visibility: function (elem, visible) {
             // save changes in edit mode
             var $visible = $(elem).data();
@@ -283,17 +330,22 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             elem.attr("data-visible", visible);
         },
 
-        // list_visibility function
+        /**
+         * List visibility function.
+         *
+         * @param {*} type
+         * @param {*} data
+         */
         list_visibility : function (type, data) {
-            if(type !== "click") return;
+            if (type !== "click") return;
             var self = this;
             var section = self.$target
-
             var list_li = ($(section).find('#eyekraft-show-list-tab')).parent(),
                 shop_list_panel = $(section).find('#shop_list_panel'),
                 map_li = ($(section).find('#eyekraft-show-map-tab')).parent(),
                 shop_map_panel = $(section).find('#shop_map_panel'),
                 map_a = $(section).find('#eyekraft-show-map-tab');
+
             if (list_li.attr("data-visible") === "on") {
                 list_li
                     .css('display', 'none')
@@ -309,12 +361,16 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             };
         },
 
-        // map_visibility function
+        /**
+         * Map visibility function.
+         *
+         * @param {*} type
+         * @param {*} data
+         */
         map_visibility : function (type, data) {
-            if(type !== "click") return;
+            if (type !== "click") return;
             var self = this;
             var section = self.$target;
-
             var list_li = ($(section).find('#eyekraft-show-list-tab')).parent(),
                 shop_list_panel = $(section).find('#shop_list_panel'),
                 map_li = ($(section).find('#eyekraft-show-map-tab')).parent(),
@@ -337,7 +393,12 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             };
         },
 
-        // widget_settings function
+        /**
+         * Widget settings function.
+         *
+         * @param {*} type
+         * @param {*} data
+         */
         widget_settings : function(type, data) {
             if (type!=="click") return;
             var self = this;
@@ -357,7 +418,8 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
                 method: 'get_sorces_for_widget',
                 args: [uuid],
                 kwargs: {
-                    context: {}}
+                    context: {}
+                }
             }).then(function (res) {
                 var result = new EditSourcesDialog(this,res,uuid).open();
                 return result;
