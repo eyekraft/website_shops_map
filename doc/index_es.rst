@@ -32,9 +32,9 @@ Uso
 
 Debe tener derechos de acceso de administrador para el módulo de Inventario para trabajar con tiendas.
 
-* Abrir el menú ``Ajustes --> Inventario --> Almacén --> Multialmacén`` para gestionar almacenes múltiples.
+* Abrir el menú ``Ajustes --> Inventario --> Almacén -->`` `Multialmacén <https://www.odoo.com/documentation/13.0/es/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html>`_ para gestionar almacenes múltiples.
 
-* Abrir el menú ``Inventario --> Gestión de almacén --> Almacenes``.
+* Abrir el menú ``Inventario --> Gestión de almacén -->`` `Almacenes <https://www.odoo.com/documentation/13.0/es/applications/inventory_and_mrp/inventory/management/warehouses.html>`_.
 
 * Crear ``Almacén``.
 

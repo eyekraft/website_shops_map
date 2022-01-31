@@ -32,9 +32,9 @@
 
 Для работы с данными требуется иметь доступ в качестве Менеджера Склада.
 
-* Откройте меню ``Настройки --> Инвентарь --> склад --> Мульти склады`` управлять несколькими складами.
+* Откройте меню ``Настройки --> Инвентарь --> склад -->`` `Мульти склады <https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html>`_ управлять несколькими складами.
 
-* Откройте меню ``Склад --> Управление складом --> Склады``.
+* Откройте меню ``Склад --> Управление складом -->`` `Склады <https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses.html>`_.
 
 * Создайте ``склад``.
 
