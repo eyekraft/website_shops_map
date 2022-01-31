@@ -30,7 +30,7 @@ Documentation
 
 Checkout the available *English* documentation for this module `here <doc/index.rst>`_.
 
-Also this documentation is available in other languages as *English* | `Russian <doc/index_ru.rst>`_ | `Spanish <doc/index_es.rst>`_.
+Also this documentation is available in other languages as `Russian <doc/index_ru.rst>`_ and `Spanish <doc/index_es.rst>`_.
 
 
 Tested
