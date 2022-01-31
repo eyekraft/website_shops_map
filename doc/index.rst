@@ -32,17 +32,19 @@ Usage
 
 You need to have Manager Access Rights for Inventory module to work with shops.
 
+* Open menu ``Settings --> Inventory --> Almacén --> Multi-Warehouses`` to manage multiple warehouses.
+
 * Open menu ``Inventory --> Warehouse Management --> Warehouses``.
 
-* Create Warehouse.
+* Create ``Warehouse``.
 
-* Mark it as 'Shop'.
+* Mark it as ``Public Shop``.
 
 * Fill all of the required data.
 
-* Place Shop Map snippet on webpage.
+* Place ``Shop Map`` snippet on webpage.
 
-* Set up source URL-path and API-key.
+* Set up source ``URL-path`` and ``API-key``.
 
 * Save snippet and see you warehouse in the list and on the map.
 
@@ -71,19 +73,19 @@ The example of usage:
 
 	<div id="shop-list-snippet-wrapper" data-id="eyekraftShopMap1512116381857" shops-on-page="6" switch-to-map="true">
 
-* shop_ids='[<list of ids of "eyekraft.shop" model records to load to the snippet>]' It allows to show a limited number of certain shops.
+* shop_ids='[<list of ids of "eyekraft.shop" model records to load to the snippet>]' - It allows to show a limited number of certain shops.
 
-* lat='<value of latitude of the fixed map center>'
+* lat='<value of latitude of the fixed map center>'.
 
-* lon='<value of longitude of the fixed map center>' By default map has user coordinates by map center. This options may override this.
+* lon='<value of longitude of the fixed map center>' - By default map has user coordinates by map center. This options may override this.
 
 * zoom='<value of zoom level of the map>' - 1..9.
 
-* client-placemark='<true/false>' Visibility of the user placemark in the middle of the map.
+* client-placemark='<true/false>' - Visibility of the user placemark in the middle of the map.
 
-* switch-to-map='<true/false>' Flag to switch to map tab after shop-list loading. It works on desktop screens only leaving list tab visible on mobile platforms.
+* switch-to-map='<true/false>' - Flag to switch to map tab after shop-list loading. It works on desktop screens only leaving list tab visible on mobile platforms.
 
-* shops-on-page='<count of shops to show on list tab at once>' Option adds 'More' button to the list.
+* shops-on-page='<count of shops to show on list tab at once>' - Option adds 'More' button to the list.
 
 * shops-on-page-mob='<count of shops to show on list tab at once on mobile screens>'.
 

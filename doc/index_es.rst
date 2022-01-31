@@ -7,6 +7,7 @@ Esta documentación también esta disponible en otros idiomas como `Ingles <inde
 
 Instalación
 ===========
+
 * La biblioteca Python '`geopy <https://geopy.readthedocs.io/en/latest/>`_' debe instalarse primero para el cálculo automático de las coordenadas geográficas de la tienda.
 
 ::
@@ -21,9 +22,9 @@ Para registrar la base de datos de Odoo como fuente de lista de tienda, debe gen
 
 * Abrir el menú ``Ajustes --> Configuración de API --> Usuarios de API de la tienda``.
 
-* Ingrese la URL a la base de datos actual y obtenga su clave API al presionar el botón Guardar.
+* Ingrese la ``URL`` a la base de datos actual y obtenga su ``clave API`` al presionar el botón ``Guardar``.
 
-* Use esta URL y la clave de API generada en la configuración de la fuente del fragmento HTML del mapa.
+* Use esta ``URL`` y la ``clave API`` generada en la configuración de la fuente del fragmento HTML de ``Shop Map`` para mapa.
 
 
 Uso
@@ -31,19 +32,21 @@ Uso
 
 Debe tener derechos de acceso de administrador para el módulo de Inventario para trabajar con tiendas.
 
+* Abrir el menú ``Ajustes --> Inventario --> Almacén --> Multialmacén`` para gestionar almacenes múltiples.
+
 * Abrir el menú ``Inventario --> Gestión de almacén --> Almacenes``.
 
-* Crear Almacén.
+* Crear ``Almacén``.
 
-* Márcalo como 'Tienda'.
+* Márcalo como ``Tienda pública``.
 
 * Llena todos los datos requeridos.
 
-* Coloque el fragmento HTML de 'Shop Map' en la página web.
+* Coloque el fragmento HTML de ``Shop Map`` en la página web.
 
-* Configure la ruta URL de fuente y la clave API.
+* Configure la ``ruta URL de fuente`` y la ``clave API``.
 
-* Guarde el fragmento HTML y vea su almacén en la lista y en el mapa.
+* Guarde el fragmento HTML de ``Shop Map``, asi puede ver su almacén en la listado de tiendas y en el mapa.
 
 
 Opciones principales
@@ -70,21 +73,21 @@ El ejemplo de uso:
 
 	<div id="shop-list-snippet-wrapper" data-id="eyekraftShopMap1512116381857" shops-on-page="6" switch-to-map="true">
 
-* shop_ids='[<lista de ids de registros del modelo "eyekraft.shop" para cargar en el fragmento>]', eso le permite mostrar un número limitado de determinadas tiendas.
+* shop_ids='[<lista de ids de registros del modelo "eyekraft.shop" para cargar en el fragmento>]' - la opción le permite mostrar un número limitado de determinadas tiendas.
 
 * lat='<valor de la latitud del centro del mapa fijo>'.
 
-* lon='<valor de la longitud del centro del mapa fijo>', por defecto, el mapa tiene coordenadas de usuario por centro del mapa. Esta opción puede anular esta.
+* lon='<valor de la longitud del centro del mapa fijo>' - por defecto, el mapa tiene coordenadas de usuario por centro del mapa. Esta opción puede anular esta.
 
 * zoom='<valor del nivel de zoom del mapa>' - 1..9.
 
-* client-placemark='<true/false>', la visibilidad de la marca de posición del usuario en el medio del mapa.
+* client-placemark='<true/false>' - la visibilidad de la marca de posición del usuario en el medio del mapa.
 
-* switch-to-map='<true/false>', este marca para cambiar a la pestaña del mapa después de cargar la lista de tienda. Funciona en pantallas de escritorio solo dejando la pestaña de lista visible en plataformas móviles.
+* switch-to-map='<true/false>' - este marca para cambiar a la pestaña del mapa después de cargar la lista de tienda. Funciona en pantallas de escritorio solo dejando la pestaña de lista visible en plataformas móviles.
 
-* shops-on-page='<recuento de tiendas para mostrar en la pestaña de lista a la vez>', la opción agrega el botón 'Más' a la lista.
+* shops-on-page='<recuento de tiendas para mostrar en la pestaña de lista a la vez>' - la opción agrega el botón 'Más' a la lista.
 
-* shops-on-page-mob='<recuento de tiendas para mostrar en la pestaña de lista a la vez en pantallas móviles>'
+* shops-on-page-mob='<recuento de tiendas para mostrar en la pestaña de lista a la vez en pantallas móviles>'.
 
 
 Soporte
