@@ -63,13 +63,29 @@ License
 This module are under the **GNU GENERAL PUBLIC LICENSE, Version 3**, please check the `license details <LICENSE>`_ for it.
 
 
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues <https://github.com/eyekraft/website_shops_map/issues>`_.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us smashing it by providing a detailed and welcomed
+`feedback <https://github.com/eyekraft/website_shops_map/issues/new?body=module:%20website_shops_map%0Aversion:%2013.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+
+Do not contact contributors directly about support or help with technical issues.
+
+
 Credits
 =======
+
+Authors
+-------
+
+* `ITLibertas <https://itlibertas.com/>`_.
 
 Sponsors
 --------
 
-* `Eyekraft Optical <https://www.eyekraft.ru>`__
+* `Eyekraft Optical <https://www.eyekraft.ru>`_.
 
 Contributors
 ------------
