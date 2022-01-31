@@ -25,6 +25,12 @@ Shop Map Tab
   :alt: Screenshot Addon for Shop Map Tab
 
 
+Live Demo
+=========
+
+* `Eyekraft Optical Shops <https://eyekraft.ru/saloni-optiki>`_.
+
+
 Documentation
 =============
 
