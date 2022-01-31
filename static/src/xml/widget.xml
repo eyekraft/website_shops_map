@@ -27,7 +27,7 @@
             </ul>
             <div class="mt16">
                 <div>
-                    <a href="#" class="js_add_source">
+                    <a href="#" class="js_add_source" title="Add source">
                         <i class="fa fa-plus-circle"/> Add source
                     </a>
                 </div>

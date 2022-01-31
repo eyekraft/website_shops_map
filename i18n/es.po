@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-30 10:36+0000\n"
-"PO-Revision-Date: 2022-01-30 06:50-0400\n"
+"POT-Creation-Date: 2022-01-31 00:04+0000\n"
+"PO-Revision-Date: 2022-01-31 00:04+0000\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -140,6 +140,7 @@ msgstr "Estado de actividad"
 
 #. module: website_shops_map
 #. openerp-web
+#: code:addons/website_shops_map/static/src/xml/widget.xml:0
 #: code:addons/website_shops_map/static/src/xml/widget.xml:0
 #, python-format
 msgid "Add source"
