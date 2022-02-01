@@ -12,8 +12,10 @@ class stock_warehouse(models.Model):
     _inherit = "stock.warehouse"
     _inherits = {"eyekraft.shop": 'shop_id'}
 
-    # compute latitude & longitude by Yandex service
     def _get_lat_lng(self):
+        """ Compute latitude & longitude by Yandex service
+            :returns: location.latitude, location.longitude
+        """
         if not self.full_address:
             return 0,0
             if 'geopy' in sys.modules:
