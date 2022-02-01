@@ -20,9 +20,9 @@
                                     </h4>
                                 </div>
                                 <div class="col-xs-4 text-right" style="color:green;padding-top: 10px;">
-                                    <h5 t-if="adminMode">№ <t t-esc="shop.code" /></h5>
+                                    <h5 t-if="adminMode">No. <t t-esc="shop.code" /></h5>
                                     <h5 t-elif="shop.info and (shop.info == 'km')"><t t-esc="shop.distance"/> km</h5>
-                                    <h5 t-elif="shop.info and (shop.info == 'num')">№ <t t-esc="shop.code"/></h5>
+                                    <h5 t-elif="shop.info and (shop.info == 'num')">No. <t t-esc="shop.code"/></h5>
                                     <h5 t-else=""><t t-esc="shop.distance"/> km</h5>
                                 </div>
                             </div>
@@ -95,9 +95,9 @@
                                     </h4>
                                 </div>
                                 <div class="col-xs-4 text-right" style="color: green; padding-top: 10px;">
-                                    <h5 t-if="adminMode">№ <t t-esc="shop.code" /></h5>
+                                    <h5 t-if="adminMode">No. <t t-esc="shop.code" /></h5>
                                     <h5 t-elif="shop.info and (shop.info == 'km')"><t t-esc="shop.distance"/> km</h5>
-                                    <h5 t-elif="shop.info and (shop.info == 'num')">№ <t t-esc="shop.code"/></h5>
+                                    <h5 t-elif="shop.info and (shop.info == 'num')">No. <t t-esc="shop.code"/></h5>
                                     <h5 t-else=""><t t-esc="shop.distance"/> km</h5>
                                 </div>
                             </div>
