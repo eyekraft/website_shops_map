@@ -32,9 +32,9 @@ class stock_warehouse(models.Model):
                         continue
                 if not location:
                     _logger.warning("Yandex is unreachable, therefore lat|lng for shop is not computed")
-            else:
-                _logger.warning("Geopy has not been imported, therefore lat|lng for shop is not computed")
-        return location.latitude, location.longitude
+                else:
+                    _logger.warning("Geopy has not been imported, therefore lat|lng for shop is not computed")
+                    return location.latitude, location.longitude
 
     def unlink(self):
         for wh in self:
@@ -72,7 +72,7 @@ class stock_warehouse(models.Model):
                 # assign company logo as shop partner avatar image
                 if self.partner_id:
                     values['image'] = self.env['res.company'].browse(self.partner_id.id).logo
-        self.shop_id.write(values)
+            self.shop_id.write(values)
         return record
 
     def _inverse_name(self):
