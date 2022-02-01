@@ -7,6 +7,10 @@ var core = require('web.core');
 var _t = core._t;
 
 website.TopBar.include({
+    /**
+     * Edit function.
+     *
+     */
     edit: function () {
         this.$('button[data-action=edit]').prop('disabled', true);
         this.$el.hide();

@@ -12,7 +12,9 @@ var _t = core._t;
 var qweb = core.qweb;
 
 ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
-
+    /**
+     * Allows to customize the Source setup.
+     */
     var EditSourcesDialog = edit_widget.Dialog.extend({
         template: 'website_shops_map.widget.dialog.edit',
         events: _.extend({}, edit_widget.Dialog.prototype.events, {
@@ -37,7 +39,12 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             this._super(parent,_.extend({},{title: _t("Map Data Source")},options || {}));
         },
 
-        // start function
+        /**
+         * Start function.
+         *
+         * @override
+         *
+         */
         start: function () {
             var self = this;
             var r = this._super.apply(this, arguments);
@@ -56,6 +63,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             });
             return r;
         },
+
+        //--------------------------------------------------------------------------
+        // Public
+        //--------------------------------------------------------------------------
+
         /**
          * Flatenize function.
          *
@@ -70,7 +82,10 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             return dict;
         },
 
-        // add source function
+        /**
+         * Add source function.
+         *
+         */
         add_source: function () {
             var self = this;
             var dialog = new SourceEntryDialog(this, {}, undefined, {});
@@ -142,7 +157,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             $source.remove();
         },
 
-        // save function
+        /**
+         * Save function.
+         *
+         * @override
+         */
         save: function () {
             var self = this;
             var new_source = this.$('.oe_source_editor').nestedSortable('toArray', {startDepthCount: 0});
@@ -190,7 +209,11 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             return this._super.apply(this, arguments);
         },
 
-        // start function
+        /**
+         * Start function
+         *
+         * @override
+         */
         start: function () {
             var self = this;
 
@@ -283,7 +306,15 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             });
         },
 
-        // save function
+        //--------------------------------------------------------------------------
+        // Public
+        //--------------------------------------------------------------------------
+
+        /**
+         * Save function.
+         *
+         * @override
+         */
         save: function () {
             var $e = this.$('#link-text');
             if (!$e.val() || !$e[0].checkValidity()) {
@@ -308,12 +339,16 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             return this._super.apply(this, arguments);
         },
 
-        // destroy function
+        /**
+         * Destroy function.
+         *
+         */
         destroy: function () {
             this._super.apply(this, arguments);
         },
     });
 
+    // Snippet option for Set visibility, List visibility, Map visibility and Widget settings
     options.registry.eyekraft_shop_list = options.Class.extend({
         /**
          * Set visibility function.

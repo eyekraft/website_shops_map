@@ -22,6 +22,10 @@ if (typeof(Number.prototype.toRadians) === "undefined") { // just in case
     }
 }
 
+/**
+ * Decimal rounding function.
+ *
+ */
 function decimalAdjust(type, value, exp) {
     // If the exp is undefined or zero...
     if (typeof exp === 'undefined' || +exp === 0) {
@@ -41,6 +45,10 @@ function decimalAdjust(type, value, exp) {
     return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
 }
 
+/**
+ * Makes an iterator for the array function.
+ *
+ */
 function makeIterator(array) {
     var nextIndex = 0;
 
@@ -60,7 +68,10 @@ if (!Math.round10) {
     };
 }
 
-
+/**
+ * Function to filter the list of stores by search string.
+ *
+ */
 var filter_shops = function filter_shops(query) {
     return function(value) {
         try {
@@ -88,6 +99,10 @@ var filter_shops = function filter_shops(query) {
     }
 }
 
+/**
+ * Function to filter shops by id.
+ *
+ */
 var filter_shops_by_id = function filter_shops(ids) {
     return function(value) {
         try {
@@ -99,6 +114,10 @@ var filter_shops_by_id = function filter_shops(ids) {
     }
 }
 
+/**
+ * Function to filter the list of stores by a set of properties.
+ *
+ */
 var filter_shops_on_properties = function filter_shops_on_properties(properties) {
     return function(value) {
         var props = [];
@@ -130,6 +149,10 @@ var baseWidget = Widget.extend({
 var adminMode = false; // flag to show numders of shops on search by numbers
 var Forced = true; // flag to force refreshing geolocation coordinates
 
+/**
+ * Shop list function.
+ *
+ */
 var shopList = baseWidget.extend({
     template: 'ShopListTemplate',
     settings: {},
@@ -154,7 +177,14 @@ var shopList = baseWidget.extend({
     switch_map: false,
     shops_on_page: 65535,
 
-    // compute shop distance function
+    /**
+     * Compute shop distance function.
+     *
+     * Calculation of the distance between the client and the store,
+     * 0 if there are no client coordinates.
+     *
+     * @param {*} shop
+     */
     compute_shop_distance: function(shop) {
         if (this.latitude && this.longitude) {
             var R = 6371; // Radius of the earth in km
@@ -171,7 +201,14 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // get latitude and longitude function
+    /**
+     * Get latitude and longitude function.
+     *
+     * Obtaining the client's coordinates (coarse coordinates are obtained
+     * from yandex-maps, then refined if the user allows the use of geolocation).
+     *
+     * @param {*} Forced
+     */
     get_lat_lng: function(Forced) {
         var deferred = $.Deferred();
         var deferred_browser = $.Deferred();
@@ -224,7 +261,12 @@ var shopList = baseWidget.extend({
         return deferred;
     },
 
-    // ge the client address function
+    /**
+     * Get the client address function.
+     *
+     * According to the client's coordinates, we get his address in
+     * human language through ymaps api.
+     */
     get_client_address: function() {
         var deferred = $.Deferred();
         var self = this;
@@ -270,6 +312,8 @@ var shopList = baseWidget.extend({
     /**
      * Remove placemarks function.
      *
+     * This removes all markers from the map.
+     *
      * @param {*} dont_remove_client
      */
     remove_placemarks: function(dont_remove_client) {
@@ -292,7 +336,10 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // load settings function
+    /**
+     * Load all settings to get a list of stores function.
+     *
+     */
     load_settings: function() {
         var deferred = $.Deferred();
         var self = this;
@@ -351,6 +398,13 @@ var shopList = baseWidget.extend({
 
     /**
      * Load shop list function.
+     *
+     * We load the list of stores, since we start rendering only after
+     * the entire list of stores has been received, and there can be many
+     * sources of stores - we create a recursive promise queue, iterating
+     * through the available list of settings as soon as all stores are
+     * received (the entire queue of promises has resolved) - the resulting
+     * promise resolves.
      *
      * @param {*} query
      * @param {*} lat
@@ -414,7 +468,7 @@ var shopList = baseWidget.extend({
     },
 
     /**
-     * Render shop list function.
+     * Render a list of stores function.
      *
      * @param {*} shop_list
      * @param {*} index
@@ -528,7 +582,13 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // render the client address function
+    /**
+     * Render the client's address, the client's address is supplemented with
+     * an edit field with autocomplete based on data from the yandex geocoder,
+     * requests to the geocoder start leaving when the request length exceeds
+     * 8 letters. function.
+     *
+     */
     render_client_address: function() {
         var self= this;
         var contents = this.$el[0].querySelector('.eyekraft-geocoded-address');
@@ -621,7 +681,7 @@ var shopList = baseWidget.extend({
     },
 
     /**
-     * Render the vertical shop list function.
+     * Render the store list rendering on the map tab.
      *
      * @param {*} shop_list
      */
@@ -687,7 +747,10 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // render the big map function
+    /**
+     * Render the map render on the map tab function.
+     *
+     */
     render_big_map: function() {
         if (!this.map) {
             if (this.latitude && this.longitude) {
@@ -728,7 +791,11 @@ var shopList = baseWidget.extend({
         this.map.controls.add(new ymaps.control.RouteEditor());
     },
 
-    // render the client placemark function
+    /**
+     * Render the client placemark function.
+     *
+     * Put a mark on the map with the position of the client.
+     */
     render_client_placemark: function() {
         if (this.show_client && this.map && this.latitude && this.longitude) {
             this.client_placemark = new ymaps.Placemark(
@@ -748,6 +815,8 @@ var shopList = baseWidget.extend({
 
     /**
      * Render the route function.
+     *
+     * Draws a route on the map.
      *
      * @param {*} shop
      */
@@ -785,7 +854,12 @@ var shopList = baseWidget.extend({
         }
     },
 
-    // render properties selector function
+    /**
+     * Render the properties selector function.
+     *
+     * Store property selector render.
+     *
+     */
     render_properties_selector: function() {
         var contents = this.$el[0].querySelector('#eyekraft_props_picker');
         if (!(contents)) { return false }
@@ -812,6 +886,8 @@ var shopList = baseWidget.extend({
 
     /**
      * Init function.
+     *
+     * Calls the necessary renderers and binds event handlers to UI elements.
      *
      * @constructor
      *
@@ -1024,7 +1100,10 @@ var shopList = baseWidget.extend({
         });
     },
 
-    // show function
+    /**
+     * Show function.
+     *
+     */
     show: function() {
         var self = this;
         this._super();
