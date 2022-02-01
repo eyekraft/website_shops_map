@@ -1,9 +1,9 @@
 odoo.define('website_shops_map.editor', function (require) {
 'use strict';
 
+var core = require('web.core');
 var editor = require('web_editor.editor');
 var website = require('website.website');
-var core = require('web.core');
 var _t = core._t;
 
 website.TopBar.include({

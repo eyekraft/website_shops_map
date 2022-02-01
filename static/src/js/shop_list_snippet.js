@@ -1,12 +1,12 @@
 odoo.define('website_shops_map.shop_list', function (require) {
 "use strict";
 
-var web_editor_base = require('web_editor.base');
 var ajax = require('web.ajax');
-var Model = require('web.Model');
-var Widget = require('web.Widget');
+var web_editor_base = require('web_editor.base');
 var core = require('web.core');
+var Model = require('web.Model');
 var session = require('web.session');
+var Widget = require('web.Widget');
 
 var Backbone = window.Backbone;
 var qweb = core.qweb;
@@ -134,13 +134,24 @@ var filter_shops_on_properties = function filter_shops_on_properties(properties)
 }
 
 var baseWidget = Widget.extend({
+    /**
+     * @override
+     * @param {Object} params
+     * @param {Object} options
+     */
     init: function(parent, options) {
         this._super(parent);
         options = options || {};
     },
+    /**
+     * @override
+     */
     show: function() {
         this.$el.removeClass('oe_hidden');
     },
+    /**
+     * @override
+     */
     hide: function() {
         this.$el.addClass('oe_hidden');
     },
@@ -985,7 +996,9 @@ var shopList = baseWidget.extend({
                             "shopList": "backToList",
                         },
 
-                        // shop function
+                        /**
+                         * Shop function.
+                         */
                         shop: function (id) {
                             var shop = self.find_shop_by_id(Number(id))
                             var widget_content = self.$el[0].querySelector('#shop_widget_content'),
@@ -1027,7 +1040,9 @@ var shopList = baseWidget.extend({
                             });
                         },
 
-                        // back to list function
+                        /**
+                         * Back to list function.
+                         */
                         backToList: function () {
                             var widget_content = self.$el[0].querySelector('#shop_widget_content'),
                                 widget_tabs = self.$el[0].querySelector('#shop_widget_tabs'),

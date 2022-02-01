@@ -1,17 +1,18 @@
 odoo.define('website_shops_map.shop_list_editor', function (require) {
 "use strict";
 
-var options = require('web_editor.snippets.options');
 var ajax = require('web.ajax');
-var edit_widget = require('web_editor.widget');
+var base = require('web_editor.base');
 var core = require('web.core');
-var base = require('web_editor.base')
-var Model = require('web.Model')
+var edit_widget = require('web_editor.widget');
+var Model = require('web.Model');
+var options = require('web_editor.snippets.options');
 
-var _t = core._t;
 var qweb = core.qweb;
+var _t = core._t;
 
 ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
+
     /**
      * Allows to customize the Source setup.
      */
