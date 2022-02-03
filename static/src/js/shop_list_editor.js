@@ -1,17 +1,17 @@
 odoo.define('website_shops_map.shop_list_editor', function (require) {
-"use strict";
+    "use strict";
 
-var ajax = require('web.ajax');
-var base = require('web_editor.base');
-var core = require('web.core');
-var edit_widget = require('web_editor.widget');
-var Model = require('web.Model');
-var options = require('web_editor.snippets.options');
+    var ajax = require('web.ajax');
+    var base = require('web_editor.base');
+    var core = require('web.core');
+    var edit_widget = require('web_editor.widget');
+    var Model = require('web.Model');
+    var options = require('web_editor.snippets.options');
 
-var qweb = core.qweb;
-var _t = core._t;
+    var qweb = core.qweb;
+    var _t = core._t;
 
-ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
+    ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
 
     /**
      * Allows to customize the Source setup.
@@ -237,41 +237,45 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
             })
             this.$("label[for=link-external]").text(_t("Source URL"));
             var mainDiv = this.$("div[class=list-group]").parent();
-            mainDiv.append('<div class="list-group">
-                <div class="form-group list-group-item" style="overflow:hidden">
-                    <div class="col-md-1 mr16">
-                        <h5 class="mt16">'+_t('Options')+':</h5>
-                    </div>
-                    <h5><label class="col-md-1 control-label vertic-align text-center" for="optcolor" title="'+_t('Enter name of the HTML-color')+'">'+_t('Color')+'</label></h5>
-                    <div class="col-md-2">
-                        <input class="form-control" type="text" value="'+this.data.color+'" id="optcolor" maxlength="10"/>
-                    </div>
-                    <h5><label class="col-md-1 control-label vertic-align text-center" for="opttag" title="'+_t('Marked label to show before the caption of the shop card')+'">'+_t('Label')+'</label></h5>
-                    <div class="col-md-2">
-                        <input class="form-control" type="text"  value="'+this.data.tag+'" id="opttag" maxlength="10"/>
-                    </div>
-                    <h5><label class="ml32 col-md-1 control-label vertic-align" for="optinfo" title="'+_t('Option to show info in the caption of the shop card')+'">'+_t('Info')+'</label></h5>
-                    <div class="col-md-1 mt4">
-                        <input type="radio" name="info" value="km">&nbsp;'+_t('Km')+'</>
-                    </div>
-                    <div class="col-md-2 mt4 mb16">
-                        <input type="radio" name="info" value="num">&nbsp;'+_t('Code')+'</>
-                    </div>
-                </div>
-            </div>');
+            var divListGroup = $(
+                '<div class="list-group">' +
+                    '<div class="form-group list-group-item" style="overflow:hidden">' +
+                        '<div class="col-md-1 mr16">' +
+                            '<h5 class="mt16">'+_t('Options')+':</h5>' +
+                        '</div>' +
+                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="optcolor" title="'+_t('Enter name of the HTML-color')+'">'+_t('Color')+'</label></h5>' +
+                        '<div class="col-md-2">' +
+                            '<input class="form-control" type="text" value="'+this.data.color+'" id="optcolor" maxlength="10"/>' +
+                        '</div>' +
+                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="opttag" title="'+_t('Marked label to show before the caption of the shop card')+'">'+_t('Label')+'</label></h5>' +
+                        '<div class="col-md-2">' +
+                            '<input class="form-control" type="text"  value="'+this.data.tag+'" id="opttag" maxlength="10"/>' +
+                        '</div>' +
+                        '<h5><label class="ml32 col-md-1 control-label vertic-align" for="optinfo" title="'+_t('Option to show info in the caption of the shop card')+'">'+_t('Info')+'</label></h5>' +
+                        '<div class="col-md-1 mt4">' +
+                            '<input type="radio" name="info" value="km">&nbsp;'+_t('Km')+'</>' +
+                        '</div>' +
+                        '<div class="col-md-2 mt4 mb16">' +
+                            '<input type="radio" name="info" value="num">&nbsp;'+_t('Code')+'</>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>');
+            mainDiv.append($divListGroup);
             if (this.data.info == 'num') {
                 this.$("input[value=num]").attr('checked','checked')
             } else {
                 this.$("input[value=km]").attr('checked','checked')
             };
             if (this.data.tags_avail.length) {
-                mainDiv.append('<div class="list-group">
-                    <div id="tags-group" class="form-group list-group-item" style="overflow:hidden">
-                        <div class="col-md-2">
-                            <h5>'+_t('Shop tags:')+'</h5>
-                        </div>
-                    </div>
-                </div>');
+                var divListGroupShopTags = $(
+                    '<div class="list-group">' +
+                        '<div id="tags-group" class="form-group list-group-item" style="overflow:hidden">' +
+                            '<div class="col-md-2">' +
+                                '<h5>'+_t('Shop tags:')+'</h5>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>');
+                mainDiv.append($divListGroupShopTags);
                 var tagsDiv = this.$("#tags-group");
                 var tagsSelected = this.data.tags.length > 0
                 if (tagsSelected && this.data.tags[0] == '') {
@@ -279,10 +283,12 @@ ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
                 }
                 for (var i=0; i < this.data.tags_avail.length; i++) {
                     var tagName = this.data.tags_avail[i];
-                    tagsDiv.append('<div class="col-md-2 mt8">
-                        <input id="shoptag'+i+'" type="checkbox" class="vertic-align" value="'+tagName+'" style="transform:scale(1.3);"/>
-                        <span class="ml8">'+tagName+'</span>
-                    </div>');
+                    var divListGroupTagsRow = $(
+                        '<div class="col-md-2 mt8">' +
+                            '<input id="shoptag'+i+'" type="checkbox" class="vertic-align" value="'+tagName+'" style="transform:scale(1.3);"/>' +
+                            '<span class="ml8">'+tagName+'</span>' +
+                        '</div>');
+                    tagsDiv.append($divListGroupTagsRow);
                     if (tagsSelected) {
                         if (this.data.tags.indexOf(tagName) > -1) {
                             tagsDiv.find('#shoptag'+i).attr('checked','checked');
