@@ -16,7 +16,7 @@
                                         <p style="font-size:11px;"><t t-esc="shop.tag"/></p>
                                     </div>
                                     <h4>
-                                        <a t-att-href="shop.own_page_href"><span> <t t-esc="shop.name"/> </span></a>
+                                        <a t-att-href="shop.own_page_href" t-att-title="shop.name"><span> <t t-esc="shop.name"/> </span></a>
                                     </h4>
                                 </div>
                                 <div class="col-xs-4 text-right" style="color:green;padding-top: 10px;">
@@ -45,12 +45,14 @@
                                 <span t-esc="shop.phone"/>
                             </div>
                             <div class="col-xs-8" style="margin-top: 10px;">
-                                <a t-if="shop.map_href" t-att-href="shop.map_href" data-toggle="collapse">
+                                <a t-if="shop.map_href" t-att-href="shop.map_href"
+                                   data-toggle="collapse" title="Show map">
                                     Show map
                                 </a>
                             </div>
                             <div class="col-xs-4 text-right" data-block="route_link" style="margin-top: 10px;">
-                                <a t-if="shop.show_route_id" t-attf-style="cursor:pointer" t-att-id="shop.show_route_id" t-att-shop="shop.id">
+                                <a t-if="shop.show_route_id" t-attf-style="cursor:pointer" t-att-id="shop.show_route_id"
+                                   t-att-shop="shop.id" title="Show route">
                                     Show route
                                 </a>
                             </div>
@@ -59,7 +61,7 @@
                             </div>
                             <t t-foreach="shop.images" t-as="image">
                                 <div class="col-xs-4 col-md-3">
-                                    <a t-att-href="image.href" data-toggle="collapse">
+                                    <a t-att-href="image.href" data-toggle="collapse" title="Image">
                                         Image <t t-esc="image.num" />
                                     </a>
                                 </div>
@@ -91,7 +93,7 @@
                                         <p style="font-size:11px;"><t t-esc="shop.tag"/></p>
                                     </div>
                                     <h4>
-                                        <a t-att-href="shop.own_page_href"><span> <t t-esc="shop.name"/> </span></a>
+                                        <a t-att-href="shop.own_page_href" t-att-title="shop.name"><span> <t t-esc="shop.name"/> </span></a>
                                     </h4>
                                 </div>
                                 <div class="col-xs-4 text-right" style="color: green; padding-top: 10px;">
@@ -120,7 +122,8 @@
                                 <span t-esc="shop.phone"/>
                             </div>
                             <div class="col-xs-12" style="margin-top: 10px;">
-                                <a t-if="shop.show_on_map_id" t-attf-style="cursor:pointer" t-att-id="shop.show_on_map_id" t-att-lat="shop.partner_latitude" t-att-lng="shop.partner_longitude">
+                                <a t-if="shop.show_on_map_id" t-attf-style="cursor:pointer" t-att-id="shop.show_on_map_id"
+                                   t-att-lat="shop.partner_latitude" t-att-lng="shop.partner_longitude" title="Show on the map">
                                     Show on the map
                                 </a>
                             </div>
@@ -142,10 +145,10 @@
                 </div>
                 <h5>Your approximate location is:</h5>
                 <h4 id="eyekraft-shop-list-user-geoloc-text" style="margin-bottom:8px"> <t t-esc="address"/> </h4>
-                <a class="btn"  href="#eyekraft-shop-list-user-geoloc" data-toggle="collapse">
+                <a class="btn" href="#eyekraft-shop-list-user-geoloc" data-toggle="collapse" title="Edit">
                     Edit
                 </a>
-                <a class="btn ml16" id="eyekraft-shop-list-refresh">
+                <a class="btn ml16" id="eyekraft-shop-list-refresh" title="Update">
                     Update
                 </a>
             </div>
@@ -226,12 +229,12 @@
                                 <b>Comment:</b> <span> <t t-esc="shop.comment"/> </span>
                             </div>
                             <div class="col-xs-6 col-md-3 col-md-offset-3" style="padding-top: 20px;">
-                                <a t-att-href="shop.own_map_href" data-toggle="collapse">
+                                <a t-att-href="shop.own_map_href" data-toggle="collapse" title="Show map">
                                     Show map
                                 </a>
                             </div>
                             <div class="col-xs-6 col-md-3" data-block="route_link" style="padding-top: 20px; cursor: pointer;">
-                                <a t-att-id="shop.own_show_route_id" t-att-shop="shop.id">
+                                <a t-att-id="shop.own_show_route_id" t-att-shop="shop.id" title="Show route">
                                     Show route
                                 </a>
                             </div>
