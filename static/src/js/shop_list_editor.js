@@ -4,8 +4,8 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
     var ajax = require('web.ajax');
     var base = require('web_editor.base');
     var core = require('web.core');
-    var edit_widget = require('web_editor.widget');
-    var Model = require('web.Model');
+    var Dialog = require('web.Dialog');
+    var LinkDialog = require('wysiwyg.widgets.LinkDialog');
     var options = require('web_editor.snippets.options');
 
     var qweb = core.qweb;
@@ -16,9 +16,9 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
     /**
      * Allows to customize the Source setup.
      */
-    var EditSourcesDialog = edit_widget.Dialog.extend({
+    var EditSourcesDialog = Dialog.extend({
         template: 'website_shops_map.widget.dialog.edit',
-        events: _.extend({}, edit_widget.Dialog.prototype.events, {
+        events: _.extend({}, Dialog.prototype.events, {
             'click a.js_add_source': 'add_source',
             'click button.js_edit_source': 'edit_source',
             'click button.js_delete_source': 'delete_source',
@@ -186,7 +186,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
         },
     });
 
-    var SourceEntryDialog = edit_widget.LinkDialog.extend({
+    var SourceEntryDialog = LinkDialog.extend({
         /**
          * Init function.
          *

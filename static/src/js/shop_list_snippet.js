@@ -4,7 +4,6 @@ odoo.define("website_shops_map.shop_list", function (require) {
     var ajax = require("web.ajax");
     var web_editor_base = require("web_editor.base");
     var core = require("web.core");
-    // var Model = require("web.Model");
     var session = require("web.session");
     var Widget = require("web.Widget");
 
