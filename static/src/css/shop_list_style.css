@@ -1,54 +1,84 @@
-#address-input-group{
+#address-input-group {
     margin-top: 18px;
 }
-#shop-card-small-map{
+#shop-card-small-map {
     margin-bottom: 10px;
 }
-#eyekraft-shop-list-user-geoloc{
+#eyekraft-shop-list-user-geoloc {
     margin-top: 18px;
 }
-.shop-map-container{
-    min-height:600px;
-    padding-bottom:16px;
+.shop-map-container {
+    min-height: 600px;
+    padding-bottom: 16px;
     border-bottom: 1px solid lightgrey;
 }
-.shop-list-container{
-    padding-bottom:16px;
+.shop-list-container {
+    padding-bottom: 16px;
     border-bottom: 1px solid lightgrey;
 }
-#shop-list-vertical{
+#shop-list-vertical {
     overflow-y: scroll;
     max-height: 584px;
 }
-#eyekraft_props_picker{
-    width:200%;
+#eyekraft_props_picker {
+    width: 200%;
     margin-top: 0px;
 }
 #map-container-vertical {
     min-height: 584px;
 }
 .vertic-align {
-    vertical-align:top;
-     margin-top:5px
+    vertical-align: top;
+    margin-top: 5px;
 }
-.autocomplete-suggestions { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-no-suggestion { padding: 2px 5px;}
-.autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: bold; color: #000; }
-.autocomplete-group { padding: 2px 5px; }
-.autocomplete-group strong { font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
-.bootstrap-select.btn-group{
-    width:100%;
+.autocomplete-suggestions {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    background: #FFF;
+    cursor: default;
+    overflow: auto;
+    -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+.autocomplete-suggestion {
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.autocomplete-no-suggestion {
+    padding: 2px 5px;
+}
+.autocomplete-selected {
+    background: #F0F0F0;
+}
+.autocomplete-suggestions strong {
+    font-weight: bold;
+    color: #000;
+}
+.autocomplete-group {
+    padding: 2px 5px;
+}
+.autocomplete-group strong {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    display: block;
+    border-bottom: 1px solid #000;
+}
+.bootstrap-select.btn-group {
+    width: 100%;
     margin-top: 18px;
-    color: rgb(255,0,0);
+    color: rgb(255, 0, 0);
 }
 @media screen and (max-width: 800px) {
-	#shop-list-vertical {
-	    max-height: 300px;
-	    margin-bottom: 32px;
-		            }
-	#map-container-vertical {
-	    min-height:550px;
-			    }
+    #shop-list-vertical {
+        max-height: 300px;
+        margin-bottom: 32px;
+    }
+    #map-container-vertical {
+        min-height: 550px;
+    }
 }
