@@ -74,7 +74,7 @@
 
         <!-- Add "Shop List Snippet" Template to the Snippets bar -->
         <template id="add_snippet_to_panel_shoplist" inherit_id="website.snippets" name="Add Snippet to Panel">
-            <xpath expr="//div[@id='snippet_structure']/div[contains(@class, 'o_panel_body')]" position="inside">
+            <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]/t" position="before">
                 <t t-snippet="website_shops_map.snippet_eyekraft_shop_list"
                    t-thumbnail="/website_shops_map/static/src/img/snippets/shop_list_snippet_icon.png"/>
             </xpath>
