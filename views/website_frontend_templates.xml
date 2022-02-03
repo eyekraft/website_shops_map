@@ -2,6 +2,7 @@
 <odoo>
     <data>
 
+        <!-- eyekraft.shop Card -->
         <template id="eyekraft_shop_card">
             <div class=" reflex-col-xs-12 reflex-col-sm-6 reflex-col-md-4 reflex-col-lg-4">
                 <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" >
@@ -79,6 +80,7 @@
             </div>
         </template>
 
+        <!-- eyekraft.shop Card Map -->
         <template id="eyekraft_shop_card_map">
             <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12">
                 <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" >
@@ -133,6 +135,7 @@
             </div>
         </template>
 
+        <!-- eyekraft.shop List Client Address -->
         <template id="eyekraft_shop_list_client_address">
             <div style="padding-bottom:16px">
                 <div id="eyekraft-shop-list-user-geoloc" class="collapse">
@@ -154,6 +157,7 @@
             </div>
         </template>
 
+        <!-- eyekraft.shop Map Balloon -->
         <template id="eyekraft_shop_map_balloon">
             <div style='width:100%; max-width:300px;'>
                 <p t-if="shop.full_address" style="font-size:14px; margin-top:8px;margin-bottom:8px;">

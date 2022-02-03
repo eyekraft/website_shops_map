@@ -1,5 +1,6 @@
 <templates id="template" xml:space="preserve">
 
+    <!-- website_shops_map widget dialog source -->
     <t t-name="website_shops_map.widget.dialog.source">
         <li t-att-data-source-id="source.id">
             <div class="input-group">
@@ -17,6 +18,7 @@
         </li>
     </t>
 
+    <!-- website_shops_map widget dialog edit -->
     <div t-name="website_shops_map.widget.dialog.edit">
         <t>
             <t t-set="title">Source setup</t>
