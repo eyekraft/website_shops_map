@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
+        <!-- ShopsMap Frontend Assets -->
         <template id="shops_map_assets" inherit_id="website.assets_frontend">
             <xpath expr="." position="inside">
                 <script type="text/javascript" src="/website_shops_map/static/lib/backbone/backbone.js"></script>
                 <script type="text/javascript" src="/website_shops_map/static/lib/jquery.autocomplete.js"></script>
                 <script type="text/javascript" src="/website_shops_map/static/lib/jquery.cookie.js"></script>
                 <script type="text/javascript" src="/website_shops_map/static/lib/bootstrap-select/bootstrap-select.js"></script>
-                <script type="text/javascript" src="/website_shops_map/static/src/js/shop_list_snippet.js" async="async"></script>-->
-                <link rel='stylesheet' href='/website_shops_map/static/lib/bootstrap-select/bootstrap-select.min.css'></link>
-                <link rel='stylesheet' href='/website_shops_map/static/src/css/reflex.css'></link>
-                <link rel='stylesheet' href='/website_shops_map/static/src/css/shop_list_style.css'></link>
-
+                <script type="text/javascript" src="/website_shops_map/static/src/js/shop_list_snippet.js" async="async"></script>
+                <link type="text/css" rel="stylesheet" href="/website_shops_map/static/lib/bootstrap-select/bootstrap-select.min.css" />
+                <link type="text/css" rel="stylesheet" href="/website_shops_map/static/src/css/reflex.css" />
+                <link type="text/css" rel="stylesheet" href="/website_shops_map/static/src/css/shop_list_style.css" />
             </xpath>
         </template>
 
