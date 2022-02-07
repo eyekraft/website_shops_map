@@ -808,9 +808,9 @@ odoo.define("website_shops_map.shop_list", function (require) {
 
                 this.map = new ymaps.Map("map-container-vertical", {
                     center: center,
+                    controls: ['largeMapDefaultSet'],
                     zoom: this.scale
                 });
-                this.map.controls.add(new ymaps.control.MapTools());
                 this.map.controls.add(new ymaps.control.ZoomControl());
                 this.map.controls.add(new ymaps.control.RouteEditor());
                 this.render_client_placemark();
@@ -826,9 +826,9 @@ odoo.define("website_shops_map.shop_list", function (require) {
             var center = [shop.partner_latitude, shop.partner_longitude];
             this.map = new ymaps.Map("own-map-container-vertical", {
                 center: center,
+                controls: ['largeMapDefaultSet'],
                 zoom: 14
             });
-            this.map.controls.add(new ymaps.control.MapTools());
             this.map.controls.add(new ymaps.control.ZoomControl());
             this.map.controls.add(new ymaps.control.RouteEditor());
         },
