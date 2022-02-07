@@ -20,9 +20,28 @@ class stock_warehouse(models.Model):
             return 0,0
             if 'geopy' in sys.modules:
                 geolocator = geocoders.Yandex()
+
+                # https://geopy.readthedocs.io/en/latest/index.html#geopy.geocoders.Yandex.geocode
+                spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC, es", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]
+                english = ["en_AU", "en_CA", "en_GB", "en_US"]
+                if self.env.context['lang'] == u'es' or self.env.context['lang'] in spanish:
+                    language="en_US"
+                elif self.env.context['lang'] == u'en' or self.env.context['lang'] in english:
+                    language="en_US"
+                elif self.env.context['lang'] == u'tr' or self.env.context['lang'] == u'tr_TR':
+                    language="tr_TR"
+                elif self.env.context['lang'] == u'uk' or self.env.context['lang'] == u'uk_UA':
+                    language="uk_UA"
+                elif self.env.context['lang'] == u'be' or self.env.context['lang'] == u'be_BY':
+                    language="be_BY"
+                elif self.env.context['lang'] == u'ru' or self.env.context['lang'] == u'ru_RU':
+                    language="ru_RU"
+                else:
+                    language="en_RU"
+
                 for i in xrange(10):
                     try:
-                        location = geolocator.geocode(query=self.full_address, timeout=10)
+                        location = geolocator.geocode(query=self.full_address, timeout=10, lang=language)
                         break
                     except exc.GeocoderTimedOut as e:
                         _logger.info("GeocoderTimedOut: Retrying...")
