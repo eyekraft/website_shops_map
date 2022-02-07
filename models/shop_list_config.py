@@ -52,4 +52,3 @@ class shop_list_config(models.Model):
                     self.create(values)
             for source_id in to_delete:
                 self.browse(source_id).unlink()
-

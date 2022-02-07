@@ -19,8 +19,8 @@ Partner And Google Map Snippet compatible.
         'base_multi_image',
         'base_geolocalize',
         'base_automation',
-        'website',
         'stock',
+        'website',
     ],
     'data': [
         'data/website_shops_map_data.xml',

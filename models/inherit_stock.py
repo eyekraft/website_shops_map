@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import logging
 import sys
-import geopy
 from datetime import datetime
+from geopy import exc, geocoders
 from odoo import api, fields, models
 _logger = logging.getLogger(__name__)
 
@@ -19,23 +19,26 @@ class stock_warehouse(models.Model):
         if not self.full_address:
             return 0,0
             if 'geopy' in sys.modules:
-                geolocator = geopy.geocoders.Yandex()
+                geolocator = geocoders.Yandex()
                 for i in xrange(10):
                     try:
-                        location = geolocator.geocode(self.full_address, timeout=10)
+                        location = geolocator.geocode(query=self.full_address, timeout=10)
                         break
-                    except geopy.exc.GeocoderTimedOut as e:
+                    except exc.GeocoderTimedOut as e:
+                        _logger.info("GeocoderTimedOut: Retrying...")
                         continue
-                    except geopy.exc.GeocoderQueryError as e:
+                    except exc.GeocoderQuotaExceeded as e:
+                        _logger.info("GeocoderQuotaExceeded: The remote geocoding service refused to fulfill the request because the client has used its quota...")
                         continue
                     except AttributeError:
                         continue
-                    except geopy.exc.GeocoderParseError as e:
+                    except exc.GeocoderParseError as e:
+                        _logger.info("GeocoderParseError: Geopy could not parse the service's response...")
                         continue
                 if not location:
-                    _logger.warning("Yandex is unreachable, therefore lat|lng for shop is not computed")
+                    _logger.warning("Yandex is unreachable, therefore latitude|longitude for shop is not computed.")
                 else:
-                    _logger.warning("Geopy has not been imported, therefore lat|lng for shop is not computed")
+                    _logger.warning("Geopy has not been imported, therefore latitude|longitude for shop is not computed.")
                     return location.latitude, location.longitude
 
     def unlink(self):

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import werkzeug
-import logging
-import sys
-import lxml.html
-import requests
 import json
-from odoo.http import request
+import lxml.html
+import logging
+import requests
+import sys
+import werkzeug
 from geopy.distance import geodesic
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -20,6 +20,7 @@ from odoo import modules, models, fields, api
 
 def urlplus(url, params):
     return werkzeug.Href(url)(params or None)
+
 
 # class to load extended description of module
 class eyekraft_module_description(models.Model):
@@ -48,11 +49,13 @@ class eyekraft_module_description(models.Model):
     # Model Fields
     manual_html = fields.Html(string='Manual HTML', compute='_manual')
 
+
 # class to objectify shop dictionary
 # for template data compatibility
 class shopobj:
     def __init__(self,dictobj):
         self.__dict__ = dictobj
+
 
 # class to get coordinates of the user on server side
 # and load and show primary list of shops
@@ -143,6 +146,7 @@ class eyekraft_module_geo(models.Model):
             })
         return shop_cards_html
 
+
 class tune_partner(models.Model):
     _inherit="res.partner"
 
@@ -202,9 +206,7 @@ class eyekraft_shop(models.Model):
         compute='_compute_full_address',
         store=True,
     )
-
     metro_station = fields.Char(string='Subway station')
-
     properties_ids = fields.Many2many(
         'shop.property',
         'shop_shop_properties_rel',
@@ -212,19 +214,14 @@ class eyekraft_shop(models.Model):
         'property_id',
         string='Properties',
     )
-
     work_hours_ids = fields.One2many(
         "shop.work.hours",
         "shop_id",
         string="Work hours",
     )
-
     rating = fields.Float(string="Rating")
-
     public = fields.Boolean(string="Public Shop")
-
     foreign_partner = fields.Boolean(help="Flag for partner record linked on module install")
-
     warehouse_ids = fields.One2many(
         "stock.warehouse",
         "shop_id",
