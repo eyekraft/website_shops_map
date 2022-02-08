@@ -29,9 +29,10 @@ class eyekraft_module_description(models.Model):
     _inherit = "ir.module.module"
 
     def _manual(self):
+        spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC, es", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]
         if self.env.context['lang'] == u'ru_RU':
             path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
-        elif self.env.context['lang'] == u'es' and self.env.context['lang'] == u'es_CL' and self.env.context['lang'] == u'es_ES':
+        elif self.env.context['lang'] == u'es' or self.env.context['lang'] in spanish:
             path = modules.module.get_module_resource(self.name, 'doc/manual_es.html')
         else:
             path = modules.module.get_module_resource(self.name, 'doc/manual.html')
