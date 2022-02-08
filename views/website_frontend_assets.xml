@@ -18,7 +18,7 @@
         <!-- Yandex Map API Link Assets -->
         <template name="Yandex Map API Link" id="yandex_map_api" inherit_id="website.layout">
             <xpath expr="//script[last()]" position="after">
-                <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.full&amp;lang=ru-RU" type="text/javascript" async="async"/>
+                <script type="text/javascript" src="https://api-maps.yandex.ru/2.1.79/?load=package.full&amp;lang=ru_RU&amp;mode=release"></script>
             </xpath>
         </template>
 
