@@ -142,7 +142,9 @@
                     <div class="input-group">
                         <input id="eyekraft-shop-list-user-geoloc-input" type="text" class="form-control" placeholder="Enter your address" />
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-info user-geoloc-input-address" ><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-info user-geoloc-input-address" >
+                                <i class="fa fa-map-marker"></i>
+                            </button>
                         </span>
                     </div>
                 </div>

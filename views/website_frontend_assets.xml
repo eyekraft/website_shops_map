@@ -15,12 +15,14 @@
             </xpath>
         </template>
 
+        <!-- Yandex Map API Link Assets -->
         <template name="Yandex Map API Link" id="yandex_map_api" inherit_id="website.layout">
             <xpath expr="//script[last()]" position="after">
                 <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.full&amp;lang=ru-RU" type="text/javascript" async="async"/>
             </xpath>
         </template>
 
+        <!-- Website Editor Assets -->
         <template id="shops_map_assets_editor" inherit_id="website.assets_editor" name="Editor assets">
             <xpath expr="." position="inside">
                 <!-- <script type="text/javascript" src="/website_shops_map/static/src/js/website.editor.js"></script> -->
