@@ -336,15 +336,18 @@ odoo.define("website_shops_map.shop_list", function (require) {
             if (this.map) {
                 var self = this;
                 if (this.route) {
+                    // Removing the route to the map
                     this.map.geoObjects.remove(this.route);
                     self.route = false;
                 }
                 if (this.client_placemark && !dont_remove_client) {
+                    // Removing the route to the map
                     this.map.geoObjects.remove(this.client_placemark);
                     this.client_placemark = false;
                 }
                 for (var i = 0, len = this.shop_list.length; i < len; i++) {
                     if (this.shop_list[i].placemark) {
+                        // Removing the route to the map
                         this.map.geoObjects.remove(this.shop_list[i].placemark);
                         this.shop_list[i].placemark = false;
                     }
@@ -548,11 +551,14 @@ odoo.define("website_shops_map.shop_list", function (require) {
             for (var i = index; i < len; i++) {
                 var shop = shop_list[i];
                 shop.show_route_id = "shop-show-route-" + shop.id;
-                var shop_card_html = qweb.render("website_shops_map.eyekraft_shop_card", {
-                    widget: this,
-                    shop: shop,
-                    adminMode: adminMode
-                });
+                // Render the "Shop Card" Template
+                var shop_card_html = qweb.render(
+                    "website_shops_map.eyekraft_shop_card", {
+                        widget: this,
+                        shop: shop,
+                        adminMode: adminMode
+                    }
+                );
                 var shop_card = document.createElement("div");
                 shop_card.innerHTML = shop_card_html;
                 shop_card = shop_card.childNodes[1];
@@ -624,6 +630,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
             var self = this;
             var contents = this.$el[0].querySelector(".eyekraft-geocoded-address");
             contents.innerHTML = "";
+            // Render the "Shop List Client Address" Template
             var address_html = qweb.render(
                 "website_shops_map.eyekraft_shop_list_client_address", {
                     widget: this,
@@ -667,7 +674,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
 
             $("#eyekraft-shop-list-refresh")
                 .click(function (event) {
-                    $("#eyekraft-shop-list-user-geoloc-text").html(_t("determined..."));
+                    $("#eyekraft-shop-list-user-geoloc-text").html(_t("determined...") + " <span class='fa fa-refresh fa-spin ml8'/>");
                     self.get_lat_lng(Forced)
                         .then(function () {
                         self.get_client_address().then(function () {
@@ -748,9 +755,11 @@ odoo.define("website_shops_map.shop_list", function (require) {
 
             for (var i = 0, len = shop_list.length; i < len; i++) {
                 var shop = shop_list[i];
+                // Let's create a label
                 shop_list[i].placemark = new ymaps.Placemark(
                     [shop.partner_latitude, shop.partner_longitude],
                     {
+                        // Render the "Shop Map Balloon" Template
                         balloonContent: qweb.render(
                             "website_shops_map.eyekraft_shop_map_balloon", {
                                 widget: this,
@@ -760,18 +769,24 @@ odoo.define("website_shops_map.shop_list", function (require) {
                         )
                     },
                     {
+                        // Disable the balloon close button
                         balloonCloseButton: false,
+                        // We will open and close the balloon by clicking on the label icon
                         hideIconOnBalloonOpen: false
                     }
                 );
+                // Adding the route to the map
                 this.map.geoObjects.add(shop_list[i].placemark);
                 shop.show_on_map_id = "shop-show-on-map-" + shop.id;
+
+                // Render the "Shop Card Map" Template
                 var shop_card_html = qweb.render(
                     "website_shops_map.eyekraft_shop_card_map", {
                         widget: this,
                         shop: shop
                     }
                 );
+
                 var shop_card = document.createElement("div");
                 shop_card.innerHTML = shop_card_html;
                 shop_card = shop_card.childNodes[1];
@@ -779,6 +794,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 $("#" + shop.show_on_map_id).click(function (event) {
                     var lat = parseFloat(event.currentTarget.attributes.lat.value);
                     var lng = parseFloat(event.currentTarget.attributes.lng.value);
+                    // Sets the center of the map
                     self.map.setCenter([lat, lng], 16, { checkZoomRange: true });
                     $("html, body").animate({
                         scrollTop: $("#map-container-vertical").offset().top
@@ -810,12 +826,18 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     }
                 }
 
+                // Class for creating and managing a map
                 this.map = new ymaps.Map("map-container-vertical", {
+                    // Center of the map
                     center: center,
+                    // The map will be created with controls
                     controls: ['largeMapDefaultSet'],
+                    // Scale factor
                     zoom: this.scale
                 });
+                // Map scale control
                 this.map.controls.add(new ymaps.control.ZoomControl());
+                // Route editor control
                 this.map.controls.add(new ymaps.control.RouteEditor());
                 this.render_client_placemark();
             }
@@ -828,12 +850,18 @@ odoo.define("website_shops_map.shop_list", function (require) {
          */
         render_own_big_map: function (shop) {
             var center = [shop.partner_latitude, shop.partner_longitude];
+            // Class for creating and managing a map
             this.map = new ymaps.Map("own-map-container-vertical", {
+                // Center of the map
                 center: center,
+                // The map will be created with controls
                 controls: ['largeMapDefaultSet'],
+                // Scale factor
                 zoom: 14
             });
+            // Map scale control
             this.map.controls.add(new ymaps.control.ZoomControl());
+            // Route editor control
             this.map.controls.add(new ymaps.control.RouteEditor());
         },
 
@@ -844,16 +872,20 @@ odoo.define("website_shops_map.shop_list", function (require) {
          */
         render_client_placemark: function () {
             if (this.show_client && this.map && this.latitude && this.longitude) {
+                // Let's create a label
                 this.client_placemark = new ymaps.Placemark(
                     [this.latitude, this.longitude], {
                         balloonContentHeader: _t("You are here"),
                         balloonContentBody: "",
                         area: ""
                     }, {
+                        // Set a balloon without content
                         preset: "twirl#redIcon"
                     }
                 );
+                // Adding the route to the map
                 this.map.geoObjects.add(this.client_placemark);
+                // Sets the center of the map
                 this.map.setCenter([this.latitude, this.longitude]);
             }
         },
@@ -869,39 +901,56 @@ odoo.define("website_shops_map.shop_list", function (require) {
             if (this.map) {
                 if (this.latitude && this.longitude) {
                     var self = this;
+                    // Building a route from customer location to shop localization
                     ymaps
                         .route(
                             [
                                 {
+                                    // The 'wayPoint' value is point through which you want to pass without stopping
                                     type: "wayPoint",
+                                    // Array of point coordinates, or its address as a string
                                     point: [this.latitude, this.longitude]
                                 },
                                 {
+                                    // The 'wayPoint' value is point through which you want to pass without stopping
                                     type: "wayPoint",
+                                    // Array of point coordinates, or its address as a string
                                     point: [shop.partner_latitude, shop.partner_longitude]
                                 }
                             ],
+                            // A flag that allows you to automatically set the center and zoom factor
+                            // of the map so that the constructed route is visible in its entirety
                             { mapStateAutoApply: true }
                         )
                         .then(function (route) {
                             self.route = route;
+                            // Returns is a collection of paths that make up the route.
                             var points = self.route.getWayPoints();
+                            // Set the current customer location
                             points.get(0).properties.set("balloonContentHeader", _t('Are you here'));
+                            // Set the destination store location
                             points.get(0).properties.set("balloonContent", self.full_client_address);
+                            // Set a balloon without content
                             points.get(0).options.set("preset", "twirl#redIcon");
+                            // Render the "Shop Map Balloon" Template
                             points.get(1).properties.set("balloonContent", qweb.render(
                                 "website_shops_map.eyekraft_shop_map_balloon", {
                                     widget: this,
                                     shop: shop
                                 }
                             ));
+                            // Returns the collection of paths that make up the route.
                             self.route.getPaths().options.set({
+                                // The balloon only shows information about the travel time with traffic
                                 balloonContentBodyLayout: ymaps.templateLayoutFactory.createClass(_t("Travel time: approx.") + " " + self.route.getHumanTime()),
+                                // Set a custom opacity of the appearance for lines of the route
                                 opacity: 0.9
                             });
+                            // Adding the route to the map
                             self.map.geoObjects.add(self.route);
                         });
                 } else {
+                    // Sets the center of the map
                     this.map.setCenter([shop.partner_latitude, shop.partner_longitude]);
                 }
             }
@@ -921,10 +970,13 @@ odoo.define("website_shops_map.shop_list", function (require) {
             contents.innerHTML = "";
             var val = [];
             for (var i = 0, len = this.properties.length; i < len; i++) {
-                var option_html = qweb.render("website_shops_map.eyekraft_shop_map_props_option", {
-                    widget: this,
-                    option: this.properties[i].name
-                });
+                // Render the "Shop Map Properties Option" Template
+                var option_html = qweb.render(
+                    "website_shops_map.eyekraft_shop_map_props_option", {
+                        widget: this,
+                        option: this.properties[i].name
+                    }
+                );
                 var option = document.createElement("div");
                 option.innerHTML = option_html;
                 option = option.childNodes[1];
@@ -974,11 +1026,16 @@ odoo.define("website_shops_map.shop_list", function (require) {
                         dataType: "json"
                     }).then(function (result) {
                         if (query) {
+                            // Set a collection of geo objects
                             result = result.response.GeoObjectCollection;
+                            // Additional geo object meta-data with information about the request and the number of toponyms found
                             if (query.length > 2 && result.metaDataProperty.GeocoderResponseMetaData["found"] > 0) {
+                                // featureMember, container for placing a single geo object or a group of geo objects
                                 for (var i = 0; i < result.featureMember.length; i++) {
+                                    // Set the detailed information about the toponym found
                                     var place = result.featureMember[i].GeoObject.metaDataProperty.GeocoderMetaData;
-                                    if ((['RU','KZ'].indexOf(place.Address.country_code) != -1) && place.kind == 'locality') { // LEO
+                                    // If country code and place kind is locality
+                                    if ((['RU','KZ'].indexOf(place.Address.country_code) != -1) && place.kind == 'locality') {
                                         var lat_lng = result.featureMember[i].GeoObject.Point.pos.split(" ");
                                         var templatitude = self.latitude;
                                         var templongitude = self.longitude;
@@ -1074,10 +1131,13 @@ odoo.define("website_shops_map.shop_list", function (require) {
                                 }
 
                                 shop.own_show_route_id = "shop-show-route-" + shop.id + "-own";
-                                var shop_own_page_html = qweb.render("website_shops_map.eyekraft_shop_own_page", {
-                                    widget: self,
-                                    shop: shop
-                                });
+                                // Render the "Shop Map Own Page" Template
+                                var shop_own_page_html = qweb.render(
+                                    "website_shops_map.eyekraft_shop_own_page", {
+                                        widget: self,
+                                        shop: shop
+                                    }
+                                );
                                 var shop_own_page = document.createElement("div");
                                 shop_own_page.innerHTML = shop_own_page_html;
                                 shop_own_page = shop_own_page.childNodes[1];
