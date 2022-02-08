@@ -76,11 +76,10 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 var array_query = query.split(",").map(String);
                 // search in address fields if query is not а number
                 if (isNaN(Number(array_query[0]))) {
-                    var result = (
+                    var result =
                         value.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
                         value.full_address.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
-                        value.metro_station.toLowerCase().indexOf(query.toLowerCase()) !== -1
-                    );
+                        value.metro_station.toLowerCase().indexOf(query.toLowerCase()) !== -1;
                 } else {
                     // search in shop number field if query is a number or array of numbers
                     adminMode = true;
@@ -175,7 +174,9 @@ odoo.define("website_shops_map.shop_list", function (require) {
         on_map_tab: false,
         show_route: false,
         show_own_shop_route: false,
+        // Latitude
         latitude: 0.0,
+        // Longitude
         longitude: 0.0,
         full_client_address: _t("Not defined"),
         properties_selector: false,
@@ -280,7 +281,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
         get_client_address: function () {
             var deferred = $.Deferred();
             var self = this;
-            console.log("ShopsMap GeoLocation: latitude " + self.latitude + " longitude " + self.longitude);
+            console.log("ShopsMap GeoLocation: latitude " + self.latitude + " and longitude " + self.longitude);
             var url = "https://geocode-maps.yandex.ru/1.x/?geocode=" + self.longitude + ", " + self.latitude + "&format=json";
             console.log("ShopsMap GeoLocation: Retrieving client address...");
             $.ajax({
@@ -288,7 +289,9 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 dataType: "json",
                 timeout: 10000
             }).then(function (result) {
+                console.log("ShopsMap GeoLocation: Result success response: " + result.response);
                 result = result.response;
+                console.log(result);
                 if (result.GeoObjectCollection && result.GeoObjectCollection.featureMember) {
                     self.full_client_address = result.GeoObjectCollection.featureMember[0].GeoObject.description +
                                                ", " + result.GeoObjectCollection.featureMember[0].GeoObject.name
@@ -299,9 +302,10 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     deferred.reject();
                 }
             }).fail(function (result) {
-                self.full_client_address = _t("Address determination error");
                 console.log("ShopsMap GeoLocarion: Error retrieving client address from gecode-maps.yandex.ru");
+                console.log("ShopsMap GeoLocation: Result fail response: " + result.response);
                 console.log(result);
+                self.full_client_address = _t("Address determination error");
                 deferred.reject();
             });
             return deferred;
