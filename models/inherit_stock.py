@@ -91,7 +91,7 @@ class stock_warehouse(models.Model):
                 values['date_localization'] = datetime.today().strftime('%Y-%m-%d')
             # assign first shop photo as shop partner avatar image
             if self.shop_id.image_ids:
-                values['image'] = self.shop_id.image_ids[0].image_medium
+                values['image'] = self.shop_id.image_ids[0].image_1920
             else:
                 # assign company logo as shop partner avatar image
                 if self.partner_id:

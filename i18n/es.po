@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-01 16:02+0000\n"
-"PO-Revision-Date: 2022-02-01 12:07-0400\n"
+"POT-Creation-Date: 2022-02-08 08:52+0000\n"
+"PO-Revision-Date: 2022-02-08 05:01-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -556,6 +556,7 @@ msgstr "Dirección completa"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_latitude
+#: model:ir.model.fields,field_description:website_shops_map.field_res_partner__partner_latitude
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__partner_latitude
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__partner_latitude
 msgid "Geo Latitude"
@@ -563,6 +564,7 @@ msgstr "Latitud geográfica"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_longitude
+#: model:ir.model.fields,field_description:website_shops_map.field_res_partner__partner_longitude
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__partner_longitude
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__partner_longitude
 msgid "Geo Longitude"
@@ -570,6 +572,7 @@ msgstr "Longitud geográfica"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__date_localization
+#: model:ir.model.fields,field_description:website_shops_map.field_res_partner__date_localization
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__date_localization
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__date_localization
 msgid "Geolocation Date"
@@ -801,7 +804,7 @@ msgid ""
 msgstr ""
 "Última vez que se realizó la conciliación de facturas y pagos para este "
 "socio. Se establece si no hay al menos un débito y un crédito sin conciliar "
-"o si hace clic en el botón \"Hecho\""
+"o si hace clic en el botón \"Hecho\"."
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__last_time_entries_checked
@@ -1034,6 +1037,14 @@ msgstr "Socio"
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__contract_ids
 msgid "Partner Contracts"
 msgstr "Contratos de socios"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image
+#: model:ir.model.fields,field_description:website_shops_map.field_res_partner__image
+#: model:ir.model.fields,field_description:website_shops_map.field_res_users__image
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__image
+msgid "Partner Image"
+msgstr "Imagen de socio"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__same_vat_partner_id
@@ -1524,6 +1535,18 @@ msgstr ""
 "cobrar para el socio actual"
 
 #. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__image
+#: model:ir.model.fields,help:website_shops_map.field_res_partner__image
+#: model:ir.model.fields,help:website_shops_map.field_res_users__image
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__image
+msgid ""
+"This field holds the image used as photo for this partner shop, limited to "
+"1024x1024px"
+msgstr ""
+"Este campo contiene la imagen utilizada como foto para esta tienda asociada, "
+"limitada a 1024x1024px"
+
+#. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__email_normalized
 msgid ""
 "This field is used to search on email address as the primary email field can"
@@ -1751,9 +1774,12 @@ msgid ""
 "If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
 "Anywhere else, time values are computed according to the time offset of your web client."
 msgstr ""
-"Al imprimir documentos y exportar/importar datos, los valores de tiempo se calculan de acuerdo con esta zona horaria.\n"
-"Si la zona horaria no está configurada, se usa UTC (Tiempo universal coordinado).\n"
-"En cualquier otro lugar, los valores de tiempo se calculan de acuerdo con la compensación de tiempo de su cliente web."
+"Al imprimir documentos y exportar/importar datos, los valores de tiempo se "
+"calculan de acuerdo con esta zona horaria.\n"
+"Si la zona horaria no está configurada, se usa UTC (Tiempo universal "
+"coordinado).\n"
+"En cualquier otro lugar, los valores de tiempo se calculan de acuerdo con la "
+"compensación de tiempo de su cliente web."
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__widget_id

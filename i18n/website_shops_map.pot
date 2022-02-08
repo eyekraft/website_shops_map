@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-01 16:02+0000\n"
-"PO-Revision-Date: 2022-02-01 16:02+0000\n"
+"POT-Creation-Date: 2022-02-08 08:52+0000\n"
+"PO-Revision-Date: 2022-02-08 08:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1000,6 +1000,14 @@ msgid "Partner Contracts"
 msgstr ""
 
 #. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image
+#: model:ir.model.fields,field_description:website_shops_map.field_res_partner__image
+#: model:ir.model.fields,field_description:website_shops_map.field_res_users__image
+#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__image
+msgid "Partner Image"
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__same_vat_partner_id
 msgid "Partner with same Tax ID"
 msgstr ""
@@ -1462,6 +1470,16 @@ msgstr ""
 msgid ""
 "This account will be used instead of the default one as the receivable "
 "account for the current partner"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__image
+#: model:ir.model.fields,help:website_shops_map.field_res_partner__image
+#: model:ir.model.fields,help:website_shops_map.field_res_users__image
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__image
+msgid ""
+"This field holds the image used as photo for this partner shop, limited to "
+"1024x1024px"
 msgstr ""
 
 #. module: website_shops_map
