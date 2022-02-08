@@ -13,4 +13,4 @@ class ResPartner(models.Model):
     partner_longitude = fields.Float(string='Geo Longitude', digits=(16, 5))
     date_localization = fields.Date(string='Geolocation Date')
     image = fields.Binary(string="Partner Image", attachment=True,
-        help="This field holds the image used as avatar for this partner, limited to 1024x1024px",)
+        help="This field holds the image used as photo for this partner shop, limited to 1024x1024px",)
