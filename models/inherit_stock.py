@@ -128,7 +128,7 @@ class stock_warehouse(models.Model):
     shop_id = fields.Many2one(
         "eyekraft.shop",
         string="Shop",
-        required=False,
+        required=True,
         ondelete="cascade",
     )
 
