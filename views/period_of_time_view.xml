@@ -30,7 +30,7 @@
     <!-- "Period of time" menu item -->
     <menuitem id="period_of_time_menu"
         action="period_of_time_action"
-        parent="sales_team.menu_sale_config"
+        parent="website_shops_map.menu_shop_config"
         name="Periods of Time"
         sequence="110" />
 </odoo>

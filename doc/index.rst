@@ -20,7 +20,7 @@ Configuration
 
 To register Odoo database as shop list source you need to generate local API-key.
 
-* Open menu ``Settings --> API Settings --> Shop API Users``.
+* Open menu ``Inventory --> Warehouse Management --> API Settings --> Shop API Users``.
 
 * Enter URL to current database and get you API-key on pushing saving button.
 
@@ -32,7 +32,7 @@ Usage
 
 You need to have Manager Access Rights for Inventory module to work with shops.
 
-* Open menu ``Settings --> Inventory --> Almacén -->`` `Multi-Warehouses <https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html>`_ to manage multiple warehouses.
+* Open menu ``Settings --> Inventory --> Warehouse -->`` `Multi-Warehouses <https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html>`_ to manage multiple warehouses.
 
 * Open menu ``Inventory --> Warehouse Management -->`` `Warehouses <https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses.html>`_.
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-09 18:17+0000\n"
-"PO-Revision-Date: 2022-02-09 14:24-0400\n"
+"POT-Creation-Date: 2022-02-09 22:23+0000\n"
+"PO-Revision-Date: 2022-02-09 18:29-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -1280,6 +1280,11 @@ msgid "Shop List Url"
 msgstr "URL de lista de la tienda"
 
 #. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.menu_shop_config
+msgid "Shop Management"
+msgstr "Gestión de de la tienda"
+
+#. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.shop_properties_action
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_shop_property_view_tree
 msgid "Shop Properties"
@@ -1548,8 +1553,8 @@ msgid ""
 "This field holds the image used as photo for this partner shop, limited to "
 "1024x1024px"
 msgstr ""
-"Este campo contiene la imagen utilizada como foto para esta tienda asociada, "
-"limitada a 1024x1024px"
+"Este campo contiene la imagen utilizada como foto para esta tienda asociada,"
+" limitada a 1024x1024px"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__email_normalized

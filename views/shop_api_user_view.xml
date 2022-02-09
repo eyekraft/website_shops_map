@@ -23,8 +23,9 @@
 
     <!-- "Shop API Users" menu item -->
     <menuitem id="menu_api_settings_administration"
-        parent="base.menu_administration"
-        name="API Settings"/>
+        parent="stock.menu_stock_config_settings"
+        name="API Settings"
+        sequence="6" />
     <menuitem id="shop_api_users_menu"
         action="shop_api_users_action"
         parent="menu_api_settings_administration"

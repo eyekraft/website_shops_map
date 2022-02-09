@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-09 18:16+0000\n"
-"PO-Revision-Date: 2022-02-09 18:16+0000\n"
+"POT-Creation-Date: 2022-02-09 22:23+0000\n"
+"PO-Revision-Date: 2022-02-09 22:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1233,6 +1233,11 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__shop_list_url
 msgid "Shop List Url"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.menu_shop_config
+msgid "Shop Management"
 msgstr ""
 
 #. module: website_shops_map

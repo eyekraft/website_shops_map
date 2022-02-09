@@ -102,4 +102,10 @@
             </xpath>
         </field>
     </record>
+
+    <!-- "Shop Management" menu root item -->
+    <menuitem id="menu_shop_config"
+        name="Shop Management"
+        parent="stock.menu_stock_config_settings"
+        sequence="4" />
 </odoo>

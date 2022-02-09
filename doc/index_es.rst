@@ -20,7 +20,7 @@ Configuración
 
 Para registrar la base de datos de Odoo como fuente de lista de tienda, debe generar una clave API local.
 
-* Abrir el menú ``Ajustes --> Configuración de API --> Usuarios de API de la tienda``.
+* Abrir el menú ``Inventario --> Gestión de almacén --> Configuración de API --> Usuarios de API de la tienda``.
 
 * Ingrese la ``URL`` a la base de datos actual y obtenga su ``clave API`` al presionar el botón ``Guardar``.
 

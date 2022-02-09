@@ -29,16 +29,14 @@
 
     <!-- "Shop map cache" menu items -->
     <menuitem id="shop_map_cache_root"
-        parent="website.menu_website_configuration"
+        parent="stock.menu_stock_config_settings"
         name="Shop map"
-        sequence="1"
-    />
+        sequence="5" />
 
     <menuitem id="shop_map_cache_menu"
         action="shop_map_cache_action"
         parent="shop_map_cache_root"
         name="Shop map cache"
-        sequence="100"
-    />
+        sequence="100" />
 
 </odoo>
