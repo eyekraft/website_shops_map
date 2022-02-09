@@ -19,6 +19,7 @@ class stock_warehouse(models.Model):
         if not self.full_address:
             return 0,0
             if 'geopy' in sys.modules:
+                # Geocoder using the Yandex Maps API.
                 geolocator = geocoders.Yandex()
 
                 # https://geopy.readthedocs.io/en/latest/index.html#geopy.geocoders.Yandex.geocode
@@ -40,7 +41,9 @@ class stock_warehouse(models.Model):
                     language="en_RU"
 
                 for i in xrange(10):
+                    # Do the geocoding
                     try:
+                        # Return a location point by address using Yandex geocoder.
                         location = geolocator.geocode(query=self.full_address, timeout=10, lang=language)
                         break
                     except exc.GeocoderTimedOut as e:
@@ -131,4 +134,3 @@ class stock_warehouse(models.Model):
         required=True,
         ondelete="cascade",
     )
-

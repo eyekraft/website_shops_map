@@ -10,7 +10,7 @@ class shop_list_config(models.Model):
     shop_list_url = fields.Char(string="Shop List Url")
     shop_list_params = fields.Char(string="Shop List Paramters")
     widget_id = fields.Char(string="Widget ID")
-    
+
     @api.model
     def get_sorces_for_widget(self, widget_id):
         sources = self.search([('widget_id', '=', widget_id)])

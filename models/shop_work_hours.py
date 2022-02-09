@@ -8,6 +8,7 @@ class eyecraft_work_days(models.Model):
     _name = "eyecraft.work.days"
     _description = "Shops Work Hours"
 
+    # Model Fields
     name = fields.Char("Work days")
 
 
@@ -19,7 +20,7 @@ class paeriod_of_time(models.Model):
         (
             'start_end_time_check',
             'check (start_time<end_time)',
-            'End of period can\'t be less than or equal to start of period!'
+            "End of period can't be less than or equal to start of period!"
         ),
     ]
 
