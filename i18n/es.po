@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-08 08:52+0000\n"
-"PO-Revision-Date: 2022-02-08 05:01-0400\n"
+"POT-Creation-Date: 2022-02-09 18:17+0000\n"
+"PO-Revision-Date: 2022-02-09 14:24-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -21,28 +21,28 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-clock-o\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Opening hours:</b>"
+"                            <b>Opening hours:</b>"
 msgstr ""
 "<i class=\"fa fa-clock-o\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Horario de apertura:</b>"
+"                            <b>Horario de apertura:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-commenting \" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Comment:</b>"
+"                            <b>Comment:</b>"
 msgstr ""
 "<i class=\"fa fa-commenting \" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Comentario:</b>"
+"                            <b>Comentario:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-envelope\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Email:</b>"
+"                            <b>Email:</b>"
 msgstr ""
 "<i class=\"fa fa-envelope\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Correo electrónico:</b>"
+"                            <b>Correo electrónico:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_options
@@ -63,19 +63,19 @@ msgstr "<i class=\"fa fa-fw fa-map\"/> Pestaña Mapa"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-map-marker\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Address:</b>"
+"                            <b>Address:</b>"
 msgstr ""
 "<i class=\"fa fa-map-marker\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Dirección:</b>"
+"                            <b>Dirección:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-phone\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Phone:</b>"
+"                            <b>Phone:</b>"
 msgstr ""
 "<i class=\"fa fa-phone\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Teléfono:</b>"
+"                            <b>Teléfono:</b>"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__api_key
@@ -714,6 +714,11 @@ msgstr "Facturas"
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_is_follower
 msgid "Is Follower"
 msgstr "Es seguidor"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
+msgid "Is Public Shop"
+msgstr "Es tienda pública"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_published

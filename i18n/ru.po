@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-08 08:52+0000\n"
-"PO-Revision-Date: 2022-02-08 08:52+0000\n"
+"POT-Creation-Date: 2022-02-09 18:16+0000\n"
+"PO-Revision-Date: 2022-02-09 18:16+0000\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "Language: ru\n"
@@ -22,28 +22,28 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-clock-o\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Opening hours:</b>"
+"                            <b>Opening hours:</b>"
 msgstr ""
 "<i class=\"fa fa-clock-o\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Часы работы:</b>"
+"                            <b>Часы работы:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-commenting \" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Comment:</b>"
+"                            <b>Comment:</b>"
 msgstr ""
 "<i class=\"fa fa-commenting \" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Комментарий:</b>"
+"                            <b>Комментарий:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-envelope\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Email:</b>"
+"                            <b>Email:</b>"
 msgstr ""
 "<i class=\"fa fa-envelope\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Эл. почта:</b>"
+"                            <b>Эл. почта:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_options
@@ -64,19 +64,19 @@ msgstr "<i class=\"fa fa-fw fa-map\"/> Карта"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-map-marker\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Address:</b>"
+"                            <b>Address:</b>"
 msgstr ""
 "<i class=\"fa fa-map-marker\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Адрес:</b>"
+"                            <b>Адрес:</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid ""
 "<i class=\"fa fa-phone\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Phone:</b>"
+"                            <b>Phone:</b>"
 msgstr ""
 "<i class=\"fa fa-phone\" style=\"padding-right: 5px;\"/>\n"
-"                                <b>Телефон:</b>"
+"                            <b>Телефон:</b>"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__api_key
@@ -695,6 +695,11 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_is_follower
 msgid "Is Follower"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
+msgid "Is Public Shop"
 msgstr ""
 
 #. module: website_shops_map

@@ -7,7 +7,11 @@
         <field name="inherit_id" ref="stock.stock_warehouse_view_search"/>
         <field name="arch" type="xml">
             <search position="inside">
-                <field name="name" string="Shop name or code" filter_domain="['|',('name','ilike',self),('code','ilike',self)]"/>
+                <field name="name" string="Shop name or code"
+                    filter_domain="['|',('name', 'ilike', self),('code', 'ilike', self)]"/>
+                <separator/>
+                <filter string="Is Public Shop" name="public_shop" domain="[('public','=',True)]"/>
+                <separator/>
             </search>
         </field>
     </record>
