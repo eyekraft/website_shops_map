@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="view_shop_module" model="ir.ui.view">
-            <field name="name">view.shop.module</field>
-            <field name="model">ir.module.module</field>
-            <field name="inherit_id" ref="base.module_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='description_html']" position="replace">
-                    <div style="height:30px;"/>
-                    <notebook> 
-                        <page string="About">
-                            <field name="description_html" class="oe_styling_v8"/>
-                        </page>
-                        <page string="Instructions" attrs="{'invisible':[('name','!=','website_shops_map')]}">
-                           <field name="manual_html" class="oe_styling_v8"/>
-                        </page>
-                    </notebook>
-                </xpath>
-            </field>
-        </record>
-
-    </data>
+    <!-- "Instructions HTML manual" view -->
+    <record id="view_shop_module" model="ir.ui.view">
+        <field name="name">view.shop.module</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description_html']" position="replace">
+                <div style="height:30px;"/>
+                <notebook>
+                    <page string="About">
+                        <field name="description_html" class="oe_styling_v8"/>
+                    </page>
+                    <page string="Instructions" attrs="{'invisible':[('name','!=','website_shops_map')]}">
+                       <field name="manual_html" class="oe_styling_v8"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
 </odoo>

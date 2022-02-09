@@ -34,9 +34,44 @@ Live Demo
 Documentation
 =============
 
+This add-on have two kind of documentation as:
+
+
+User Instructions
+-----------------
+
+This documentation is about the **User Instructions** for use this add-on.
+You can access to it via:
+
+
+HTML version
+~~~~~~~~~~~~
+
+* Open menu ``Settings --> Apps --> Shops Map --> Instructions``.
+
+This documentation is available in other languages as *English*, *Russian*
+and *Spanish*, only that depending on the detected language it will show
+the supported language.
+
+
+Text version
+~~~~~~~~~~~~
+
 Checkout the available *English* documentation for this module `here <doc/index.rst>`_.
 
-Also this documentation is available in other languages as `Russian <doc/index_ru.rst>`_ and `Spanish <doc/index_es.rst>`_.
+Also this documentation is available in other languages as `Russian <doc/index_ru.rst>`_
+and `Spanish <doc/index_es.rst>`_.
+
+
+Javascript Widget
+-----------------
+
+This documentation is about the **Store List Widget** build it on Javascript.
+
+Checkout the available *English* `documentation <static/README.md>`_ for this module.
+
+Also this documentation is available in other languages as `Russian version <static/README_ru.md>`_
+and `Spanish version <static/README_es.md>`_.
 
 
 Tested
