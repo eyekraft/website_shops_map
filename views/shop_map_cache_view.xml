@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-         <record id="shop_map_cache_view_tree" model="ir.ui.view">
-            <field name="name">shop.map.cache.tree</field>
-            <field name="model">shop.map.cache</field>
-            <field name="arch" type="xml">
-                <tree string="Shop map cache" default_order="create_date desc" create="false">
-                    <field name="create_date" string="Date"/>
-                    <field name="latitude"/>
-                    <field name="longitude"/>
-                </tree>
-            </field>
-        </record>
+        <!-- "Shop map cache" tree view -->
+    <record id="shop_map_cache_view_tree" model="ir.ui.view">
+        <field name="name">shop.map.cache.tree</field>
+        <field name="model">shop.map.cache</field>
+        <field name="arch" type="xml">
+            <tree string="Shop map cache" default_order="create_date desc" create="false">
+                <field name="create_date" string="Date"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="shop_map_cache_action" model="ir.actions.act_window">
-            <field name="name">Shop map cache</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">shop.map.cache</field>
-            <field name="context">{'order':'create_date desc'}</field>
-            <field name="view_mode">tree</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent">
-                    No cached requests
-                </p>
-            </field>
-        </record>
+    <!-- "Shop map cache" ir.actions.act_window -->
+    <record id="shop_map_cache_action" model="ir.actions.act_window">
+        <field name="name">Shop map cache</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">shop.map.cache</field>
+        <field name="context">{'order':'create_date desc'}</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent">
+                No cached requests
+            </p>
+        </field>
+    </record>
 
-        <menuitem id="shop_map_cache_root"
-            parent="website.menu_website_configuration"
-            name="Shop map"
-            sequence="1"
-        />
+    <!-- "Shop map cache" menu items -->
+    <menuitem id="shop_map_cache_root"
+        parent="website.menu_website_configuration"
+        name="Shop map"
+        sequence="1"
+    />
 
-        <menuitem id="shop_map_cache_menu"
-            action="shop_map_cache_action"
-            parent="shop_map_cache_root"
-            name="Shop map cache"
-            sequence="100"
-        />
+    <menuitem id="shop_map_cache_menu"
+        action="shop_map_cache_action"
+        parent="shop_map_cache_root"
+        name="Shop map cache"
+        sequence="100"
+    />
 
-    </data>
 </odoo>

@@ -1,102 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-         <record id="view_warehouse_shop_search" model="ir.ui.view">
-            <field name="name">stock.warehouse</field>
-            <field name="model">stock.warehouse</field>
-            <field name="inherit_id" ref="stock.stock_warehouse_view_search"/>
-            <field name="arch" type="xml">
-                <search position="inside">
-                    <field name="name" string="Shop name or code" filter_domain="['|',('name','ilike',self),('code','ilike',self)]"/>
-                </search>
-            </field>
-        </record>
+    <!-- "Stock Warehouse for Public Shop" search filter domain view -->
+    <record id="view_warehouse_shop_search" model="ir.ui.view">
+        <field name="name">stock.warehouse</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.stock_warehouse_view_search"/>
+        <field name="arch" type="xml">
+            <search position="inside">
+                <field name="name" string="Shop name or code" filter_domain="['|',('name','ilike',self),('code','ilike',self)]"/>
+            </search>
+        </field>
+    </record>
 
-        <record id="view_warehouse" model="ir.ui.view">
-            <field name="name">stock.warehouse</field>
-            <field name="model">stock.warehouse</field>
-            <field name="inherit_id" ref="stock.view_warehouse"/>
-            <field name="arch" type="xml">
-                <label for="name"  position="before">
-                    <field name="public"/>
-                    <label for="public" class="mr16"/>
-                    <br/>
-                </label>
-                <notebook groups="stock.group_adv_location" position="attributes">
-                    <attribute name="groups"></attribute>
-                </notebook>
-                <xpath expr="//notebook" position="before">
-                    <notebook attrs="{'invisible': [('public', '=', False)]}">
-                        <page name="shop_info" string="Shop Info">
+    <!-- "Stock Warehouse for Public Shop" form view -->
+    <record id="view_warehouse" model="ir.ui.view">
+        <field name="name">stock.warehouse</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.view_warehouse"/>
+        <field name="arch" type="xml">
+            <label for="name"  position="before">
+                <field name="public"/>
+                <label for="public" class="mr16"/>
+                <br/>
+            </label>
+            <notebook groups="stock.group_adv_location" position="attributes">
+                <attribute name="groups"></attribute>
+            </notebook>
+            <xpath expr="//notebook" position="before">
+                <notebook attrs="{'invisible': [('public', '=', False)]}">
+                    <page name="shop_info" string="Shop Info">
+                        <group>
+                            <field name="properties_ids" widget="many2many_tags" placeholder="Properties"/>
+                        </group>
+                        <group>
                             <group>
-                                <field name="properties_ids" widget="many2many_tags" placeholder="Properties"/>
+                                <label for="metro_station" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="metro_station" placeholder="Metro station" />&amp;nbsp; 
+                                    <field name="street" placeholder="Street" />&amp;nbsp;
+                                    <field name="street2" placeholder="Mall" />&amp;nbsp;
+                                    <field name="city" placeholder="City" />&amp;nbsp;
+                                    <field name="state_id" placeholder="State"/>&amp;nbsp;
+                                    <field name="zip" placeholder="ZIP" />&amp;nbsp;
+                                    <field name="country_id" placeholder="Country" options='{"no_create": True}'/>
+                                </div>
+                                <field name="category_id" widget="many2many_tags" options="{'no_create_edit':True}"/>
                             </group>
                             <group>
-                                <group>
-                                    <label for="metro_station" string="Address"/>
-                                    <div class="o_address_format">
-                                        <field name="metro_station" placeholder="Metro station" />
-                                        <field name="street" placeholder="Street" />
-                                        <field name="street2" placeholder="Mall" />
-                                        <field name="city" placeholder="City" />
-                                        <field name="state_id" placeholder="State"/>
-                                        <field name="zip" placeholder="ZIP" />
-                                        <field name="country_id" placeholder="Country" options='{"no_create": True}'/>
-                                    </div>
-                                    <field name="category_id" widget="many2many_tags" options="{'no_create_edit':True}"/>
-                                </group>
-                                <group>
-                                    <field name="phone" widget="phone"/>
-                                    <field name="email" widget="email" />
-                                    <field name="partner_latitude" string="Latitude"/>
-                                    <field name="partner_longitude" string="Longitude"/>
-                                </group>
+                                <field name="phone" widget="phone"/>
+                                <field name="email" widget="email" />
+                                <field name="partner_latitude" string="Latitude"/>
+                                <field name="partner_longitude" string="Longitude"/>
                             </group>
-                            <field name="comment" placeholder="Comment..."/>
-                            <notebook>
-                                <page string="Work Hours" name="work_hours">
-                                    <field name="work_hours_ids">
-                                        <tree editable="bottom">
-                                            <field name="work_days_id"/>
-                                            <field name="period_ids" widget="many2many_tags"/>
-                                        </tree>
-                                    </field>
-                                </page>
-                                <page name="images" string="Images">
-                                    <field name="image_ids"
-                                        nolabel="1"
-                                        context="{
-                                            'default_owner_model': 'eyekraft.shop',
-                                            'default_owner_id': id,
-                                            'default_storage': 'db',
-                                        }"
-                                        mode="kanban">
-                                        <field name="file_db_store" widget="image"/>
-                                        <form>
-                                            <sheet>
+                        </group>
+                        <field name="comment" placeholder="Comment..."/>
+                        <notebook>
+                            <page string="Work Hours" name="work_hours">
+                                <field name="work_hours_ids">
+                                    <tree editable="bottom">
+                                        <field name="work_days_id"/>
+                                        <field name="period_ids" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="images" string="Images">
+                                <field name="image_ids"
+                                    nolabel="1"
+                                    context="{
+                                        'default_owner_model': 'eyekraft.shop',
+                                        'default_owner_id': id,
+                                        'default_storage': 'db',
+                                    }"
+                                    mode="kanban">
+                                    <field name="file_db_store" widget="image"/>
+                                    <form>
+                                        <sheet>
+                                            <group>
                                                 <group>
-                                                    <group>
-                                                        <field name="name"/>
-                                                        <field name="owner_model" invisible="1"/>
-                                                        <field name="owner_id" invisible="1"/>
-                                                        <field name="storage" invisible="1"/>
-                                                        <field name="filename" invisible="1"/>
-                                                        <field name="file_db_store"
-                                                               filename="filename"
-                                                               widget="image"/>
-                                                    </group>
+                                                    <field name="name"/>
+                                                    <field name="owner_model" invisible="1"/>
+                                                    <field name="owner_id" invisible="1"/>
+                                                    <field name="storage" invisible="1"/>
+                                                    <field name="filename" invisible="1"/>
+                                                    <field name="file_db_store"
+                                                           filename="filename"
+                                                           widget="image"/>
                                                 </group>
-                                            </sheet>
-                                        </form>
-                                    </field>
-                                </page>
-                            </notebook>
-                        </page>
-                    </notebook>
-                    <div style="height: 30px;"/>
-                </xpath>
-            </field>
-        </record>
-
-    </data>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </page>
+                </notebook>
+                <div style="height: 30px;"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

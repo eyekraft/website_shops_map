@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <menuitem id="menu_api_settings_administration" parent="base.menu_administration" name="API Settings"/>
+    <!-- "Shop API Users" tree view -->
+    <record id="shop_api_users_view_tree" model="ir.ui.view">
+        <field name="name">shop.api.user.tree</field>
+        <field name="model">shop.api.user</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <tree string="API Users" editable="bottom">
+                <field name="name"/>
+                <field name="api_key" readonly="1"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="shop_api_users_view_tree" model="ir.ui.view">
-            <field name="name">shop.api.user.tree</field>
-            <field name="model">shop.api.user</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="API Users" editable="bottom">
-                    <field name="name"/>
-                    <field name="api_key" readonly="1"/>
-                </tree>
-            </field>
-        </record>
+    <!-- "Shop API Users" ir.actions.act_window -->
+    <record id="shop_api_users_action" model="ir.actions.act_window">
+        <field name="name">Shop API Users</field>
+        <field name="res_model">shop.api.user</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="shop_api_users_view_tree" />
+    </record>
 
-        <record id="shop_api_users_action" model="ir.actions.act_window">
-            <field name="name">Shop API Users</field>
-            <field name="res_model">shop.api.user</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="shop_api_users_view_tree" />
-        </record>
-
-        <menuitem id="shop_api_users_menu"
-            action="shop_api_users_action"
-            parent="menu_api_settings_administration"
-            name="Shop API Users"
-        />
-
-    </data>
+    <!-- "Shop API Users" menu item -->
+    <menuitem id="menu_api_settings_administration"
+        parent="base.menu_administration"
+        name="API Settings"/>
+    <menuitem id="shop_api_users_menu"
+        action="shop_api_users_action"
+        parent="menu_api_settings_administration"
+        name="Shop API Users" />
 </odoo>
