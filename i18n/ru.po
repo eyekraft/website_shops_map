@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-09 22:23+0000\n"
-"PO-Revision-Date: 2022-02-09 22:23+0000\n"
+"POT-Creation-Date: 2022-02-10 00:54+0000\n"
+"PO-Revision-Date: 2022-02-10 00:54+0000\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "Language: ru\n"
@@ -17,6 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Virtaal 0.7.1\n"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__l10n_cl_sii_taxpayer_type
+msgid ""
+"1 - VAT Affected (1st Category) (Most of the cases)\n"
+"2 - Fees Receipt Issuer (Applies to suppliers who issue fees receipt)\n"
+"3 - End consumer (only receipts)\n"
+"4 - Foreigner"
+msgstr ""
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
@@ -220,6 +229,7 @@ msgstr ""
 
 #. module: website_shops_map
 #: model:base.automation,name:website_shops_map.shop_cache_erase_on_cr_rule
+#: model:base.automation,name:website_shops_map.shop_cache_erase_on_dl_rule
 #: model:ir.actions.server,name:website_shops_map.shop_cache_erase_on_cr_rule_ir_actions_server
 msgid "Call Shop Map Cache erasing on create"
 msgstr ""
@@ -251,10 +261,22 @@ msgid "Check this box if this contact is an Employee."
 msgstr ""
 
 #. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__country_enforce_cities
+msgid ""
+"Check this box to ensure every address created in that country has a 'City' "
+"chosen in the list of the country's cities."
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__city
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "City"
 msgstr "Город"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__city_id
+msgid "City of Address"
+msgstr ""
 
 #. module: website_shops_map
 #. openerp-web
@@ -467,6 +489,11 @@ msgid "End of period can't be less than or equal to start of period!"
 msgstr "Конец периода не может быть раньше начала периода!"
 
 #. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__country_enforce_cities
+msgid "Enforce Cities"
+msgstr ""
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
@@ -597,6 +624,21 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_exception_icon
 msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__vat
+msgid "Identification Number"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__vat
+msgid "Identification Number for selected type"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__l10n_latam_identification_type_id
+msgid "Identification Type"
 msgstr ""
 
 #. module: website_shops_map
@@ -751,11 +793,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property____last_update
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours____last_update
 msgid "Last Modified on"
-msgstr "Последний раз изменено"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__last_website_so_id
-msgid "Last Online Sales Order"
 msgstr ""
 
 #. module: website_shops_map
@@ -1121,11 +1158,6 @@ msgid "Restrict publishing to this website."
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_seo_optimized
-msgid "SEO optimized"
-msgstr ""
-
-#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
@@ -1439,15 +1471,8 @@ msgid "Tags"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__vat
-msgid "Tax ID"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__vat
-msgid ""
-"The Tax Identification Number. Complete it if the contact is subjected to "
-"government taxes. Used in some legal statements."
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__l10n_cl_sii_taxpayer_type
+msgid "Taxpayer Type"
 msgstr ""
 
 #. module: website_shops_map
@@ -1483,6 +1508,11 @@ msgstr ""
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_stock_supplier
 msgid ""
 "The stock location used as source when receiving goods from this contact."
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__l10n_latam_identification_type_id
+msgid "The type of identification"
 msgstr ""
 
 #. module: website_shops_map
@@ -1677,16 +1707,6 @@ msgid "Website Messages"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_description
-msgid "Website Partner Full Description"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_short_description
-msgid "Website Partner Short Description"
-msgstr ""
-
-#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_url
 msgid "Website URL"
 msgstr ""
@@ -1694,26 +1714,6 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_message_ids
 msgid "Website communication history"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_description
-msgid "Website meta description"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_keywords
-msgid "Website meta keywords"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_title
-msgid "Website meta title"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_og_img
-msgid "Website opengraph image"
 msgstr ""
 
 #. module: website_shops_map

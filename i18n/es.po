@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-09 22:23+0000\n"
-"PO-Revision-Date: 2022-02-09 18:29-0400\n"
+"POT-Creation-Date: 2022-02-10 00:55+0000\n"
+"PO-Revision-Date: 2022-02-09 21:00-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -16,6 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.1\n"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__l10n_cl_sii_taxpayer_type
+msgid ""
+"1 - VAT Affected (1st Category) (Most of the cases)\n"
+"2 - Fees Receipt Issuer (Applies to suppliers who issue fees receipt)\n"
+"3 - End consumer (only receipts)\n"
+"4 - Foreigner"
+msgstr ""
+"1 - IVA Afectado (1ª Categoría) (La mayoría de los casos)\n"
+"2 - Emisor de Recibo de Tarifas (Aplica a proveedores que emiten recibo de "
+"tarifas)\n"
+"3 - Consumidor final (solo recibos)\n"
+"4 - Extranjero"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
@@ -222,6 +236,7 @@ msgstr ""
 
 #. module: website_shops_map
 #: model:base.automation,name:website_shops_map.shop_cache_erase_on_cr_rule
+#: model:base.automation,name:website_shops_map.shop_cache_erase_on_dl_rule
 #: model:ir.actions.server,name:website_shops_map.shop_cache_erase_on_cr_rule_ir_actions_server
 msgid "Call Shop Map Cache erasing on create"
 msgstr "Borrar la memoria caché del mapa de la tienda al crear una tienda"
@@ -254,10 +269,24 @@ msgid "Check this box if this contact is an Employee."
 msgstr "Marque esta casilla si este contacto es un empleado."
 
 #. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__country_enforce_cities
+msgid ""
+"Check this box to ensure every address created in that country has a 'City' "
+"chosen in the list of the country's cities."
+msgstr ""
+"Marque esta casilla para asegurarse de que cada dirección creada en ese país "
+"tenga una 'Ciudad' elegida en la lista de ciudades del país."
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__city
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "City"
 msgstr "Ciudad"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__city_id
+msgid "City of Address"
+msgstr "Ciudad de dirección"
 
 #. module: website_shops_map
 #. openerp-web
@@ -475,6 +504,11 @@ msgstr ""
 "¡El final del período no puede ser menor o igual que el inicio del período!"
 
 #. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__country_enforce_cities
+msgid "Enforce Cities"
+msgstr "Forzar ciudades"
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
@@ -609,6 +643,21 @@ msgstr "Icono"
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr "Icono para indicar una actividad de excepción."
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__vat
+msgid "Identification Number"
+msgstr "Número de identificación"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__vat
+msgid "Identification Number for selected type"
+msgstr "Número de identificación para el tipo seleccionado"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__l10n_latam_identification_type_id
+msgid "Identification Type"
+msgstr "Tipo de identificación"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_needaction
@@ -770,11 +819,6 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__last_website_so_id
-msgid "Last Online Sales Order"
-msgstr "Último pedido de venta en línea"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__write_uid
@@ -1145,11 +1189,6 @@ msgid "Restrict publishing to this website."
 msgstr "Restringir la publicación a este sitio web."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_seo_optimized
-msgid "SEO optimized"
-msgstr "SEO optimizado"
-
-#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "Error de entrega de SMS"
@@ -1470,18 +1509,9 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__vat
-msgid "Tax ID"
-msgstr "ID del impuesto"
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__vat
-msgid ""
-"The Tax Identification Number. Complete it if the contact is subjected to "
-"government taxes. Used in some legal statements."
-msgstr ""
-"El Número de Identificación Fiscal. Complételo si el contacto está sujeto a "
-"impuestos gubernamentales. Se utiliza en algunas declaraciones legales."
+#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__l10n_cl_sii_taxpayer_type
+msgid "Taxpayer Type"
+msgstr "Tipo de contribuyente"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_account_position_id
@@ -1525,6 +1555,11 @@ msgid ""
 msgstr ""
 "La ubicación de stock utilizada como fuente al recibir mercancías de este "
 "contacto."
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__l10n_latam_identification_type_id
+msgid "The type of identification"
+msgstr "El tipo de identificación"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_account_payable_id
@@ -1733,16 +1768,6 @@ msgid "Website Messages"
 msgstr "Mensajes de sitio web"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_description
-msgid "Website Partner Full Description"
-msgstr "Descripción completa de socio del sitio web"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_short_description
-msgid "Website Partner Short Description"
-msgstr "Descripción corta de socio del sitio web"
-
-#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_url
 msgid "Website URL"
 msgstr "URL del sitio web"
@@ -1751,26 +1776,6 @@ msgstr "URL del sitio web"
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del sitio web"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_description
-msgid "Website meta description"
-msgstr "Meta descripción del sitio web"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_keywords
-msgid "Website meta keywords"
-msgstr "Metapalabras clave del sitio web"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_title
-msgid "Website meta title"
-msgstr "Metatítulo del sitio web"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_meta_og_img
-msgid "Website opengraph image"
-msgstr "Imagen de Opengraph del sitio web"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__work_days_id
