@@ -5,7 +5,7 @@
 <section class="oe_container">
     <div class="oe_spaced">
         <div class="col-md-12">
-            <h4 class="oe_slogan" style="color:#428bca; text-align: center;">The order of creating store</h4>
+            <h4 class="oe_slogan" style="color:#428bca; text-align: center;">The order of creating shop</h4>
 	  </div>
         <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt32">
@@ -15,49 +15,71 @@
                 <img src="/website_shops_map/static/description/scr_man_3.jpg"/>
            </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <p class="oe_mt32">1. Open menu Inventory/Warehouse management/Warehouses.</p>
-            <p class="oe_mt32">2. Create new warehouse:
+            <p class="oe_mt32">2. Create a new warehouse:
             <ul>
              <li>check "Shop" checkbox to assign warehouse as public shop</li>
-             <li>specify the name of the shop</li>
-             <li>specify the short name of the shop</li>
-             <li>specify city where shop is located in the field "City"</li>
-             <li>specify address of the shop in the field "Street"</li>
-             <li>specify the name of the mall in the field "Mall" if any</li>
-             <li>specify the name of the subway station if any</li>
-             <li>select properties for shop (properties must be pre-filled - see below)</li>
-             <li>enter opening days in format of your own (ex. «mo-fr», «Saturday»), or select option filled earlier</li>
-             <li>enter opening hours, or select option filled earlier</li>
-             <li>load images for the shop to display on shop page, if any</li>
+             <li>specify the name of the shop (used to display on the shop map with the "Shop List Snippet")</li>
+             <li>specify a short name of the shop (arbitrary alphanumeric designation)</li>
+             <li>specify the name of city where shop is located in the field "City"</li>
+             <li>specify address of the shop as the street, building number and building name in the field "Street" field</li>
+             <li>specify the name of the mall in the field "Mall", if necessary</li>
+             <li>specify the name of the subway station in the "Metro" field, if necessary</li>
+             <li>select the services available in the shop in the "Properties" field (services must be pre-configured - see below)</li>
+             <li>add a shop hours entry</li>
+             <li>enter opening days in format of your own (ex. «Mon-Fri», «Saturday»), or select previously entered days from the list</li>
+             <li>enter opening hours and enter the data in the window that appears, or select previously entered hours from the list</li>
+             <li>upload photos in the "Images" tab for the shop to display on shop page, if necessary</li>
             </ul>
             </p>
-            <p class="oe_mt32">3. Save the form. Now shop is available to show on the snippet map</p>
+            <p class="oe_mt32">3. Save the form. Now shop is available to show on the "Shop List Snippet" map</p>
         </div>
         <div class="col-md-12 mt32">
             <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop properties</h4>
 	  </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <p class="oe_mt32">Properties are used to filter shops on the webpage. They can be selected by user from drop-down list or be pre-installed on snippet load permanently with no selection ability.</p>
             <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop properties</p>
             <p class="oe_mt32">2. Create new property:</p>
             <ul>
              <li>specify name of the property (to see in the drop-down selection on the webpage)</li>
-             <li>specify 'Sequence' if necessary (properties with a lower number are shown in the selection list earlier)</li>
-             <li>check 'Default' to apply this property automatically on snippet load</li>
-             <li>specify URL-address to apply automatic property on specified page only, ex. «/page/shops»*</li>
+             <li>specify "Sequence" if necessary (properties with a lower number are shown in the selection list earlier)</li>
+             <li>check "Default" to apply this property automatically on "Shop List Snippet" load</li>
+             <li>specify "URL-address" to apply automatic property on specified page only, ex. «/page/shops»*</li>
             </ul>
         </div>
-       <div class="col-md-6">
-           <div class="oe_demo oe_picture oe_screenshot mt48">
-               <img src="/website_shops_map/static/description/scr_man_4.jpg"/>
-           </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_4.jpg"/>
+            </div>
             <div class="oe_demo oe_picture oe_screenshot mt32">
                 <img src="/website_shops_map/static/description/scr_man_5.jpg"/>
            </div>
         </div>
         <div class="col-md-12">
             <p class="oe_mt32">3. Save the form. The property is available in the property list of the shop creation form</p>
-            <p class="oe_mt32"><i>* If "URL" field is filled the automatic filter works on specified page only. Otherwise, filter applies on every shop map snippet of the website.</i></p>
+            <p class="oe_mt32"><i>* If "URL" field is filled the automatic filter works on specified page only. Otherwise, filter applies on every "Shop List Snippet" of the website.</i></p>
         </div>
+        <div class="col-md-12">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop Coordinate Adjustment</h4>
+	</div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_6.jpg"/>
+           </div>
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_7.jpg"/>
+           </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Sometimes a situation may arise when the address of the shop does not accurately reflect the location of the shop on the map. In this case:</p>
+            <p class="oe_mt32">1. Go to the «Yandex maps» resource (<a href="http://map.yandex.ru" target="_blank">map.yandex.ru</a>)</p>
+            <p class="oe_mt32">2. Enter your shop address in the search bar</p>
+            <p class="oe_mt32">3. If the shop is not exactly indicated on the map, find the correct location visually and click on it</p>
+            <p class="oe_mt32">4. A pop-up help window will show the geo-coordinates of the point</p>
+            <p class="oe_mt32">5. Copy these coordinates into the fields "Latitude" and "Longitude" on the form with the data of the shop</p>
+            <p class="oe_mt32">6. Save the form (Save)</p>
+        </div>
+    </div>
 </section>
