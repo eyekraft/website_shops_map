@@ -1344,12 +1344,6 @@ msgid "Shop tags:"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.model,name:website_shops_map.model_eyecraft_work_days
-#: model:ir.model,name:website_shops_map.model_shop_work_hours
-msgid "Shops Work Hours"
-msgstr ""
-
-#. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
 msgid "Show map"
@@ -1440,6 +1434,11 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__picking_warn
 msgid "Stock Picking"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+msgid "Stores closest to you..."
 msgstr ""
 
 #. module: website_shops_map

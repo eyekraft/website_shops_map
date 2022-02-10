@@ -1451,6 +1451,11 @@ msgid "Stock Picking"
 msgstr ""
 
 #. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+msgid "Stores closest to you..."
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__street
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Street"
