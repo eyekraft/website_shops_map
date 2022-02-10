@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 00:54+0000\n"
-"PO-Revision-Date: 2022-02-10 00:54+0000\n"
+"POT-Creation-Date: 2022-02-10 05:40+0000\n"
+"PO-Revision-Date: 2022-02-10 05:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1287,6 +1287,19 @@ msgid "Shop Property"
 msgstr ""
 
 #. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_work_days_action
+#: model:ir.model,name:website_shops_map.model_eyecraft_work_days
+#: model:ir.ui.menu,name:website_shops_map.shop_work_days_menu
+#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_work_days_view_form
+msgid "Shop Work Days"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_shop_work_hours
+msgid "Shop Work Hours"
+msgstr ""
+
+#. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
 msgid "Shop list"
 msgstr ""
@@ -1513,6 +1526,13 @@ msgstr ""
 msgid ""
 "This account will be used instead of the default one as the receivable "
 "account for the current partner"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyecraft_work_days__name
+msgid ""
+"This field enter opening days in format of your own (ex. «Mon-Fri», "
+"«Saturday»)"
 msgstr ""
 
 #. module: website_shops_map

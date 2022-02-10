@@ -45,7 +45,7 @@
     <!-- "Shop List Config" menu item -->
     <menuitem id="shop_urls_menu"
         action="shop_urls_action"
-        parent="stock.menu_stock_config_settings"
+        parent="menu_shop_config"
         name="Shop List Config"
-        sequence="7" />
+        sequence="130" />
 </odoo>

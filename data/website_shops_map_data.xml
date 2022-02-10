@@ -26,12 +26,23 @@
             <field name="trigger">on_unlink</field>
             <field name="action_server_id" ref="shop_cache_erase_server_action"/>
         </record>
-    </data>
-    <data noupdate="1">
+
         <!-- creation of the 'shop' partner tag -->
         <record id="partner_shop_category_id" model="res.partner.category">
             <field name="name">shop</field>
             <field name="active">True</field>
         </record>
+
+        <!-- Shop Work Hours - START -->
+        <record id="shop_work_days_1" model="eyecraft.work.days">
+            <field name="name">Monday to Friday</field>
+        </record>
+        <record id="shop_work_days_2" model="eyecraft.work.days">
+            <field name="name">Saturday</field>
+        </record>
+        <record id="shop_work_days_3" model="eyecraft.work.days">
+            <field name="name">Sunday</field>
+        </record>
+        <!-- Shop Work Hours - END -->
     </data>
 </odoo>

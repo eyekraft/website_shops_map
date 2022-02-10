@@ -32,11 +32,9 @@
         parent="stock.menu_stock_config_settings"
         name="Shop map"
         sequence="5" />
-
     <menuitem id="shop_map_cache_menu"
         action="shop_map_cache_action"
         parent="shop_map_cache_root"
         name="Shop map cache"
         sequence="100" />
-
 </odoo>

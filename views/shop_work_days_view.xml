@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- "Shop Work Days" form view -->
+    <record id="shop_work_days_view_form" model="ir.ui.view">
+        <field name="name">eyecraft.work.days.form</field>
+        <field name="model">eyecraft.work.days</field>
+        <field name="arch" type="xml">
+            <form string="Shop Work Days">
+                <sheet>
+                    <label for="name" />
+                    <field name="name" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- "Shop Work Days" ir.actions.act_window -->
+    <record id="shop_work_days_action" model="ir.actions.act_window">
+        <field name="name">Shop Work Days</field>
+        <field name="res_model">eyecraft.work.days</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- "Shop Work Days" menu item -->
+    <menuitem id="shop_work_days_menu"
+        action="shop_work_days_action"
+        parent="menu_shop_config"
+        name="Shop Work Days"
+        sequence="110" />
+</odoo>

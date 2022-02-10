@@ -6,10 +6,13 @@ _logger = logging.getLogger(__name__)
 
 class eyecraft_work_days(models.Model):
     _name = "eyecraft.work.days"
-    _description = "Shops Work Hours"
+    _description = "Shop Work Days"
 
     # Model Fields
-    name = fields.Char("Work days")
+    name = fields.Char(
+        string="Work days",
+        help="This field enter opening days in format of your own (ex. «Mon-Fri», «Saturday»)",
+    )
 
 
 class paeriod_of_time(models.Model):
@@ -33,14 +36,24 @@ class paeriod_of_time(models.Model):
             )
 
     # Model Fields
-    name = fields.Char("Period of Time", compute="_compute_name", store=True)
-    start_time = fields.Float("Since", required=True)
-    end_time = fields.Float("To", required=True)
+    name = fields.Char(
+        string="Period of Time",
+        compute="_compute_name",
+        store=True
+    )
+    start_time = fields.Float(
+        string="Since",
+        required=True
+    )
+    end_time = fields.Float(
+        string="To",
+        required=True
+    )
 
 
 class shop_work_hours(models.Model):
     _name = "shop.work.hours"
-    _description = "Shops Work Hours"
+    _description = "Shop Work Hours"
 
     # Model Fields
     name = fields.Char(string="Name")
