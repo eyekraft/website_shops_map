@@ -24,7 +24,7 @@ To register Odoo database as shop list source you need to generate local API-key
 
 * Enter URL to current database and get you API-key on pushing saving button.
 
-* Use this URL and generated API-key on map snippet source setup.
+* Use this URL and generated API-key on map ``Shop List Snippet`` source setup.
 
 
 Usage
@@ -42,11 +42,11 @@ You need to have Manager Access Rights for Inventory module to work with shops.
 
 * Fill all of the required data.
 
-* Place ``Shop Map`` snippet on webpage.
+* Place ``Shop List Snippet`` on webpage.
 
 * Set up source ``URL-path`` and ``API-key``.
 
-* Save snippet and see you warehouse in the list and on the map.
+* Save the ``Shop List Snippet`` and see you warehouse in the list and on the map.
 
 
 Main options

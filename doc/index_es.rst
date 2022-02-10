@@ -24,7 +24,7 @@ Para registrar la base de datos de Odoo como fuente de lista de tienda, debe gen
 
 * Ingrese la ``URL`` a la base de datos actual y obtenga su ``clave API`` al presionar el botón ``Guardar``.
 
-* Use esta ``URL`` y la ``clave API`` generada en la configuración de la fuente del fragmento HTML de ``Shop Map`` para mapa.
+* Use esta ``URL`` y la ``clave API`` generada en la configuración de la fuente del fragmento HTML de ``Shop List Snippet`` para mapa.
 
 
 Uso
@@ -42,11 +42,11 @@ Debe tener derechos de acceso de administrador para el módulo de Inventario par
 
 * Llena todos los datos requeridos.
 
-* Coloque el fragmento HTML de ``Shop Map`` en la página web.
+* Coloque el fragmento HTML de ``Shop List Snippet`` en la página web.
 
 * Configure la ``ruta URL de fuente`` y la ``clave API``.
 
-* Guarde el fragmento HTML de ``Shop Map``, asi puede ver su almacén en la listado de tiendas y en el mapa.
+* Guarde el fragmento HTML de ``Shop List Snippet``, asi puede ver su almacén en la listado de tiendas y en el mapa.
 
 
 Opciones principales
