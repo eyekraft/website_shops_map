@@ -23,7 +23,7 @@ class stock_warehouse(models.Model):
                 geolocator = geocoders.Yandex()
 
                 # https://geopy.readthedocs.io/en/latest/index.html#geopy.geocoders.Yandex.geocode
-                spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC, es", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]
+                spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]
                 english = ["en_AU", "en_CA", "en_GB", "en_US"]
                 if self.env.context['lang'] == u'es' or self.env.context['lang'] in spanish:
                     language="en_US"
