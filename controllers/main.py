@@ -1,8 +1,8 @@
 # -*- codimg: utf-8 -*-
-import logging
-import json
 import ast
-from odoo import http, SUPERUSER_ID
+import json
+import logging
+from odoo import http
 from odoo.http import request
 
 _logger = logging.getLogger(__name__)
@@ -21,8 +21,28 @@ class EyekraftShopList(http.Controller):
             return False
 
 
+    @http.route(['/api/get_yandex_apikey'], type='json', auth="public", website=False, cors='*')
+    def get_yandex_apikey(self, debug=False, **kwargs):
+        """
+        Exports Yandex API key From Settings
+        """
+        api_key = request.env['ir.config_parameter'].sudo().get_param(
+            'web_yandex_maps.api_key', default='')
+        return api_key
+
+
+    @http.route(['/api/get_yandex_lang'], type='json', auth="public", website=False, cors='*')
+    def get_yandex_lang(self, debug=False, **kwargs):
+        """
+        Exports Yandex API Language From Settings
+        """
+        language = request.env['ir.config_parameter'].sudo().get_param(
+            'web_yandex_maps.lang_localization', default='')
+        return language
+
+
     @http.route(['/api/shops'], type='json', auth="public", website=False, cors='*')
-    def get_shops_list(self, query=False,  debug=False, lat=False, lng=False, **kwargs):
+    def get_shops_list(self, query=False, debug=False, lat=False, lng=False, **kwargs):
         """
         Exports Shop list in JSON format
         """

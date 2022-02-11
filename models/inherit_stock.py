@@ -16,11 +16,15 @@ class stock_warehouse(models.Model):
         """ Compute latitude & longitude by Yandex service
             :returns: location.latitude, location.longitude
         """
+
+        # Yandex API Key
+        YANDEX_API_KEY = self.env['ir.config_parameter'].sudo().get_param('web_yandex_maps.api_key')
+
         if not self.full_address:
             return 0,0
             if 'geopy' in sys.modules:
                 # Geocoder using the Yandex Maps API.
-                geolocator = geocoders.Yandex()
+                geolocator = geocoders.Yandex(api_key=YANDEX_API_KEY)
 
                 # https://geopy.readthedocs.io/en/latest/index.html#geopy.geocoders.Yandex.geocode
                 spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]

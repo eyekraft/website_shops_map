@@ -30,6 +30,7 @@ Partner And Google Map Snippet compatible.
         'views/shop_api_user_view.xml',
         'views/shop_map_cache_view.xml',
         'views/period_of_time_view.xml',
+        'views/res_config_settings.xml',
         'views/stock_view.xml',
         'views/shop_list_config_view.xml',
         'views/shop_list_snippet.xml',

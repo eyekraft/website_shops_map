@@ -188,6 +188,10 @@ odoo.define("website_shops_map.shop_list", function (require) {
         show_client: true,
         switch_map: false,
         shops_on_page: 65535,
+        // Your map store api key here
+        ya_key: false,
+        // Language of the response and regional settings of the map
+        lang: false,
 
         /**
          * Compute shop distance function.
@@ -281,8 +285,21 @@ odoo.define("website_shops_map.shop_list", function (require) {
         get_client_address: function () {
             var deferred = $.Deferred();
             var self = this;
+
+            // Get Yandex API Key
+            ajax.jsonRpc("/api/get_yandex_apikey", "POST", {}
+                ).then(function (api_key) {
+                return self.ya_key = api_key || false;
+            });
+
+            // Get Yandex API language
+            ajax.jsonRpc("/api/get_yandex_lang", "POST", {}
+                ).then(function (language) {
+                return self.lang = language || false;
+            });
+
             console.log("ShopsMap GeoLocation: latitude " + self.latitude + " and longitude " + self.longitude);
-            var url = "https://geocode-maps.yandex.ru/1.x/?geocode=" + self.longitude + ", " + self.latitude + "&format=json";
+            var url = "https://geocode-maps.yandex.ru/1.x/?&apikey=" + self.ya_key + "&geocode=" + self.longitude + ", " + self.latitude + "&results=1&lang=" + self.lang + "&format=json&sco=latlong";
             console.log("ShopsMap GeoLocation: Retrieving client address...");
             $.ajax({
                 url: url,
@@ -644,7 +661,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
 
             var yandex_lookup = function (query, callback) {
                 if (query.length > 2) {
-                    var url = "https://geocode-maps.yandex.ru/1.x/?geocode=" + query + "&format=json";
+                    var url = "https://geocode-maps.yandex.ru/1.x/?&apikey=" + self.ya_key + "?geocode=" + query + "&format=json";
                     $.ajax({
                         url: url,
                         dataType: "json"
@@ -1020,7 +1037,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     try {
                         var query = $("#eyekraft-shop-list-address-input")[0].value;
                     } catch (e){};
-                    var url = "https://geocode-maps.yandex.ru/1.x/?geocode=" + query + "&format=json&results=25";
+                    var url = "https://geocode-maps.yandex.ru/1.x/?&apikey=" + self.ya_key + "?geocode=" + query + "&format=json&results=25";
                     $.ajax({
                         url: url,
                         dataType: "json"

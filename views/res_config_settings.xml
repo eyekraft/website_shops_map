@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.web_yandex_maps</field>
+            <field name="priority" eval="200"/>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='integration']" position="after">
+                    <div name="web_yandex_maps">
+                        <h2>Yandex Maps View</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <div class="text-muted">
+                                        <p><b>Set API keys and map localization</b></p>
+                                        <span>Visit the <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" target="_blank">page</a> about get an API Key for the "JavaScript API y HTTP Geocoder" Map service</span>
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <label for="yandex_maps_view_api_key" string="Api key"/>
+                                            <field name="yandex_maps_view_api_key"/>
+                                        </div>
+                                        <div class="text-muted">
+                                            <hr/>
+                                            <p><b>Parameters of Javascript API Asset link resource</b></p>
+                                            <span>Visit the <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/dg/concepts/load.html#load__param" target="_blank">page</a> about what libraries are loaded via Javascript API Asset link resource</span>
+                                        </div>
+                                        <div class="mt16">
+                                            <label for="yandex_maps_lang_localization" string="Language"/>
+                                            <field name="yandex_maps_lang_localization"/>
+                                            <div class="text-muted">
+                                                <p>Set the language loaded on the map</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt16">
+                                            <label for="yandex_maps_libraries" string="Libraries"/>
+                                            <field name="yandex_maps_libraries"/>
+                                            <div class="text-muted">
+                                                <p>Set the libraries loaded on the map</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
