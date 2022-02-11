@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 05:40+0000\n"
-"PO-Revision-Date: 2022-02-10 02:33-0400\n"
+"POT-Creation-Date: 2022-02-11 00:55+0000\n"
+"PO-Revision-Date: 2022-02-10 20:59-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -30,6 +30,17 @@ msgstr ""
 "tarifas)\n"
 "3 - Consumidor final (solo recibos)\n"
 "4 - Extranjero"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "<b>Parameters of Javascript API Asset link resource</b>"
+msgstr ""
+"<b>Parámetros del recurso de enlace del activo de la API de Javascript</b>"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "<b>Set API keys and map localization</b>"
+msgstr "<b>Establecer API keys y localización de mapas</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
@@ -94,7 +105,7 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__api_key
 msgid "API Key"
-msgstr "Clave API"
+msgstr "API Key"
 
 #. module: website_shops_map
 #: model:ir.ui.menu,name:website_shops_map.menu_api_settings_administration
@@ -192,6 +203,11 @@ msgstr ""
 "traducidos a este idioma."
 
 #. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Api key"
+msgstr "API Key"
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_snippet.js:0
 #, python-format
@@ -219,6 +235,11 @@ msgid "Banks"
 msgstr "Bancos"
 
 #. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__be_by
+msgid "Belarusian"
+msgstr "Bielorruso"
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_blacklisted
 msgid "Blacklist"
 msgstr "Lista negra"
@@ -238,12 +259,6 @@ msgstr ""
 #: model:base.automation,name:website_shops_map.shop_cache_erase_on_cr_rule
 #: model:base.automation,name:website_shops_map.shop_cache_erase_on_dl_rule
 #: model:ir.actions.server,name:website_shops_map.shop_cache_erase_on_cr_rule_ir_actions_server
-msgid "Call Shop Map Cache erasing on create"
-msgstr "Borrar la memoria caché del mapa de la tienda al crear una tienda"
-
-#. module: website_shops_map
-#: model:base.automation,name:website_shops_map.shop_cache_erase_on_dl_rule
-#: model:ir.actions.server,name:website_shops_map.shop_cache_erase_on_dl_rule_ir_actions_server
 msgid "Call Shop Map Cache erasing on delete"
 msgstr "Borrar la memoria caché del mapa de la tienda al eliminar una tienda"
 
@@ -256,6 +271,14 @@ msgstr "Puede publicar"
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__channel_ids
 msgid "Channels"
 msgstr "Canales"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__public
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__public
+msgid "Check \"Public Shop\" checkbox to assign warehouse as public shop"
+msgstr ""
+"Marque la casilla de verificación \"Tienda pública\" para asignar el almacén "
+"como tienda real"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__is_company
@@ -351,6 +374,11 @@ msgstr "ID de la base de datos de la compañía"
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__contact_address
 msgid "Complete Address"
 msgstr "Completa tu direccion"
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
 
 #. module: website_shops_map
 #. openerp-web
@@ -509,6 +537,11 @@ msgid "Enforce Cities"
 msgstr "Forzar ciudades"
 
 #. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__en_us
+msgid "English"
+msgstr "Ingles"
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
@@ -519,12 +552,6 @@ msgstr "Introduzca el nombre del color HTML"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_list_client_address
 msgid "Enter your address"
 msgstr "Ingrese su dirección"
-
-#. module: website_shops_map
-#: model:ir.actions.server,name:website_shops_map.shop_cache_erase_server_action
-msgid "Erase Shop Map Cache on shop creation or deletion"
-msgstr ""
-"Borrar la memoria caché del mapa de la tienda al crear o eliminar una tienda"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__phone_sanitized
@@ -723,6 +750,85 @@ msgid "Images"
 msgstr "Imágenes"
 
 #. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__default
+msgid ""
+"In this field, you can check \"Default\" to apply this property "
+"automatically on \"Shop List Snippet\" load"
+msgstr ""
+"En este campo, puede marcar \"Predeterminado\" para aplicar esta propiedad "
+"automáticamente en la carga del fragmento HTML de \"Shop List Snippet\""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__name
+msgid ""
+"In this field, you can enter \"Name\" of the property (to see in the drop-"
+"down selection on the webpage)"
+msgstr ""
+"En este campo, el \"Nombre\" de la propiedad (para ver en la selección "
+"desplegable en la página web)"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__sequence
+msgid ""
+"In this field, you can enter \"Sequence\" if necessary (properties with a "
+"lower number are shown in the selection list earlier)"
+msgstr ""
+"En este campo, la \"Secuencia\" si es necesario (las propiedades con un "
+"número más bajo se muestran en la lista de selección anterior)"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__work_hours_ids
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__work_hours_ids
+msgid ""
+"In this field, you can enter opening hours and enter the data in the window "
+"that appears, or select previously entered hours from the list"
+msgstr ""
+"En este campo, puede ingresar el horario de apertura e ingrese los datos en "
+"la ventana que aparece, o seleccione el horario ingresado previamente de la "
+"lista"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_work_hours__work_days_id
+msgid ""
+"In this field, you can enter the \"Shop Work Hours\" in which the shop works"
+" in set hours"
+msgstr ""
+"En este campo, puede ingresar el \"Horario de trabajo de la tienda\" en el "
+"que la tienda trabaja en horas establecidas"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__path
+msgid ""
+"In this field, you can enter the \"URL\" address using default option "
+"permanently, to apply automatic property on specified page only, ex. "
+"«/page/shops»"
+msgstr ""
+"En este campo, puede ingresar la dirección \"URL\", para aplicar la "
+"propiedad automática solo en la página especificada, ej. «/page/shops»"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__metro_station
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__metro_station
+msgid ""
+"In this field, you can enter the name of the subway station in the \"Subway "
+"station\" field, if necessary"
+msgstr ""
+"En este campo, puede ingresar el nombre de la estación de metro en el campo "
+"\"Estación de metro\", si corresponde"
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__properties_ids
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__properties_ids
+msgid ""
+"In this field, you can select the services available in the shop in the "
+"\"Properties\" field (services must be pre-configured at \"Shop "
+"Properties\")"
+msgstr ""
+"En este campo, puede seleccionar los servicios disponibles en la tienda en "
+"el campo \"Propiedades\" (los servicios deben estar preconfigurados en \""
+"Propiedades de la tienda\")"
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__industry_id
 msgid "Industry"
 msgstr "Industria"
@@ -805,6 +911,7 @@ msgstr "Etiqueta"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__lang
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
 msgid "Language"
 msgstr "Idioma"
 
@@ -865,6 +972,12 @@ msgstr "Última fecha de conciliación de facturas y pagos"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Latitude"
 msgstr "Latitud"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_libraries
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Libraries"
+msgstr "Bibliotecas"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__longitude
@@ -1122,12 +1235,6 @@ msgid "Period of time"
 msgstr "Período de tiempo"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_shop_work_hours__work_days_id
-msgid "Period of week in which the shop works in set hours"
-msgstr ""
-"Periodo de la semana en el que la tienda trabaja en horario establecido"
-
-#. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.period_of_time_action
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__period_ids
 #: model:ir.ui.menu,name:website_shops_map.period_of_time_menu
@@ -1187,6 +1294,11 @@ msgstr "Usuario responsable"
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_id
 msgid "Restrict publishing to this website."
 msgstr "Restringir la publicación a este sitio web."
+
+#. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__ru_ru
+msgid "Russian"
+msgstr "Ruso"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_has_sms_error
@@ -1263,6 +1375,16 @@ msgstr "Uno mismo"
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__sequence
 msgid "Sequence"
 msgstr "Secuencia"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Set the language loaded on the map"
+msgstr "Establecer el idioma cargado en el mapa"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Set the libraries loaded on the map"
+msgstr "Establecer las bibliotecas cargadas en el mapa"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_share
@@ -1448,7 +1570,7 @@ msgstr "Imagen pequeña"
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
 msgid "Source API-key"
-msgstr "Clave API de origen"
+msgstr "API Key de origen"
 
 #. module: website_shops_map
 #. openerp-web
@@ -1702,6 +1824,11 @@ msgid "Travel time: approx."
 msgstr "Tiempo de viaje: aprox."
 
 #. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__tr_tr
+msgid "Turkish"
+msgstr "Turco"
+
+#. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
@@ -1712,9 +1839,9 @@ msgid "URL"
 msgstr "URL"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_shop_property__path
-msgid "URL using default option permanently"
-msgstr "URL que usa la opción predeterminada de forma permanente"
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__uk_ua
+msgid "Ukrainian"
+msgstr "Ucranio"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_unread
@@ -1755,6 +1882,11 @@ msgstr "Condiciones de pago del proveedor"
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_published
 msgid "Visible on current website"
 msgstr "Visible en el sitio web actual"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Visit the"
+msgstr "Visite la"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__visitor_ids
@@ -1839,6 +1971,21 @@ msgid "Work hours"
 msgstr "Horas laborales"
 
 #. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_lang_localization
+msgid "Yandex Maps Language Localization"
+msgstr "Localización de idioma de Yandex Maps"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Yandex Maps View"
+msgstr "Vista de mapas de Yandex"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_view_api_key
+msgid "Yandex Maps View Api Key"
+msgstr "API Key para la vista mapas de Yandex"
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_snippet.js:0
 #, python-format
@@ -1861,6 +2008,21 @@ msgid "Zip"
 msgstr "Código postal"
 
 #. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid ""
+"about get an API Key for the \"JavaScript API y HTTP Geocoder\" Map service"
+msgstr ""
+"acerca de obtener una API Key para el servicio de mapas \"JavaScript API y "
+"HTTP Geocoder\""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "about what libraries are loaded via Javascript API Asset link resource"
+msgstr ""
+"sobre qué bibliotecas se cargan a través del recurso de enlace de activos de "
+"la API de Javascript"
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_snippet.js:0
 #, python-format
@@ -1872,6 +2034,11 @@ msgstr "determinado..."
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card_map
 msgid "km"
 msgstr "km"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "page"
+msgstr "página"
 
 #. module: website_shops_map
 #: model:res.partner.category,name:website_shops_map.partner_shop_category_id

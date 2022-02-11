@@ -207,21 +207,31 @@ class eyekraft_shop(models.Model):
         compute='_compute_full_address',
         store=True,
     )
-    metro_station = fields.Char(string='Subway station')
+    metro_station = fields.Char(
+        string='Subway station',
+        help='In this field, you can enter the name of the subway station in the "Subway station" field, if necessary',
+    )
     properties_ids = fields.Many2many(
         'shop.property',
         'shop_shop_properties_rel',
         'shop_id',
         'property_id',
         string='Properties',
+        help='In this field, you can select the services available in the shop in the "Properties" field (services must be pre-configured at "Shop Properties")',
     )
     work_hours_ids = fields.One2many(
         "shop.work.hours",
         "shop_id",
         string="Work hours",
+        help='In this field, you can enter opening hours and enter the data in the window that appears, or select previously entered hours from the list',
     )
-    rating = fields.Float(string="Rating")
-    public = fields.Boolean(string="Public Shop")
+    rating = fields.Float(
+        string="Rating"
+    )
+    public = fields.Boolean(
+        string="Public Shop",
+        help='Check "Public Shop" checkbox to assign warehouse as public shop',
+    )
     foreign_partner = fields.Boolean(help="Flag for partner record linked on module install")
     warehouse_ids = fields.One2many(
         "stock.warehouse",

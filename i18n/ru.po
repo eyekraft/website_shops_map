@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 05:40+0000\n"
-"PO-Revision-Date: 2022-02-10 05:40+0000\n"
+"POT-Creation-Date: 2022-02-11 00:55+0000\n"
+"PO-Revision-Date: 2022-02-11 00:55+0000\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "Language: ru\n"
@@ -25,6 +25,16 @@ msgid ""
 "2 - Fees Receipt Issuer (Applies to suppliers who issue fees receipt)\n"
 "3 - End consumer (only receipts)\n"
 "4 - Foreigner"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "<b>Parameters of Javascript API Asset link resource</b>"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "<b>Set API keys and map localization</b>"
 msgstr ""
 
 #. module: website_shops_map
@@ -186,6 +196,11 @@ msgid ""
 msgstr ""
 
 #. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Api key"
+msgstr ""
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_snippet.js:0
 #, python-format
@@ -213,6 +228,11 @@ msgid "Banks"
 msgstr ""
 
 #. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__be_by
+msgid "Belarusian"
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_blacklisted
 msgid "Blacklist"
 msgstr ""
@@ -231,12 +251,6 @@ msgstr ""
 #: model:base.automation,name:website_shops_map.shop_cache_erase_on_cr_rule
 #: model:base.automation,name:website_shops_map.shop_cache_erase_on_dl_rule
 #: model:ir.actions.server,name:website_shops_map.shop_cache_erase_on_cr_rule_ir_actions_server
-msgid "Call Shop Map Cache erasing on create"
-msgstr ""
-
-#. module: website_shops_map
-#: model:base.automation,name:website_shops_map.shop_cache_erase_on_dl_rule
-#: model:ir.actions.server,name:website_shops_map.shop_cache_erase_on_dl_rule_ir_actions_server
 msgid "Call Shop Map Cache erasing on delete"
 msgstr ""
 
@@ -248,6 +262,12 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__channel_ids
 msgid "Channels"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__public
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__public
+msgid "Check \"Public Shop\" checkbox to assign warehouse as public shop"
 msgstr ""
 
 #. module: website_shops_map
@@ -340,6 +360,11 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__contact_address
 msgid "Complete Address"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_res_config_settings
+msgid "Config Settings"
 msgstr ""
 
 #. module: website_shops_map
@@ -494,6 +519,11 @@ msgid "Enforce Cities"
 msgstr ""
 
 #. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__en_us
+msgid "English"
+msgstr ""
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
@@ -504,11 +534,6 @@ msgstr "Введите название HTML-цвета"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_list_client_address
 msgid "Enter your address"
 msgstr "Введите свой адрес"
-
-#. module: website_shops_map
-#: model:ir.actions.server,name:website_shops_map.shop_cache_erase_server_action
-msgid "Erase Shop Map Cache on shop creation or deletion"
-msgstr ""
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__phone_sanitized
@@ -701,6 +726,67 @@ msgid "Images"
 msgstr "Изображения"
 
 #. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__default
+msgid ""
+"In this field, you can check \"Default\" to apply this property "
+"automatically on \"Shop List Snippet\" load"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__name
+msgid ""
+"In this field, you can enter \"Name\" of the property (to see in the drop-"
+"down selection on the webpage)"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__sequence
+msgid ""
+"In this field, you can enter \"Sequence\" if necessary (properties with a "
+"lower number are shown in the selection list earlier)"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__work_hours_ids
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__work_hours_ids
+msgid ""
+"In this field, you can enter opening hours and enter the data in the window "
+"that appears, or select previously entered hours from the list"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_work_hours__work_days_id
+msgid ""
+"In this field, you can enter the \"Shop Work Hours\" in which the shop works"
+" in set hours"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_shop_property__path
+msgid ""
+"In this field, you can enter the \"URL\" address using default option "
+"permanently, to apply automatic property on specified page only, ex. "
+"«/page/shops»"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__metro_station
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__metro_station
+msgid ""
+"In this field, you can enter the name of the subway station in the \"Subway "
+"station\" field, if necessary"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__properties_ids
+#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__properties_ids
+msgid ""
+"In this field, you can select the services available in the shop in the "
+"\"Properties\" field (services must be pre-configured at \"Shop "
+"Properties\")"
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__industry_id
 msgid "Industry"
 msgstr ""
@@ -780,6 +866,7 @@ msgstr "Метка"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__lang
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
 msgid "Language"
 msgstr ""
 
@@ -837,6 +924,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Latitude"
 msgstr "Широта"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_libraries
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Libraries"
+msgstr ""
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__longitude
@@ -1092,11 +1185,6 @@ msgid "Period of time"
 msgstr "Период времени"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_shop_work_hours__work_days_id
-msgid "Period of week in which the shop works in set hours"
-msgstr "Дни недели, в которые магазин работает в заданные часы"
-
-#. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.period_of_time_action
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__period_ids
 #: model:ir.ui.menu,name:website_shops_map.period_of_time_menu
@@ -1155,6 +1243,11 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_id
 msgid "Restrict publishing to this website."
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__ru_ru
+msgid "Russian"
 msgstr ""
 
 #. module: website_shops_map
@@ -1228,6 +1321,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__sequence
 msgid "Sequence"
 msgstr "Последовательность"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Set the language loaded on the map"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Set the libraries loaded on the map"
+msgstr ""
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_share
@@ -1453,7 +1556,7 @@ msgstr ""
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
 msgid "Stores closest to you..."
-msgstr ""
+msgstr "определяются ближайшие к вам магазины..."
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__street
@@ -1639,6 +1742,11 @@ msgid "Travel time: approx."
 msgstr "Время в пути: примерно"
 
 #. module: website_shops_map
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__tr_tr
+msgid "Turkish"
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
@@ -1649,8 +1757,8 @@ msgid "URL"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_shop_property__path
-msgid "URL using default option permanently"
+#: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__uk_ua
+msgid "Ukrainian"
 msgstr ""
 
 #. module: website_shops_map
@@ -1691,6 +1799,11 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_published
 msgid "Visible on current website"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Visit the"
 msgstr ""
 
 #. module: website_shops_map
@@ -1770,6 +1883,21 @@ msgid "Work hours"
 msgstr "Часы работы"
 
 #. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_lang_localization
+msgid "Yandex Maps Language Localization"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "Yandex Maps View"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_view_api_key
+msgid "Yandex Maps View Api Key"
+msgstr ""
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_snippet.js:0
 #, python-format
@@ -1792,6 +1920,17 @@ msgid "Zip"
 msgstr "Индекс"
 
 #. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid ""
+"about get an API Key for the \"JavaScript API y HTTP Geocoder\" Map service"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "about what libraries are loaded via Javascript API Asset link resource"
+msgstr ""
+
+#. module: website_shops_map
 #. openerp-web
 #: code:addons/website_shops_map/static/src/js/shop_list_snippet.js:0
 #, python-format
@@ -1803,6 +1942,11 @@ msgstr "определяется..."
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card_map
 msgid "km"
 msgstr "км"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
+msgid "page"
+msgstr ""
 
 #. module: website_shops_map
 #: model:res.partner.category,name:website_shops_map.partner_shop_category_id
