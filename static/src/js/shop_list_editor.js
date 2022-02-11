@@ -457,7 +457,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
 
             ajax.jsonRpc('/web/dataset/call_kw', 'call', {
                 model: 'shop.list.config',
-                method: 'get_sorces_for_widget',
+                method: 'get_sources_for_widget',
                 args: [uuid],
                 kwargs: {
                     context: {}

@@ -12,7 +12,7 @@ class shop_list_config(models.Model):
     widget_id = fields.Char(string="Widget ID")
 
     @api.model
-    def get_sorces_for_widget(self, widget_id):
+    def get_sources_for_widget(self, widget_id):
         sources = self.search([('widget_id', '=', widget_id)])
         tags = self.env['eyekraft.shop'].search([]).mapped('category_id.name')
         res = []
