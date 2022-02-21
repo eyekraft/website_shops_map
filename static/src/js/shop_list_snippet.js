@@ -472,32 +472,32 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 } else {
                     settings = settings.value;
                     ajax.jsonRpc(settings.shop_list_url, "POST", settings.shop_list_params).then(function (result) {
-                        var shopList = JSON.parse(result);
-                        for (var i = 0, len = shopList.length; i < len; i++) {
+                        var shopListResult = JSON.parse(result);
+                        for (var i = 0, len = shopListResult.length; i < len; i++) {
                             // to keep compatibility with previous versions of module
                             // need to copy old 'latitude/longitude' properties
                             // to new geocoordinates properties inherited from res.partner model
-                            if (!shopList[i].partner_latitude) {
-                                shopList[i]["partner_latitude"] = shopList[i].latitude;
-                                shopList[i]["partner_longitude"] = shopList[i].longitude;
+                            if (!shopListResult[i].partner_latitude) {
+                                shopListResult[i]["partner_latitude"] = shopListResult[i].latitude;
+                                shopListResult[i]["partner_longitude"] = shopListResult[i].longitude;
                             }
-                            shopList[i].color = settings.shop_list_params.color;
-                            shopList[i].tag = settings.shop_list_params.tag;
-                            shopList[i].info = settings.shop_list_params.info;
-                            shopList[i].map_url = "https://static-maps.yandex.ru/1.x/?l=map&pt=" + shopList[i].partner_longitude + "," + shopList[i].partner_latitude + ",pm2rdm&size=400,400&z=16";
-                            shopList[i].map_id = "shop-card-small-map-" + shopList[i].id;
-                            shopList[i].map_href = "#shop-card-small-map-" + shopList[i].id;
-                            shopList[i].own_map_id = "shop-card-small-map-" + shopList[i].id + "-own";
-                            shopList[i].own_map_href = "#shop-card-small-map-" + shopList[i].id + "-own";
-                            shopList[i].own_page_href = "#shop/id" + shopList[i].id;
-                            shopList[i].properties_ids.forEach(function (prop) {
+                            shopListResult[i].color = settings.shop_list_params.color;
+                            shopListResult[i].tag = settings.shop_list_params.tag;
+                            shopListResult[i].info = settings.shop_list_params.info;
+                            shopListResult[i].map_url = "https://static-maps.yandex.ru/1.x/?l=map&pt=" + shopListResult[i].partner_longitude + "," + shopListResult[i].partner_latitude + ",pm2rdm&size=400,400&z=16";
+                            shopListResult[i].map_id = "shop-card-small-map-" + shopListResult[i].id;
+                            shopListResult[i].map_href = "#shop-card-small-map-" + shopListResult[i].id;
+                            shopListResult[i].own_map_id = "shop-card-small-map-" + shopListResult[i].id + "-own";
+                            shopListResult[i].own_map_href = "#shop-card-small-map-" + shopListResult[i].id + "-own";
+                            shopListResult[i].own_page_href = "#shop/id" + shopListResult[i].id;
+                            shopListResult[i].properties_ids.forEach(function (prop) {
                                 if (!propertyFlags[prop.name]) {
                                     self.properties.push(prop);
                                     propertyFlags[prop.name] = true;
                                 }
                             });
                         }
-                        self.shopList = self.shopList.concat(shopList);
+                        self.shopList = self.shopList.concat(shopListResult);
                         loadList(settingsIterator).then(function () {
                             def.resolve(true);
                         });
