@@ -39,6 +39,7 @@ Partner And Google Map Snippet compatible.
         'views/website_frontend_templates.xml',
     ],
     'qweb': [
+        'static/src/xml/widget.xml',
     ],
     'js': [
     ],
