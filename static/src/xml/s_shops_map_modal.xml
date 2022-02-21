@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-
-    <!-- website_shops_map widget dialog source -->
-    <t t-name="website_shops_map.widget.dialog.source">
+    <!-- Shops Map Source List URL -->
+    <t t-name="website_shops_map.shop_list_url_source">
         <li t-att-data-source-id="source.id">
             <div class="input-group">
                 <span class="input-group-addon fa fa-bars"/>
@@ -18,13 +18,13 @@
         </li>
     </t>
 
-    <!-- website_shops_map widget dialog edit -->
-    <div t-name="website_shops_map.widget.dialog.edit">
+    <!-- Shops Map Options edit mode -->
+    <div t-name="website_shops_map.s_shops_map_modal">
         <t>
             <t t-set="title">Source setup</t>
             <ul class="oe_source_editor list-unstyled">
                 <t t-foreach="widget.sources" t-as="source">
-                    <t t-call="website_shops_map.widget.dialog.source"/>
+                    <t t-call="website_shops_map.shop_list_url_source"/>
                 </t>
             </ul>
             <div class="mt16">

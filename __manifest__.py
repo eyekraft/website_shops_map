@@ -39,7 +39,7 @@ Partner And Google Map Snippet compatible.
         'views/website_frontend_templates.xml',
     ],
     'qweb': [
-        'static/src/xml/widget.xml',
+        'static/src/xml/s_shops_map_modal.xml',
     ],
     'js': [
     ],

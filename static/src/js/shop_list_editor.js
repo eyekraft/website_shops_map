@@ -11,13 +11,13 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
     var qweb = core.qweb;
     var _t = core._t;
 
-    ajax.loadXML('/website_shops_map/static/src/xml/widget.xml', qweb);
+    ajax.loadXML('/website_shops_map/static/src/xml/s_shops_map_modal.xml', qweb);
 
     /**
      * Allows to customize the Source setup.
      */
     var EditSourcesDialog = Dialog.extend({
-        template: 'website_shops_map.widget.dialog.edit',
+        template: 'website_shops_map.s_shops_map_modal',
         events: _.extend({}, Dialog.prototype.events, {
             'click a.js_add_source': 'addSource',
             'click button.js_edit_source': 'editSource',
@@ -101,7 +101,8 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
                 };
                 self.flat[new_source.id] = new_source;
                 self.$('.oe_source_editor').append(
-                    qweb.render('website_shops_map.widget.dialog.source',
+                    qweb.render(
+                        'website_shops_map.shop_list_url_source',
                         { source: new_source }
                     )
                 );
