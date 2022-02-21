@@ -143,15 +143,15 @@ odoo.define("website_shops_map.shop_list", function (require) {
          * @override
          */
         show: function () {
-            this.$el.removeClass("oe_hidden");
+            this.$el.removeClass('oe_hidden');
         },
         /**
          * @override
          */
         hide: function () {
-            this.$el.addClass("oe_hidden");
-            if ($("#shop-list-snippet-wrapper").length) {
-                var shopList = new shopListWidget($("body")).setElement($("#shop-list-snippet-wrapper"));
+            this.$el.addClass('oe_hidden');
+            if ($('#shop-list-snippet-wrapper').length) {
+                var shopList = new shopListWidget($("body")).setElement($('#shop-list-snippet-wrapper'));
             }
         },
     });
@@ -380,18 +380,18 @@ odoo.define("website_shops_map.shop_list", function (require) {
             var deferred = $.Deferred();
             var self = this;
 
-            if ($(self.$el[0]).attr("data-id")) {
-                self.widget_id = $(self.$el[0]).attr("data-id");
+            if ($(self.$el[0]).attr('data-id')) {
+                self.widget_id = $(self.$el[0]).attr('data-id');
             } else {
                 var uuidNumber = new Date().getTime();
                 self.widget_id = "eyekraftShopMap" + uuidNumber;
-                $(self.$el[0]).attr("data-id", self.widget_id);
+                $(self.$el[0]).attr('data-id', self.widget_id);
             }
 
             // check for attribute to show a limited number of shops
             // according value of attribite 'shops-ids'
-            if ($(self.$el[0]).attr("shops-ids")) {
-                var shopIds = $(self.$el[0]).attr("shops-ids");
+            if ($(self.$el[0]).attr('shops-ids')) {
+                var shopIds = $(self.$el[0]).attr('shops-ids');
                 shopIds = shopIds.slice(1, shopIds.length - 1);
                 shopIds = shopIds.split(",").map(Number);
             } else {
@@ -399,38 +399,38 @@ odoo.define("website_shops_map.shop_list", function (require) {
             }
 
             // check for attribute to set permanent default map coordinates
-            if ($(self.$el[0]).attr("lat")) {
-                self.latitude = parseFloat($(self.$el[0]).attr("lat"));
-                self.longitude = parseFloat($(self.$el[0]).attr("long"));
+            if ($(self.$el[0]).attr('lat')) {
+                self.latitude = parseFloat($(self.$el[0]).attr('lat'));
+                self.longitude = parseFloat($(self.$el[0]).attr('long'));
             }
 
             // check for attribute to set initial map scale
-            if ($(self.$el[0]).attr("zoom")) {
-                self.scale = parseInt($(self.$el[0]).attr("zoom"));
+            if ($(self.$el[0]).attr('zoom')) {
+                self.scale = parseInt($(self.$el[0]).attr('zoom'));
             }
 
             // check for attribute to show client placemark
-            if ($(self.$el[0]).attr("client-placemark")) {
-                self.showClient = parseInt($(self.$el[0]).attr("client-placecemark"));
+            if ($(self.$el[0]).attr('client-placemark')) {
+                self.showClient = parseInt($(self.$el[0]).attr('client-placecemark'));
             }
 
             // check for attribute to switch to map after loading (on desktop only)
-            if ($(self.$el[0]).attr("switch-to-map")) {
-                self.switchMap = $(self.$el[0]).attr("switch-to-map") === "true";
+            if ($(self.$el[0]).attr('switch-to-map')) {
+                self.switchMap = $(self.$el[0]).on('switch-to-map') === "true";
                 if (window.screen.width < 800) {
                     self.switchMap = false;
                 }
             }
 
             // check for attribute to define number of shops per page
-            if ($(self.$el[0]).attr("shops-on-page")) {
-                self.shopsOnPage = parseInt($(self.$el[0]).attr("shops-on-page"));
+            if ($(self.$el[0]).attr('shops-on-page')) {
+                self.shopsOnPage = parseInt($(self.$el[0]).attr('shops-on-page'));
             }
 
             // check for attribute to define number of shops per page on mobiles
-            if ($(self.$el[0]).attr("shops-on-page-mob")) {
+            if ($(self.$el[0]).attr('shops-on-page-mob')) {
                 if (window.screen.width <= 800) {
-                    self.shopsOnPage = parseInt($(self.$el[0]).attr("shops-on-page-mob"));
+                    self.shopsOnPage = parseInt($(self.$el[0]).attr('shops-on-page-mob'));
                 }
             }
 
@@ -520,7 +520,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
          */
         renderShopList: function (shopList, index) {
             var self = this;
-            var contents = this.$el[0].querySelector(".shop-list-container");
+            var contents = this.$el[0].querySelector('.shop-list-container');
 
             // index == 0 means first call of the method
             // in this case making distance counting and sorting of shopList
@@ -534,7 +534,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 });
 
                 // cropped shoplist for catalog usage
-                if ($("#shoplist")) {
+                if ($('#shoplist')) {
                     var shopListCropped = [];
                     for (var i = 0; i < 3 && i < shopList.length; i++) {
                         shopListCropped.push({
@@ -544,7 +544,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                             working_hours: shopList[i].working_hours
                         });
                     }
-                    $("#shoplist").attr("shopsids", JSON.stringify(shopListCropped));
+                    $('#shoplist').attr('shopsids', JSON.stringify(shopListCropped));
                 }
 
                 // add advance search records in front of shoplist array
@@ -576,7 +576,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                         adminMode: adminMode
                     }
                 );
-                var shopCard = document.createElement("div");
+                var shopCard = document.createElement('div');
                 shopCard.innerHTML = shopCardHTML;
                 shopCard = shopCard.childNodes[1];
                 contents.appendChild(shopCard);
@@ -585,7 +585,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     var shop = self.findShopById(shopID);
                     if (shop) {
                         self.showRoute = true;
-                        $("#eyekraft-shop-list-address-input").val(shop.full_address);
+                        $('#eyekraft-shop-list-address-input').val(shop.full_address);
                         $('a[id="eyekraft-show-map-tab"]').tab("show");
                         self.onMapTab = true;
                     }
@@ -593,31 +593,31 @@ odoo.define("website_shops_map.shop_list", function (require) {
             }
             // creates 'next-shops' button
             // if there are more shops unseen
-            var nextDiv = document.getElementById("next-button-div");
+            var nextDiv = document.getElementById('next-button-div');
             if (nextDiv) {
                 nextDiv.parentNode.removeChild(nextDiv);
             }
             if (len < shopList.length) {
-                nextDiv = document.createElement("div");
+                nextDiv = document.createElement('div');
                 nextDiv.style.width = "100%";
                 nextDiv.style.textAlign = "center";
                 nextDiv.id = "next-button-div";
                 contents.appendChild(nextDiv);
-                var nextButton = document.createElement("a");
+                var nextButton = document.createElement('a');
                 nextButton.id = "next-shops";
                 nextButton.text = _t("More to show");
                 nextButton.className = "btn btn-primary";
                 nextDiv.appendChild(nextButton);
                 contents.appendChild(nextDiv);
-                $("#next-shops").click(function (event) {
+                $('#next-shops').click(function (event) {
                     self.renderShopList(shopList, len);
                 });
             }
             var section = self.$el[0];
-            var listLi = $(section).find("#eyekraft-show-list-tab").parent(),
-                mapLi = $(section).find("#eyekraft-show-map-tab").parent(),
-                shopMapPanel = $(section).find("#shop_map_panel"),
-                shopListPanel = $(section).find("#shop_list_panel");
+            var listLi = $(section).find('#eyekraft-show-list-tab').parent(),
+                mapLi = $(section).find('#eyekraft-show-map-tab').parent(),
+                shopMapPanel = $(section).find('#shop_map_panel'),
+                shopListPanel = $(section).find('#shop_list_panel');
 
             if (listLi.attr("class") != "active" || self.switchMap) {
                 shopListPanel.attr("class", "tab-pane fade");
@@ -645,7 +645,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
          */
         renderClientAddress: function () {
             var self = this;
-            var contents = this.$el[0].querySelector(".eyekraft-geocoded-address");
+            var contents = this.$el[0].querySelector('.eyekraft-geocoded-address');
             contents.innerHTML = "";
             // Render the "Shop List Client Address" Template
             var addressHTML = qweb.render(
@@ -654,7 +654,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     address: this.fullClientAddress
                 }
             );
-            var address = document.createElement("div");
+            var address = document.createElement('div');
             address.innerHTML = addressHTML;
             address = address.childNodes[1];
             contents.appendChild(address);
@@ -689,9 +689,9 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 }
             };
 
-            $("#eyekraft-shop-list-refresh")
+            $('#eyekraft-shop-list-refresh')
                 .click(function (event) {
-                    $("#eyekraft-shop-list-user-geoloc-text").html(_t("determined...") + " <span class='fa fa-refresh fa-spin ml8'/>");
+                    $('#eyekraft-shop-list-user-geoloc-text').html(_t("determined...") + " <span class='fa fa-refresh fa-spin ml8'/>");
                     self.getLatLng(Forced)
                         .then(function () {
                         self.getClientAddress().then(function () {
@@ -703,7 +703,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     });
                 });
 
-            $("#eyekraft-shop-list-user-geoloc-input").autocomplete({
+            $('#eyekraft-shop-list-user-geoloc-input').autocomplete({
                 lookup: yandexLookUp,
                 onSelect: function (suggestion) {
                     var latLng = suggestion.data.pos.split(" ");
@@ -713,7 +713,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     self.renderClientAddress();
 
                     try {
-                        var query = $("#eyekraft-shop-list-address-input")[0].value;
+                        var query = $('#eyekraft-shop-list-address-input')[0].value;
                     } catch (e) {}
 
                     if (query) {
@@ -722,7 +722,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                         var shopList = self.shopList;
                     }
 
-                    var properties = $("#eyekraft_props_picker").val();
+                    var properties = $('#eyekraft_props_picker').val();
                     if (properties && properties.length > 0) {
                         shopList = shopList.filter(filterShopsOnProperties(properties));
                     }
@@ -747,7 +747,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
          * @param {*} shopList
          */
         renderVerticalShopList: function (shopList) {
-            var contents = this.$el[0].querySelector("#shop-list-vertical");
+            var contents = this.$el[0].querySelector('#shop-list-vertical');
             contents.innerHTML = "";
             var self = this;
             for (var i = 0, len = shopList.length; i < len; i++) {
@@ -804,7 +804,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     }
                 );
 
-                var shopCard = document.createElement("div");
+                var shopCard = document.createElement('div');
                 shopCard.innerHTML = shopCardHTML;
                 shopCard = shopCard.childNodes[1];
                 contents.appendChild(shopCard);
@@ -814,7 +814,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     // Sets the center of the map
                     self.map.setCenter([lat, lng], 16, { checkZoomRange: true });
                     $("html, body").animate({
-                        scrollTop: $("#map-container-vertical").offset().top
+                        scrollTop: $('#map-container-vertical').offset().top
                     }, 500);
                 });
             }
@@ -980,7 +980,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
          *
          */
         renderPropertiesSelector: function () {
-            var contents = this.$el[0].querySelector("#eyekraft_props_picker");
+            var contents = this.$el[0].querySelector('#eyekraft_props_picker');
             if (!(contents)) {
                 return false;
             }
@@ -994,7 +994,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                         option: this.properties[i].name
                     }
                 );
-                var option = document.createElement("div");
+                var option = document.createElement('div');
                 option.innerHTML = optionHTML;
                 option = option.childNodes[1];
                 contents.appendChild(option);
@@ -1002,13 +1002,13 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     val.push(this.properties[i].name);
                 }
             }
-            $("#eyekraft_props_picker").selectpicker({
+            $('#eyekraft_props_picker').selectpicker({
                 iconBase: "fa",
                 tickIcon: "fa-check"
             });
-            $("#eyekraft_props_picker").selectpicker("val", val);
+            $('#eyekraft_props_picker').selectpicker("val", val);
             if (this.properties.length > 0) {
-                $(".bootstrap-select").removeClass("hidden");
+                $('.bootstrap-select').removeClass('hidden');
             }
         },
 
@@ -1035,7 +1035,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 self.getLatLng(!Forced).then(function () {
                     var GeoSort = false;
                     try {
-                        var query = $("#eyekraft-shop-list-address-input")[0].value;
+                        var query = $('#eyekraft-shop-list-address-input')[0].value;
                     } catch (e){};
                     var url = "https://geocode-maps.yandex.ru/1.x/?&apikey=" + self.yandexAPIKey + "?geocode=" + query + "&format=json&results=25";
                     $.ajax({
@@ -1078,7 +1078,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                             adminMode = false;
                             var shopList = self.shopList;
                         }
-                        var properties = $("#eyekraft_props_picker").val();
+                        var properties = $('#eyekraft_props_picker').val();
                         if (properties && properties.length > 0) {
                             shopList = shopList.filter(filterShopsOnProperties(properties));
                         }
@@ -1106,10 +1106,10 @@ odoo.define("website_shops_map.shop_list", function (require) {
                     self.loadShopList().done(function () {
                         var shopList = self.shopList;
                         self.renderPropertiesSelector();
-                        $("#eyekraft_props_picker").on("changed.bs.select", function (e) {
+                        $('#eyekraft_props_picker').on('changed.bs.select', function (e) {
                             filterOnProperties();
                         });
-                        var properties = $("#eyekraft_props_picker").val();
+                        var properties = $('#eyekraft_props_picker').val();
                         if (properties && properties.length > 0) {
                             shopList = shopList.filter(filterShopsOnProperties(properties));
                         }
@@ -1126,25 +1126,25 @@ odoo.define("website_shops_map.shop_list", function (require) {
                              */
                             shop: function (id) {
                                 var shop = self.findShopById(Number(id));
-                                var widgetContent = self.$el[0].querySelector("#shop_widget_content"),
-                                    widgetTabs = self.$el[0].querySelector("#shop_widget_tabs"),
-                                    propertiesSelector = self.$el[0].querySelector("#eyekraft_props_picker_selector"),
-                                    shopSearch = self.$el[0].querySelector("#address-input-group"),
-                                    backHref = self.$el[0].querySelector("#eyekraft_back_to_shop_list");
+                                var widgetContent = self.$el[0].querySelector('#shop_widget_content'),
+                                    widgetTabs = self.$el[0].querySelector('#shop_widget_tabs'),
+                                    propertiesSelector = self.$el[0].querySelector('#eyekraft_props_picker_selector'),
+                                    shopSearch = self.$el[0].querySelector('#address-input-group'),
+                                    backHref = self.$el[0].querySelector('#eyekraft_back_to_shop_list');
                                 if (widgetContent) {
-                                    $(widgetContent).css("display", "none");
+                                    $(widgetContent).css('display', "none");
                                 }
                                 if (widgetTabs) {
-                                    $(widgetTabs).css("display", "none");
+                                    $(widgetTabs).css('display', "none");
                                 }
                                 if (propertiesSelector) {
-                                    $(propertiesSelector).css("display", "none");
+                                    $(propertiesSelector).css('display', "none");
                                 }
                                 if (shopSearch) {
-                                    $(shopSearch).css("display", "none");
+                                    $(shopSearch).css('display', "none");
                                 }
                                 if (backHref) {
-                                    $(backHref).css("display", "block");
+                                    $(backHref).css('display', "block");
                                 }
 
                                 shop.own_show_route_id = "shop-show-route-" + shop.id + "-own";
@@ -1155,15 +1155,15 @@ odoo.define("website_shops_map.shop_list", function (require) {
                                         shop: shop
                                     }
                                 );
-                                var shopOwnPage = document.createElement("div");
+                                var shopOwnPage = document.createElement('div');
                                 shopOwnPage.innerHTML = shopOwnPageHTML;
                                 shopOwnPage = shopOwnPage.childNodes[1];
                                 self.$el[0].appendChild(shopOwnPage);
 
                                 $("#" + shop.own_show_route_id).click(function (event) {
-                                    var own_map_div = self.$el[0].querySelector("#own-map-container-vertical");
+                                    var own_map_div = self.$el[0].querySelector('#own-map-container-vertical');
                                     if (own_map_div && own_map_div.innerHTML == "") {
-                                        $(own_map_div).attr("style", "border: 1px solid lightgrey; width:100%; min-height:400px; max-height:200px; overflow:hidden;");
+                                        $(own_map_div).attr('style', "border: 1px solid lightgrey; width:100%; min-height:400px; max-height:200px; overflow:hidden;");
                                         self.renderOwnBigMap(shop);
                                         self.renderRoute(shop);
                                     }
@@ -1174,29 +1174,29 @@ odoo.define("website_shops_map.shop_list", function (require) {
                              * Back to list function.
                              */
                             backToList: function () {
-                                var widgetContent = self.$el[0].querySelector("#shop_widget_content"),
-                                    widgetTabs = self.$el[0].querySelector("#shop_widget_tabs"),
-                                    propertiesSelector = self.$el[0].querySelector("#eyekraft_props_picker_selector"),
-                                    shopSearch = self.$el[0].querySelector("#address-input-group"),
-                                    backHref = self.$el[0].querySelector("#eyekraft_back_to_shop_list"),
-                                    ownPage = self.$el[0].querySelector("#eyekraft_shop_own_page");
+                                var widgetContent = self.$el[0].querySelector('#shop_widget_content'),
+                                    widgetTabs = self.$el[0].querySelector('#shop_widget_tabs'),
+                                    propertiesSelector = self.$el[0].querySelector('#eyekraft_props_picker_selector'),
+                                    shopSearch = self.$el[0].querySelector('#address-input-group'),
+                                    backHref = self.$el[0].querySelector('#eyekraft_back_to_shop_list'),
+                                    ownPage = self.$el[0].querySelector('#eyekraft_shop_own_page');
                                 if (widgetContent) {
-                                    $(widgetContent).attr("style", "");
+                                    $(widgetContent).attr('style', "");
                                 }
                                 if (widgetTabs) {
-                                    $(widgetTabs).attr("style", "");
+                                    $(widgetTabs).attr('style', "");
                                 }
                                 if (propertiesSelector) {
-                                    $(propertiesSelector).attr("style", "");
+                                    $(propertiesSelector).attr('style', "");
                                 }
                                 if (shopSearch) {
-                                    $(shopSearch).attr("style", "");
+                                    $(shopSearch).attr('style', "");
                                 }
                                 if (backHref) {
-                                    $(backHref).css("display", "none");
+                                    $(backHref).css('display', "none");
                                 }
                                 if (ownPage) {
-                                    $(ownPage).remove("#eyekraft_shop_own_page");
+                                    $(ownPage).remove('#eyekraft_shop_own_page');
                                 }
                             },
                         });
@@ -1214,29 +1214,29 @@ odoo.define("website_shops_map.shop_list", function (require) {
                 }, renderFullList
             );
 
-            $("#eyekraft-shop-list-address-input").on("keyup", function (event) {
+            $('#eyekraft-shop-list-address-input').on('keyup', function (event) {
                 if (event.keyCode == 13) {
                     filterOnProperties();
                 }
             });
 
-            $(".find-shop-by-address").click(filterOnProperties);
+            $('.find-shop-by-address').click(filterOnProperties);
 
-            $('a[id="eyekraft-show-map-tab"]').on("shown.bs.tab", function (e) {
-                var target = $(e.target).attr("href"); // activated tab
+            $('a[id="eyekraft-show-map-tab"]').on('shown.bs.tab', function (e) {
+                var target = $(e.target).attr('href'); // activated tab
                 self.renderBigMap();
                 self.onMapTab = true;
                 filterOnProperties();
                 if (self.showRoute) {
-                    var query = $("#eyekraft-shop-list-address-input").val("");
+                    var query = $('#eyekraft-shop-list-address-input').val("");
                     $("html, body").animate({
-                        scrollTop: $("#map-container-vertical").offset().top
+                        scrollTop: $('#map-container-vertical').offset().top
                     }, 500);
                 }
             });
 
-            $('a[id="eyekraft-show-list-tab"]').on("shown.bs.tab", function (e) {
-                var target = $(e.target).attr("href"); // activated tab
+            $('a[id="eyekraft-show-list-tab"]').on('shown.bs.tab', function (e) {
+                var target = $(e.target).attr('href'); // activated tab
                 self.onMapTab = false;
                 filterOnProperties();
             });
@@ -1253,8 +1253,8 @@ odoo.define("website_shops_map.shop_list", function (require) {
     });
 
     webEditorBase.ready().then(function () {
-        if ($("#shop-list-snippet-wrapper").length) {
-            var shopList = new shopListWidget($("body")).setElement($("#shop-list-snippet-wrapper"));
+        if ($('#shop-list-snippet-wrapper').length) {
+            var shopList = new shopListWidget($("body")).setElement($('#shop-list-snippet-wrapper'));
         }
     });
 
