@@ -944,7 +944,7 @@ odoo.define("website_shops_map.shop_list", function (require) {
                             // Returns is a collection of paths that make up the route.
                             var points = self.route.getWayPoints();
                             // Set the current customer location
-                            points.get(0).properties.set("balloonContentHeader", _t('Are you here'));
+                            points.get(0).properties.set("balloonContentHeader", _t("Are you here"));
                             // Set the destination store location
                             points.get(0).properties.set("balloonContent", self.fullClientAddress);
                             // Set a balloon without content

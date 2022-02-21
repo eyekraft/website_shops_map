@@ -241,22 +241,22 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
                 '<div class="list-group">' +
                     '<div class="form-group list-group-item" style="overflow:hidden">' +
                         '<div class="col-md-1 mr16">' +
-                            '<h5 class="mt16">'+_t('Options')+':</h5>' +
+                            '<h5 class="mt16">'+_t("Options")+':</h5>' +
                         '</div>' +
-                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="optcolor" title="'+_t('Enter name of the HTML-color')+'">'+_t('Color')+'</label></h5>' +
+                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="optcolor" title="'+_t("Enter name of the HTML-color")+'">'+_t("Color")+'</label></h5>' +
                         '<div class="col-md-2">' +
                             '<input class="form-control" type="text" value="'+this.data.color+'" id="optcolor" maxlength="10"/>' +
                         '</div>' +
-                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="opttag" title="'+_t('Marked label to show before the caption of the shop card')+'">'+_t('Label')+'</label></h5>' +
+                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="opttag" title="'+_t("Marked label to show before the caption of the shop card")+'">'+_t("Label")+'</label></h5>' +
                         '<div class="col-md-2">' +
                             '<input class="form-control" type="text"  value="'+this.data.tag+'" id="opttag" maxlength="10"/>' +
                         '</div>' +
-                        '<h5><label class="ml32 col-md-1 control-label vertic-align" for="optinfo" title="'+_t('Option to show info in the caption of the shop card')+'">'+_t('Info')+'</label></h5>' +
+                        '<h5><label class="ml32 col-md-1 control-label vertic-align" for="optinfo" title="'+_t("Option to show info in the caption of the shop card")+'">'+_t("Info")+'</label></h5>' +
                         '<div class="col-md-1 mt4">' +
-                            '<input type="radio" name="info" value="km">&nbsp;'+_t('Km')+'</>' +
+                            '<input type="radio" name="info" value="km">&nbsp;'+_t("Km")+'</>' +
                         '</div>' +
                         '<div class="col-md-2 mt4 mb16">' +
-                            '<input type="radio" name="info" value="num">&nbsp;'+_t('Code')+'</>' +
+                            '<input type="radio" name="info" value="num">&nbsp;'+_t("Code")+'</>' +
                         '</div>' +
                     '</div>' +
                 '</div>');

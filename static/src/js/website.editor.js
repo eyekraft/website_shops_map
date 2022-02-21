@@ -16,7 +16,7 @@ odoo.define('website_shops_map.editor', function (require) {
             this.$el.hide();
             editor.editor_bar = new editor.Class(this);
             editor.editor_bar.prependTo(document.body);
-            var messageList = _t('Select property');
+            var messageList = _t("Select property");
 
             var selector = $(document).find('#eyekraft_props_picker_selector')
             if (selector.length){
