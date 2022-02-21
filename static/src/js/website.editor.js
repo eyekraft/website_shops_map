@@ -16,19 +16,19 @@ odoo.define('website_shops_map.editor', function (require) {
             this.$el.hide();
             editor.editor_bar = new editor.Class(this);
             editor.editor_bar.prependTo(document.body);
-            message_list = _t('Select property');
+            var messageList = _t('Select property');
 
             var selector = $(document).find('#eyekraft_props_picker_selector')
             if (selector.length){
                 // remove properties
                 $(selector).children().remove();
-                $(selector).append("<select id='eyekraft_props_picker' class='hidden' multiple='' title='+ message_list +'></select>");
+                $(selector).append("<select id='eyekraft_props_picker' class='hidden' multiple='' title='+ messageList +'></select>");
             };
 
-            var big_map_view = $(document).find('#map-container-vertical')
-            if (big_map_view.length){
+            var bigMapView = $(document).find('#map-container-vertical')
+            if (bigMapView.length){
                 // remove big map
-                $(big_map_view).children().remove();
+                $(bigMapView).children().remove();
             };
         }
     });
