@@ -19,9 +19,9 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
     var EditSourcesDialog = Dialog.extend({
         template: 'website_shops_map.widget.dialog.edit',
         events: _.extend({}, Dialog.prototype.events, {
-            'click a.js_add_source': 'add_source',
-            'click button.js_edit_source': 'edit_source',
-            'click button.js_delete_source': 'delete_source',
+            'click a.js_add_source': 'addSource',
+            'click button.js_edit_source': 'editSource',
+            'click button.js_delete_source': 'deleteSource',
         }),
         /**
          * Init function.
@@ -87,7 +87,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
          * Add source function.
          *
          */
-        add_source: function () {
+        addSource: function () {
             var self = this;
             var dialog = new SourceEntryDialog(this, {}, undefined, {});
             dialog.on('save', this, function (link) {
@@ -114,7 +114,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
          *
          * @param {*} ev
          */
-        edit_source: function (ev) {
+        editSource: function (ev) {
             var self = this;
             var source_id = $(ev.currentTarget).closest('[data-source-id]').data('source-id');
             var source = self.flat[source_id];
@@ -144,7 +144,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
          *
          * @param {*} ev
          */
-        delete_source: function (ev) {
+        deleteSource: function (ev) {
             var self = this;
             var $source = $(ev.currentTarget).closest('[data-source-id]');
             var sid = $source.data('source-id');
@@ -363,7 +363,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
          * @param {*} elem
          * @param {*} visible
          */
-        set_visibility: function (elem, visible) {
+        setVisibility: function (elem, visible) {
             // save changes in edit mode
             var $visible = $(elem).data();
             $visible.visible = visible;
@@ -382,24 +382,24 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             if (type !== "click") return;
             var self = this;
             var section = self.$target
-            var list_li = ($(section).find('#eyekraft-show-list-tab')).parent(),
-                shop_list_panel = $(section).find('#shop_list_panel'),
-                map_li = ($(section).find('#eyekraft-show-map-tab')).parent(),
-                shop_map_panel = $(section).find('#shop_map_panel'),
+            var listLi = ($(section).find('#eyekraft-show-list-tab')).parent(),
+                shopListPanel = $(section).find('#shop_list_panel'),
+                mapLi = ($(section).find('#eyekraft-show-map-tab')).parent(),
+                shopMapPanel = $(section).find('#shop_map_panel'),
                 map_a = $(section).find('#eyekraft-show-map-tab');
 
-            if (list_li.attr("data-visible") === "on") {
-                list_li
+            if (listLi.attr("data-visible") === "on") {
+                listLi
                     .css('display', 'none')
                     .attr('class', '');
-                shop_list_panel.attr('class', 'tab-pane fade');
-                map_li.attr('class', 'active');
-                shop_map_panel.attr('class', 'tab-pane fade in active');
+                shopListPanel.attr('class', 'tab-pane fade');
+                mapLi.attr('class', 'active');
+                shopMapPanel.attr('class', 'tab-pane fade in active');
                 map_a.tab('show');
-                self.set_visibility(list_li, 'off');
+                self.setVisibility(listLi, 'off');
             } else {
-                list_li.css('display', 'block');
-                self.set_visibility(list_li, 'on');
+                listLi.css('display', 'block');
+                self.setVisibility(listLi, 'on');
             };
         },
 
@@ -413,24 +413,24 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             if (type !== "click") return;
             var self = this;
             var section = self.$target;
-            var list_li = ($(section).find('#eyekraft-show-list-tab')).parent(),
-                shop_list_panel = $(section).find('#shop_list_panel'),
-                map_li = ($(section).find('#eyekraft-show-map-tab')).parent(),
-                shop_map_panel = $(section).find('#shop_map_panel');
+            var listLi = ($(section).find('#eyekraft-show-list-tab')).parent(),
+                shopListPanel = $(section).find('#shop_list_panel'),
+                mapLi = ($(section).find('#eyekraft-show-map-tab')).parent(),
+                shopMapPanel = $(section).find('#shop_map_panel');
             var route_link = $(section).find('[data-block="route_link"]');
 
-            if (map_li.attr("data-visible") === "on") {
-                map_li
+            if (mapLi.attr("data-visible") === "on") {
+                mapLi
                     .css('display', 'none')
                     .attr('class', '');
-                shop_map_panel.attr('class', 'tab-pane fade');
-                list_li.attr('class', 'active');
-                shop_list_panel.attr('class', 'tab-pane fade in active');
+                shopMapPanel.attr('class', 'tab-pane fade');
+                listLi.attr('class', 'active');
+                shopListPanel.attr('class', 'tab-pane fade in active');
                 route_link.attr('class', 'col-xs-6 text-right invisible');
-                self.set_visibility(map_li, 'off');
+                self.setVisibility(mapLi, 'off');
             } else {
-                map_li.css('display', 'block');
-                self.set_visibility(map_li, 'on');
+                mapLi.css('display', 'block');
+                self.setVisibility(mapLi, 'on');
                 route_link.attr('class', 'col-xs-6 text-right');
             };
         },
@@ -448,8 +448,8 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             var uuid = $(section).attr('data-id');
 
             if (!uuid) {
-                var uuid_number = new Date().getTime();
-                uuid = 'eyekraftShopMap' + uuid_number
+                var uuidNumber = new Date().getTime();
+                uuid = 'eyekraftShopMap' + uuidNumber
                 $(section).attr('data-id', uuid)
                 var $wizard_id = $(section).data();
                 $wizard_id.id = uuid
