@@ -271,7 +271,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
                     '<div class="list-group">' +
                         '<div id="tags-group" class="form-group list-group-item" style="overflow:hidden">' +
                             '<div class="col-md-2">' +
-                                '<h5>'+_t('Shop tags:')+'</h5>' +
+                                '<h5>'+_t("Shop tags:")+'</h5>' +
                             '</div>' +
                         '</div>' +
                     '</div>');
