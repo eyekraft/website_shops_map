@@ -11,6 +11,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
     var qweb = core.qweb;
     var _t = core._t;
 
+    // Load QWeb XML Template
     ajax.loadXML('/website_shops_map/static/src/xml/s_shops_map_modal.xml', qweb);
 
     /**
@@ -23,6 +24,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             'click button.js_edit_source': 'editSource',
             'click button.js_delete_source': 'deleteSource',
         }),
+
         /**
          * Init function.
          *
@@ -242,22 +244,22 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
                 '<div class="list-group">' +
                     '<div class="form-group list-group-item" style="overflow:hidden">' +
                         '<div class="col-md-1 mr16">' +
-                            '<h5 class="mt16">'+_t("Options")+':</h5>' +
+                            '<h5 class="mt16">' + _t("Options") + ':</h5>' +
                         '</div>' +
-                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="optcolor" title="'+_t("Enter name of the HTML-color")+'">'+_t("Color")+'</label></h5>' +
+                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="optcolor" title="' + _t("Enter name of the HTML-color") + '">' + _t("Color") + '</label></h5>' +
                         '<div class="col-md-2">' +
-                            '<input class="form-control" type="text" value="'+this.data.color+'" id="optcolor" maxlength="10"/>' +
+                            '<input class="form-control" type="text" value="' + this.data.color + '" id="optcolor" maxlength="10"/>' +
                         '</div>' +
-                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="opttag" title="'+_t("Marked label to show before the caption of the shop card")+'">'+_t("Label")+'</label></h5>' +
+                        '<h5><label class="col-md-1 control-label vertic-align text-center" for="opttag" title="' + _t("Marked label to show before the caption of the shop card") + '">' + _t("Label") + '</label></h5>' +
                         '<div class="col-md-2">' +
-                            '<input class="form-control" type="text"  value="'+this.data.tag+'" id="opttag" maxlength="10"/>' +
+                            '<input class="form-control" type="text" value="' + this.data.tag + '" id="opttag" maxlength="10"/>' +
                         '</div>' +
-                        '<h5><label class="ml32 col-md-1 control-label vertic-align" for="optinfo" title="'+_t("Option to show info in the caption of the shop card")+'">'+_t("Info")+'</label></h5>' +
+                        '<h5><label class="ml32 col-md-1 control-label vertic-align" for="optinfo" title="' + _t("Option to show info in the caption of the shop card") + '">' + _t("Info") + '</label></h5>' +
                         '<div class="col-md-1 mt4">' +
-                            '<input type="radio" name="info" value="km">&nbsp;'+_t("Km")+'</>' +
+                            '<input type="radio" name="info" value="km">&nbsp;' + _t("Km") + '</>' +
                         '</div>' +
                         '<div class="col-md-2 mt4 mb16">' +
-                            '<input type="radio" name="info" value="num">&nbsp;'+_t("Code")+'</>' +
+                            '<input type="radio" name="info" value="num">&nbsp;' + _t("Code") + '</>' +
                         '</div>' +
                     '</div>' +
                 '</div>');
@@ -272,7 +274,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
                     '<div class="list-group">' +
                         '<div id="tags-group" class="form-group list-group-item" style="overflow:hidden">' +
                             '<div class="col-md-2">' +
-                                '<h5>'+_t("Shop tags:")+'</h5>' +
+                                '<h5>' + _t("Shop tags:") + '</h5>' +
                             '</div>' +
                         '</div>' +
                     '</div>');
@@ -286,8 +288,8 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
                     var tagName = this.data.tags_avail[i];
                     var divListGroupTagsRow = $(
                         '<div class="col-md-2 mt8">' +
-                            '<input id="shoptag'+i+'" type="checkbox" class="vertic-align" value="'+tagName+'" style="transform:scale(1.3);"/>' +
-                            '<span class="ml8">'+tagName+'</span>' +
+                            '<input id="shoptag' + i + '" type="checkbox" class="vertic-align" value="' + tagName + '" style="transform:scale(1.3);"/>' +
+                            '<span class="ml8">' + tagName + '</span>' +
                         '</div>');
                     tagsDiv.append($divListGroupTagsRow);
                     if (tagsSelected) {
@@ -356,6 +358,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
         },
     });
 
+    // Registries the function for open the customization dialog
     // Snippet option for Set visibility, List visibility, Map visibility and Widget settings
     options.registry.eyekraft_shop_list = options.Class.extend({
         /**
@@ -442,7 +445,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
          * @param {*} type
          * @param {*} data
          */
-        widget_settings : function(type, data) {
+        widget_settings : function (type, data) {
             if (type!=="click") return;
             var self = this;
             var section = $(self.$target).find('#shop-list-snippet-wrapper');
