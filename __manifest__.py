@@ -33,7 +33,7 @@ Partner And Google Map Snippet compatible.
         'views/res_config_settings.xml',
         'views/stock_view.xml',
         'views/shop_list_config_view.xml',
-        'views/shop_list_snippet.xml',
+        'views/s_shop_list.xml',
         'views/shop_work_days_view.xml',
         'views/website_frontend_assets.xml',
         'views/website_frontend_templates.xml',

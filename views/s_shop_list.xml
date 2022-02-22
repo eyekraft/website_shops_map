@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Shop List Snippet Template -->
+    <!-- "Shop List Snippet" Template -->
     <template id="snippet_eyekraft_shop_list" name="Shop List Snippet">
         <section class="snippet_eyekraft_shop_list">
             <div class="container">
@@ -22,7 +22,7 @@
                                             <input id="eyekraft-shop-list-address-input" type="text"
                                                 class="form-control" placeholder="Search" />
                                             <span class="input-group-btn">
-                                                <button type="button" class="btn btn-info find-shop-by-address" >Find</button>
+                                                <button type="button" class="btn btn-info find-shop-by-address">Find</button>
                                             </span>
                                         </div>
                                     </div>
@@ -89,7 +89,7 @@
     <template id="snippet_options" inherit_id="website.snippet_options" name="Snippet Options" >
         <xpath expr="." position="inside">
             <div data-js="eyekraft_shop_list" data-selector=".snippet_eyekraft_shop_list">
-                <!-- Form Options  -->
+                <!-- Form Options -->
                 <li class="divider"></li>
                 <li data-list_visibility="true"><a href="#">List Tab ON/OFF</a></li>
                 <li data-map_visibility="true"><a href="#">Map Tab ON/OFF</a></li>
