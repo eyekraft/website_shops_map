@@ -15,10 +15,18 @@
 
     <!-- "Shop API Users" ir.actions.act_window -->
     <record id="shop_api_users_action" model="ir.actions.act_window">
-        <field name="name">Shop API Users</field>
+        <field name="name">Shop's API Users</field>
         <field name="res_model">shop.api.user</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="shop_api_users_view_tree" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Shop's API Users.
+            </p>
+            <p class="oe_view_nocontent">
+                Create a Shop's API User, this is using for authentication method.
+            </p>
+        </field>
     </record>
 
     <!-- "Shop API Users" menu item -->

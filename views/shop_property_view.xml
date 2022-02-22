@@ -42,8 +42,17 @@
         <field name="res_model">shop.property</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
+            <p class="o_view_nocontent_smiling_face">
                 Create a Shop Property.
+            </p>
+            <p style="text-align: left">
+                Shop Properties are used to filter shops on the webpage or to set when creating a new warehouse at Warehouse management
+                <ul style="text-align: left">
+                    <li><i>Name</i>, defines the property name (to see in the drop-down selection on the webpage)</li>
+                    <li><i>Sequence</i>, defines the sequence number, if necessary (properties with a lower number are shown in the selection list earlier)</li>
+                    <li><i>Default</i>, checks as default to apply this property automatically on "Shop List Snippet" load</li>
+                    <li><i>URL</i>, defines the url address using default option permanently, to apply automatic property on specified page only, ex. «/page/shops»</li>
+                </ul>
             </p>
         </field>
     </record>

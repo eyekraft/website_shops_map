@@ -25,6 +25,18 @@
         <field name="name">Periods of Time</field>
         <field name="res_model">period.of.time</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Periods of Time.
+            </p>
+            <p style="text-align: left">
+                Create a Periods of Time entering opening hours for the shop
+                <ul style="text-align: left">
+                    <li><i>Since</i>, defines the hour from in which the shop works, in set hours in numbers</li>
+                    <li><i>To</i>, defines the hour until in which the shop works, in set hours in numbers</li>
+                </ul>
+            </p>
+        </field>
     </record>
 
     <!-- "Period of time" menu item -->

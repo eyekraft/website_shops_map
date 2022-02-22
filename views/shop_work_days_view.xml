@@ -19,6 +19,14 @@
         <field name="name">Shop Work Days</field>
         <field name="res_model">eyecraft.work.days</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Shop Work Days.
+            </p>
+            <p class="oe_view_nocontent">
+                Create a opening days in format of your own (ex. «Mon-Fri», «Saturday») for the shop
+            </p>
+        </field>
     </record>
 
     <!-- "Shop Work Days" menu item -->

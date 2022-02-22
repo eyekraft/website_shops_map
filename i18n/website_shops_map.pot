@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-11 00:55+0000\n"
-"PO-Revision-Date: 2022-02-11 00:55+0000\n"
+"POT-Creation-Date: 2022-02-22 23:18+0000\n"
+"PO-Revision-Date: 2022-02-22 23:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
+msgid "&amp;nbsp;"
+msgstr ""
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
@@ -90,6 +95,97 @@ msgid ""
 msgstr ""
 
 #. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid ""
+"<i>Colour</i>, defines colour of shop card border. Cause snippet allows to "
+"show lists from several sources it may be need to distinguish between them."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
+msgid ""
+"<i>Default</i>, checks as default to apply this property automatically on "
+"\"Shop List Snippet\" load"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid ""
+"<i>Info</i>, defines the type of information to display in the shop card "
+"caption. It's distance from current user's location to the shop location by "
+"default."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid ""
+"<i>Label</i>, defines short text mark placed before shop name. It has the "
+"same purpose as colour."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
+msgid ""
+"<i>Name</i>, defines the property name (to see in the drop-down selection on"
+" the webpage)"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
+msgid ""
+"<i>Sequence</i>, defines the sequence number, if necessary (properties with "
+"a lower number are shown in the selection list earlier)"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid ""
+"<i>Shop List Paramters</i>, defines the parameters for Shop List, like as:"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid "<i>Shop List Url</i>, defines the url address for Shop List"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid ""
+"<i>Shop tags</i>, defines shops with what tags will be shown on the map of "
+"the snippet. Cause this module supports Partner Google Map Snippet it can "
+"use its tagged Partners with geolocation completed. Partners available for "
+"Partner Google Map Snippet are imported as shops on this module install and "
+"are able to show by corresponding tag. The module's own tag is 'shop' and it"
+" is used by default."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
+msgid ""
+"<i>Since</i>, defines the hour from in which the shop works, in set hours in"
+" numbers"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
+msgid ""
+"<i>To</i>, defines the hour until in which the shop works, in set hours in "
+"numbers"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
+msgid ""
+"<i>URL</i>, defines the url address using default option permanently, to "
+"apply automatic property on specified page only, ex. «/page/shops»"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid "<i>Widget ID</i>, defines the Widget ID for Shop List."
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__api_key
 msgid "API Key"
 msgstr ""
@@ -152,8 +248,8 @@ msgstr ""
 
 #. module: website_shops_map
 #. openerp-web
-#: code:addons/website_shops_map/static/src/xml/widget.xml:0
-#: code:addons/website_shops_map/static/src/xml/widget.xml:0
+#: code:addons/website_shops_map/static/src/xml/s_shops_map_modal.xml:0
+#: code:addons/website_shops_map/static/src/xml/s_shops_map_modal.xml:0
 #, python-format
 msgid "Add source"
 msgstr ""
@@ -396,8 +492,54 @@ msgid "Country"
 msgstr ""
 
 #. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
+msgid "Create a Periods of Time entering opening hours for the shop"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
+msgid "Create a Periods of Time."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
+msgid ""
+"Create a Shop API User for the shop, this is using for authentication "
+"method."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
+msgid "Create a Shop API Users."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid ""
+"Create a Shop List Config because in the snippet configuration dialog you "
+"can choose next options of your shop list:"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
+msgid "Create a Shop List Config."
+msgstr ""
+
+#. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
 msgid "Create a Shop Property."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_work_days_action
+msgid "Create a Shop Work Days."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_work_days_action
+msgid ""
+"Create a opening days in format of your own (ex. «Mon-Fri», «Saturday») for "
+"the shop"
 msgstr ""
 
 #. module: website_shops_map
@@ -1336,7 +1478,6 @@ msgid "Shop"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.actions.act_window,name:website_shops_map.shop_api_users_action
 #: model:ir.ui.menu,name:website_shops_map.shop_api_users_menu
 msgid "Shop API Users"
 msgstr ""
@@ -1387,6 +1528,13 @@ msgstr ""
 #: model:ir.actions.act_window,name:website_shops_map.shop_properties_action
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_shop_property_view_tree
 msgid "Shop Properties"
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
+msgid ""
+"Shop Properties are used to filter shops on the webpage or to set when "
+"creating a new warehouse at Warehouse management"
 msgstr ""
 
 #. module: website_shops_map
@@ -1449,6 +1597,11 @@ msgstr ""
 #: code:addons/website_shops_map/static/src/js/shop_list_editor.js:0
 #, python-format
 msgid "Shop tags:"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_api_users_action
+msgid "Shop's API Users"
 msgstr ""
 
 #. module: website_shops_map
@@ -1519,7 +1672,7 @@ msgstr ""
 
 #. module: website_shops_map
 #. openerp-web
-#: code:addons/website_shops_map/static/src/xml/widget.xml:0
+#: code:addons/website_shops_map/static/src/xml/s_shops_map_modal.xml:0
 #, python-format
 msgid "Source setup"
 msgstr ""
@@ -1614,6 +1767,11 @@ msgstr ""
 #: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_stock_supplier
 msgid ""
 "The stock location used as source when receiving goods from this contact."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_map_cache_action
+msgid "There aren't any Yandrix map cached requests"
 msgstr ""
 
 #. module: website_shops_map
