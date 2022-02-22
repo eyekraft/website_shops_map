@@ -15,7 +15,7 @@ class eyecraft_work_days(models.Model):
     )
 
 
-class paeriod_of_time(models.Model):
+class period_of_time(models.Model):
     _name = "period.of.time"
     _description = "Period of Time"
 
