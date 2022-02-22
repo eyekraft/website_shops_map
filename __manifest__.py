@@ -41,12 +41,15 @@ Partner And Google Map Snippet compatible.
     'qweb': [
         'static/src/xml/s_shops_map_modal.xml',
     ],
-    'js': [
-    ],
-    'demo': [
-    ],
-    'test': [
-    ],
+    # 'js': [
+    #     'static/src/js/shop_list_editor.js',
+    #     'static/src/js/shop_list_snippet.js',
+    #     'static/src/js/website.editor.js',
+    # ],
+    # 'demo': [
+    # ],
+    # 'test': [
+    # ],
     'license': 'GPL-3',
     'images': ['static/description/main.png'],
     'update_xml': [],
