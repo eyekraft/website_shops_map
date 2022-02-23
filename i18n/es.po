@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-22 19:52+0000\n"
-"PO-Revision-Date: 2022-02-22 19:27-0400\n"
+"PO-Revision-Date: 2022-02-22 20:27-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -136,7 +136,7 @@ msgid ""
 msgstr ""
 "<i>Información</i>, define el tipo de información que se mostrará en el "
 "título de la tarjeta de la tienda. Es la distancia desde la ubicación del "
-"usuario actual hasta la ubicación de la tienda por defecto."
+"usuario actual hasta la ubicación de la tienda predeterminada."
 
 #. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
@@ -197,7 +197,7 @@ msgstr ""
 "geolocalización completa. Los socios disponibles para Partner Google Map "
 "Snippet se importan como tiendas en la instalación de este módulo y se "
 "pueden mostrar con la etiqueta correspondiente. La etiqueta propia del "
-"módulo es 'shop' y se usa por defecto."
+"módulo es 'shop' y se usa predeterminada."
 
 #. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
@@ -662,7 +662,7 @@ msgstr "Fecha"
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__default
 msgid "Default"
-msgstr "Por defecto"
+msgstr "Predeterminada"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__trust
