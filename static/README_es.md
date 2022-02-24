@@ -24,9 +24,11 @@ Aquí están los archivos código fuentes:
 
 * ``js`` - archivo **shop_list_shippet** con toda la lógica de representación.
 
+    * ``shop_list_editor.js`` - la lógica del widget **shopList** desde el modo de editor de sitios web.
+
 ## shop_list_snippet.js
 
-Contiene el widget shopList y algunas funciones auxiliares:
+Contiene el widget **shopList** y algunas funciones auxiliares:
 
 * **toRadians** - convertir grados a radianes.
 

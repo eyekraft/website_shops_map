@@ -24,9 +24,11 @@ Here are the sources codes:
 
 * ``js`` - shop_list_shippet file with all the rendering logic.
 
+    * ``shop_list_editor.js`` - the **shopList** widget logic from website editor mode.
+
 ## shop_list_snippet.js
 
-Contains the shopList widget and some helper functions:
+Contains the **shopList** widget and some helper functions:
 
 * **toRadians** - convert degrees to radians
 
