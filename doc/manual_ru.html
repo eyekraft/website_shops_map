@@ -4,81 +4,216 @@
 </head>
 <section class="oe_container">
     <div class="oe_spaced">
-        <div class="col-md-12">
-            <h4 class="oe_slogan" style="color:#428bca; text-align: center;">Порядок создания магазина</h4>
-	  </div>
-        <div class="col-md-6">
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_2.jpg"/>
-           </div>
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_3.jpg"/>
-           </div>
-        </div>
-        <div class="col-md-12">
-            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Склады</p>
-            <p class="oe_mt32">2. Создайте новый склад (Create):
-            <ul>
-             <li>активируйте опцию «Магазин»</li>
-             <li>укажите название (используется для отображения на карте магазинов)</li>
-             <li>укажите короткое название (произвольное буквенно-цифровое обозначение)</li>
-             <li>укажите город в поле «Город»</li>
-             <li>укажите улицу, номер строения и название строения в поле «Улица»</li>
-             <li>укажите название торгового заедения а поле «Торговый центр»</li>
-             <li>при необходимости укажите название станции метро в поле «Метро»</li>
-             <li>выберите услуги, доступные в магазине в поле «Свойства» (услуги должны быть предварительно сформированы - см. ниже)</li>
-             <li>добавьте запись часов работы магазина</li>
-             <li>выберите создание дней работы магазина и введите данные в произвольном формате (например, «пн-пт», «суббота»), либо выберите из списка ранее введенные дни</li>
-             <li>выберите создание часов работы и введите данные в появившемся окне, либо выберите из списка ранее введенные часы</li>
-             <li>при необходимости загрузите фотографии во вкладке «Изображения»</li>
-            </ul>
+        <div class="text-center mb64">
+            <p class="lead slim">
+                Эта инструкция позволяет настроить серверную часть Odoo, все необходимые регистры, чтобы иметь возможность отображать список магазинов.
             </p>
-            <p class="oe_mt32">3. Сохраните форму (Save). Магазин станет доступен для показа на карте</p>
         </div>
+        <div class="col-md-10">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_title.jpg" alt="Список магазинов на карте"/>
+            </div>
+        </div>
+    </div>
+    <div class="oe_spaced">
+        <!-- Shop API Users -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Пользователи API магазинов</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Для того, чтобы использовать текущую базу в качестве источника списка магазинов, необходимо сформировать локальный ключ API.</p>
+            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Управление магазином/API Settings/Пользователи API магазинов</p>
+            <ul>
+                <li>Введите URL текущего сайта, и в процессе сохранения записи будет сформирован ключ API.</li>
+                <li>Введите этот URL и ключ API во время настройки источника сниппета карты.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_api_users_form.png" alt="Снимок экрана для формы пользователей API магазина"/>
+            </div>
+        </div>
+        <!-- Yandex Maps API -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Yandex Maps API</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Откройте меню Настройки/общие настройки/Просмотр Яндекс Карт</p>
+            <p class="oe_mt32">2. Установите ключ API и локализацию карты, посетите <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" title="Yandex Maps API" target="_blank">страница</a> о получении ключа API для картографического сервиса "JavaScript API и HTTP Geocoder".</p>
+            <p class="oe_mt32">Заполните все необходимые данные и сохраните их.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_yandex_settings_form.png" alt="Скриншот аддона для просмотра Яндекс Карт"/>
+            </div>
+        </div>
+        <!-- Multi-Warehouses -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Multi-Warehouses</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">You can manage several warehouses. You need to have Manager Access Rights for Inventory module to work with shops.</p>
+            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Управление магазином/<a href="https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html" title="Multi-Warehouses" target="_blank">Multi-Warehouses</a></p>
+            <p class="oe_mt32">Заполните все необходимые данные и сохраните их.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_warehouses_settings_form.png" alt="Screenshot for define Multi-Warehouses"/>
+            </div>
+        </div>
+        <!-- Shop List Config -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop List Config</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Create a Shop List Config because in the snippet configuration dialog you can choose next options of your shop list.</p>
+            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Управление магазином/Shop List Config</p>
+            <ul>
+                <li>specify "Shop List Url", defines the URL address for Shop List.</li>
+                <li>specify "Shop List Paramters", defines the URL address for Shop List.</li>
+                <ul>
+                    <li>specify "Colour", defines colour of shop card border. Cause snippet allows to show lists from several sources it may be need to distinguish between them.</li>
+                    <li>specify "Label", defines short text mark placed before shop name. It has the same purpose as colour.</li>
+                    <li>specify "Info", defines the type of information to display in the shop card caption. It's distance from current user's location to the shop location by default.</li>
+                    <li>specify "Shop tags", defines shops with what tags will be shown on the map of the snippet. Cause this module supports Partner Google Map Snippet it can use its tagged Partners with geolocation completed. Partners available for Partner Google Map Snippet are imported as shops on this module install and are able to show by corresponding tag. The module's own tag is 'shop' and it is used by default.</li>
+                </ul>
+                <li>specify "Widget ID", defines the Widget ID for Shop List.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_urls_form.png" alt="Screenshot for Shop List Config form"/>
+            </div>
+        </div>
+        <!-- Periods of Time -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Периоды времени</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Создайте периоды времени, указав часы работы магазина.</p>
+            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Управление магазином/Периоды времени</p>
+            <ul>
+                <li>указать "С" определяет час, с которого работает магазин, в заданных часах цифрами.</li>
+                <li>указать «До» определяет час, до которого работает магазин, в заданных часах в цифрах.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_period_of_time_form.png" alt="Снимок экрана для формы Периоды времени"/>
+            </div>
+        </div>
+        <!-- Shop Work Days -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Рабочие дни в магазине</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Управление магазином/Рабочие дни в магазине</p>
+            <p class="oe_mt32">Create a opening days in format of your own (ex. «Mon-Fri», «Saturday») for the shop.</p>
+            <p class="oe_mt32">Заполните все необходимые данные и сохраните их.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_work_days_form.png" alt="Снимок экрана для формы «Рабочие дни в магазине»"/>
+            </div>
+        </div>
+        <!-- Shop properties -->
         <div class="col-md-12 mt32">
             <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Свойства магазинов</h4>
-	  </div>
+        </div>
         <div class="col-md-12">
             <p class="oe_mt32">Свойства используются в качестве фильтров, сортируя магазины по услугам. Они могут выбираться поcетителем сайта из выпадающего меню, а также устанавливаться автоматически при загрузке страницы.</p>
             <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/Управление магазином/Свойства магазина</p>
             <p class="oe_mt32">2. Создайте новое свойство (Create):</p>
             <ul>
-             <li>укажите название свойства (используется в списке выбора)</li>
-             <li>при необходимости укажите последовательность (Sequence) (свойства с меньшим номером показываются в списке раньше)</li>
-             <li>при необходимости активируйте опцию «По-умолчанию» (Default), чтобы автоматически применять это свойство при загрузке страницы</li>
-             <li>укажите в поле «URL» адрес страницы для автоматического фильтра, например «/page/shops»*</li>
+                <li>укажите название свойства (используется в списке выбора)</li>
+                <li>при необходимости укажите последовательность (Sequence) (свойства с меньшим номером показываются в списке раньше)</li>
+                <li>при необходимости активируйте опцию «По-умолчанию» (Default), чтобы автоматически применять это свойство при загрузке страницы</li>
+                <li>укажите в поле «URL» адрес страницы для автоматического фильтра, например «/page/shops»*</li>
+            </ul>
+            <p class="oe_mt32">3. Сохраните форму (Save). Свойство станет доступно в поле «Свойства» при создании магазинов.</p>
+            <p class="oe_mt32"><i>* При заполненном URL фильтр работает только на указанной станице. Если это поле остается пустым, фильтр применяется ко всем страницам со списком магазинов.</i></p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_4.jpg" alt=""/>
+            </div>
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_5.jpg" alt=""/>
+           </div>
+        </div>
+        <!-- The order of creating shop -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Порядок создания магазина</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Вы можете создать склад как общедоступный магазин.</p>
+            <p class="oe_mt32">1. Откройте меню Инвентаризация/Управление складом/<a href="https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses.html" title="Склады" target="_blank">Склады</a></p>
+            <p class="oe_mt32">2. Создайте новый склад <b>склад</b> (Create):</p>
+            <ul>
+                <li>активируйте опцию <b>Магазин</b>, флажок, чтобы назначить склад как публичный магазин.</li>
+                <ul>
+                    <li>укажите название (используется для отображения на карте магазинов)</li>
+                    <li>укажите короткое название (произвольное буквенно-цифровое обозначение)</li>
+                    <li>укажите город в поле «Город»</li>
+                    <li>укажите улицу, номер строения и название строения в поле «Улица»</li>
+                    <li>укажите название торгового заедения а поле «Торговый центр»</li>
+                    <li>при необходимости укажите название станции метро в поле «Метро»</li>
+                    <li>выберите услуги, доступные в магазине в поле «Свойства» (услуги должны быть предварительно сформированы - см. ниже)</li>
+                    <li>добавьте запись часов работы магазина</li>
+                    <li>выберите создание дней работы магазина и введите данные в произвольном формате (например, «пн-пт», «суббота»), либо выберите из списка ранее введенные дни</li>
+                    <li>выберите создание часов работы и введите данные в появившемся окне, либо выберите из списка ранее введенные часы</li>
+                    <li>при необходимости загрузите фотографии во вкладке «Изображения</li>
+                </ul>
             </ul>
         </div>
         <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt48">
-                <img src="/website_shops_map/static/description/scr_man_4.jpg"/>
+                <img src="/website_shops_map/static/description/scr_man_warehouse_as_shop.png" alt="Screenshot for Manage Warehouses form"/>
             </div>
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_5.jpg"/>
-           </div>
         </div>
         <div class="col-md-12">
-            <p class="oe_mt32">3. Сохраните форму (Save). Свойство станет доступно в поле «Свойства» при создании магазинов.</p>
-            <p class="oe_mt32"><i>* При заполненном URL фильтр работает только на указанной станице. Если это поле остается пустым, фильтр применяется ко всем страницам со списком магазинов.</i></p>
+            <p class="oe_mt32">3. Сохраните форму (Save). Магазин станет доступен для показа на карте</p>
         </div>
-        <div class="col-md-12">
-            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Корректировка координат магазина</h4>
-	</div>
         <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_6.jpg"/>
-           </div>
+                <img src="/website_shops_map/static/description/scr_man_2.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Помните: Вы можете выбрать доступные в магазине услуги в поле "Свойства" (услуги должны быть предварительно настроены - см. предыдущий раздел).</p>
+        </div>
+        <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_7.jpg"/>
+                <img src="/website_shops_map/static/description/scr_man_3.jpg" alt=""/>
            </div>
         </div>
         <div class="col-md-12">
+            <p class="oe_mt32">Помните: Вы можете выбрать доступные в магазине услуги в поле "Свойства" (услуги должны быть предварительно настроены - см. предыдущий раздел).</p>
+            <p class="oe_mt32">Также вы можете ввести часы работы и ввести данные в появившемся окне или выбрать ранее введенные часы из списка.</p>
+        </div>
+        <!-- Shop Coordinate Adjustment -->
+        <div class="col-md-12">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Корректировка координат магазина</h4>
             <p class="oe_mt32">Иногда может возникнуть ситуация, когда адрес магазина не точно отражает метоположение магазина на карте. В этом случае:</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_6.jpg" alt="Check if the Shop coordinates is correct"/>
+           </div>
+        </div>
+        <div class="col-md-12">
             <p class="oe_mt32">1. Пройдите на ресурс «Яндекс-карты» (<a href="http://map.yandex.ru" target="_blank">map.yandex.ru</a>)</p>
             <p class="oe_mt32">2. Введите в строке поиска адрес вашего магазина</p>
             <p class="oe_mt32">3. Если магазин не точно указан на карте, найдите правильное место визуально и щелкните по нему мышью</p>
             <p class="oe_mt32">4. Всплывающее справочное окно покажет гео-координаты пункта</p>
             <p class="oe_mt32">5. Скопируйте эти координаты в поля Широта (Latitude) и Долгота (Longitude) на форме с данными магазина</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_7.jpg" alt="Update the coordinates for the Shop"/>
+           </div>
+        </div>
+        <div class="col-md-12">
             <p class="oe_mt32">6. Сохраните форму (Save)</p>
         </div>
     </div>

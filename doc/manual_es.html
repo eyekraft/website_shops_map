@@ -4,81 +4,216 @@
 </head>
 <section class="oe_container">
     <div class="oe_spaced">
-        <div class="col-md-12">
-            <h4 class="oe_slogan" style="color:#428bca; text-align: center;">El orden de creación de la tienda</h4>
-	  </div>
-        <div class="col-md-8">
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_2.jpg"/>
-           </div>
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_3.jpg"/>
-           </div>
-        </div>
-        <div class="col-md-12">
-            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Almacenes</p>
-            <p class="oe_mt32">2. Crear un nuevo Almacén:
-            <ul>
-             <li>marque la casilla de verificación "Tienda" para asignar el almacén como tienda pública</li>
-             <li>especifique el nombre de la tienda (usado para mostrar en el mapa de la tienda con el fragmento HTML de "Shop List Snippet")</li>
-             <li>especifique un nombre corto de la tienda (designación alfanumérica arbitraria)</li>
-             <li>especifique el nombre de la ciudad donde se encuentra la tienda en el campo "Ciudad"</li>
-             <li>especifique la dirección de la tienda como: calle, número y nombre del edificio en el campo "Calle"</li>
-             <li>especifique el nombre del centro comercial en el campo "Centro comercial", si corresponde</li>
-             <li>especifique el nombre de la estación de metro en el campo "Estación de metro", si corresponde</li>
-             <li>seleccione los servicios disponibles en la tienda en el campo "Propiedades" (los servicios deben estar preconfigurados - ver a continuación)</li>
-             <li>añadir una entrada de horario de la tienda</li>
-             <li>ingrese los días de apertura en su propio formato (p. ej., «Lunes a Viernes», «Sábado»), o seleccione las horas ingresadas previamente de la lista</li>
-             <li>ingrese el horario de apertura e ingrese los datos en la ventana que aparece, o seleccione el horario ingresado previamente de la lista</li>
-             <li>cargue fotos en la pestaña "Imágenes" para que la tienda las muestre en la página de la tienda, si corresponde</li>
-            </ul>
+        <div class="text-center mb64">
+            <p class="lead slim">
+                Esta instrucciones le permite configurar el el backend de Odoo, todos los registros necesarios para poder mostrar el listado de tiendas.
             </p>
-            <p class="oe_mt32">3. Guarde el formulario. Ahora la tienda está disponible para mostrar en el fragmento HTML de "Shop List Snippet"</p>
         </div>
+        <div class="col-md-10">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_title.jpg" alt="Lista de tiendas en el mapa"/>
+            </div>
+        </div>
+    </div>
+    <div class="oe_spaced">
+        <!-- Shop API Users -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Usuarios de API de la tienda</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Para registrar la base de datos de Odoo como fuente de lista de tienda, debe generar una clave API local.</p>
+            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Gestión de la tienda/Configuración de API/Usuarios de API de la tienda</p>
+            <ul>
+                <li>Ingrese la <b>URL</b> a la base de datos actual y obtenga su <b>clave API</b> al presionar el botón <b>Guardar</b>.</li>
+                <li>Use esta <b>URL</b> y la <b>clave API</b> generada en la configuración de la fuente del fragmento HTML de <b>Shop List Snippet</b> para mapa.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_api_users_form.png" alt="Captura de pantalla para el formulario Usuarios de API de la tienda"/>
+            </div>
+        </div>
+        <!-- Yandex Maps API -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Yandex Maps API</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Abrir el menú Ajustes/Opciones Generales/Vista de mapas de Yandex</p>
+            <p class="oe_mt32">2. Debe establecer API Key y localización de mapas, visite la <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" title="Yandex Maps API" target="_blank">página</a> acerca de obtener una API Key para el servicio de mapas "JavaScript API y HTTP Geocoder".</p>
+            <p class="oe_mt32">Llena todos los datos requeridos y guárdelo.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_yandex_settings_form.png" alt="Captura de pantalla para opciones de Yandex Maps View"/>
+            </div>
+        </div>
+        <!-- Multi-Warehouses -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Multialmacén</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Puede gestionar varios almacenes. Debe tener derechos de acceso de administrador para el módulo de Inventario para trabajar con tiendas.</p>
+            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Gestión de la tienda/<a href="https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html" title="Multialmacén" target="_blank">Multialmacén</a></p>
+            <p class="oe_mt32">Llena todos los datos requeridos y guárdelo.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_warehouses_settings_form.png" alt="Captura de pantalla para el formulario define Multi-Warehouses"/>
+            </div>
+        </div>
+        <!-- Shop List Config -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Configuración de lista de tiendas</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Crear una configuración de lista de tiendas porque en el cuadro de diálogo de configuración de fragmentos puede elegir las siguientes opciones de su lista de compras.</p>
+            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Gestión de la tienda/Configuración de lista de tiendas</p>
+            <ul>
+                <li>"URL de lista de la tienda", define la dirección URL para lista de la tienda.</li>
+                <li>"Parámetros de lista de Tienda", define los parámetros para Lista de Tienda, como:</li>
+                <ul>
+                    <li>"Color", define el color del borde de la tarjeta de la tienda. Por que el fragmento HTML le permite mostrar listas de varias fuentes, es posible que sea necesario distinguirlas.</li>
+                    <li>"Etiqueta", define una marca de texto corta colocada antes del nombre de la tienda. Tiene el mismo propósito que el color.</li>
+                    <li>"Información", define el tipo de información que se mostrará en el título de la tarjeta de la tienda. Es la distancia desde la ubicación del usuario actual hasta la ubicación de la tienda predeterminada.</li>
+                    <li>"Etiquetas de tienda", define las tiendas con qué etiquetas se mostrarán en el mapa del fragmento. Debido a que este módulo es compatible con Partner Google Map Snippet, puede usar sus socios etiquetados con geolocalización completa. Los socios disponibles para Partner Google Map Snippet se importan como tiendas en la instalación de este módulo y se pueden mostrar con la etiqueta correspondiente. La etiqueta propia del módulo es 'shop' y se usa predeterminada.</li>
+                </ul>
+                <li>"ID de Widget", define el ID de Widget para la Lista de Tienda.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_urls_form.png" alt="Captura de pantalla para el formulario Configuración de lista de tiendas"/>
+            </div>
+        </div>
+        <!-- Periods of Time -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Períodos de tiempo</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Crear un Período de Tiempo ingresando el horario de apertura de la tienda.</p>
+            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Gestión de la tienda/Períodos de tiempo</p>
+            <ul>
+                <li>"Desde", define la hora a partir de la cual trabaja la tienda, en horas establecidas en números.</li>
+                <li>"A", define la hora hasta la que trabaja la tienda, en horas establecidas en números.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_period_of_time_form.png" alt="Captura de pantalla para el formulario Períodos de tiempo"/>
+            </div>
+        </div>
+        <!-- Shop Work Days -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Días de trabajo de la tienda</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Gestión de la tienda/Días de trabajo de la tienda</p>
+            <p class="oe_mt32">Cree un día de apertura en su propio formato (por ejemplo, «lunes a viernes», «sábado») para la tienda.</p>
+            <p class="oe_mt32">Llena todos los datos requeridos y guárdelo.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_work_days_form.png" alt="Captura de pantalla para el formulario Días de trabajo de la tienda"/>
+            </div>
+        </div>
+        <!-- Shop properties -->
         <div class="col-md-12 mt32">
             <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Propiedades de Tienda</h4>
-	  </div>
+        </div>
         <div class="col-md-12">
             <p class="oe_mt32">Las propiedades se utilizan para filtrar tiendas en la página web. Pueden ser seleccionados por el usuario de la lista desplegable o estar preinstalados en la carga de fragmentos de forma permanente sin capacidad de selección.</p>
             <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/Almacenes/Gestión de la tienda/Propiedades de tienda</p>
             <p class="oe_mt32">2. Crear nueva propiedad:</p>
             <ul>
-             <li>especifique el "Nombre" de la propiedad (para ver en la selección desplegable en la página web)</li>
-             <li>especifique la "Secuencia" si es necesario (las propiedades con un número más bajo se muestran en la lista de selección anterior)</li>
-             <li>marque como "Predeterminado" para aplicar esta propiedad automáticamente en la carga del fragmento HTML de "Shop List Snippet"</li>
-             <li>especifique la dirección "URL" para aplicar la propiedad automática solo en la página especificada, ej. «/page/shops»*</li>
+                <li>especifique el "Nombre" de la propiedad (para ver en la selección desplegable en la página web)</li>
+                <li>especifique la "Secuencia" si es necesario (las propiedades con un número más bajo se muestran en la lista de selección anterior)</li>
+                <li>marque como "Predeterminado" para aplicar esta propiedad automáticamente en la carga del fragmento HTML de "Shop List Snippet"</li>
+                <li>especifique la dirección "URL" para aplicar la propiedad automática solo en la página especificada, ej. «/page/shops»*</li>
+            </ul>
+            <p class="oe_mt32">3. Guarde el formulario. La propiedad está disponible en la lista de propiedades del formulario de la creación de tiendas.</p>
+            <p class="oe_mt32"><i>* Si el campo "URL" está lleno, el filtro automático funciona solo en la página especificada. De lo contrario, el filtro se aplica a cada fragmento HTML de "Shop List Snippet" de tienda del sitio web.</i></p>
+        </div>
+        <div class="col-md-8">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_4.jpg" alt=""/>
+            </div>
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_5.jpg" alt=""/>
+           </div>
+        </div>
+        <!-- The order of creating shop -->
+        <div class="col-md-12">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">El orden de creación de la tienda</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">You can to create Warehouse as Public Shop.</p>
+            <p class="oe_mt32">1. Abrir el menú Inventario/Gestión de almacén/<a href="https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses.html" title="Almacenes" target="_blank">Almacenes</a></p></p>
+            <p class="oe_mt32">2. Crear un nuevo <b>Almacén</b>:</p>
+            <ul>
+                <li>Marque la casilla de verificación <b>Tienda pública</b>, para asignar el almacén como tienda pública.</li>
+                <ul>
+                    <li>especifique el nombre de la tienda (usado para mostrar en el mapa de la tienda con el fragmento HTML de "Shop List Snippet")</li>
+                    <li>especifique un nombre corto de la tienda (designación alfanumérica arbitraria)</li>
+                    <li>especifique el nombre de la ciudad donde se encuentra la tienda en el campo "Ciudad"</li>
+                    <li>especifique la dirección de la tienda como: calle, número y nombre del edificio en el campo "Calle"</li>
+                    <li>especifique el nombre del centro comercial en el campo "Centro comercial", si corresponde</li>
+                    <li>especifique el nombre de la estación de metro en el campo "Estación de metro", si corresponde</li>
+                    <li>seleccione los servicios disponibles en la tienda en el campo "Propiedades" (los servicios deben estar preconfigurados - ver a continuación)</li>
+                    <li>añadir una entrada de horario de la tienda</li>
+                    <li>ingrese los días de apertura en su propio formato (p. ej., «Lunes a Viernes», «Sábado»), o seleccione las horas ingresadas previamente de la lista</li>
+                    <li>ingrese el horario de apertura e ingrese los datos en la ventana que aparece, o seleccione el horario ingresado previamente de la lista</li>
+                    <li>cargue fotos en la pestaña "Imágenes" para que la tienda las muestre en la página de la tienda, si corresponde</li>
+                </ul>
             </ul>
         </div>
         <div class="col-md-8">
             <div class="oe_demo oe_picture oe_screenshot mt48">
-                <img src="/website_shops_map/static/description/scr_man_4.jpg"/>
+                <img src="/website_shops_map/static/description/scr_man_warehouse_as_shop.png" alt="Captura de pantalla para el formulario Manage Warehouses"/>
             </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">3. Guarde el formulario. Ahora la tienda está disponible para mostrar en el fragmento HTML de "Shop List Snippet"</p>
+        </div>
+        <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_5.jpg"/>
+                <img src="/website_shops_map/static/description/scr_man_2.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Recuerde: seleccione los servicios disponibles en la tienda en el campo "Propiedades" (los servicios deben estar preconfigurados - ver sección anterior).</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_3.jpg" alt=""/>
            </div>
         </div>
         <div class="col-md-12">
-            <p class="oe_mt32">3. Guarde el formulario. La propiedad está disponible en la lista de propiedades del formulario de la creación de tiendas.</p>
-            <p class="oe_mt32"><i>* Si el campo "URL" está lleno, el filtro automático funciona solo en la página especificada. De lo contrario, el filtro se aplica a cada fragmento HTML de "Shop List Snippet" de tienda del sitio web.</i></p>
+            <p class="oe_mt32">Recuerde: ingrese los días de apertura en su propio formato (p. ej., «Lunes a Viernes», «Sábado»), o seleccione las horas ingresadas previamente de la lista.</p>
+            <p class="oe_mt32">También usted puede ingrese el horario de apertura e ingrese los datos en la ventana que aparece, o seleccione el horario ingresado previamente de la lista.</p>
         </div>
+        <!-- Shop Coordinate Adjustment -->
         <div class="col-md-12">
             <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Ajuste de coordenadas de la tienda</h4>
-	    </div>
-        <div class="col-md-8">
+            <p class="oe_mt32">A veces puede surgir una situación en la que la dirección de la tienda no refleje con precisión la ubicación de la tienda en el mapa. En este caso:</p>
+        </div>
+        <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_6.jpg"/>
-           </div>
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-                <img src="/website_shops_map/static/description/scr_man_7.jpg"/>
+                <img src="/website_shops_map/static/description/scr_man_6.jpg" alt="Compruebe si las coordenadas de la tienda son correctas"/>
            </div>
         </div>
         <div class="col-md-12">
-            <p class="oe_mt32">A veces puede surgir una situación en la que la dirección de la tienda no refleje con precisión la ubicación de la tienda en el mapa. En este caso:</p>
             <p class="oe_mt32">1. Ir al recurso «Yandex maps» (<a href="http://map.yandex.ru" target="_blank">map.yandex.ru</a>)</p>
             <p class="oe_mt32">2. Introduce la dirección de tu tienda en la barra de búsqueda</p>
             <p class="oe_mt32">3. Si la tienda no está exactamente indicada en el mapa, busque la ubicación correcta visualmente y haga clic en ella</p>
             <p class="oe_mt32">4. Una ventana emergente de ayuda mostrará las coordenadas geográficas del punto</p>
             <p class="oe_mt32">5. Copia estas coordenadas en los campos "Latitud" y "Longitud" del formulario con los datos de la tienda</p>
+        </div>
+        <div class="col-md-8">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_7.jpg" alt="Actualizar las coordenadas de la Tienda"/>
+           </div>
+        </div>
+        <div class="col-md-12">
             <p class="oe_mt32">6. Guarde el formulario</p>
         </div>
     </div>

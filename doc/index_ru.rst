@@ -34,13 +34,13 @@
 Yandex Maps API
 ---------------
 
-Set API key and map localization, visit the `page <https://yandex.com/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key>`_ about get an API Key for the "JavaScript API y HTTP Geocoder" Map service.
+Установите ключ API и локализацию карты, посетите `страница <https://yandex.com/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key>`_ о получении ключа API для картографического сервиса "JavaScript API и HTTP Geocoder".
 
 * Откройте меню ``Settings --> General Settings --> Yandex Maps View``.
 
     .. figure:: ../static/description/scr_man_yandex_settings_form.png
       :width: 600px
-      :alt: Screenshot Addon for Yandex Maps View
+      :alt: Скриншот аддона для просмотра Яндекс Карт
 
 * Заполните все необходимые данные и сохранить его.
 
@@ -90,11 +90,11 @@ Create a Shop List Config because in the snippet configuration dialog you can ch
 Периоды времени
 ---------------
 
-Create a Periods of Time entering opening hours for the shop
+Создайте периоды времени, указав часы работы магазина.
 
-    * **Since**, defines the hour from in which the shop works, in set hours in numbers.
+    * **С**, определяет час, с которого работает магазин, в заданных часах цифрами.
 
-    * **To**, defines the hour until in which the shop works, in set hours in numbers.
+    * **До**, определяет час, до которого работает магазин, в заданных часах в цифрах.
 
 Откройте меню ``Инвентарь --> Управление складом --> Управление магазином --> Периоды времени``.
 
