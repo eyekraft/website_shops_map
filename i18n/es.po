@@ -4,10 +4,10 @@
 # Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0-20210809\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-22 19:52+0000\n"
-"PO-Revision-Date: 2022-02-22 20:27-0400\n"
+"POT-Creation-Date: 2022-02-24 15:57+0000\n"
+"PO-Revision-Date: 2022-02-24 12:21-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -44,8 +44,8 @@ msgstr ""
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
-msgid "<b>Set API keys and map localization</b>"
-msgstr "<b>Establecer API keys y localización de mapas</b>"
+msgid "<b>Set API key and map localization</b>"
+msgstr "<b>Establecer API key y localización de mapas</b>"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
@@ -1626,7 +1626,20 @@ msgid "Shop Management"
 msgstr "Gestión de la tienda"
 
 #. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
+msgid "Shop Map"
+msgstr "Mapa de tienda"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
+#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
+msgid "Shop Map Cache"
+msgstr "Memoria caché del mapa de la tienda"
+
+#. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.shop_properties_action
+#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_shop_property_view_tree
 msgid "Shop Properties"
 msgstr "Propiedades de tienda"
@@ -1665,18 +1678,6 @@ msgid "Shop list"
 msgstr "Lista de la tienda"
 
 #. module: website_shops_map
-#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
-msgid "Shop map"
-msgstr "Mapa de tienda"
-
-#. module: website_shops_map
-#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
-#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
-#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
-msgid "Shop map cache"
-msgstr "Memoria caché del mapa de la tienda"
-
-#. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_eyekraft_shop
 msgid "Shop model for eyekraft"
 msgstr "Modelo tienda para eyekraft"
@@ -1685,11 +1686,6 @@ msgstr "Modelo tienda para eyekraft"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
 msgid "Shop name or code"
 msgstr "Nombre o código de la tienda"
-
-#. module: website_shops_map
-#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
-msgid "Shop properties"
-msgstr "Propiedades de tienda"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_shop_property
@@ -1776,7 +1772,7 @@ msgstr "URL de origen"
 
 #. module: website_shops_map
 #. openerp-web
-#: code:addons/website_shops_map/static/src/xml/widget.xml:0
+#: code:addons/website_shops_map/static/src/xml/s_shops_map_modal.xml:0
 #, python-format
 msgid "Source setup"
 msgstr "Configurar fuente"

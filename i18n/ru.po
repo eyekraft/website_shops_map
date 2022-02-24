@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-22 19:52+0000\n"
-"PO-Revision-Date: 2022-02-22 19:52+0000\n"
+"POT-Creation-Date: 2022-02-24 15:49+0000\n"
+"PO-Revision-Date: 2022-02-24 15:49+0000\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "Language: ru\n"
@@ -39,7 +39,7 @@ msgstr ""
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
-msgid "<b>Set API keys and map localization</b>"
+msgid "<b>Set API key and map localization</b>"
 msgstr ""
 
 #. module: website_shops_map
@@ -510,18 +510,6 @@ msgid "Create a Periods of Time."
 msgstr ""
 
 #. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
-msgid ""
-"Create a Shop API User for the shop, this is using for authentication "
-"method."
-msgstr ""
-
-#. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
-msgid "Create a Shop API Users."
-msgstr ""
-
-#. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
 msgid ""
 "Create a Shop List Config because in the snippet configuration dialog you "
@@ -541,6 +529,16 @@ msgstr "Создать свойство магазина."
 #. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_work_days_action
 msgid "Create a Shop Work Days."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
+msgid "Create a Shop's API User, this is using for authentication method."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
+msgid "Create a Shop's API Users."
 msgstr ""
 
 #. module: website_shops_map
@@ -1531,10 +1529,23 @@ msgstr "Ссылка"
 #. module: website_shops_map
 #: model:ir.ui.menu,name:website_shops_map.menu_shop_config
 msgid "Shop Management"
-msgstr ""
+msgstr "Управление магазином"
+
+#. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
+msgid "Shop Map"
+msgstr "Карта магазинов"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
+#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
+msgid "Shop Map Cache"
+msgstr "Кеш карты магазинов"
 
 #. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.shop_properties_action
+#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_shop_property_view_tree
 msgid "Shop Properties"
 msgstr "Свойства магазинов"
@@ -1557,7 +1568,7 @@ msgstr "Свойства магазина"
 #: model:ir.ui.menu,name:website_shops_map.shop_work_days_menu
 #: model_terms:ir.ui.view,arch_db:website_shops_map.shop_work_days_view_form
 msgid "Shop Work Days"
-msgstr ""
+msgstr "Рабочие дни магазина"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_shop_work_hours
@@ -1570,18 +1581,6 @@ msgid "Shop list"
 msgstr "Список магазинов"
 
 #. module: website_shops_map
-#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
-msgid "Shop map"
-msgstr "Карта магазинов"
-
-#. module: website_shops_map
-#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
-#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
-#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
-msgid "Shop map cache"
-msgstr "Кеш карты магазинов"
-
-#. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_eyekraft_shop
 msgid "Shop model for eyekraft"
 msgstr "Shop model for eyekraft"
@@ -1590,11 +1589,6 @@ msgstr "Shop model for eyekraft"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
 msgid "Shop name or code"
 msgstr ""
-
-#. module: website_shops_map
-#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
-msgid "Shop properties"
-msgstr "Свойства магазинов"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_shop_property
@@ -1681,7 +1675,7 @@ msgstr "URL источника"
 
 #. module: website_shops_map
 #. openerp-web
-#: code:addons/website_shops_map/static/src/xml/widget.xml:0
+#: code:addons/website_shops_map/static/src/xml/s_shops_map_modal.xml:0
 #, python-format
 msgid "Source setup"
 msgstr ""

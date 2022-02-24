@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210809\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-22 23:18+0000\n"
-"PO-Revision-Date: 2022-02-22 23:18+0000\n"
+"POT-Creation-Date: 2022-02-24 15:57+0000\n"
+"PO-Revision-Date: 2022-02-24 15:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
-msgid "<b>Set API keys and map localization</b>"
+msgid "<b>Set API key and map localization</b>"
 msgstr ""
 
 #. module: website_shops_map
@@ -502,18 +502,6 @@ msgid "Create a Periods of Time."
 msgstr ""
 
 #. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
-msgid ""
-"Create a Shop API User for the shop, this is using for authentication "
-"method."
-msgstr ""
-
-#. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
-msgid "Create a Shop API Users."
-msgstr ""
-
-#. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
 msgid ""
 "Create a Shop List Config because in the snippet configuration dialog you "
@@ -533,6 +521,16 @@ msgstr ""
 #. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_work_days_action
 msgid "Create a Shop Work Days."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
+msgid "Create a Shop's API User, this is using for authentication method."
+msgstr ""
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_api_users_action
+msgid "Create a Shop's API Users."
 msgstr ""
 
 #. module: website_shops_map
@@ -1525,7 +1523,20 @@ msgid "Shop Management"
 msgstr ""
 
 #. module: website_shops_map
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
+msgid "Shop Map"
+msgstr ""
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
+#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
+#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
+msgid "Shop Map Cache"
+msgstr ""
+
+#. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.shop_properties_action
+#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_shop_property_view_tree
 msgid "Shop Properties"
 msgstr ""
@@ -1561,18 +1572,6 @@ msgid "Shop list"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_root
-msgid "Shop map"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.actions.act_window,name:website_shops_map.shop_map_cache_action
-#: model:ir.ui.menu,name:website_shops_map.shop_map_cache_menu
-#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
-msgid "Shop map cache"
-msgstr ""
-
-#. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_eyekraft_shop
 msgid "Shop model for eyekraft"
 msgstr ""
@@ -1580,11 +1579,6 @@ msgstr ""
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
 msgid "Shop name or code"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.ui.menu,name:website_shops_map.shop_properties_menu
-msgid "Shop properties"
 msgstr ""
 
 #. module: website_shops_map
