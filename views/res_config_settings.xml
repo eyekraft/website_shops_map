@@ -15,7 +15,7 @@
                                 <div class="o_setting_right_pane">
                                     <div class="text-muted">
                                         <p><b>Set API keys and map localization</b></p>
-                                        <span>Visit the <a href="https://yandex.ru/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" target="_blank">page</a> about get an API Key for the "JavaScript API y HTTP Geocoder" Map service</span>
+                                        <span>Visit the <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" target="_blank">page</a> about get an API Key for the "JavaScript API y HTTP Geocoder" Map service</span>
                                     </div>
                                     <div class="content-group">
                                         <div class="mt16">
