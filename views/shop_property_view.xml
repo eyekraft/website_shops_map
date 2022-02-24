@@ -61,6 +61,6 @@
     <menuitem id="website_shops_map.shop_properties_menu"
         action="shop_properties_action"
         parent="menu_shop_config"
-        name="Shop properties"
+        name="Shop Properties"
         sequence="100" />
 </odoo>

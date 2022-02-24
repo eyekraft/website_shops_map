@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Shop Card -->
+    <!-- "Shop Card" Template -->
     <template id="eyekraft_shop_card">
         <!-- Shop Card - START -->
         <div class=" reflex-col-xs-12 reflex-col-sm-6 reflex-col-md-4 reflex-col-lg-4">
@@ -80,7 +80,7 @@
         <!-- Shop Card - END -->
     </template>
 
-    <!-- Shop Card Map -->
+    <!-- "Shop Card Map" Template -->
     <template id="eyekraft_shop_card_map">
         <!-- Shop Card Map - START -->
         <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12">
@@ -140,7 +140,7 @@
         <!-- Shop Card Map - END -->
     </template>
 
-    <!-- Shop List Client Address -->
+    <!-- "Shop List Client Address" Template -->
     <template id="eyekraft_shop_list_client_address">
         <!-- Shop List Client Address - START -->
         <div style="padding-bottom:16px">
@@ -166,7 +166,7 @@
         <!-- Shop List Client Address - END -->
     </template>
 
-    <!-- Shop Map Balloon -->
+    <!-- "Shop Map Balloon" Template -->
     <template id="eyekraft_shop_map_balloon">
         <!-- Shop Map Balloon - START -->
         <div style='width:100%; max-width:300px;'>
@@ -185,14 +185,14 @@
         <!-- Shop Map Balloon - END -->
     </template>
 
-    <!-- Shop Map Properties Option -->
+    <!-- "Shop Map Properties Option" Template -->
     <template id="eyekraft_shop_map_props_option">
         <!-- Shop Map Properties Option - START -->
         <option><t t-esc="option" /></option>
         <!-- Shop Map Properties Option - END -->
     </template>
 
-    <!-- Shop Map Own Page -->
+    <!-- "Shop Map Own Page" Template -->
     <template id="eyekraft_shop_own_page">
         <!-- Shop Map Own Page - START -->
         <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12" id="eyekraft_shop_own_page">

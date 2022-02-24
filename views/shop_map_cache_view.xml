@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <!-- "Shop map cache" tree view -->
+        <!-- "Shop Map Cache" tree view -->
     <record id="shop_map_cache_view_tree" model="ir.ui.view">
         <field name="name">shop.map.cache.tree</field>
         <field name="model">shop.map.cache</field>
         <field name="arch" type="xml">
-            <tree string="Shop map cache" default_order="create_date desc" create="false">
+            <tree string="Shop Map Cache" default_order="create_date desc" create="false">
                 <field name="create_date" string="Date"/>
                 <field name="latitude"/>
                 <field name="longitude"/>
@@ -13,9 +13,9 @@
         </field>
     </record>
 
-    <!-- "Shop map cache" ir.actions.act_window -->
+    <!-- "Shop Map Cache" ir.actions.act_window -->
     <record id="shop_map_cache_action" model="ir.actions.act_window">
-        <field name="name">Shop map cache</field>
+        <field name="name">Shop Map Cache</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">shop.map.cache</field>
         <field name="context">{'order':'create_date desc'}</field>
@@ -30,14 +30,14 @@
         </field>
     </record>
 
-    <!-- "Shop map cache" menu items -->
+    <!-- "Shop Map Cache" menu items -->
     <menuitem id="shop_map_cache_root"
         parent="stock.menu_stock_config_settings"
-        name="Shop map"
+        name="Shop Map"
         sequence="5" />
     <menuitem id="shop_map_cache_menu"
         action="shop_map_cache_action"
         parent="shop_map_cache_root"
-        name="Shop map cache"
+        name="Shop Map Cache"
         sequence="100" />
 </odoo>
