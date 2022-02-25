@@ -2174,7 +2174,7 @@ msgstr "Localización de idioma de Yandex Maps"
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
 msgid "Yandex Maps View"
-msgstr "Vista de mapas de Yandex"
+msgstr "Vista Yandex Maps"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_res_config_settings__yandex_maps_view_api_key
