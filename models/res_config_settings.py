@@ -22,6 +22,6 @@ class ResConfigSettings(models.TransientModel):
         selection=YMAPS_LANG_LOCALIZATION,
         string='Yandex Maps Language Localization',
         config_parameter='web_yandex_maps.lang_localization')
-    yandex_maps_libraries = fields.Char(
-        string='Libraries',
-        config_parameter='web_yandex_maps.libraries')
+    yandex_maps_modules = fields.Char(
+        string='Modules',
+        config_parameter='web_yandex_maps.modules')

@@ -25,7 +25,7 @@
                                         <div class="text-muted">
                                             <hr/>
                                             <p><b>Parameters of Javascript API Asset link resource</b></p>
-                                            <span>Visit the <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/dg/concepts/load.html#load__param" target="_blank">page</a> about what libraries are loaded via Javascript API Asset link resource</span>
+                                            <span>Visit the <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/dg/concepts/load.html#load__param" target="_blank">page</a> about what modules are loaded via Javascript API Asset link resource</span>
                                         </div>
                                         <div class="mt16">
                                             <label for="yandex_maps_lang_localization" string="Language"/>
@@ -35,10 +35,10 @@
                                             </div>
                                         </div>
                                         <div class="mt16">
-                                            <label for="yandex_maps_libraries" string="Libraries"/>
-                                            <field name="yandex_maps_libraries"/>
+                                            <label for="yandex_maps_modules" string="Modules"/>
+                                            <field name="yandex_maps_modules"/>
                                             <div class="text-muted">
-                                                <p>Set the libraries loaded on the map</p>
+                                                <p>Set the modules loaded on the map</p>
                                             </div>
                                         </div>
                                     </div>
