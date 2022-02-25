@@ -22,8 +22,10 @@ def urlplus(url, params):
     return werkzeug.Href(url)(params or None)
 
 
-# class to load extended description of module
 class eyekraft_module_description(models.Model):
+    """
+    Class to load extended description of module.
+    """
     _name = "ir.module.module"
     _descriprion = "Extends standart description_html with more html files"
     _inherit = "ir.module.module"
@@ -51,16 +53,20 @@ class eyekraft_module_description(models.Model):
     manual_html = fields.Html(string='Manual HTML', compute='_manual')
 
 
-# class to objectify shop dictionary
-# for template data compatibility
 class shopobj:
+    """
+    Class to objectify shop dictionary
+    for template data compatibility.
+    """
     def __init__(self,dictobj):
         self.__dict__ = dictobj
 
 
-# class to get coordinates of the user on server side
-# and load and show primary list of shops
 class eyekraft_module_geo(models.Model):
+    """
+    Class to get coordinates of the user on server side
+    and load and show primary list of shops.
+    """
     _inherit = "website"
 
     # parameters are:
@@ -68,6 +74,14 @@ class eyekraft_module_geo(models.Model):
     # tab - flag of the tab showed by default. Template name of shop card depends of it.
     @api.model
     def load_primary_shop_list(self,snippet_id,tab):
+        """Load primary shop list.
+
+        :param snippet_id: to read parameters of certain snippet.
+        :type snippet_id: str.
+        :param tab: flag of the tab showed by default. Template name of shop card depends of it.
+        :type tab: str.
+        :returns: str shop_cards_html
+        """
         # prevent of search bots requests
         if not 'HTTP_USER_AGENT' in request.httprequest.environ:
             return ''
@@ -75,7 +89,7 @@ class eyekraft_module_geo(models.Model):
         for bot in bots:
             if request.httprequest.environ['HTTP_USER_AGENT'].find(bot) > -1:
                 return ''
-        # load parameters of snippet
+        # Load parameters of snippet
         header= {'Content-type':'application/json'}
         try:
             r = requests.get(request.httprequest.host_url+'api/shoplist/params', timeout=3, data=json.dumps({'params':{'widget_id':'eyekraftShopMap'+str(snippet_id)}}), headers=header)
@@ -114,16 +128,18 @@ class eyekraft_module_geo(models.Model):
             except:
                 return ''
 
-        # count shops distance and sort shop list by remoteness
+        # Count shops distance and sort shop list by remoteness
         for shop in shop_list:
             shop['distance'] = float(format(geodesic((location['latitude'],location['longitude']),(shop['partner_latitude'],shop['partner_longitude'])).km,'.2f'))
         shop_list = sorted(shop_list, key=lambda shop: shop['distance'])
-        # prepare the list of shop cards to import to webpage
+        # Prepare the list of shop cards to import to webpage
         view = request.env['ir.ui.view'].sudo()
         shop_cards_html = ''
         if tab == 'list':
+            # Render the "Shop Card" Template
             template_name = 'website_shops_map.eyekraft_shop_card'
         else:
+            # Render the "Shop Card Map" Template
             template_name = 'website_shops_map.eyekraft_shop_card_map'
         for i in xrange(6):
             shop = shopobj(shop_list[i])
@@ -173,7 +189,7 @@ class eyekraft_shop(models.Model):
             partner.unlink()
         return record
 
-    # collect full address field from other fields
+    # Collect full address field from other fields
     @api.depends('country_id', 'state_id', 'city', 'street', 'street2', 'zip')
     def _compute_full_address(self):
         """
@@ -239,7 +255,7 @@ class eyekraft_shop(models.Model):
         string="Warehouse Name",
     )
 
-    # collect string of all work hours periods
+    # Collect string of all work hours periods
     def _get_work_hours(self):
         self.ensure_one()
         res = u''

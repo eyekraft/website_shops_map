@@ -13,6 +13,7 @@ class shop_list_config(models.Model):
 
     @api.model
     def get_sources_for_widget(self, widget_id):
+        ''' Get sources for widget '''
         sources = self.search([('widget_id', '=', widget_id)])
         tags = self.env['eyekraft.shop'].search([]).mapped('category_id.name')
         res = []
@@ -31,6 +32,7 @@ class shop_list_config(models.Model):
         return res
 
     def save(self, data):
+        ''' Save sources for widget '''
         if data:
             widget_id = data.get('widget_id', '')
             sources = data.get('data', {})
