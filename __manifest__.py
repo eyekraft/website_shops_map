@@ -23,6 +23,7 @@ Partner And Google Map Snippet compatible.
         'website',
     ],
     'data': [
+        'data/yandex_maps_data.xml',
         'data/website_shops_map_data.xml',
         'security/ir.model.access.csv',
         'views/shop_property_view.xml',

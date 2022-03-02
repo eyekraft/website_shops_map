@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- set Yandex Maps modules default parameter -->
+        <function model="ir.config_parameter" name="set_param" eval="('web_yandex_maps.modules', 'package.full')"/>
+        <!-- set Yandex Maps Language Localization default parameter -->
+        <function model="ir.config_parameter" name="set_param" eval="('web_yandex_maps.lang_localization', 'en_US')"/>
+    </data>
+</odoo>
