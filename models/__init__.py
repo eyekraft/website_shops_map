@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import eyekraft_shop
 from . import inherit_stock
 from . import res_config_settings
