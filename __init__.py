@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
+from odoo import api, SUPERUSER_ID
 from . import controllers
 from . import models
 from . import setup
 
 
 def fn_post_init_hook(cr, registry):
-    from odoo import api, SUPERUSER_ID
 
     env = api.Environment(cr,SUPERUSER_ID,context={})
     model_obj = env['stock.warehouse']
