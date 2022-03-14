@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': 'Shops Map',
     'version': '1.1.20171129',
