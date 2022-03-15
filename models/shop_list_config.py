@@ -1,7 +1,7 @@
 from odoo import api, fields, models, sys
 
 
-class shop_list_config(models.Model):
+class ShopListConfig(models.Model):
     _name = 'shop.list.config'
     _description = "Shop List Configurations"
 
@@ -14,7 +14,7 @@ class shop_list_config(models.Model):
     def get_sources_for_widget(self, widget_id):
         ''' Get sources for widget '''
         sources = self.search([('widget_id', '=', widget_id)])
-        tags = self.env['eyekraft.shop'].search([]).mapped('category_id.name')
+        tags = self.env['public.shop'].search([]).mapped('category_id.name')
         res = []
         for source in sources:
             res.append({

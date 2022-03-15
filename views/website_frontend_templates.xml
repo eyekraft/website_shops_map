@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- "Shop Card" Template -->
-    <template id="eyekraft_shop_card">
+    <template id="public_shop_card">
         <!-- Shop Card - START -->
         <div class=" reflex-col-xs-12 reflex-col-sm-6 reflex-col-md-4 reflex-col-lg-4">
             <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" >
@@ -81,7 +81,7 @@
     </template>
 
     <!-- "Shop Card Map" Template -->
-    <template id="eyekraft_shop_card_map">
+    <template id="public_shop_card_map">
         <!-- Shop Card Map - START -->
         <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12">
             <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md">
@@ -141,12 +141,12 @@
     </template>
 
     <!-- "Shop List Client Address" Template -->
-    <template id="eyekraft_shop_list_client_address">
+    <template id="public_shop_list_client_address">
         <!-- Shop List Client Address - START -->
         <div style="padding-bottom:16px">
-            <div id="eyekraft-shop-list-user-geoloc" class="collapse">
+            <div id="public-shop-list-user-geoloc" class="collapse">
                 <div class="input-group">
-                    <input id="eyekraft-shop-list-user-geoloc-input" type="text" class="form-control" placeholder="Enter your address" />
+                    <input id="public-shop-list-user-geoloc-input" type="text" class="form-control" placeholder="Enter your address" />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-info user-geoloc-input-address" >
                             <i class="fa fa-map-marker"></i>
@@ -155,11 +155,11 @@
                 </div>
             </div>
             <h5>Your approximate location is:</h5>
-            <h4 id="eyekraft-shop-list-user-geoloc-text" style="margin-bottom:8px"> <t t-esc="address"/> </h4>
-            <a class="btn" href="#eyekraft-shop-list-user-geoloc" data-toggle="collapse" title="Edit">
+            <h4 id="public-shop-list-user-geoloc-text" style="margin-bottom:8px"> <t t-esc="address"/> </h4>
+            <a class="btn" href="#public-shop-list-user-geoloc" data-toggle="collapse" title="Edit">
                 Edit
             </a>
-            <a class="btn ml16" id="eyekraft-shop-list-refresh" title="Update">
+            <a class="btn ml16" id="public-shop-list-refresh" title="Update">
                 Update
             </a>
         </div>
@@ -167,7 +167,7 @@
     </template>
 
     <!-- "Shop Map Balloon" Template -->
-    <template id="eyekraft_shop_map_balloon">
+    <template id="public_shop_map_balloon">
         <!-- Shop Map Balloon - START -->
         <div style='width:100%; max-width:300px;'>
             <p t-if="shop.full_address" style="font-size:14px; margin-top:8px;margin-bottom:8px;">
@@ -186,16 +186,16 @@
     </template>
 
     <!-- "Shop Map Properties Option" Template -->
-    <template id="eyekraft_shop_map_props_option">
+    <template id="public_shop_map_props_option">
         <!-- Shop Map Properties Option - START -->
         <option><t t-esc="option" /></option>
         <!-- Shop Map Properties Option - END -->
     </template>
 
     <!-- "Shop Map Own Page" Template -->
-    <template id="eyekraft_shop_own_page">
+    <template id="public_shop_own_page">
         <!-- Shop Map Own Page - START -->
-        <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12" id="eyekraft_shop_own_page">
+        <div class=" reflex-col-xs-12 reflex-col-sm-12 reflex-col-md-12 reflex-col-lg-12" id="public_shop_own_page">
             <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md" style="margin:0px;">
                 <div class="reflex-col-md-12" t-attf-style="margin-top:15px;margin-bottom:15px;padding-bottom: 10px; margin-right:0px; background-color: white; boCrder: 1px solid {{ bordercolor }}; border-radius: 2px; box-shadow: 0px 0px 9px rgb(230,230,230);">
                     <div class="col-xs-12" style="margin-bottom: auto; margin-top: auto;">

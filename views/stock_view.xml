@@ -71,7 +71,7 @@
                                 <field name="image_ids"
                                     nolabel="1"
                                     context="{
-                                        'default_owner_model': 'eyekraft.shop',
+                                        'default_owner_model': 'public.shop',
                                         'default_owner_id': id,
                                         'default_storage': 'db',
                                     }"

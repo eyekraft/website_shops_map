@@ -2,9 +2,13 @@ import hashlib
 from odoo import api, fields, models
 
 
-class shop_api_user(models.Model):
+class ShopApiUser(models.Model):
     _name = 'shop.api.user'
     _description = 'Shop API users'
+
+    # Model Fields
+    name = fields.Char(string="Name")
+    api_key = fields.Char(string="API Key")
 
     def generate_api_key(self):
         """
@@ -15,11 +19,6 @@ class shop_api_user(models.Model):
 
     @api.model
     def create(self, values):
-        api_user = super(shop_api_user, self).create(values)
+        api_user = super(ShopApiUser, self).create(values)
         api_user.generate_api_key()
         return api_user
-
-
-    # Model Fields
-    name = fields.Char(string="Name")
-    api_key = fields.Char(string="API Key")

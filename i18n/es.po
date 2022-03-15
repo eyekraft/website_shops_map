@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-25 16:22+0000\n"
-"PO-Revision-Date: 2022-02-25 16:22+0000\n"
+"POT-Creation-Date: 2022-03-14 23:17+0000\n"
+"PO-Revision-Date: 2022-03-14 23:58-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -23,20 +23,6 @@ msgid "&amp;nbsp;"
 msgstr "&amp;nbsp;"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__l10n_cl_sii_taxpayer_type
-msgid ""
-"1 - VAT Affected (1st Category) (Most of the cases)\n"
-"2 - Fees Receipt Issuer (Applies to suppliers who issue fees receipt)\n"
-"3 - End consumer (only receipts)\n"
-"4 - Foreigner"
-msgstr ""
-"1 - IVA Afectado (1ª Categoría) (La mayoría de los casos)\n"
-"2 - Emisor de Recibo de Tarifas (Aplica a proveedores que emiten recibo de "
-"tarifas)\n"
-"3 - Consumidor final (solo recibos)\n"
-"4 - Extranjero"
-
-#. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
 msgid "<b>Parameters of Javascript API Asset link resource</b>"
 msgstr ""
@@ -48,7 +34,7 @@ msgid "<b>Set API key and map localization</b>"
 msgstr "<b>Establecer API key y localización de mapas</b>"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid ""
 "<i class=\"fa fa-clock-o\" style=\"padding-right: 5px;\"/>\n"
 "                            <b>Opening hours:</b>"
@@ -57,7 +43,7 @@ msgstr ""
 "                            <b>Horario de apertura:</b>"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid ""
 "<i class=\"fa fa-commenting \" style=\"padding-right: 5px;\"/>\n"
 "                            <b>Comment:</b>"
@@ -66,7 +52,7 @@ msgstr ""
 "                            <b>Comentario:</b>"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid ""
 "<i class=\"fa fa-envelope\" style=\"padding-right: 5px;\"/>\n"
 "                            <b>Email:</b>"
@@ -90,7 +76,7 @@ msgid "<i class=\"fa fa-fw fa-map\"/> Map Tab"
 msgstr "<i class=\"fa fa-fw fa-map\"/> Pestaña Mapa"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid ""
 "<i class=\"fa fa-map-marker\" style=\"padding-right: 5px;\"/>\n"
 "                            <b>Address:</b>"
@@ -99,7 +85,7 @@ msgstr ""
 "                            <b>Dirección:</b>"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid ""
 "<i class=\"fa fa-phone\" style=\"padding-right: 5px;\"/>\n"
 "                            <b>Phone:</b>"
@@ -200,7 +186,7 @@ msgstr ""
 "módulo es 'shop' y se usa predeterminada."
 
 #. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_time_period_action
 msgid ""
 "<i>Since</i>, defines the hour from in which the shop works, in set hours in"
 " numbers"
@@ -209,7 +195,7 @@ msgstr ""
 "establecidas en números"
 
 #. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_time_period_action
 msgid ""
 "<i>To</i>, defines the hour until in which the shop works, in set hours in "
 "numbers"
@@ -254,42 +240,42 @@ msgid "About"
 msgstr "Acerca de"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_account_payable_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_account_payable_id
 msgid "Account Payable"
 msgstr "Cuenta por pagar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_account_receivable_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_account_receivable_id
 msgid "Account Receivable"
 msgstr "Cuenta por cobrar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_needaction
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_needaction
 msgid "Action Needed"
 msgstr "Accion necesaria"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__active
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__active
 msgid "Active"
 msgstr "Activo"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__active_lang_count
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__active_lang_count
 msgid "Active Lang Count"
 msgstr "Contar de idiomas activos"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_ids
 msgid "Activities"
 msgstr "Actividades"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_exception_decoration
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr "Decoración de excepción de actividad"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_state
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_state
 msgid "Activity State"
 msgstr "Estado de actividad"
 
@@ -302,7 +288,7 @@ msgid "Add source"
 msgstr "Agregue una fuente"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__additional_info
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__additional_info
 msgid "Additional info"
 msgstr "Información adicional"
 
@@ -312,7 +298,7 @@ msgid "Address"
 msgstr "Dirección"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__type
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__type
 msgid "Address Type"
 msgstr "Tipo de dirección"
 
@@ -324,7 +310,7 @@ msgid "Address determination error"
 msgstr "Error de determinación de dirección"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__lang
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__lang
 msgid ""
 "All the emails and documents sent to this contact will be translated in this"
 " language."
@@ -345,22 +331,22 @@ msgid "Are you here"
 msgstr "Estás aquí"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_attachment_count
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_attachment_count
 msgid "Attachment Count"
 msgstr "Contar archivos adjuntos"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Back to the shop list"
 msgstr "Volver a la lista de tiendas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__bank_account_count
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__bank_account_count
 msgid "Bank"
 msgstr "Banco"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__bank_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__bank_ids
 msgid "Banks"
 msgstr "Bancos"
 
@@ -370,12 +356,12 @@ msgid "Belarusian"
 msgstr "Bielorruso"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_blacklisted
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__is_blacklisted
 msgid "Blacklist"
 msgstr "Lista negra"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_bounce
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_bounce
 msgid "Bounce"
 msgstr "Rebote"
 
@@ -393,17 +379,17 @@ msgid "Call Shop Map Cache erasing on delete"
 msgstr "Borrar la memoria caché del mapa de la tienda al eliminar una tienda"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__can_publish
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__can_publish
 msgid "Can Publish"
 msgstr "Puede publicar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__channel_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__channel_ids
 msgid "Channels"
 msgstr "Canales"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__public
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__public
 #: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__public
 msgid "Check \"Public Shop\" checkbox to assign warehouse as public shop"
 msgstr ""
@@ -411,35 +397,26 @@ msgstr ""
 "como tienda real"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__is_company
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__is_company
 msgid "Check if the contact is a company, otherwise it is a person"
 msgstr ""
 "Verifica si el contacto es una empresa, de lo contrario es una persona"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__employee
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__employee
 msgid "Check this box if this contact is an Employee."
 msgstr "Marque esta casilla si este contacto es un empleado."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__country_enforce_cities
-msgid ""
-"Check this box to ensure every address created in that country has a 'City' "
-"chosen in the list of the country's cities."
-msgstr ""
-"Marque esta casilla para asegurarse de que cada dirección creada en ese país "
-"tenga una 'Ciudad' elegida en la lista de ciudades del país."
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
+msgid "Choose a service"
+msgstr "Elige un servicio"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__city
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__city
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "City"
 msgstr "Ciudad"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__city_id
-msgid "City of Address"
-msgstr "Ciudad de dirección"
 
 #. module: website_shops_map
 #. openerp-web
@@ -456,7 +433,7 @@ msgid "Color"
 msgstr "Color"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__color
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__color
 msgid "Color Index"
 msgstr "Indice de color"
 
@@ -466,42 +443,42 @@ msgid "Comment..."
 msgstr "Comentario..."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__commercial_partner_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__commercial_partner_id
 msgid "Commercial Entity"
 msgstr "Entidad Comercial"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__ref_company_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__ref_company_ids
 msgid "Companies that refers to partner"
 msgstr "Compañías que se refieren a socio"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__company_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__company_id
 msgid "Company"
 msgstr "Compañía"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__company_name
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__company_name
 msgid "Company Name"
 msgstr "Nombre de compañía"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__commercial_company_name
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__commercial_company_name
 msgid "Company Name Entity"
 msgstr "Entidad del nombre de compañía"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__company_type
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__company_type
 msgid "Company Type"
 msgstr "Tipo de compañía"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_gid
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__partner_gid
 msgid "Company database ID"
 msgstr "ID de la base de datos de la compañía"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__contact_address
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__contact_address
 msgid "Complete Address"
 msgstr "Completa tu direccion"
 
@@ -519,7 +496,7 @@ msgstr "Configuración de la fuente de datos"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_res_partner
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__child_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__child_ids
 msgid "Contact"
 msgstr "Contacto"
 
@@ -531,32 +508,21 @@ msgid "Could not find source entry"
 msgstr "No se pudo encontrar la entrada de origen"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__payment_token_count
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__payment_token_count
 msgid "Count Payment Token"
 msgstr "Recuento de token de pago"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_bounce
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_bounce
 msgid "Counter of the number of bounced emails for this contact"
 msgstr ""
 "Contador de la cantidad de correos electrónicos rebotados para este contacto"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__country_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__country_id
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Country"
 msgstr "País"
-
-#. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
-msgid "Create a Periods of Time entering opening hours for the shop"
-msgstr ""
-"Crear un Período de Tiempo ingresando el horario de apertura de la tienda"
-
-#. module: website_shops_map
-#: model_terms:ir.actions.act_window,help:website_shops_map.period_of_time_action
-msgid "Create a Periods of Time."
-msgstr "Crear un Período de Tiempo."
 
 #. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_urls_action
@@ -577,6 +543,16 @@ msgstr "Crear una configuración de lista de tiendas."
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_properties_action
 msgid "Create a Shop Property."
 msgstr "Crear una propiedad de la tienda."
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_time_period_action
+msgid "Create a Shop Time Period entering opening hours for the shop"
+msgstr "Crear un Período de Tiempo ingresando el horario de apertura de la tienda"
+
+#. module: website_shops_map
+#: model_terms:ir.actions.act_window,help:website_shops_map.shop_time_period_action
+msgid "Create a Shop Time Period."
+msgstr "Crear un Período de Tiempo de la tienda."
 
 #. module: website_shops_map
 #: model_terms:ir.actions.act_window,help:website_shops_map.shop_work_days_action
@@ -605,56 +581,56 @@ msgstr ""
 ", «sábado») para la tienda"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__create_uid
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__create_uid
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__create_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__create_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__create_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__create_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__create_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__create_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__create_date
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__create_date
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__create_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__create_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__create_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__create_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__create_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__create_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__create_date
 msgid "Created on"
 msgstr "Creado en"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__credit_limit
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__credit_limit
 msgid "Credit Limit"
 msgstr "Límite de crédito"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__currency_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__currency_id
 msgid "Currency"
 msgstr "Moneda"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_stock_customer
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_stock_customer
 msgid "Customer Location"
 msgstr "Ubicación del cliente"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_payment_term_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_payment_term_id
 msgid "Customer Payment Terms"
 msgstr "Condiciones de pago del cliente"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__customer_rank
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__customer_rank
 msgid "Customer Rank"
 msgstr "Rango de cliente"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__date
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__date
 #: model_terms:ir.ui.view,arch_db:website_shops_map.shop_map_cache_view_tree
 msgid "Date"
 msgstr "Fecha"
@@ -665,29 +641,30 @@ msgid "Default"
 msgstr "Predeterminada"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__trust
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__trust
 msgid "Degree of trust you have in this debtor"
 msgstr "Grado de confianza que tiene en este deudor"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__display_name
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__display_name
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__display_name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__display_name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__display_name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__display_name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__display_name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__display_name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__display_name
 msgid "Display Name"
 msgstr "Nombre para mostrar"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_list_client_address
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_list_client_address
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Edit"
 msgstr "Editar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__partner_share
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__partner_share
 msgid ""
 "Either customer (not a user), either shared user. Indicated the current "
 "partner is a customer without access or with a limited access created for "
@@ -698,25 +675,20 @@ msgstr ""
 "compartir datos."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__email
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__email
 msgid "Email"
 msgstr "Correo electrónico"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__employee
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__employee
 msgid "Employee"
 msgstr "Empleado"
 
 #. module: website_shops_map
-#: model:ir.model.constraint,message:website_shops_map.constraint_period_of_time_start_end_time_check
+#: model:ir.model.constraint,message:website_shops_map.constraint_shop_time_period_start_end_time_check
 msgid "End of period can't be less than or equal to start of period!"
 msgstr ""
 "¡El final del período no puede ser menor o igual que el inicio del período!"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__country_enforce_cities
-msgid "Enforce Cities"
-msgstr "Forzar ciudades"
 
 #. module: website_shops_map
 #: model:ir.model.fields.selection,name:website_shops_map.selection__res_config_settings__yandex_maps_lang_localization__en_us
@@ -731,12 +703,13 @@ msgid "Enter name of the HTML-color"
 msgstr "Introduzca el nombre del color HTML"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_list_client_address
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_list_client_address
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Enter your address"
 msgstr "Ingrese su dirección"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__phone_sanitized
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__phone_sanitized
 msgid ""
 "Field used to store sanitized phone number. Helps speeding up searches and "
 "comparisons."
@@ -745,60 +718,60 @@ msgstr ""
 "acelerar las búsquedas y comparaciones."
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Find"
 msgstr "Encontrar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_account_position_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_account_position_id
 msgid "Fiscal Position"
 msgstr "Posición fiscal"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__foreign_partner
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__foreign_partner
 #: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__foreign_partner
 msgid "Flag for partner record linked on module install"
 msgstr "Indicador de registro de socio vinculado en la instalación del módulo"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_follower_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_channel_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_channel_ids
 msgid "Followers (Channels)"
 msgstr "Seguidores (Canales)"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_partner_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Followers (Socios)"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__foreign_partner
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__foreign_partner
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__foreign_partner
 msgid "Foreign Partner"
 msgstr "Socio extranjero"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__email_formatted
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__email_formatted
 msgid "Format email address \"Name <email@domain>\""
 msgstr "Formato de dirección correo electrónico \"Nombre <email@domino>\""
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__email_formatted
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__email_formatted
 msgid "Formatted Email"
 msgstr "Formato de correo electrónico"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__full_address
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__full_address
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__full_address
 msgid "Full Address"
 msgstr "Dirección completa"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_latitude
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__partner_latitude
 #: model:ir.model.fields,field_description:website_shops_map.field_res_partner__partner_latitude
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__partner_latitude
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__partner_latitude
@@ -806,7 +779,7 @@ msgid "Geo Latitude"
 msgstr "Latitud geográfica"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_longitude
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__partner_longitude
 #: model:ir.model.fields,field_description:website_shops_map.field_res_partner__partner_longitude
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__partner_longitude
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__partner_longitude
@@ -814,7 +787,7 @@ msgid "Geo Longitude"
 msgstr "Longitud geográfica"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__date_localization
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__date_localization
 #: model:ir.model.fields,field_description:website_shops_map.field_res_partner__date_localization
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__date_localization
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__date_localization
@@ -822,66 +795,51 @@ msgid "Geolocation Date"
 msgstr "Fecha de geolocalización"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__has_unreconciled_entries
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__has_unreconciled_entries
 msgid "Has Unreconciled Entries"
 msgstr "Tiene entradas no conciliadas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__id
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__id
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__id
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__id
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__id
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__id
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__id
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__id
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__id
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__id
 msgid "ID"
 msgstr "ID"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__im_status
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__im_status
 msgid "IM Status"
 msgstr "Estado de IM"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_exception_icon
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_exception_icon
 msgid "Icon"
 msgstr "Icono"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_exception_icon
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr "Icono para indicar una actividad de excepción."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__vat
-msgid "Identification Number"
-msgstr "Número de identificación"
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__vat
-msgid "Identification Number for selected type"
-msgstr "Número de identificación para el tipo seleccionado"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__l10n_latam_identification_type_id
-msgid "Identification Type"
-msgstr "Tipo de identificación"
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_needaction
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_unread
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_needaction
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Si está marcado, los nuevos mensajes requieren su atención."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_has_error
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_has_sms_error
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_has_error
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__team_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__team_id
 msgid ""
 "If set, this Sales Team will be used for sales and assignations related to "
 "this partner"
@@ -890,8 +848,8 @@ msgstr ""
 "relacionadas con este socio"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__is_blacklisted
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__phone_blacklisted
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__is_blacklisted
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__phone_blacklisted
 msgid ""
 "If the email address is on the blacklist, the contact won't receive mass "
 "mailing anymore, from any list"
@@ -900,33 +858,33 @@ msgstr ""
 " no recibirá correos masivos, de ninguna lista"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_1920
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_1920
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card
 msgid "Image"
 msgstr "Imagen"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_1024
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_1024
 msgid "Image 1024"
 msgstr "Imagen 1024"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_128
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_128
 msgid "Image 128"
 msgstr "Imagen 128"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_256
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_256
 msgid "Image 256"
 msgstr "Imagen 256"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_512
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_512
 msgid "Image 512"
 msgstr "Imagen 512"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_ids
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Images"
 msgstr "Imágenes"
@@ -959,7 +917,7 @@ msgstr ""
 "número más bajo se muestran en la lista de selección anterior)"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__work_hours_ids
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__work_hours_ids
 #: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__work_hours_ids
 msgid ""
 "In this field, you can enter opening hours and enter the data in the window "
@@ -989,7 +947,7 @@ msgstr ""
 "propiedad automática solo en la página especificada, ej. «/page/shops»"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__metro_station
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__metro_station
 #: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__metro_station
 msgid ""
 "In this field, you can enter the name of the subway station in the \"Subway "
@@ -999,7 +957,7 @@ msgstr ""
 "\"Estación de metro\", si corresponde"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__properties_ids
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__properties_ids
 #: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__properties_ids
 msgid ""
 "In this field, you can select the services available in the shop in the "
@@ -1011,7 +969,7 @@ msgstr ""
 "Propiedades de la tienda\")"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__industry_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__industry_id
 msgid "Industry"
 msgstr "Industria"
 
@@ -1028,12 +986,12 @@ msgid "Instructions"
 msgstr "Instrucciones"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__invoice_warn
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__invoice_warn
 msgid "Invoice"
 msgstr "Factura"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__type
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__type
 msgid ""
 "Invoice & Delivery addresses are used in sales orders. Private addresses are"
 " only visible by authorized users."
@@ -1043,12 +1001,12 @@ msgstr ""
 "autorizados."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__invoice_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__invoice_ids
 msgid "Invoices"
 msgstr "Facturas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_is_follower
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_is_follower
 msgid "Is Follower"
 msgstr "Es seguidor"
 
@@ -1058,22 +1016,22 @@ msgid "Is Public Shop"
 msgstr "Es tienda pública"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_published
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__is_published
 msgid "Is Published"
 msgstr "Está publicado"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__is_company
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__is_company
 msgid "Is a Company"
 msgstr "Es una Compañía"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__function
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__function
 msgid "Job Position"
 msgstr "Puesto de trabajo"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__journal_item_count
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__journal_item_count
 msgid "Journal Items"
 msgstr "Elementos del diario"
 
@@ -1092,49 +1050,49 @@ msgid "Label"
 msgstr "Etiqueta"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__lang
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__lang
 #: model_terms:ir.ui.view,arch_db:website_shops_map.res_config_settings_view_form
 msgid "Language"
 msgstr "Idioma"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days____last_update
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop____last_update
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time____last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop____last_update
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user____last_update
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config____last_update
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache____last_update
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property____last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period____last_update
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days____last_update
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__write_uid
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__write_uid
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__write_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__write_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__write_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__write_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__write_uid
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__write_uid
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__write_date
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__write_date
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__write_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__write_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_list_config__write_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_map_cache__write_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__write_date
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__write_date
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__last_time_entries_checked
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__last_time_entries_checked
 msgid ""
 "Last time the invoices & payments matching was performed for this partner. "
 "It is set either if there's not at least an unreconciled debit and an "
@@ -1145,7 +1103,7 @@ msgstr ""
 "o si hace clic en el botón \"Hecho\"."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__last_time_entries_checked
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__last_time_entries_checked
 msgid "Latest Invoices & Payments Matching Date"
 msgstr "Última fecha de conciliación de facturas y pagos"
 
@@ -1162,12 +1120,12 @@ msgid "Longitude"
 msgstr "Longitud"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_main_attachment_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Archivo adjunto principal"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_main
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_main
 msgid "Main image"
 msgstr "Imagen principal"
 
@@ -1182,7 +1140,7 @@ msgid "Manual HTML"
 msgstr "Manual HTML"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Map"
 msgstr "Mapa"
 
@@ -1202,32 +1160,32 @@ msgstr ""
 "Etiqueta marcada para mostrar antes del título de la tarjeta de la tienda"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_main_medium
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_main_medium
 msgid "Medium image"
 msgstr "Imagen mediana"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_has_error
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_has_error
 msgid "Message Delivery error"
 msgstr "Error de entrega de mensajes"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__invoice_warn_msg
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__invoice_warn_msg
 msgid "Message for Invoice"
 msgstr "Mensaje para Factura"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__sale_warn_msg
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__sale_warn_msg
 msgid "Message for Sales Order"
 msgstr "Mensaje para orden de venta"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__picking_warn_msg
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__picking_warn_msg
 msgid "Message for Stock Picking"
 msgstr "Mensaje para selección de stock"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_ids
 msgid "Messages"
 msgstr "Mensajes"
 
@@ -1237,7 +1195,7 @@ msgid "Metro station"
 msgstr "Estación de metro"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__mobile
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__mobile
 msgid "Mobile"
 msgstr "Móvil"
 
@@ -1260,7 +1218,7 @@ msgid "More to show"
 msgstr "Más para mostrar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__name
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_api_user__name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_property__name
 #: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__name
@@ -1273,17 +1231,17 @@ msgid "Name..."
 msgstr "Nombre..."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_date_deadline
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Fecha límite de la próxima actividad"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_summary
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_summary
 msgid "Next Activity Summary"
 msgstr "Resumen de la siguiente actividad"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_type_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_type_id
 msgid "Next Activity Type"
 msgstr "Siguiente tipo de actividad"
 
@@ -1293,13 +1251,13 @@ msgid "No cached requests"
 msgstr "Sin solicitudes en caché"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card_map
 msgid "No."
 msgstr "No."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__email_normalized
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__email_normalized
 msgid "Normalized Email"
 msgstr "Correo electrónico normalizado"
 
@@ -1313,32 +1271,32 @@ msgid "Not defined"
 msgstr "No definida"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__comment
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__comment
 msgid "Notes"
 msgstr "Notas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_needaction_counter
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Número de acciones"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_has_error_counter
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_has_error_counter
 msgid "Number of errors"
 msgstr "Número de errores"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_needaction_counter
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr "Número de mensajes que requieren una acción"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_has_error_counter
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de entrega"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__message_unread_counter
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__message_unread_counter
 msgid "Number of unread messages"
 msgstr "Número de mensajes no leídos"
 
@@ -1367,22 +1325,22 @@ msgid "Options"
 msgstr "Opciones"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__parent_name
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__parent_name
 msgid "Parent name"
 msgstr "Nombre del elemento padre"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__partner_id
 msgid "Partner"
 msgstr "Socio"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__contract_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__contract_ids
 msgid "Partner Contracts"
 msgstr "Contratos de socios"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image
 #: model:ir.model.fields,field_description:website_shops_map.field_res_partner__image
 #: model:ir.model.fields,field_description:website_shops_map.field_res_users__image
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__image
@@ -1390,89 +1348,76 @@ msgid "Partner Image"
 msgstr "Imagen de socio"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__same_vat_partner_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__same_vat_partner_id
 msgid "Partner with same Tax ID"
 msgstr "Socio con el mismo ID del impuesto"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__debit_limit
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__debit_limit
 msgid "Payable Limit"
 msgstr "Límite por pagar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__payment_token_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__payment_token_ids
 msgid "Payment Tokens"
 msgstr "Fichas de pago"
 
 #. module: website_shops_map
-#: model:ir.model,name:website_shops_map.model_period_of_time
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__name
-msgid "Period of Time"
-msgstr "Período de tiempo"
-
-#. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.period_of_time_view_form
-msgid "Period of time"
-msgstr "Período de tiempo"
-
-#. module: website_shops_map
-#: model:ir.actions.act_window,name:website_shops_map.period_of_time_action
-#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__period_ids
-#: model:ir.ui.menu,name:website_shops_map.period_of_time_menu
-msgid "Periods of Time"
-msgstr "Períodos de tiempo"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__phone
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__phone
 msgid "Phone"
 msgstr "Teléfono"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__phone_blacklisted
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__phone_blacklisted
 msgid "Phone Blacklisted"
 msgstr "Teléfono en la lista negra"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_product_pricelist
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_product_pricelist
 msgid "Pricelist"
 msgstr "Lista de precios"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__properties_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__properties_ids
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__properties_ids
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Properties"
 msgstr "Propiedades"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__public
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__public
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__public
 msgid "Public Shop"
 msgstr "Tienda pública"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__rating
+#: model:ir.model,name:website_shops_map.model_public_shop
+msgid "Public Shop model"
+msgstr "Modelo tienda pública"
+
+#. module: website_shops_map
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__rating
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__rating
 msgid "Rating"
 msgstr "Calificación"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__ref
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__ref
 msgid "Reference"
 msgstr "Referencia"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__parent_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__parent_id
 msgid "Related Company"
 msgstr "Compañía vinculada"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__activity_user_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__activity_user_id
 msgid "Responsible User"
 msgstr "Usuario responsable"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__website_id
 msgid "Restrict publishing to this website."
 msgstr "Restringir la publicación a este sitio web."
 
@@ -1482,49 +1427,44 @@ msgid "Russian"
 msgstr "Ruso"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_has_sms_error
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "Error de entrega de SMS"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__sale_order_count
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__sale_order_count
 msgid "Sale Order Count"
 msgstr "Recuento de órdenes de venta"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__sale_order_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__sale_order_ids
 msgid "Sales Order"
 msgstr "Órdenes de venta"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__team_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__team_id
 msgid "Sales Team"
 msgstr "Equipo de ventas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__sale_warn
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__sale_warn
 msgid "Sales Warnings"
 msgstr "Advertencias de venta"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__user_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__user_id
 msgid "Salesperson"
 msgstr "Vendedor"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__phone_sanitized
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__phone_sanitized
 msgid "Sanitized Number"
 msgstr "Número desinfectado"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Search"
 msgstr "Búsqueda"
-
-#. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
-msgid "Select option"
-msgstr "Seleccionar opción"
 
 #. module: website_shops_map
 #. openerp-web
@@ -1534,9 +1474,9 @@ msgid "Select property"
 msgstr "Seleccionar propiedad"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__invoice_warn
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__picking_warn
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__sale_warn
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__invoice_warn
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__picking_warn
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__sale_warn
 msgid ""
 "Selecting the \"Warning\" option will notify user with the message, "
 "Selecting \"Blocking Message\" will throw an exception with the message and "
@@ -1548,7 +1488,7 @@ msgstr ""
 "siguiente campo."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__self
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__self
 msgid "Self"
 msgstr "Uno mismo"
 
@@ -1568,7 +1508,7 @@ msgid "Set the modules loaded on the map"
 msgstr "Establecer las módulos cargadas en el mapa"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__partner_share
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__partner_share
 msgid "Share Partner"
 msgstr "Compartir socio"
 
@@ -1660,8 +1600,23 @@ msgid "Shop Property"
 msgstr "Propiedad de tienda"
 
 #. module: website_shops_map
+#: model:ir.model,name:website_shops_map.model_shop_property
+msgid "Shop Property model"
+msgstr "Modelo propiedad de tienda"
+
+#. module: website_shops_map
+#: model:ir.actions.act_window,name:website_shops_map.shop_time_period_action
+#: model:ir.model,name:website_shops_map.model_shop_time_period
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_hours__period_ids
+#: model:ir.ui.menu,name:website_shops_map.shop_time_period_menu
+#: model_terms:ir.ui.view,arch_db:website_shops_map.shop_time_period_view_form
+msgid "Shop Time Period"
+msgstr "Períodos de tiempo de la tienda"
+
+#. module: website_shops_map
 #: model:ir.actions.act_window,name:website_shops_map.shop_work_days_action
-#: model:ir.model,name:website_shops_map.model_eyecraft_work_days
+#: model:ir.model,name:website_shops_map.model_shop_work_days
 #: model:ir.ui.menu,name:website_shops_map.shop_work_days_menu
 #: model_terms:ir.ui.view,arch_db:website_shops_map.shop_work_days_view_form
 msgid "Shop Work Days"
@@ -1673,24 +1628,14 @@ msgid "Shop Work Hours"
 msgstr "Horas de trabajo de la tienda"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Shop list"
 msgstr "Lista de la tienda"
-
-#. module: website_shops_map
-#: model:ir.model,name:website_shops_map.model_eyekraft_shop
-msgid "Shop model for eyekraft"
-msgstr "Modelo tienda para eyekraft"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
 msgid "Shop name or code"
 msgstr "Nombre o código de la tienda"
-
-#. module: website_shops_map
-#: model:ir.model,name:website_shops_map.model_shop_property
-msgid "Shop property model for eyekraft"
-msgstr "Modelo propiedad de tienda para eyekraft"
 
 #. module: website_shops_map
 #. openerp-web
@@ -1705,54 +1650,54 @@ msgid "Shop's API Users"
 msgstr "Usuarios de API de la tienda"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid "Show map"
 msgstr "Mostrar mapa"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card_map
 msgid "Show on the map"
 msgstr "Mostrar en el mapa"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_own_page
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_own_page
 msgid "Show route"
 msgstr "Mostrar ruta"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__signup_expiration
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__signup_expiration
 msgid "Signup Expiration"
 msgstr "Caducidad del registro"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__signup_token
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__signup_token
 msgid "Signup Token"
 msgstr "Token de registro"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__signup_type
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__signup_type
 msgid "Signup Token Type"
 msgstr "Tipo de token de registro"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__signup_valid
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__signup_valid
 msgid "Signup Token is Valid"
 msgstr "El token de registro es válido"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__signup_url
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__signup_url
 msgid "Signup URL"
 msgstr "URL de registro"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__start_time
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__start_time
 msgid "Since"
 msgstr "Desde"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__image_main_small
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__image_main_small
 msgid "Small image"
 msgstr "Imagen pequeña"
 
@@ -1778,13 +1723,13 @@ msgid "Source setup"
 msgstr "Configurar fuente"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__state_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__state_id
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "State"
 msgstr "Estado"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_state
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__activity_state
 msgid ""
 "Status based on activities\n"
 "Overdue: Due date is already passed\n"
@@ -1797,49 +1742,58 @@ msgstr ""
 "Planeado: Actividades futuras."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__picking_warn
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__picking_warn
 msgid "Stock Picking"
 msgstr "Selección de Stock"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_eyekraft_shop_list
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
 msgid "Stores closest to you..."
 msgstr "Tiendas más cercanas a ti..."
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__street
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__street
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Street"
 msgstr "Calle"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__street2
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__street2
 msgid "Street2"
 msgstr "Calle 2"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__metro_station
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__metro_station
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__metro_station
 msgid "Subway station"
 msgstr "Estación de metro"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__supplier_rank
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__supplier_rank
 msgid "Supplier Rank"
 msgstr "Rango de proveedor"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__category_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__category_id
 msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__l10n_cl_sii_taxpayer_type
-msgid "Taxpayer Type"
-msgstr "Tipo de contribuyente"
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__vat
+msgid "Tax ID"
+msgstr "ID del impuesto"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_account_position_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+"El Número de Identificación Fiscal. Complételo si el contacto está sujeto a "
+"impuestos gubernamentales. Se utiliza en algunas declaraciones legales."
+
+#. module: website_shops_map
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_account_position_id
 msgid ""
 "The fiscal position determines the taxes/accounts used for this contact."
 msgstr ""
@@ -1847,17 +1801,17 @@ msgstr ""
 "contacto."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_url
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__website_url
 msgid "The full URL to access the document through the website."
 msgstr "La URL completa para acceder al documento a través del sitio web."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__user_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__user_id
 msgid "The internal user in charge of this contact."
 msgstr "El usuario interno a cargo de este contacto."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__has_unreconciled_entries
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__has_unreconciled_entries
 msgid ""
 "The partner has at least one unreconciled debit and credit since last time "
 "the invoices & payments matching was performed."
@@ -1866,7 +1820,7 @@ msgstr ""
 " vez que se realizó la conciliación de facturas y pagos."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_stock_customer
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_stock_customer
 msgid ""
 "The stock location used as destination when sending goods to this contact."
 msgstr ""
@@ -1874,7 +1828,7 @@ msgstr ""
 "contacto."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_stock_supplier
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_stock_supplier
 msgid ""
 "The stock location used as source when receiving goods from this contact."
 msgstr ""
@@ -1887,12 +1841,7 @@ msgid "There aren't any Yandrix map cached requests"
 msgstr "No hay ninguna solicitud de caché de mapas del servicio Yandrix"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__l10n_latam_identification_type_id
-msgid "The type of identification"
-msgstr "El tipo de identificación"
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_account_payable_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_account_payable_id
 msgid ""
 "This account will be used instead of the default one as the payable account "
 "for the current partner"
@@ -1901,7 +1850,7 @@ msgstr ""
 "para el socio actual"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_account_receivable_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_account_receivable_id
 msgid ""
 "This account will be used instead of the default one as the receivable "
 "account for the current partner"
@@ -1910,7 +1859,7 @@ msgstr ""
 "cobrar para el socio actual"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyecraft_work_days__name
+#: model:ir.model.fields,help:website_shops_map.field_shop_work_days__name
 msgid ""
 "This field enter opening days in format of your own (ex. «Mon-Fri», "
 "«Saturday»)"
@@ -1919,7 +1868,7 @@ msgstr ""
 "ejemplo, «Lunes a Viernes», «Sábado»)"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__image
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__image
 #: model:ir.model.fields,help:website_shops_map.field_res_partner__image
 #: model:ir.model.fields,help:website_shops_map.field_res_users__image
 #: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__image
@@ -1931,7 +1880,7 @@ msgstr ""
 " limitada a 1024x1024px"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__email_normalized
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__email_normalized
 msgid ""
 "This field is used to search on email address as the primary email field can"
 " contain more than strictly an email address."
@@ -1941,7 +1890,7 @@ msgstr ""
 "estrictamente una dirección de correo electrónico."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_supplier_payment_term_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_supplier_payment_term_id
 msgid ""
 "This payment term will be used instead of the default one for purchase "
 "orders and vendor bills"
@@ -1950,7 +1899,7 @@ msgstr ""
 "de compra y facturas de proveedores"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_payment_term_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_payment_term_id
 msgid ""
 "This payment term will be used instead of the default one for sales orders "
 "and customer invoices"
@@ -1959,7 +1908,7 @@ msgstr ""
 "de venta y facturas de clientes"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__property_product_pricelist
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__property_product_pricelist
 msgid ""
 "This pricelist will be used, instead of the default one, for sales to the "
 "current partner"
@@ -1968,47 +1917,47 @@ msgstr ""
 "ventas al socio actual"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__tz
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__tz
 msgid "Timezone"
 msgstr "Zona horaria"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__tz_offset
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__tz_offset
 msgid "Timezone offset"
 msgstr "Compensación de zona horaria"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__title
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__title
 msgid "Title"
 msgstr "Título"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_period_of_time__end_time
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_time_period__end_time
 msgid "To"
 msgstr "A"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__total_invoiced
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__total_invoiced
 msgid "Total Invoiced"
 msgstr "Total facturado"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__debit
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__debit
 msgid "Total Payable"
 msgstr "Total a pagar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__credit
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__credit
 msgid "Total Receivable"
 msgstr "Total de cuentas por cobrar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__credit
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__credit
 msgid "Total amount this customer owes you."
 msgstr "Cantidad total que este cliente le debe."
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__debit
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__debit
 msgid "Total amount you have to pay to this vendor."
 msgstr "Importe total que debe pagar a este proveedor."
 
@@ -2025,7 +1974,7 @@ msgid "Turkish"
 msgstr "Turco"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__activity_exception_decoration
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
 
@@ -2040,42 +1989,42 @@ msgid "Ukrainian"
 msgstr "Ucranio"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_unread
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_unread
 msgid "Unread Messages"
 msgstr "Mensajes no leídos"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__message_unread_counter
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Contador de mensajes no leídos"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_list_client_address
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_list_client_address
 msgid "Update"
 msgstr "Actualizar"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__user_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__user_ids
 msgid "Users"
 msgstr "Usuarios"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__currency_id
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__currency_id
 msgid "Utility field to express amount currency"
 msgstr "Campo de utilidad para expresar cantidad moneda"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_stock_supplier
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_stock_supplier
 msgid "Vendor Location"
 msgstr "Ubicación del proveedor"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__property_supplier_payment_term_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__property_supplier_payment_term_id
 msgid "Vendor Payment Terms"
 msgstr "Condiciones de pago del proveedor"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_published
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__website_published
 msgid "Visible on current website"
 msgstr "Visible en el sitio web actual"
 
@@ -2085,7 +2034,7 @@ msgid "Visit the"
 msgstr "Visite la"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__visitor_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__visitor_ids
 msgid "Visitors"
 msgstr "Visitantes"
 
@@ -2095,34 +2044,34 @@ msgid "Warehouse"
 msgstr "Almacén"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__warehouse_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__warehouse_ids
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__warehouse_ids
 msgid "Warehouse Name"
 msgstr "Nombre del almacén"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_website
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_id
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__website_id
 msgid "Website"
 msgstr "Sitio web"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__website
 msgid "Website Link"
 msgstr "Enlace de sitio web"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_message_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__website_message_ids
 msgid "Website Messages"
 msgstr "Mensajes de sitio web"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__website_url
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__website_url
 msgid "Website URL"
 msgstr "URL del sitio web"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__website_message_ids
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del sitio web"
 
@@ -2132,7 +2081,7 @@ msgid "Week days"
 msgstr "Días de la semana"
 
 #. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_eyekraft_shop__tz
+#: model:ir.model.fields,help:website_shops_map.field_public_shop__tz
 msgid ""
 "When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
 "If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
@@ -2156,12 +2105,12 @@ msgid "Work Hours"
 msgstr "Horas laborales"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyecraft_work_days__name
+#: model:ir.model.fields,field_description:website_shops_map.field_shop_work_days__name
 msgid "Work days"
 msgstr "Días de trabajo"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__work_hours_ids
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__work_hours_ids
 #: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__work_hours_ids
 msgid "Work hours"
 msgstr "Horas laborales"
@@ -2189,9 +2138,14 @@ msgid "You are here"
 msgstr "Usted esta aquí"
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_list_client_address
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_list_client_address
 msgid "Your approximate location is:"
 msgstr "Su ubicación aproximada es:"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
+msgid "Your approximate location:"
+msgstr "Su ubicación aproximada:"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
@@ -2199,7 +2153,7 @@ msgid "ZIP"
 msgstr "CÓDIGO POSTAL"
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_eyekraft_shop__zip
+#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__zip
 msgid "Zip"
 msgstr "Código postal"
 
@@ -2226,8 +2180,13 @@ msgid "determined..."
 msgstr "determinado..."
 
 #. module: website_shops_map
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card
-#: model_terms:ir.ui.view,arch_db:website_shops_map.eyekraft_shop_card_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.snippet_public_shop_list
+msgid "determined...<span class=\"fa fa-refresh fa-spin ml8\"/>"
+msgstr "determinado...<span class=\"fa fa-refresh fa-spin ml8\"/>"
+
+#. module: website_shops_map
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card
+#: model_terms:ir.ui.view,arch_db:website_shops_map.public_shop_card_map
 msgid "km"
 msgstr "km"
 

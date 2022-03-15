@@ -1,9 +1,9 @@
 from odoo import api, fields, models
 
 
-class shop_property(models.Model):
+class ShopProperty(models.Model):
     _name = 'shop.property'
-    _description = 'Shop property model for eyekraft'
+    _description = 'Shop Property model'
 
     # Model Fields
     name = fields.Char(

@@ -18,7 +18,10 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
      * Allows to customize the Source setup.
      */
     var EditSourcesDialog = Dialog.extend({
+        // The name of a QWeb template that will be rendered after the widget
+        // has been initialized but before it has been started.
         template: 'website_shops_map.s_shops_map_modal',
+        // Events are a mapping of an event selector
         events: _.extend({}, Dialog.prototype.events, {
             'click a.js_add_source': 'addSource',
             'click button.js_edit_source': 'editSource',
@@ -27,6 +30,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
 
         /**
          * Init function.
+         * Creation and initialization of the Dialog widget instance
          *
          * @constructor
          *
@@ -44,6 +48,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
 
         /**
          * Start function.
+         * Starting the widget, and returning the result of starting it
          *
          * @override
          *
@@ -172,6 +177,8 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             var levels = [];
             var data = self.flat;
             var context = {};
+
+            // Save sources for widget
             ajax.jsonRpc('/web/dataset/call_kw', 'call', {
                 model: 'shop.list.config',
                 method: 'save',
@@ -351,6 +358,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
 
         /**
          * Destroy function.
+         * Widget destruction and cleanup
          *
          */
         destroy: function () {
@@ -360,7 +368,7 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
 
     // Registries the function for open the customization dialog
     // Snippet option for Set visibility, List visibility, Map visibility and Widget settings
-    options.registry.eyekraft_shop_list = options.Class.extend({
+    options.registry.public_shop_list = options.Class.extend({
         /**
          * Set visibility function.
          *
@@ -386,11 +394,11 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             if (type !== "click") return;
             var self = this;
             var section = self.$target
-            var listLi = ($(section).find('#eyekraft-show-list-tab')).parent(),
+            var listLi = ($(section).find('#shop-show-list-tab')).parent(),
                 shopListPanel = $(section).find('#shop_list_panel'),
-                mapLi = ($(section).find('#eyekraft-show-map-tab')).parent(),
+                mapLi = ($(section).find('#shop-show-map-tab')).parent(),
                 shopMapPanel = $(section).find('#shop_map_panel'),
-                map_a = $(section).find('#eyekraft-show-map-tab');
+                map_a = $(section).find('#shop-show-map-tab');
 
             if (listLi.attr("data-visible") === "on") {
                 listLi
@@ -417,9 +425,9 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
             if (type !== "click") return;
             var self = this;
             var section = self.$target;
-            var listLi = ($(section).find('#eyekraft-show-list-tab')).parent(),
+            var listLi = ($(section).find('#shop-show-list-tab')).parent(),
                 shopListPanel = $(section).find('#shop_list_panel'),
-                mapLi = ($(section).find('#eyekraft-show-map-tab')).parent(),
+                mapLi = ($(section).find('#shop-show-map-tab')).parent(),
                 shopMapPanel = $(section).find('#shop_map_panel');
             var route_link = $(section).find('[data-block="route_link"]');
 
@@ -453,12 +461,13 @@ odoo.define('website_shops_map.shop_list_editor', function (require) {
 
             if (!uuid) {
                 var uuidNumber = new Date().getTime();
-                uuid = 'eyekraftShopMap' + uuidNumber
+                uuid = 'publicShopMap' + uuidNumber
                 $(section).attr('data-id', uuid)
                 var $wizard_id = $(section).data();
                 $wizard_id.id = uuid
             }
 
+            // Get sources for widget
             ajax.jsonRpc('/web/dataset/call_kw', 'call', {
                 model: 'shop.list.config',
                 method: 'get_sources_for_widget',

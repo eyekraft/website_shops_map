@@ -3,7 +3,7 @@ from odoo import api, fields, models
 
 # this is model to store cached requests for geo-coordibates determination
 # model stores coordinates and short shoplist in HTML for quick page formation
-# the status of cached coordinates checks by load_primary_shop_list() method of eyekraft.shop model
+# the status of cached coordinates checks by load_primary_shop_list() method of public.shop model
 class ShopsMapCache(models.Model):
     _name = 'shop.map.cache'
     _description = 'Caching model to store geoccordinates of clients'

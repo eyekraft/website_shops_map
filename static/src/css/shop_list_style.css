@@ -4,7 +4,7 @@
 #shop-card-small-map {
     margin-bottom: 10px;
 }
-#eyekraft-shop-list-user-geoloc {
+#public-shop-list-user-geoloc {
     margin-top: 18px;
 }
 .shop-map-container {
@@ -20,7 +20,7 @@
     overflow-y: scroll;
     max-height: 584px;
 }
-#eyekraft_props_picker {
+#shop_props_picker {
     width: 200%;
     margin-top: 0px;
 }

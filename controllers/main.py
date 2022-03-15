@@ -7,7 +7,7 @@ from odoo.http import request
 _logger = logging.getLogger(__name__)
 
 
-class EyekraftShopList(http.Controller):
+class PublicShopList(http.Controller):
 
     def authenticate(self, api_key):
         """
@@ -80,10 +80,10 @@ class EyekraftShopList(http.Controller):
                 for tag in tags:
                     tagId = request.env['res.partner.category'].sudo().search([('name','=',tag)]).id
                     domain.append(('category_id','in',tagId))
-                    shop_ids = request.env['eyekraft.shop'].sudo().search(domain)
+                    shop_ids = request.env['public.shop'].sudo().search(domain)
             else:
                 # if ids list get recordset of passed ids only
-                shop_ids = request.env['eyekraft.shop'].sudo().browse(isIds)
+                shop_ids = request.env['public.shop'].sudo().browse(isIds)
 
             for shop in shop_ids:
                 shop_dict = {field: shop.__getattribute__(field) for field in export_fields}
@@ -138,12 +138,12 @@ class EyekraftShopList(http.Controller):
     @http.route(['/api/templates'], type='http', methods=["GET"], auth="public", website=False, cors='*')
     def get_xml_templates(self, debug=False, **kwargs):
         templates_list = [
-            'website_shops_map.eyekraft_shop_map_balloon',
-            'website_shops_map.eyekraft_shop_card',
-            'website_shops_map.eyekraft_shop_list_client_address',
-            'website_shops_map.eyekraft_shop_card_map',
-            'website_shops_map.eyekraft_shop_map_props_option',
-            'website_shops_map.eyekraft_shop_own_page',
+            'website_shops_map.public_shop_map_balloon',
+            'website_shops_map.public_shop_card',
+            'website_shops_map.public_shop_list_client_address',
+            'website_shops_map.public_shop_card_map',
+            'website_shops_map.public_shop_map_props_option',
+            'website_shops_map.public_shop_own_page',
         ]
         result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<templates id=\"template\" xml:space=\"preserve\">\n"
         for template in templates_list:

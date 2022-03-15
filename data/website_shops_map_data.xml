@@ -34,13 +34,13 @@
         </record>
 
         <!-- Shop Work Hours - START -->
-        <record id="shop_work_days_1" model="eyecraft.work.days">
+        <record id="shop_work_days_1" model="shop.work.days">
             <field name="name">Monday to Friday</field>
         </record>
-        <record id="shop_work_days_2" model="eyecraft.work.days">
+        <record id="shop_work_days_2" model="shop.work.days">
             <field name="name">Saturday</field>
         </record>
-        <record id="shop_work_days_3" model="eyecraft.work.days">
+        <record id="shop_work_days_3" model="shop.work.days">
             <field name="name">Sunday</field>
         </record>
         <!-- Shop Work Hours - END -->

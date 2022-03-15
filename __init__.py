@@ -14,7 +14,7 @@ def fn_post_init_hook(cr, registry):
     # convert them in compatible type
     for wh in warehouses:
         values = {'name': wh.name}
-        shop_id = env['eyekraft.shop'].create(values)
+        shop_id = env['public.shop'].create(values)
         values = {'shop_id': shop_id.id}
         wh.write(values)
         if wh.partner_id:

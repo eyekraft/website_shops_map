@@ -12,7 +12,6 @@ YMAPS_LANG_LOCALIZATION = [
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-
     # Model Fields
     yandex_maps_view_api_key = fields.Char(
         string='Yandex Maps View Api Key',

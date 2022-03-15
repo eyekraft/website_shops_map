@@ -2,7 +2,7 @@
 <odoo>
     <!-- "Shop Properties" tree view -->
     <record id="view_shop_property_view_tree" model="ir.ui.view">
-        <field name="name">eyekraft.shop.property.tree</field>
+        <field name="name">public.shop.property.tree</field>
         <field name="model">shop.property</field>
         <field name="arch" type="xml">
             <tree string="Shop Properties">
@@ -15,7 +15,7 @@
 
     <!-- "Shop Properties" form view -->
     <record id="shop_property_view_form" model="ir.ui.view">
-        <field name="name">eyekraft.shop.property.form</field>
+        <field name="name">public.shop.property.form</field>
         <field name="model">shop.property</field>
         <field name="arch" type="xml">
             <form string="Shop Property">

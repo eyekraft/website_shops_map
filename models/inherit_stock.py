@@ -6,10 +6,10 @@ from odoo import api, fields, models
 _logger = logging.getLogger(__name__)
 
 
-class stock_warehouse(models.Model):
+class StockWarehouse(models.Model):
     _name = "stock.warehouse"
     _inherit = "stock.warehouse"
-    _inherits = {"eyekraft.shop": 'shop_id'}
+    _inherits = {"public.shop": 'shop_id'}
 
     def _get_lat_lng(self):
         """ Compute latitude & longitude by Yandex service
@@ -71,11 +71,11 @@ class stock_warehouse(models.Model):
             if wh.shop_id:
                 wh.shop_id.unlink()
             else:
-                return super(stock_warehouse, self).unlink()
+                return super(StockWarehouse, self).unlink()
 
     @api.model
     def create(self,vals):
-        record = super(stock_warehouse, self).create(vals)
+        record = super(StockWarehouse, self).create(vals)
         values = {}
         if record.shop_id.public:
             values['company_type'] = 'company'
@@ -85,7 +85,7 @@ class stock_warehouse(models.Model):
         return record
 
     def write(self,vals):
-        record = super(stock_warehouse, self).write(vals)
+        record = super(StockWarehouse, self).write(vals)
         values = {'name': self.name}
         # if warehouse is shop
         if self.shop_id.public:
@@ -132,7 +132,7 @@ class stock_warehouse(models.Model):
 
     # Model Fields
     shop_id = fields.Many2one(
-        "eyekraft.shop",
+        "public.shop",
         string="Shop",
         required=True,
         ondelete="cascade",
