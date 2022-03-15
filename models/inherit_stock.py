@@ -26,19 +26,20 @@ class StockWarehouse(models.Model):
                 geolocator = geocoders.Yandex(api_key=YANDEX_API_KEY)
 
                 # https://geopy.readthedocs.io/en/latest/index.html#geopy.geocoders.Yandex.geocode
+                lang = self.env.context['lang']
                 spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]
                 english = ["en_AU", "en_CA", "en_GB", "en_US"]
-                if self.env.context['lang'] == u'es' or self.env.context['lang'] in spanish:
+                if lang == u'es' or lang in spanish:
                     language="en_US"
-                elif self.env.context['lang'] == u'en' or self.env.context['lang'] in english:
+                elif lang == u'en' or lang in english:
                     language="en_US"
-                elif self.env.context['lang'] == u'tr' or self.env.context['lang'] == u'tr_TR':
+                elif lang == u'tr' or lang == u'tr_TR':
                     language="tr_TR"
-                elif self.env.context['lang'] == u'uk' or self.env.context['lang'] == u'uk_UA':
+                elif lang == u'uk' or lang == u'uk_UA':
                     language="uk_UA"
-                elif self.env.context['lang'] == u'be' or self.env.context['lang'] == u'be_BY':
+                elif lang == u'be' or lang == u'be_BY':
                     language="be_BY"
-                elif self.env.context['lang'] == u'ru' or self.env.context['lang'] == u'ru_RU':
+                elif lang == u'ru' or lang == u'ru_RU':
                     language="ru_RU"
                 else:
                     language="en_RU"
