@@ -1,5 +1,4 @@
 from . import public_shop
-from . import inherit_stock
 from . import ir_module_module
 from . import res_config_settings
 from . import res_partner
@@ -10,4 +9,5 @@ from . import shop_property
 from . import shop_time_period
 from . import shop_work_days
 from . import shop_work_hours
+from . import stock_warehouse
 from . import website
