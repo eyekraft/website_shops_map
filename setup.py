@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # https://gist.github.com/sehrishnaz/2f7ead70f1ab8927325f5f14a747c000
 
 import os
