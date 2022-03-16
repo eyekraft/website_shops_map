@@ -27,7 +27,7 @@ class PublicShop(models.Model):
     partner_id = fields.Many2one(
         "res.partner",
         required=True,
-        ondelete="restrict"
+        ondelete="restrict",
     )
     full_address = fields.Char(
         string='Full Address',
@@ -36,7 +36,8 @@ class PublicShop(models.Model):
     )
     metro_station = fields.Char(
         string='Subway station',
-        help='In this field, you can enter the name of the subway station in the "Subway station" field, if necessary',
+        help='In this field, you can enter the name of the subway station in the '
+             '"Subway station" field, if necessary',
     )
     properties_ids = fields.Many2many(
         'shop.property',
@@ -44,22 +45,26 @@ class PublicShop(models.Model):
         'shop_id',
         'property_id',
         string='Properties',
-        help='In this field, you can select the services available in the shop in the "Properties" field (services must be pre-configured at "Shop Properties")',
+        help='In this field, you can select the services available in the shop in '
+             'the "Properties" field (services must be pre-configured at "Shop Properties")',
     )
     work_hours_ids = fields.One2many(
         "shop.work.hours",
         "shop_id",
         string="Work hours",
-        help='In this field, you can enter opening hours and enter the data in the window that appears, or select previously entered hours from the list',
+        help='In this field, you can enter opening hours and enter the data in the '
+             'window that appears, or select previously entered hours from the list',
     )
     rating = fields.Float(
-        string="Rating"
+        string="Rating",
     )
     public = fields.Boolean(
         string="Public Shop",
         help='Check "Public Shop" checkbox to assign warehouse as public shop',
     )
-    foreign_partner = fields.Boolean(help="Flag for partner record linked on module install")
+    foreign_partner = fields.Boolean(
+        help="Flag for partner record linked on module install",
+    )
     warehouse_ids = fields.One2many(
         "stock.warehouse",
         "shop_id",

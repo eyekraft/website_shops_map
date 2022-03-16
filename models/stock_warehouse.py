@@ -11,6 +11,14 @@ class StockWarehouse(models.Model):
     _inherit = "stock.warehouse"
     _inherits = {"public.shop": 'shop_id'}
 
+    # Model Fields
+    shop_id = fields.Many2one(
+        "public.shop",
+        string="Shop",
+        required=True,
+        ondelete="cascade",
+    )
+
     def _get_lat_lng(self):
         """ Compute latitude & longitude by Yandex service
             :returns: location.latitude, location.longitude
@@ -129,12 +137,3 @@ class StockWarehouse(models.Model):
     def erase_on_shop(self):
         model_name = 'shop.map.cache'
         model.env[model_name].erase_on_new_shop()
-
-
-    # Model Fields
-    shop_id = fields.Many2one(
-        "public.shop",
-        string="Shop",
-        required=True,
-        ondelete="cascade",
-    )

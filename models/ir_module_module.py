@@ -14,7 +14,10 @@ class IrModuleModule(models.Model):
     _inherit = "ir.module.module"
 
     # Model Fields
-    manual_html = fields.Html(string='Manual HTML', compute='_manual')
+    manual_html = fields.Html(
+        string='Manual HTML',
+        compute='_manual',
+    )
 
     # Extends standart description_html with more html files
     def _manual(self):

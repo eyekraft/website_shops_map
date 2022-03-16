@@ -19,15 +19,15 @@ class ShopTimePeriod(models.Model):
     name = fields.Char(
         string="Shop Time Period",
         compute="_compute_name",
-        store=True
+        store=True,
     )
     start_time = fields.Float(
         string="Since",
-        required=True
+        required=True,
     )
     end_time = fields.Float(
         string="To",
-        required=True
+        required=True,
     )
 
     @api.depends('start_time', 'end_time')
