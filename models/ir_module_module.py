@@ -18,10 +18,11 @@ class IrModuleModule(models.Model):
 
     # Extends standart description_html with more html files
     def _manual(self):
+        lang = self.env.context['lang']
         spanish = ["es_ES", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC, es", "es_GT", "es_MX", "es_PA", "es_PE", "es_PY", "es_UY", "es_VE"]
-        if self.env.context['lang'] == u'ru_RU':
+        if lang == u'ru_RU':
             path = modules.module.get_module_resource(self.name, 'doc/manual_ru.html')
-        elif self.env.context['lang'] == u'es' or self.env.context['lang'] in spanish:
+        elif lang == u'es' or lang in spanish:
             path = modules.module.get_module_resource(self.name, 'doc/manual_es.html')
         else:
             path = modules.module.get_module_resource(self.name, 'doc/manual.html')
