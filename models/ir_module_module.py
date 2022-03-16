@@ -15,7 +15,7 @@ class IrModuleModule(models.Model):
 
     # Model Fields
     manual_html = fields.Html(
-        string='Manual HTML',
+        string='HTML Manual',
         compute='_manual',
     )
 
