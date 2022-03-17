@@ -232,8 +232,8 @@ odoo.define("website_shops_map.shop_list", function (require) {
 
             // callback to correct latitude and longitude by browser deferred navigation
             deferred_browser.done(function () {
-                $.cookie("geo_lat", self.latitude, { expires: 365, path: "/" });
-                $.cookie("geo_lon", self.longitude, { expires: 365, path: "/" });
+                Cookies.set("geo_lat", self.latitude, { expires: 365, path: "/" });
+                Cookies.set("geo_lon", self.longitude, { expires: 365, path: "/" });
                 console.log("ShopsMap GeoLocation: browser coordinates are updated:");
                 self.getClientAddress().then(function () {
                     self.renderClientAddress();
@@ -242,10 +242,10 @@ odoo.define("website_shops_map.shop_list", function (require) {
             });
 
             // if there are cookies, read cookies
-            if ($.cookie("geo_lat") && $.cookie("geo_lon") && !Forced) {
+            if (Cookies.get("geo_lat") && Cookies.get("geo_lon") && !Forced) {
                 console.log("ShopsMap GeoLocation: cookies are used");
-                self.latitude = parseFloat($.cookie("geo_lat"));
-                self.longitude = parseFloat($.cookie("geo_lon"));
+                self.latitude = parseFloat(Cookies.get("geo_lat"));
+                self.longitude = parseFloat(Cookies.get("geo_lon"));
                 deferred.resolve();
             } else {
                 // otherwise compute values of latitude and longitude
@@ -698,8 +698,8 @@ odoo.define("website_shops_map.shop_list", function (require) {
                             self.renderClientAddress();
                             self.renderShopList(self.shopList, 0);
                         });
-                        $.cookie("geo_lat", self.latitude, { expires: 365, path: "/" });
-                        $.cookie("geo_lon", self.longitude, { expires: 365, path: "/" });
+                        Cookies.set("geo_lat", self.latitude, { expires: 365, path: "/" });
+                        Cookies.set("geo_lon", self.longitude, { expires: 365, path: "/" });
                     });
                 });
 
@@ -735,8 +735,8 @@ odoo.define("website_shops_map.shop_list", function (require) {
                         self.renderShopList(shopList, 0);
                     }
 
-                    $.cookie("geo_lat", self.latitude, { expires: 365, path: "/" });
-                    $.cookie("geo_lon", self.longitude, { expires: 365, path: "/" });
+                    Cookies.set("geo_lat", self.latitude, { expires: 365, path: "/" });
+                    Cookies.set("geo_lon", self.longitude, { expires: 365, path: "/" });
                 },
             });
         },
@@ -1208,8 +1208,8 @@ odoo.define("website_shops_map.shop_list", function (require) {
             }
 
             this.getLatLng(!Forced).then(function () { // success
-                    $.cookie("geo_lat", self.latitude, { expires: 365, path: "/" });
-                    $.cookie("geo_lon", self.longitude, { expires: 365, path: "/" });
+                    Cookies.set("geo_lat", self.latitude, { expires: 365, path: "/" });
+                    Cookies.set("geo_lon", self.longitude, { expires: 365, path: "/" });
                     self.getClientAddress().then(renderFullList);
                 }, renderFullList
             );
