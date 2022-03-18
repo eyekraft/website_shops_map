@@ -28,7 +28,7 @@ Partner And Google Map Snippet compatible.
         'views/ir_module_module_view.xml',
         'views/res_config_settings.xml',
         'views/s_shop_list.xml',
-        'views/stock_view.xml',
+        'views/stock_warehouse_view.xml',
         'views/shop_api_user_view.xml',
         'views/shop_list_config_view.xml',
         'views/shop_map_cache_view.xml',
