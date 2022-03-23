@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 04:46+0000\n"
-"PO-Revision-Date: 2022-03-16 04:46+0000\n"
+"POT-Creation-Date: 2022-03-23 17:07+0000\n"
+"PO-Revision-Date: 2022-03-23 13:18-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "Language: ru\n"
@@ -349,12 +349,6 @@ msgstr ""
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_public_shop__channel_ids
 msgid "Channels"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_public_shop__public
-#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__public
-msgid "Check \"Public Shop\" checkbox to assign warehouse as public shop"
 msgstr ""
 
 #. module: website_shops_map
@@ -938,7 +932,7 @@ msgstr ""
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
-msgid "Is Public Shop"
+msgid "Is Public Shop?"
 msgstr ""
 
 #. module: website_shops_map
@@ -1300,12 +1294,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Properties"
 msgstr "Свойства"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__public
-#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__public
-msgid "Public Shop"
-msgstr ""
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_public_shop

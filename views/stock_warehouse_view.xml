@@ -10,7 +10,7 @@
                 <field name="name" string="Shop name or code"
                     filter_domain="['|',('name', 'ilike', self),('code', 'ilike', self)]"/>
                 <separator/>
-                <filter string="Is Public Shop" name="public_shop" domain="[('public','=',True)]"/>
+                <filter string="Is Public Shop?" name="public_shop" domain="[('is_published','=',True)]"/>
                 <separator/>
             </search>
         </field>
@@ -23,15 +23,15 @@
         <field name="inherit_id" ref="stock.view_warehouse"/>
         <field name="arch" type="xml">
             <label for="name"  position="before">
-                <field name="public"/>
-                <label for="public" class="mr16"/>
+                <field name="is_published"/>
+                <label for="is_published" class="mr16"/>
                 <br/>
             </label>
             <notebook groups="stock.group_adv_location" position="attributes">
                 <attribute name="groups"></attribute>
             </notebook>
             <xpath expr="//notebook" position="before">
-                <notebook attrs="{'invisible': [('public', '=', False)]}">
+                <notebook attrs="{'invisible': [('is_published', '=', False)]}">
                     <page name="shop_info" string="Shop Info">
                         <group>
                             <field name="properties_ids" widget="many2many_tags" placeholder="Properties"/>

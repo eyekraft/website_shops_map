@@ -18,7 +18,10 @@ _logger = logging.getLogger(__name__)
 class PublicShop(models.Model):
     _name = "public.shop"
     _description = "Public Shop model"
-    _inherit = "base_multi_image.owner"
+    _inherit = [
+        "base_multi_image.owner",
+        "website.published.mixin",
+    ]
     _inherits = {"res.partner":'partner_id'}
 
     _sql_constraints = [('check_name', 'CHECK(True)','')]
@@ -57,10 +60,6 @@ class PublicShop(models.Model):
     )
     rating = fields.Float(
         string="Rating",
-    )
-    public = fields.Boolean(
-        string="Public Shop",
-        help='Check "Public Shop" checkbox to assign warehouse as public shop',
     )
     foreign_partner = fields.Boolean(
         help="Flag for partner record linked on module install",

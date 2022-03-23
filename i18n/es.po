@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 04:46+0000\n"
-"PO-Revision-Date: 2022-03-16 00:52-0400\n"
+"POT-Creation-Date: 2022-03-23 17:07+0000\n"
+"PO-Revision-Date: 2022-03-23 13:18-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -387,14 +387,6 @@ msgstr "Puede publicar"
 #: model:ir.model.fields,field_description:website_shops_map.field_public_shop__channel_ids
 msgid "Channels"
 msgstr "Canales"
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_public_shop__public
-#: model:ir.model.fields,help:website_shops_map.field_stock_warehouse__public
-msgid "Check \"Public Shop\" checkbox to assign warehouse as public shop"
-msgstr ""
-"Marque la casilla de verificación \"Tienda pública\" para asignar el almacén "
-"como tienda real"
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_public_shop__is_company
@@ -1017,8 +1009,8 @@ msgstr "Es seguidor"
 
 #. module: website_shops_map
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse_shop_search
-msgid "Is Public Shop"
-msgstr "Es tienda pública"
+msgid "Is Public Shop?"
+msgstr "¿Es tienda pública?"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_public_shop__is_published
@@ -1383,12 +1375,6 @@ msgstr "Lista de precios"
 #: model_terms:ir.ui.view,arch_db:website_shops_map.view_warehouse
 msgid "Properties"
 msgstr "Propiedades"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__public
-#: model:ir.model.fields,field_description:website_shops_map.field_stock_warehouse__public
-msgid "Public Shop"
-msgstr "Tienda pública"
 
 #. module: website_shops_map
 #: model:ir.model,name:website_shops_map.model_public_shop

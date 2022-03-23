@@ -86,7 +86,7 @@ class StockWarehouse(models.Model):
     def create(self,vals):
         record = super(StockWarehouse, self).create(vals)
         values = {}
-        if record.shop_id.public:
+        if record.shop_id.is_published:
             values['company_type'] = 'company'
             values['is_company'] = True
             values['category_id'] = [(6,0,[self.env.ref('website_shops_map.partner_shop_category_id').id])]
@@ -97,7 +97,7 @@ class StockWarehouse(models.Model):
         record = super(StockWarehouse, self).write(vals)
         values = {'name': self.name}
         # if warehouse is shop
-        if self.shop_id.public:
+        if self.shop_id.is_published:
             # if there are no coordinates - count them
             if not self.shop_id.partner_latitude:
                 coordinates = self._get_lat_lng()
