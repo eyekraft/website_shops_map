@@ -37,7 +37,7 @@ def fn_post_init_hook(cr, registry):
     for partner in partners_to_stock:
         values = {'name': partner.name,'code':'x_'+str(i)}
         warehouse = model_obj.create(values)
-        warehouse.public = True
+        warehouse.is_published = True
         warehouse.shop_id.foreign_partner = True
         partner_to_delete = warehouse.shop_id.partner_id
         warehouse.shop_id.partner_id = partner
