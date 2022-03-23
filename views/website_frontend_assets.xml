@@ -5,7 +5,7 @@
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/website_shops_map/static/lib/backbone/backbone.js"></script>
             <script type="text/javascript" src="/website_shops_map/static/lib/jquery.autocomplete.js"></script>
-            <script type="text/javascript" src="/website_shops_map/static/lib/jquery.cookie.js"></script>
+            <script type="text/javascript" src="/website_shops_map/static/lib/js.cookie.js"></script>
             <script type="text/javascript" src="/website_shops_map/static/lib/bootstrap-select/bootstrap-select.js"></script>
             <script type="text/javascript" src="/website_shops_map/static/src/js/shop_list_snippet.js" async="async"></script>
             <link type="text/css" rel="stylesheet" href="/website_shops_map/static/lib/bootstrap-select/bootstrap-select.min.css" />
