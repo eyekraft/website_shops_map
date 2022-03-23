@@ -1,23 +1,26 @@
-# -*- coding: utf-8 -*-
-from odoo  import models, fields, api, sys
+from odoo import api, fields, models, sys
 
-class shop_list_config(models.Model):
+
+class ShopListConfig(models.Model):
     _name = 'shop.list.config'
+    _description = "Shop List Configurations"
 
+    # Model Fields
     shop_list_url = fields.Char(string="Shop List Url")
     shop_list_params = fields.Char(string="Shop List Paramters")
     widget_id = fields.Char(string="Widget ID")
-    
+
     @api.model
-    def get_sorces_for_widget(self, widget_id):
+    def get_sources_for_widget(self, widget_id):
+        ''' Get sources for widget '''
         sources = self.search([('widget_id', '=', widget_id)])
-	tags = self.env['eyekraft.shop'].search([]).mapped('category_id.name')
+        tags = self.env['public.shop'].search([]).mapped('category_id.name')
         res = []
-    	for source in sources:
-    	    res.append({
-        	'id': source.id,
-		'tags_avail': tags if tags else [],
-            	'shop_list_url': source.shop_list_url.replace('/api/shops', ''),
+        for source in sources:
+            res.append({
+                'id': source.id,
+                'tags_avail': tags if tags else [],
+                'shop_list_url': source.shop_list_url.replace('/api/shops', ''),
                 'shop_list_params': eval(source.shop_list_params)['api_key'],
                 'shop_list_color': eval(source.shop_list_params)['color'] if 'color' in eval(source.shop_list_params) else '',
                 'shop_list_tag': eval(source.shop_list_params)['tag'] if 'tag' in eval(source.shop_list_params) else '',
@@ -28,6 +31,7 @@ class shop_list_config(models.Model):
         return res
 
     def save(self, data):
+        ''' Save sources for widget '''
         if data:
             widget_id = data.get('widget_id', '')
             sources = data.get('data', {})
@@ -36,10 +40,10 @@ class shop_list_config(models.Model):
                 values = {
                     'shop_list_url': (source['shop_list_url'] + '/api/shops').replace('//api', '/api'),
                     'shop_list_params': str({'api_key': source['shop_list_params'],
-                			     'color': source['shop_list_color'],
-                			     'tag': source['shop_list_tag'],
-                			     'info': source['shop_list_info'],
-					     'tags': ','.join(source['tags']) if 'tags' in source else ''}),
+                    'color': source['shop_list_color'],
+                    'tag': source['shop_list_tag'],
+                    'info': source['shop_list_info'],
+                    'tags': ','.join(source['tags']) if 'tags' in source else ''}),
                     'widget_id': widget_id,
                 }
                 try:
@@ -49,4 +53,3 @@ class shop_list_config(models.Model):
                     self.create(values)
             for source_id in to_delete:
                 self.browse(source_id).unlink()
-

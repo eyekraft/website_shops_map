@@ -12,8 +12,7 @@
           var object = {};
           var $defineProperty = Object.defineProperty;
           var result = $defineProperty(object, object, object) && $defineProperty;
-        } catch (error) {
-        }
+        } catch (error) {}
         return result;
       }());
       var indexOf = ''.indexOf;

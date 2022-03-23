@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- "Shop Time Period" form view -->
+    <record id="shop_time_period_view_form" model="ir.ui.view">
+        <field name="name">shop.time.period.form</field>
+        <field name="model">shop.time.period</field>
+        <field name="arch" type="xml">
+            <form string="Shop Time Period">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="start_time" widget="float_time"/>
+                        </group>
+                        <group>
+                            <field name="end_time" widget="float_time"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- "Shop Time Period" ir.actions.act_window -->
+    <record id="shop_time_period_action" model="ir.actions.act_window">
+        <field name="name">Shop Time Period</field>
+        <field name="res_model">shop.time.period</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Shop Time Period.
+            </p>
+            <p style="text-align: left">
+                Create a Shop Time Period entering opening hours for the shop
+                <ul style="text-align: left">
+                    <li><i>Since</i>, defines the hour from in which the shop works, in set hours in numbers</li>
+                    <li><i>To</i>, defines the hour until in which the shop works, in set hours in numbers</li>
+                </ul>
+            </p>
+        </field>
+    </record>
+
+    <!-- "Shop Time Period" menu item -->
+    <menuitem id="shop_time_period_menu"
+        action="shop_time_period_action"
+        parent="menu_shop_config"
+        name="Shop Time Period"
+        sequence="120" />
+</odoo>

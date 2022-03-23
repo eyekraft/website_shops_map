@@ -4,60 +4,217 @@
 </head>
 <section class="oe_container">
     <div class="oe_spaced">
-        <div class="col-md-12">
-            <h4 class="oe_slogan" style="color:#428bca; text-align: center;">The order of creating store</h4>
-	  </div>
-        <div class="col-md-6">
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-			  <img src="scr_man_2.jpg"/>
-           </div>
-            <div class="oe_demo oe_picture oe_screenshot mt32">
-			  <img src="scr_man_3.jpg"/>
-           </div>
-        </div> 
-        <div class="col-md-6">
-<p class="oe_mt32">1. Open menu Inventory/Warehouse management/Warehouses.</p>
-<p class="oe_mt32">2. Create new warehouse:
-            <ul>
-             <li>check "Shop" checkbox to assign warehouse as public shop</li>
-             <li>specify the name of the shop</li>
-             <li>specify the short name of the shop</li>
-             <li>specify city where shop is located in the field "City"</li>
-             <li>specify address of the shop in the field "Street"</li>
-             <li>specify the name of the mall in the field "Mall" if any</li>
-             <li>specify the name of the subway station if any</li>
-             <li>select properties for shop (properties must be pre-filled - see below)</li>
-             <li>enter opening days in format of your own (ex. «mo-fr», «Saturday»), or select option filled earlier</li>
-             <li>enter opening hours, or select option filled earlier</li>
-             <li>load images for the shop to display on shop page, if any</li>
-            </ul>
-</p>
-<p class="oe_mt32">3. Save the form. Now shop is available to show on the snippet map</p>
+        <div class="text-center mb64">
+            <p class="lead slim">
+                This instructions allows you to configure the Odoo backend, all the necessary registers to be able to show the list of shops.
+            </p>
         </div>
+        <div class="col-md-10">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_title.jpg" alt="Shops List on Map"/>
+            </div>
+        </div>
+    </div>
+    <div class="oe_spaced">
+        <!-- Shop API Users -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop API Users</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">To register Odoo database as shop list source you need to generate local API-key.</p>
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop Management/API Settings/Shop API Users</p>
+            <ul>
+                <li>Enter URL to current database and get you API-key on pushing saving button.</li>
+                <li>Use this URL and generated API-key on map <b>Shop List Snippet</b> source setup.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_api_users_form.png" alt="Screenshot for Shop API Users form"/>
+            </div>
+        </div>
+        <!-- Yandex Maps API -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Yandex Maps API</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Open menu Settings/General Settings/Yandex Maps View</p>
+            <p class="oe_mt32">2. Set API key and map localization, visit the <a href="https://yandex.com/dev/maps/jsapi/doc/2.1/quick-start/index.html#get-api-key" title="Yandex Maps API" target="_blank">page</a> about get an API Key for the "JavaScript API y HTTP Geocoder" Map service.</p>
+            <p class="oe_mt32">Fill all of the required data and save it.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_yandex_settings_form.png" alt="Screenshot Addon for Yandex Maps View"/>
+            </div>
+        </div>
+        <!-- Multi-Warehouses -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Multi-Warehouses</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">You can manage several warehouses. You need to have Manager Access Rights for Inventory module to work with shops.</p>
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop Management/<a href="https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses/warehouse_creation.html" title="Multi-Warehouses" target="_blank">Multi-Warehouses</a></p>
+            <p class="oe_mt32">Fill all of the required data and save it.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_warehouses_settings_form.png" alt="Screenshot for define Multi-Warehouses"/>
+            </div>
+        </div>
+        <!-- Shop List Config -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop List Config</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Create a Shop List Config because in the snippet configuration dialog you can choose next options of your shop list.</p>
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop Management/Shop List Config</p>
+            <ul>
+                <li>specify "Shop List Url", defines the URL address for Shop List.</li>
+                <li>specify "Shop List Paramters", defines the URL address for Shop List.</li>
+                <ul>
+                    <li>specify "Colour", defines colour of shop card border. Cause snippet allows to show lists from several sources it may be need to distinguish between them.</li>
+                    <li>specify "Label", defines short text mark placed before shop name. It has the same purpose as colour.</li>
+                    <li>specify "Info", defines the type of information to display in the shop card caption. It's distance from current user's location to the shop location by default.</li>
+                    <li>specify "Shop tags", defines shops with what tags will be shown on the map of the snippet. Cause this module supports Partner Google Map Snippet it can use its tagged Partners with geolocation completed. Partners available for Partner Google Map Snippet are imported as shops on this module install and are able to show by corresponding tag. The module's own tag is 'shop' and it is used by default.</li>
+                </ul>
+                <li>specify "Widget ID", defines the Widget ID for Shop List.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_urls_form.png" alt="Screenshot for Shop List Config form"/>
+            </div>
+        </div>
+        <!-- Periods of Time -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Periods of Time</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Create a Periods of Time entering opening hours for the shop.</p>
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop Management/Periods of Time</p>
+            <ul>
+                <li>specify "Since" defines the hour from in which the shop works, in set hours in numbers.</li>
+                <li>specify "To" defines the hour until in which the shop works, in set hours in numbers.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_period_of_time_form.png" alt="Screenshot for Periods of Time form"/>
+            </div>
+        </div>
+        <!-- Shop Work Days -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop Work Days</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop Management/Shop Work Days</p>
+            <p class="oe_mt32">Create a opening days in format of your own (ex. «Mon-Fri», «Saturday») for the shop.</p>
+            <p class="oe_mt32">Fill all of the required data and save it.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_shop_work_days_form.png" alt="Screenshot for Shop Work Days form"/>
+            </div>
+        </div>
+        <!-- Shop properties -->
         <div class="col-md-12 mt32">
             <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop properties</h4>
-	  </div>
-        <div class="col-md-6">
-            <p class="oe_mt32">Properties are used to filter shops on the webpage. They can be selected by user from dropdown list or be preinstalled on snippet load permanently with no selection ability.</p>
-<p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop properties</p>
-<p class="oe_mt32">2. Create new property:</p>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Properties are used to filter shops on the webpage. They can be selected by user from drop-down list or be pre-installed on snippet load permanently with no selection ability.</p>
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/Shop Management/Shop properties</p>
+            <p class="oe_mt32">2. Create new property:</p>
             <ul>
-             <li>specify name of the property (to see in the dropdown selection on the webpage)</li>
-             <li>specufy 'Sequence' if necessary (properties with a lower number are shown in the selection list earlier)</li>
-             <li>check 'Default' to apply this property automatically on snippet load</li>
-             <li>specify URL-address to apply automatic property on specified page only, ex. «/page/shops»*</li>
+                <li>specify "Name" of the property (to see in the drop-down selection on the webpage)</li>
+                <li>specify "Sequence" if necessary (properties with a lower number are shown in the selection list earlier)</li>
+                <li>check "Default" to apply this property automatically on "Shop List Snippet" load</li>
+                <li>specify "URL-address" to apply automatic property on specified page only, ex. «/page/shops»*</li>
+            </ul>
+            <p class="oe_mt32">3. Save the form. The property is available in the property list of the shop creation form</p>
+            <p class="oe_mt32"><i>* If "URL" field is filled the automatic filter works on specified page only. Otherwise, filter applies on every "Shop List Snippet" of the website.</i></p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt48">
+                <img src="/website_shops_map/static/description/scr_man_4.jpg" alt=""/>
+            </div>
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_5.jpg" alt=""/>
+           </div>
+        </div>
+        <!-- The order of creating shop -->
+        <div class="col-md-12 mt32">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">The order of creating shop</h4>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">You can to create Warehouse as Public Shop.</p>
+            <p class="oe_mt32">1. Open menu Inventory/Warehouse Management/<a href="https://www.odoo.com/documentation/13.0/applications/inventory_and_mrp/inventory/management/warehouses.html" title="Warehouses" target="_blank">Warehouses</a></p>
+            <p class="oe_mt32">2. Create a new <b>Warehouse</b>:</p>
+            <ul>
+                <li>Mark it as <b>Public Shop</b>, checkbox to assign warehouse as public shop.</li>
+                <ul>
+                    <li>specify the name of the shop (used to display on the shop map with the "Shop List Snippet")</li>
+                    <li>specify a short name of the shop (arbitrary alphanumeric designation)</li>
+                    <li>specify the name of city where shop is located in the field "City"</li>
+                    <li>specify address of the shop as the street, building number and building name in the field "Street" field</li>
+                    <li>specify the name of the mall in the field "Mall", if necessary</li>
+                    <li>specify the name of the subway station in the "Metro" field, if necessary</li>
+                    <li>select the services available in the shop in the "Properties" field (services must be pre-configured - see below)</li>
+                    <li>add a shop hours entry</li>
+                    <li>enter opening days in format of your own (ex. «Mon-Fri», «Saturday»), or select previously entered days from the list</li>
+                    <li>enter opening hours and enter the data in the window that appears, or select previously entered hours from the list</li>
+                    <li>upload photos in the "Images" tab for the shop to display on shop page, if necessary</li>
+                </ul>
             </ul>
         </div>
-       <div class="col-md-6">
+        <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt48">
-                    <img src="scr_man_4.jpg"/>
-           </div>
+                <img src="/website_shops_map/static/description/scr_man_warehouse_as_shop.png" alt="Screenshot for Manage Warehouses form"/>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">3. Save the form. Now shop is available to show on the "Shop List Snippet" map</p>
+        </div>
+        <div class="col-md-6">
             <div class="oe_demo oe_picture oe_screenshot mt32">
-			  <img src="scr_man_5.jpg"/>
+                <img src="/website_shops_map/static/description/scr_man_2.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Remember: You can select the services available in the shop in the "Properties" field (services must be pre-configured - see previous section).</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_3.jpg" alt=""/>
            </div>
-        </div> 
- <div class="col-md-12">
-<p class="oe_mt32">3. Save the form. The property is available in the property list of the shop creation form</p>
-<p class="oe_mt32"><i>* If "URL" field is filled the automatic filter works on specified page only. Otherwise, filter applies on every shop map snippet of the website.</i></p>
-</div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">Remember: You can enter opening days in format of your own (ex. «Mon-Fri», «Saturday»), or select previously entered days from the list.</p>
+            <p class="oe_mt32">Also you can enter opening hours and enter the data in the window that appears, or select previously entered hours from the list.</p>
+        </div>
+        <!-- Shop Coordinate Adjustment -->
+        <div class="col-md-12">
+            <h4 class="oe_slogan" style="color:#428bca; text-align:center;">Shop Coordinate Adjustment</h4>
+            <p class="oe_mt32">Sometimes a situation may arise when the address of the shop does not accurately reflect the location of the shop on the map. In this case:</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_6.jpg" alt="Check if the Shop coordinates is correct"/>
+           </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">1. Go to the «Yandex maps» resource (<a href="http://map.yandex.ru" target="_blank">map.yandex.ru</a>)</p>
+            <p class="oe_mt32">2. Enter your shop address in the search bar</p>
+            <p class="oe_mt32">3. If the shop is not exactly indicated on the map, find the correct location visually and click on it</p>
+            <p class="oe_mt32">4. A pop-up help window will show the geo-coordinates of the point</p>
+            <p class="oe_mt32">5. Copy these coordinates into the fields "Latitude" and "Longitude" on the form with the data of the shop</p>
+        </div>
+        <div class="col-md-6">
+            <div class="oe_demo oe_picture oe_screenshot mt32">
+                <img src="/website_shops_map/static/description/scr_man_7.jpg" alt="Update the coordinates for the Shop"/>
+           </div>
+        </div>
+        <div class="col-md-12">
+            <p class="oe_mt32">6. Save the form (Save)</p>
+        </div>
+    </div>
 </section>

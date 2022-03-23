@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <menuitem id="menu_api_settings_administration" parent="base.menu_administration" name="API Settings"/>
+<odoo>
+    <!-- "Shop API Users" tree view -->
+    <record id="shop_api_users_view_tree" model="ir.ui.view">
+        <field name="name">shop.api.user.tree</field>
+        <field name="model">shop.api.user</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <tree string="API Users" editable="bottom">
+                <field name="name"/>
+                <field name="api_key" readonly="1"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="shop_api_users_view_tree" model="ir.ui.view">
-            <field name="name">shop.api.user.tree</field>
-            <field name="model">shop.api.user</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="API Users" editable="bottom">
-                    <field name="name"/>
-                    <field name="api_key" readonly="1"/>
-                </tree>
-            </field>
-        </record>
+    <!-- "Shop API Users" ir.actions.act_window -->
+    <record id="shop_api_users_action" model="ir.actions.act_window">
+        <field name="name">Shop's API Users</field>
+        <field name="res_model">shop.api.user</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="shop_api_users_view_tree" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Shop's API Users.
+            </p>
+            <p class="oe_view_nocontent">
+                Create a Shop's API User, this is using for authentication method.
+            </p>
+        </field>
+    </record>
 
-        <record id="shop_api_users_action" model="ir.actions.act_window">
-            <field name="name">Shop API Users</field>
-            <field name="res_model">shop.api.user</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="shop_api_users_view_tree" />
-        </record>
-
-        <menuitem id="shop_api_users_menu"
-            action="shop_api_users_action"
-            parent="menu_api_settings_administration"
-            name="Shop API Users"
-        />
-
-    </data>
-</openerp>
+    <!-- "Shop API Users" menu item -->
+    <menuitem id="menu_api_settings_administration"
+        parent="stock.menu_stock_config_settings"
+        name="API Settings"
+        sequence="6" />
+    <menuitem id="shop_api_users_menu"
+        action="shop_api_users_action"
+        parent="menu_api_settings_administration"
+        name="Shop API Users" />
+</odoo>

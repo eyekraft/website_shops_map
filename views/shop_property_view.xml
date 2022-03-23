@@ -1,58 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-         <record id="view_shop_property_view_tree" model="ir.ui.view">
-            <field name="name">eyekraft.shop.property.tree</field>
-            <field name="model">shop.property</field>
-            <field name="arch" type="xml">
-                <tree string="Shop Properties">
-                    <field name="name"/>
-                    <field name="default"/>
-		    <field name="path"/>
-                </tree>
-            </field>
-        </record>
+<odoo>
+    <!-- "Shop Properties" tree view -->
+    <record id="view_shop_property_view_tree" model="ir.ui.view">
+        <field name="name">public.shop.property.tree</field>
+        <field name="model">shop.property</field>
+        <field name="arch" type="xml">
+            <tree string="Shop Properties">
+                <field name="name"/>
+                <field name="default"/>
+                <field name="path"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="shop_property_view_form" model="ir.ui.view">
-            <field name="name">eyekraft.shop.property.form</field>
-            <field name="model">shop.property</field>
-            <field name="arch" type="xml">
-                <form string="Shop Property">
-                    <sheet>
-                        <div class="oe_title">
-                            <h1>
-                                <field name="name" placeholder="Name..."/>
-                            </h1>
-                        </div>
-                        <group>
-                            <field name="sequence"/>
-                            <field name="default"/>
-			    <field name="path"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <!-- "Shop Properties" form view -->
+    <record id="shop_property_view_form" model="ir.ui.view">
+        <field name="name">public.shop.property.form</field>
+        <field name="model">shop.property</field>
+        <field name="arch" type="xml">
+            <form string="Shop Property">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="sequence"/>
+                        <field name="default"/>
+                        <field name="path"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="shop_properties_action" model="ir.actions.act_window">
-            <field name="name">Shop Properties</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">shop.property</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Create a Shop Property.
-                </p>
-            </field>
-        </record>
+    <!-- "Shop Properties" ir.actions.act_window -->
+    <record id="shop_properties_action" model="ir.actions.act_window">
+        <field name="name">Shop Properties</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">shop.property</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Shop Property.
+            </p>
+            <p style="text-align: left">
+                Shop Properties are used to filter shops on the webpage or to set when creating a new warehouse at Warehouse management
+                <ul style="text-align: left">
+                    <li><i>Name</i>, defines the property name (to see in the drop-down selection on the webpage)</li>
+                    <li><i>Sequence</i>, defines the sequence number, if necessary (properties with a lower number are shown in the selection list earlier)</li>
+                    <li><i>Default</i>, checks as default to apply this property automatically on "Shop List Snippet" load</li>
+                    <li><i>URL</i>, defines the url address using default option permanently, to apply automatic property on specified page only, ex. «/page/shops»</li>
+                </ul>
+            </p>
+        </field>
+    </record>
 
-        <menuitem id="website_shops_map.shop_properties_menu"
-            action="shop_properties_action"
-            parent="stock.menu_warehouse_config"
-            name="Shop properties"
-            sequence="100"
-        />
-
-    </data>
-</openerp>
+    <!-- "Shop Properties" menu item -->
+    <menuitem id="website_shops_map.shop_properties_menu"
+        action="shop_properties_action"
+        parent="menu_shop_config"
+        name="Shop Properties"
+        sequence="100" />
+</odoo>

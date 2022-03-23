@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- "Shop List Snippet" Template -->
+    <template id="snippet_public_shop_list" name="Shop List Snippet">
+        <section class="snippet_public_shop_list">
+            <div class="container">
+                <div id="shop-list-snippet-wrapper">
+                    <div id="wrap">
+                        <div class="oe_structure"/>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3" id="back_link_to_shop_list" style="display: none;">
+                                    <div style="padding-top: 20px;">
+                                        <p class="p_caption">
+                                            <a href="#shopList" class="o_default_snippet_text" title="Back to the shop list">Back to the shop list</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" id="public_shop_search">
+                                    <div id="address-input-group" >
+                                        <div class="input-group">
+                                            <input id="public-shop-list-address-input" type="text"
+                                                class="form-control" placeholder="Search" autocomplete="off" />
+                                            <span class="input-group-btn">
+                                                <span class="fa fa-refresh fa-spin ml16 mt8" style="display:none;position:absolute;left:-40px;font-size:large"></span>
+                                                <button type="button" class="btn btn-primary find-shop-by-address o_default_snippet_text" style="position: relative; overflow: hidden;">Find</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" id="shop_props_picker_selector">
+                                    <select id="shop_props_picker" class="hidden" multiple=""
+                                        title="Choose a service"></select>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <span class="shop-geocoded-address">
+                                        <div style="padding-bottom:16px">
+                                            <div id="public-shop-list-user-geoloc" class="collapse">
+                                                <div class="input-group">
+                                                    <input id="public-shop-list-user-geoloc-input" type="text" class="form-control" placeholder="Enter your address" autocomplete="off"/>
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-info user-geoloc-input-address" style="position: relative; overflow: hidden;">
+                                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <p>Your approximate location:</p>
+                                            <p>determined...<span class="fa fa-refresh fa-spin ml8"></span></p>
+                                            <a href="#public-shop-list-user-geoloc" data-toggle="collapse">Edit</a>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs" id="shop_widget_tabs">
+                            <li class="active" data-visible="on">
+                                <a id="shop-show-list-tab" data-toggle="tab" href="#shop_list_panel" class="o_default_snippet_text" title="Shop list">Shop list</a>
+                            </li>
+                            <li data-visible="on">
+                                <a id="shop-show-map-tab" data-toggle="tab" href="#shop_map_panel" class="o_default_snippet_text" title="Map">Map</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="shop_widget_content">
+                            <div id="shop_list_panel" class="tab-pane fade in active">
+                                <section class="mt16 mb16">
+                                    <div class="container">
+                                        <div class="reflex-container reflex-wrap shop-list-container">
+                                            <div class="col-xs-12 text-center">
+                                                <span class="fa fa-refresh fa-spin fa-2x mt8"></span>
+                                                <p class="mt4">Stores closest to you...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="shop_map_panel" class="tab-pane fade">
+                                <section class="mt16 mb16">
+                                    <div class="container">
+                                        <div class="reflex-container reflex-wrap shop-map-container row">
+                                            <div class="col-xs-12 col-md-4" id="shop-list-vertical"></div>
+                                            <div class="col-xs-12 col-md-8" >
+                                                <div id="map-container-vertical" style="width:100%; height:100%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Add "Shop List Snippet" Template to the Snippets bar -->
+    <template id="add_snippet_to_panel_shoplist" inherit_id="website.snippets" name="Add Snippet to Panel">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]/t" position="before">
+            <t t-snippet="website_shops_map.snippet_public_shop_list"
+               t-thumbnail="/website_shops_map/static/src/img/snippets/shop_list_snippet_icon.png"/>
+        </xpath>
+    </template>
+
+    <!-- Snippet's Options -->
+    <template id="snippet_options" inherit_id="website.snippet_options" name="Snippet Options" >
+        <xpath expr="." position="inside">
+            <div data-js="public_shop_list" data-selector=".snippet_public_shop_list">
+                <!-- Form Options -->
+                <li class="divider"></li>
+                <li data-list_visibility="true"><a href="#">List Tab ON/OFF</a></li>
+                <li data-map_visibility="true"><a href="#">Map Tab ON/OFF</a></li>
+                <li class="divider"></li>
+                <li data-widget_settings="true"><a href="#">Edit source</a></li>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,49 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
+    <!-- "Shop List Config" tree view -->
+    <record id="shop_urls_tree" model="ir.ui.view">
+        <field name="name">shop.list.config.tree</field>
+        <field name="model">shop.list.config</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <tree string="API Users" editable="bottom">
+                <field name="shop_list_url"/>
+                <field name="shop_list_params"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="shop_urls_tree" model="ir.ui.view">
-            <field name="name">shop.list.config.tree</field>
-            <field name="model">shop.list.config</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="API Users" editable="bottom">
-                    <field name="shop_list_url"/>
-                    <field name="shop_list_params"/>
-                </tree>
-            </field>
-        </record>
+    <!-- "Shop List Config" form view -->
+    <record id="shop_urls_form" model="ir.ui.view">
+        <field name="name">Shop List Config</field>
+        <field name="model">shop.list.config</field>
+        <field name="arch" type="xml">
+            <form string="Shop List Config">
+                <sheet>
+                    <group string="Shop List Config">
+                        <div class="col-md-12 col-lg-12">
+                            <group>
+                                <field name="shop_list_url"/>
+                                <field name="shop_list_params"/>
+                                <field name="widget_id"/>
+                            </group>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="shop_urls_form" model="ir.ui.view">
-            <field name="name">Shop List Config</field>
-            <field name="model">shop.list.config</field>
-            <field name="arch" type="xml">
-                <form string="Shop List Config">
-                    <sheet>
-                        <group string="Shop List Config">
-                            <div class="col-md-12 col-lg-12">
-                                <group>
-                                    <field name="shop_list_url"/>
-                                    <field name="shop_list_params"/>
-                                    <field name="widget_id"/>
-                                </group>
-                            </div>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <!-- "Shop List Config" ir.actions.act_window -->
+    <record id="shop_urls_action" model="ir.actions.act_window">
+        <field name="name">Shop List Config</field>
+        <field name="res_model">shop.list.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="shop_urls_tree" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Shop List Config.
+            </p>
+            <p style="text-align: left">
+                Create a Shop List Config because in the snippet configuration dialog you can choose next options of your shop list:
+                <ul style="text-align: left">
+                    <li><i>Shop List Url</i>, defines the url address for Shop List</li>
+                    <li><i>Shop List Paramters</i>, defines the parameters for Shop List, like as:
+                        <ol style="text-align: left">
+                            <li><i>Colour</i>, defines colour of shop card border. Cause snippet allows to show lists from several sources it may be need to distinguish between them.</li>
+                            <li><i>Label</i>, defines short text mark placed before shop name. It has the same purpose as colour.</li>
+                            <li><i>Info</i>, defines the type of information to display in the shop card caption. It's distance from current user's location to the shop location by default.</li>
+                            <li><i>Shop tags</i>, defines shops with what tags will be shown on the map of the snippet. Cause this module supports Partner Google Map Snippet it can use its tagged Partners with geolocation completed. Partners available for Partner Google Map Snippet are imported as shops on this module install and are able to show by corresponding tag. The module's own tag is 'shop' and it is used by default.</li>
+                        </ol>
+                    </li>
+                    <li><i>Widget ID</i>, defines the Widget ID for Shop List.</li>
+                </ul>
+            </p>
+        </field>
+    </record>
 
-        <record id="shop_urls_action" model="ir.actions.act_window">
-            <field name="name">Shop List Config</field>
-            <field name="res_model">shop.list.config</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="shop_urls_tree" />
-        </record>
-
-        <menuitem id="shop_urls_menu" name="Shop List Config"
-            parent="base.menu_administration" action="shop_urls_action"/>
-
-    </data>
-</openerp>
+    <!-- "Shop List Config" menu item -->
+    <menuitem id="shop_urls_menu"
+        action="shop_urls_action"
+        parent="menu_shop_config"
+        name="Shop List Config"
+        sequence="130" />
+</odoo>

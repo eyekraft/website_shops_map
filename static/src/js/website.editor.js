@@ -1,29 +1,36 @@
 odoo.define('website_shops_map.editor', function (require) {
-'use strict';
+    'use strict';
 
-var editor = require('web_editor.editor');
-var website = require('website.website');
+    var core = require('web.core');
+    var editor = require('web_editor.editor');
+    var website = require('website.website');
+    var _t = core._t;
 
-website.TopBar.include({
-    edit: function () {
-        this.$('button[data-action=edit]').prop('disabled', true);
-        this.$el.hide();
-        editor.editor_bar = new editor.Class(this);
-        editor.editor_bar.prependTo(document.body);
+    website.TopBar.include({
+        /**
+         * Edit function.
+         *
+         */
+        edit: function () {
+            this.$('button[data-action=edit]').prop('disabled', true);
+            this.$el.hide();
+            editor.editor_bar = new editor.Class(this);
+            editor.editor_bar.prependTo(document.body);
+            var messageList = _t("Select property");
 
-        var selector = $(document).find('#eyekraft_props_picker_selector')
-        if (selector.length){
-            // remove properties
-            $(selector).children().remove();
-            $(selector).append("<select id='eyekraft_props_picker' class='hidden' multiple='' title='Select property'></select>");
-        };
+            var selector = $(document).find('#shop_props_picker_selector')
+            if (selector.length){
+                // remove properties
+                $(selector).children().remove();
+                $(selector).append("<select id='shop_props_picker' class='hidden' multiple='' title='+ messageList +'></select>");
+            };
 
-        var big_map_view = $(document).find('#map-container-vertical')
-        if (big_map_view.length){
-            // remove big map
-            $(big_map_view).children().remove();
-        };
-    }
-});
+            var bigMapView = $(document).find('#map-container-vertical')
+            if (bigMapView.length){
+                // remove big map
+                $(bigMapView).children().remove();
+            };
+        }
+    });
 
 });
