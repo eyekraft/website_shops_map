@@ -1675,18 +1675,6 @@ msgid "Tags"
 msgstr ""
 
 #. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__vat
-msgid "Tax ID"
-msgstr ""
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_public_shop__vat
-msgid ""
-"The Tax Identification Number. Complete it if the contact is subjected to "
-"government taxes. Used in some legal statements."
-msgstr ""
-
-#. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_public_shop__property_account_position_id
 msgid ""
 "The fiscal position determines the taxes/accounts used for this contact."

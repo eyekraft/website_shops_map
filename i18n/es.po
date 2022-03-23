@@ -569,8 +569,8 @@ msgid ""
 "Create a opening days in format of your own (ex. «Mon-Fri», «Saturday») for "
 "the shop"
 msgstr ""
-"Cree un día de apertura en su propio formato (por ejemplo, «lunes a viernes»"
-", «sábado») para la tienda"
+"Cree un día de apertura en su propio formato (por ejemplo, «lunes a "
+"viernes», «sábado») para la tienda"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_public_shop__create_uid
@@ -962,8 +962,8 @@ msgid ""
 "Properties\")"
 msgstr ""
 "En este campo, puede seleccionar los servicios disponibles en la tienda en "
-"el campo \"Propiedades\" (los servicios deben estar preconfigurados en \""
-"Propiedades de la tienda\")"
+"el campo \"Propiedades\" (los servicios deben estar preconfigurados en "
+"\"Propiedades de la tienda\")"
 
 #. module: website_shops_map
 #: model:ir.model.fields,field_description:website_shops_map.field_public_shop__industry_id
@@ -1763,20 +1763,6 @@ msgstr "Rango de proveedor"
 #: model:ir.model.fields,field_description:website_shops_map.field_public_shop__category_id
 msgid "Tags"
 msgstr "Etiquetas"
-
-#. module: website_shops_map
-#: model:ir.model.fields,field_description:website_shops_map.field_public_shop__vat
-msgid "Tax ID"
-msgstr "ID del impuesto"
-
-#. module: website_shops_map
-#: model:ir.model.fields,help:website_shops_map.field_public_shop__vat
-msgid ""
-"The Tax Identification Number. Complete it if the contact is subjected to "
-"government taxes. Used in some legal statements."
-msgstr ""
-"El Número de Identificación Fiscal. Complételo si el contacto está sujeto a "
-"impuestos gubernamentales. Se utiliza en algunas declaraciones legales."
 
 #. module: website_shops_map
 #: model:ir.model.fields,help:website_shops_map.field_public_shop__property_account_position_id
