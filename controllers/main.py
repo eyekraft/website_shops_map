@@ -71,10 +71,10 @@ class PublicShopList(http.Controller):
         tags = tags.split(',') if tags else False
         shop_ids = []
         if not isIds:
-            # if not ids list passes get recordset of all shops ('public' flag in true)
+            # if not ids list passes get recordset of all shops ('is_published' flag in true)
             # checks if linked warehouse record is not archieved ('active' flag is true)
             # and filter by selected tags
-            domain = [('public', '=', True),('warehouse_ids.active','=',True)]
+            domain = [('is_published', '=', True),('warehouse_ids.active','=',True)]
             if tags:
                 domain.append('|') if len(tags) > 1 else None
                 for tag in tags:
